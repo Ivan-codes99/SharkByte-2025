@@ -1,16 +1,93 @@
-import { Book, Award, Briefcase } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Book, Award, Briefcase, Users, ChevronDown, ChevronUp } from "lucide-react";
 import type { Milestone } from "../types";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { groupMilestonesByTime } from "../lib/semester";
+import { logger } from "../lib/logger";
 
 interface TimelineProps {
   milestones: Milestone[];
+}
+
+// Component to detect if text is truncated
+function TruncatedText({
+  text,
+  isExpanded,
+  onToggle,
+}: {
+  text: string;
+  isExpanded: boolean;
+  onToggle: () => void;
+}) {
+  const textRef = useRef<HTMLParagraphElement>(null);
+  const [isTruncated, setIsTruncated] = useState(false);
+
+  useEffect(() => {
+    const checkTruncation = () => {
+      if (textRef.current && !isExpanded) {
+        // Check if text is actually truncated by comparing scrollHeight to clientHeight
+        const isTextTruncated = textRef.current.scrollHeight > textRef.current.clientHeight;
+        setIsTruncated(isTextTruncated);
+      } else {
+        setIsTruncated(false);
+      }
+    };
+
+    // Check immediately
+    checkTruncation();
+
+    // Also check after a brief delay to account for layout
+    const timeoutId = setTimeout(checkTruncation, 100);
+
+    // Use ResizeObserver to check when container size changes
+    const resizeObserver = new ResizeObserver(checkTruncation);
+    if (textRef.current) {
+      resizeObserver.observe(textRef.current);
+    }
+
+    return () => {
+      clearTimeout(timeoutId);
+      resizeObserver.disconnect();
+    };
+  }, [text, isExpanded]);
+
+  return (
+    <div className="mb-3 flex-1">
+      <p
+        ref={textRef}
+        className={`text-sm text-gray-700 ${isExpanded ? "" : "line-clamp-2"}`}
+      >
+        {text}
+      </p>
+      {isTruncated && (
+        <button
+          onClick={onToggle}
+          className="mt-2 text-xs text-primary hover:text-primary-700 font-semibold flex items-center gap-1 transition-colors"
+          type="button"
+        >
+          {isExpanded ? (
+            <>
+              <ChevronUp className="h-3 w-3" />
+              Read less
+            </>
+          ) : (
+            <>
+              <ChevronDown className="h-3 w-3" />
+              Read more
+            </>
+          )}
+        </button>
+      )}
+    </div>
+  );
 }
 
 const iconMap = {
   COURSE: Book,
   CERT: Award,
   INTERNSHIP: Briefcase,
+  EXTRACURRICULAR: Users,
 };
 
 const statusConfig = {
@@ -20,66 +97,148 @@ const statusConfig = {
 };
 
 export function Timeline({ milestones }: TimelineProps) {
+  // Track which milestone cards are expanded
+  const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
+
+  // Group milestones by time period (semester or month)
+  const timeGroups = groupMilestonesByTime(milestones);
+
+  const toggleCard = (milestoneId: string) => {
+    setExpandedCards((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(milestoneId)) {
+        newSet.delete(milestoneId);
+        logger.debug("Milestone card collapsed", { milestoneId }, "Timeline");
+      } else {
+        newSet.add(milestoneId);
+        logger.debug("Milestone card expanded", { milestoneId }, "Timeline");
+      }
+      return newSet;
+    });
+  };
+
+  logger.debug("Timeline rendered", {
+    totalMilestones: milestones.length,
+    timeGroups: timeGroups.length,
+  }, "Timeline");
+
   return (
     <div className="relative">
-      {/* Vertical line */}
+      {/* Vertical line - spans all time periods */}
       <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200" />
 
-      <div className="space-y-8">
-        {milestones.map((milestone) => {
-          const Icon = iconMap[milestone.kind];
-          const statusInfo = statusConfig[milestone.status];
+      <div className="space-y-12">
+        {timeGroups.map((group, groupIndex) => {
+          const isSemester = group.type === "semester";
+          const isNestedMonth = group.parentSemester !== undefined;
+          const indentClass = isNestedMonth ? "ml-16" : "";
+          const prevGroup = groupIndex > 0 ? timeGroups[groupIndex - 1] : null;
+          const isFirstNestedMonth = isNestedMonth && prevGroup?.type === "semester" && prevGroup.key === group.parentSemester;
 
           return (
-            <div key={milestone.id} className="relative flex items-start gap-4">
-              {/* Icon circle */}
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-primary-100 border-2 border-white shadow-md">
-                <Icon className="h-6 w-6 text-primary" />
-              </div>
-
-              {/* Content */}
-              <div className="flex-1 pb-8">
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                  <div>
-                    <h3 className="text-lg font-semibold text-black">
-                      {milestone.title}
-                    </h3>
-                    <p className="text-sm text-gray-700 mt-1">
-                      {milestone.description}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <Badge variant="secondary" className="text-xs">
-                      {milestone.kind.replace("_", " ")}
-                    </Badge>
-                    <Badge variant={statusInfo.variant} className="text-xs">
-                      {statusInfo.label}
-                    </Badge>
-                  </div>
+            <div key={group.key} className={`relative ${indentClass}`}>
+              {/* Connecting line from parent semester to nested month */}
+              {isFirstNestedMonth && (
+                <div className="absolute -left-10 top-0 h-6 w-0.5 bg-gray-300" />
+              )}
+              
+              {/* Time Period Header */}
+              <div className="relative flex items-center gap-4 mb-6">
+                <div
+                  className={`relative z-10 flex h-16 w-16 items-center justify-center rounded-full border-4 border-white shadow-lg ${
+                    isSemester ? "bg-primary" : "bg-gray-600"
+                  }`}
+                >
+                  {isSemester ? (
+                    <span className="text-white font-bold text-lg">
+                      {group.displayName.includes("Fall")
+                        ? "F"
+                        : group.displayName.includes("Spring")
+                        ? "S"
+                        : "U"}
+                    </span>
+                  ) : (
+                    <span className="text-white font-bold text-xs">
+                      {new Date(group.date).toLocaleDateString("en-US", {
+                        month: "short",
+                      })}
+                    </span>
+                  )}
                 </div>
-
-                {milestone.targetDate && (
-                  <p className="text-xs text-gray-600 mt-2">
-                    Target: {new Date(milestone.targetDate).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
+                <div>
+                  <h3 className={`font-bold text-black tracking-tight ${isNestedMonth ? "text-xl" : "text-2xl"}`}>
+                    {group.displayName}
+                  </h3>
+                  <p className="text-sm text-gray-600 mt-1">
+                    {group.milestones.length} milestone{group.milestones.length !== 1 ? "s" : ""}
                   </p>
-                )}
-
-                {/* Mint NFT button (disabled in MVP) */}
-                {milestone.status === "DONE" && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    disabled
-                    className="mt-3 text-xs"
-                  >
-                    Mint NFT (Coming Soon)
-                  </Button>
-                )}
+                </div>
               </div>
+
+              {/* Milestones in this time period - displayed horizontally */}
+              <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 ${isNestedMonth ? "ml-20" : "ml-20"}`}>
+                {group.milestones.map((milestone: Milestone) => {
+                  const Icon = iconMap[milestone.kind];
+                  const statusInfo = statusConfig[milestone.status];
+                  const isExpanded = expandedCards.has(milestone.id);
+                  const hasDescription = milestone.description && milestone.description.trim().length > 0;
+
+                  return (
+                    <div
+                      key={milestone.id}
+                      className="relative rounded-xl border bg-white p-4 shadow-md hover:shadow-lg transition-shadow flex flex-col"
+                    >
+                      {/* Icon */}
+                      <div className="flex items-start gap-3 mb-3">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 border-2 border-primary-200 flex-shrink-0">
+                          <Icon className="h-5 w-5 text-primary" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-base font-semibold text-black">
+                            {milestone.title}
+                          </h4>
+                        </div>
+                      </div>
+
+                      {/* Description */}
+                      {hasDescription && (
+                        <TruncatedText
+                          text={milestone.description!}
+                          isExpanded={isExpanded}
+                          onToggle={() => toggleCard(milestone.id)}
+                        />
+                      )}
+
+                      {/* Badges */}
+                      <div className="flex items-center gap-2 flex-wrap mb-3">
+                        <Badge variant="secondary" className="text-xs">
+                          {milestone.kind.replace("_", " ")}
+                        </Badge>
+                        <Badge variant={statusInfo.variant} className="text-xs">
+                          {statusInfo.label}
+                        </Badge>
+                      </div>
+
+                      {/* Mint NFT button (disabled in MVP) */}
+                      {milestone.status === "DONE" && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          disabled
+                          className="w-full text-xs"
+                        >
+                          Mint NFT (Coming Soon)
+                        </Button>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Connector line to next time period (except last) */}
+              {groupIndex < timeGroups.length - 1 && (
+                <div className="ml-6 h-8 w-0.5 bg-gray-200" />
+              )}
             </div>
           );
         })}
@@ -87,4 +246,3 @@ export function Timeline({ milestones }: TimelineProps) {
     </div>
   );
 }
-
