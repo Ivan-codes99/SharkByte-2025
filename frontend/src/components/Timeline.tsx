@@ -90,6 +90,11 @@ const iconMap = {
   EXTRACURRICULAR: Users,
 };
 
+// Check if a milestone is a level header
+function isLevelHeader(milestone: Milestone): boolean {
+  return milestone.id.startsWith("level-header-");
+}
+
 const statusConfig = {
   PLANNED: { label: "Planned", variant: "outline" as const },
   IN_PROGRESS: { label: "In Progress", variant: "warning" as const },
@@ -190,13 +195,30 @@ export function Timeline({ milestones }: TimelineProps) {
                     >
                       {/* Icon */}
                       <div className="flex items-start gap-3 mb-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 border-2 border-primary-200 flex-shrink-0">
-                          <Icon className="h-5 w-5 text-primary" />
+                        <div className={`flex h-10 w-10 items-center justify-center rounded-lg border-2 flex-shrink-0 ${
+                          isLevelHeader(milestone)
+                            ? "bg-primary-500 border-primary-600"
+                            : "bg-primary-100 border-primary-200"
+                        }`}>
+                          {isLevelHeader(milestone) ? (
+                            <span className="text-white font-bold text-xs">
+                              {milestone.title.split(" @ ")[0]}
+                            </span>
+                          ) : (
+                            <Icon className="h-5 w-5 text-primary" />
+                          )}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-base font-semibold text-black">
+                          <h4 className={`font-semibold text-black ${
+                            isLevelHeader(milestone) ? "text-lg" : "text-base"
+                          }`}>
                             {milestone.title}
                           </h4>
+                          {isLevelHeader(milestone) && (
+                            <p className="text-xs text-gray-600 mt-1">
+                              {milestone.title.split(" @ ")[1]}
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -210,17 +232,19 @@ export function Timeline({ milestones }: TimelineProps) {
                       )}
 
                       {/* Badges */}
-                      <div className="flex items-center gap-2 flex-wrap mb-3">
-                        <Badge variant="secondary" className="text-xs">
-                          {milestone.kind.replace("_", " ")}
-                        </Badge>
-                        <Badge variant={statusInfo.variant} className="text-xs">
-                          {statusInfo.label}
-                        </Badge>
-                      </div>
+                      {!isLevelHeader(milestone) && (
+                        <div className="flex items-center gap-2 flex-wrap mb-3">
+                          <Badge variant="secondary" className="text-xs">
+                            {milestone.kind.replace("_", " ")}
+                          </Badge>
+                          <Badge variant={statusInfo.variant} className="text-xs">
+                            {statusInfo.label}
+                          </Badge>
+                        </div>
+                      )}
 
                       {/* Mint NFT button (disabled in MVP) */}
-                      {milestone.status === "DONE" && (
+                      {!isLevelHeader(milestone) && milestone.status === "DONE" && (
                         <Button
                           variant="outline"
                           size="sm"

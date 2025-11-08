@@ -171,13 +171,60 @@ app.get("/careers", (c) => {
   logger.info("Listing available careers");
   return c.json({
     careers: [
+      // Computer Science & Technology
       "Computer Scientist",
       "Software Engineer",
       "Computer Engineer",
-      "Mechanical Engineer",
-      "Architect",
       "Data Scientist",
       "Cybersecurity Specialist",
+      "Information Technology Specialist",
+      "Network Administrator",
+      "Web Developer",
+      "Mobile App Developer",
+      "Database Administrator",
+      "Cloud Architect",
+      "DevOps Engineer",
+      // Engineering
+      "Mechanical Engineer",
+      "Electrical Engineer",
+      "Civil Engineer",
+      "Aerospace Engineer",
+      "Biomedical Engineer",
+      "Chemical Engineer",
+      "Industrial Engineer",
+      "Environmental Engineer",
+      // Architecture & Design
+      "Architect",
+      "Interior Designer",
+      "Urban Planner",
+      "Landscape Architect",
+      // Business & Finance
+      "Business Administrator",
+      "Accountant",
+      "Financial Analyst",
+      "Marketing Manager",
+      "Human Resources Manager",
+      "Project Manager",
+      // Healthcare
+      "Registered Nurse",
+      "Physical Therapist",
+      "Occupational Therapist",
+      "Radiologic Technologist",
+      "Medical Laboratory Technician",
+      "Respiratory Therapist",
+      // Education
+      "Teacher",
+      "School Counselor",
+      "Educational Administrator",
+      // Criminal Justice
+      "Police Officer",
+      "Probation Officer",
+      "Criminal Justice Administrator",
+      // Arts & Media
+      "Graphic Designer",
+      "Multimedia Specialist",
+      "Journalist",
+      "Public Relations Specialist",
     ],
   });
 });

@@ -200,13 +200,17 @@ export async function generatePathway(
   // Step 7: Build alternative pathways
   const alternativePathways: AlternativePathway[] = [];
 
-  // Alternative: Different transfer institution
-  if (bsLevels.length > 1) {
+  // Create alternative pathways for ALL transfer institutions
+  // This ensures users can choose any transfer option, not just the primary
+  if (bsLevels.length > 0) {
+    // Create alternatives for all BS levels EXCEPT the primary (which is already in primaryPathway)
+    // This gives users all transfer options to choose from
     for (let i = 1; i < bsLevels.length; i++) {
       const altBs = bsLevels[i];
+      
       const altPathway: AlternativePathway = {
         name: `${altBs.institution} Transfer Path`,
-        description: `Alternative pathway transferring to ${altBs.institution} instead of ${bsLevels[0].institution}`,
+        description: `Transfer pathway to ${altBs.institution === "FIU" ? "Florida International University" : altBs.institution === "UF" ? "University of Florida" : altBs.institution === "FSU" ? "Florida State University" : altBs.institution}`,
         levels: [
           aaLevel,
           altBs,
@@ -214,6 +218,26 @@ export async function generatePathway(
         ],
       };
       alternativePathways.push(altPathway);
+    }
+    
+    // Also ensure the primary institution is available as an explicit option
+    // This allows users to see all options including the primary
+    const primaryInstitution = bsLevels[0]?.institution;
+    if (primaryInstitution && bsLevels.length > 1) {
+      // Add primary as an alternative option too (for consistency in UI)
+      const primaryAlt: AlternativePathway = {
+        name: `${primaryInstitution} Transfer Path`,
+        description: `Transfer pathway to ${primaryInstitution === "FIU" ? "Florida International University" : primaryInstitution === "UF" ? "University of Florida" : primaryInstitution === "FSU" ? "Florida State University" : primaryInstitution}`,
+        levels: [
+          aaLevel,
+          bsLevels[0],
+          ...graduateLevels.filter((l) => l.institution === primaryInstitution),
+        ],
+      };
+      // Only add if not already in alternatives (to avoid duplicates)
+      if (!alternativePathways.some(alt => alt.levels[1]?.institution === primaryInstitution)) {
+        alternativePathways.unshift(primaryAlt); // Add at beginning
+      }
     }
   }
 
