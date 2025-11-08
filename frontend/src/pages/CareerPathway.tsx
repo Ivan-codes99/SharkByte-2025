@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Timeline } from "../components/Timeline";
+import { TimelineTree } from "../components/TimelineTree";
 import { generatePathway, getCareers } from "../lib/api";
 import { pathwayToMilestones } from "../lib/pathway-converter";
 import type { GeneratedPathway } from "../types/pathway";
@@ -183,7 +183,23 @@ export function CareerPathway() {
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-black mb-8">
                 Your Career Pathway
               </h2>
-              <Timeline milestones={milestones} />
+              <TimelineTree 
+                milestones={milestones}
+                onMilestoneStatusChange={(milestoneId, status) => {
+                  logger.action("Milestone status updated", { milestoneId, status }, "CareerPathway");
+                  // Update local state
+                  setMilestones(prev => 
+                    prev.map(m => m.id === milestoneId ? { ...m, status } : m)
+                  );
+                }}
+                onElectiveSelectionChange={(milestoneId, selected) => {
+                  logger.action("Elective selection updated", { milestoneId, selected }, "CareerPathway");
+                  // Update local state
+                  setMilestones(prev => 
+                    prev.map(m => m.id === milestoneId ? { ...m, selected } : m)
+                  );
+                }}
+              />
             </>
           ) : (
             <div className="text-center py-12">

@@ -102,6 +102,26 @@ function pathwayLevelToMilestones(
     }
 
     courses.forEach((course, index) => {
+      // Determine category: CORE for required courses (CS, Math, Physics, Chemistry)
+      // This is a simple heuristic - in production, this would come from backend data
+      const isCore = course.code.startsWith("COP") || course.code.startsWith("MAC") || 
+                     course.code.startsWith("PHY") || course.code.startsWith("CHM") ||
+                     course.code.startsWith("COT") || course.code.startsWith("STA");
+      // Only mark as CORE if it's a core course, otherwise leave category undefined
+      const category = isCore ? "CORE" : undefined;
+      
+      // Check if this is an elective course (by description or course code pattern)
+      const isHumanitiesElective = course.description?.toLowerCase().includes("humanities elective") || 
+                                    course.code.startsWith("ARH") || course.code.startsWith("LIT") ||
+                                    course.code.startsWith("PHI") || course.code.startsWith("THE");
+      const isCSElective = course.description?.toLowerCase().includes("cs elective") ||
+                            course.description?.toLowerCase().includes("elective option") && 
+                            (course.code.startsWith("CAP") || course.code.startsWith("CNT") || 
+                             course.code.startsWith("COP") || course.code.startsWith("CEN"));
+      const isElective = isHumanitiesElective || isCSElective;
+      const electiveGroupId = isHumanitiesElective ? "humanities-electives" : 
+                              isCSElective ? "cs-electives" : undefined;
+      
       milestones.push({
         id: `course-${level.level}-${level.institution}-${course.code}-${key}-${index}`,
         title: `${course.code}: ${course.title}`,
@@ -111,6 +131,10 @@ function pathwayLevelToMilestones(
         targetDate: semesterToDate(semester as "FALL" | "SPRING" | "SUMMER", year),
         status: "PLANNED" as MilestoneStatus,
         description: course.description || `${course.credits} credits${course.prerequisites ? `. Prerequisites: ${course.prerequisites.join(", ")}` : ""}`,
+        category: category as "CORE" | undefined,
+        isElective: isElective,
+        electiveGroupId: electiveGroupId,
+        requiredCount: isHumanitiesElective ? 2 : isCSElective ? 2 : undefined, // Choose 2 of each elective group
       });
     });
   });
@@ -247,6 +271,7 @@ export function pathwayToMilestones(pathway: GeneratedPathway, useAlternativePat
         targetDate: earliestMilestone.targetDate || semesterToDate(levelStartSemester, levelStartYear),
         status: "PLANNED" as MilestoneStatus,
         description: level.description || `${level.programName}${level.duration ? ` (${level.duration})` : ""}`,
+        category: "DEGREE",
       });
     }
     
