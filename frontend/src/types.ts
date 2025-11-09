@@ -1,0 +1,95 @@
+export type MilestoneStatus = "PLANNED" | "IN_PROGRESS" | "DONE";
+
+export type Semester = "FALL" | "SPRING" | "SUMMER";
+
+export type MilestoneCategory = "CORE" | "ELECTIVE" | "DEGREE";
+
+export type Milestone = {
+  id: string;
+  title: string;
+  kind: "COURSE" | "CERT" | "INTERNSHIP" | "EXTRACURRICULAR";
+  targetDate?: string;
+  // Semester-based scheduling (alternative to targetDate)
+  semester?: Semester;
+  year?: number;
+  status: MilestoneStatus;
+  description?: string;
+  // New fields for tree structure and interactivity
+  category?: MilestoneCategory; // Visual categorization
+  electiveGroupId?: string; // For grouping elective courses
+  isElective?: boolean; // Whether this is an elective course
+  selected?: boolean; // For user-selected electives
+  requiredCount?: number; // For elective groups: "choose X of Y"
+  totalOptions?: number; // Total options in an elective group
+  children?: Milestone[]; // For tree structure (e.g., elective groups with options)
+};
+
+export type Scholarship = {
+  id: string;
+  title: string;
+  awardUSD: number;
+  deadlineISO: string;
+  programTags: string[];
+  essayWords?: number;
+  url?: string;
+  blurb: string;
+};
+
+export type DegreeLevel = "AA" | "AS" | "BS" | "BA" | "MS" | "MA" | "PhD" | "CERT";
+export type Institution = "MDC" | "FIU" | "UF" | "FSU" | "OTHER";
+
+export interface ProgramCourse {
+  code: string;
+  title: string;
+  credits: number;
+  prerequisites?: string[];
+  corequisite?: string;
+  description?: string;
+  semester?: Semester;
+  year?: number;
+}
+
+export interface ProgramCertification {
+  name: string;
+  description: string;
+  required: boolean;
+  timing?: string;
+  prerequisites?: string[];
+}
+
+export interface ProgramExam {
+  name: string;
+  description: string;
+  required: boolean;
+  timing?: string;
+  scoreRequirements?: {
+    minimum?: number;
+    recommended?: number;
+  };
+}
+
+export interface ProgramInternship {
+  type: "REQUIRED" | "OPTIONAL" | "RECOMMENDED";
+  timing: string;
+  description: string;
+  duration?: string;
+}
+
+export interface ProgramAnalysisResponse {
+  degreeType: DegreeLevel;
+  programName: string;
+  institution: Institution;
+  metadata: {
+    totalCredits?: number;
+    duration?: string;
+    description?: string;
+  };
+  courses: ProgramCourse[];
+  certifications?: {
+    required: ProgramCertification[];
+    recommended: ProgramCertification[];
+  };
+  exams?: ProgramExam[];
+  internships?: ProgramInternship[];
+}
+
