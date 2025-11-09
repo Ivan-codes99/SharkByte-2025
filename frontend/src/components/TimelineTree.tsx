@@ -338,8 +338,9 @@ export function TimelineTree({
         const group = timeGroups[i];
         if (!group) continue;
         
+        // Only count credits that count toward required credits
         const groupCredits = group.milestones.reduce((sum, m) => {
-          if (m.kind === "COURSE" && m.credits) {
+          if (m.kind === "COURSE" && m.credits && (m.countsTowardRequired !== false)) {
             return sum + m.credits;
           }
           return sum;
@@ -352,8 +353,9 @@ export function TimelineTree({
         const group = timeGroups[i];
         if (!group) continue;
         
+        // Only count credits that count toward required credits
         const groupCredits = group.milestones.reduce((sum, m) => {
-          if (m.kind === "COURSE" && m.credits) {
+          if (m.kind === "COURSE" && m.credits && (m.countsTowardRequired !== false)) {
             return sum + m.credits;
           }
           return sum;
@@ -513,8 +515,9 @@ export function TimelineTree({
                     {(() => {
                       if (isSemester) {
                         // For semesters, calculate credits including nested months
+                        // Only count credits that count toward required credits
                         let semesterCredits = group.milestones.reduce((sum, m) => {
-                          if (m.kind === "COURSE" && m.credits) {
+                          if (m.kind === "COURSE" && m.credits && (m.countsTowardRequired !== false)) {
                             return sum + m.credits;
                           }
                           return sum;
@@ -525,7 +528,7 @@ export function TimelineTree({
                           const nextGroup = timeGroups[i];
                           if (nextGroup?.parentSemester === group.key) {
                             const nestedCredits = nextGroup.milestones.reduce((sum, m) => {
-                              if (m.kind === "COURSE" && m.credits) {
+                              if (m.kind === "COURSE" && m.credits && (m.countsTowardRequired !== false)) {
                                 return sum + m.credits;
                               }
                               return sum;

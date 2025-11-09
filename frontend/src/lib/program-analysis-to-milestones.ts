@@ -14,106 +14,139 @@ interface CourseWithContext {
   requiredCredits?: number;
   electiveGroupId?: string;
   requiredCount?: number; // Number of courses required from this elective group
+  groupId: string; // Unique identifier for the requirement group
+}
+
+interface GroupRequirement {
+  groupId: string;
+  groupName: string;
+  requiredCredits: number;
+  isElective: boolean;
+  courses: CourseWithContext[];
+  creditsScheduled: number; // Track how many credits we've scheduled from this group
+  isSatisfied: boolean; // Whether we've met the required credits
 }
 
 /**
  * Recursively extract all courses from nested requirement groups
+ * and build a structure to track group requirements
  */
-function extractCourses(
+function extractCoursesAndGroups(
   groups: RequirementGroup[],
   parentName: string = "",
   isElective: boolean = false,
-  electiveGroupId?: string
-): CourseWithContext[] {
+  electiveGroupId?: string,
+  groupRequirements: Map<string, GroupRequirement> = new Map(),
+  groupIdPrefix: string = ""
+): { courses: CourseWithContext[]; groupRequirements: Map<string, GroupRequirement> } {
   const courses: CourseWithContext[] = [];
 
-  groups.forEach((group) => {
+  groups.forEach((group, groupIndex) => {
     const fullGroupName = parentName ? `${parentName} > ${group.name}` : group.name;
     const isElectiveGroup = 
       group.name.toLowerCase().includes("elective") ||
       group.name.toLowerCase().includes("select") ||
       group.name.toLowerCase().includes("choose");
+    
+    const currentGroupId = groupIdPrefix ? `${groupIdPrefix}-${groupIndex}` : `group-${groupIndex}`;
+    const currentElectiveGroupId = isElectiveGroup ? `elective-${fullGroupName}` : electiveGroupId;
 
     // If this group has courses, add them
     if (group.courses && group.courses.length > 0) {
-      // Calculate how many courses are needed based on requiredCredits
-      // Assume average 3 credits per course
-      const avgCreditsPerCourse = 3;
-      const requiredCount = isElectiveGroup && group.requiredCredits
-        ? Math.ceil(group.requiredCredits / avgCreditsPerCourse)
-        : undefined;
-
+      const groupCourses: CourseWithContext[] = [];
+      
       group.courses.forEach((course) => {
         // Skip pattern courses (like "CAI*", "CAP*") - we'll handle them differently
         if (course.code.endsWith("*")) {
           return;
         }
 
-        courses.push({
+        const courseWithContext: CourseWithContext = {
           course,
           groupName: fullGroupName,
           isElective: isElective || isElectiveGroup,
           requiredCredits: group.requiredCredits,
-          electiveGroupId: isElectiveGroup ? `elective-${fullGroupName}` : electiveGroupId,
-          requiredCount,
-        });
+          electiveGroupId: currentElectiveGroupId,
+          groupId: currentGroupId,
+        };
+        
+        groupCourses.push(courseWithContext);
+        courses.push(courseWithContext);
       });
+
+      // Track this group's requirements
+      if (group.requiredCredits > 0) {
+        groupRequirements.set(currentGroupId, {
+          groupId: currentGroupId,
+          groupName: fullGroupName,
+          requiredCredits: group.requiredCredits,
+          isElective: isElective || isElectiveGroup,
+          courses: groupCourses,
+          creditsScheduled: 0,
+          isSatisfied: false,
+        });
+      }
     }
 
     // If this group has nested groups, recurse
     if (group.groups && group.groups.length > 0) {
-      const nestedCourses = extractCourses(
+      const nestedResult = extractCoursesAndGroups(
         group.groups,
         fullGroupName,
         isElective || isElectiveGroup,
-        isElectiveGroup ? `elective-${fullGroupName}` : electiveGroupId
+        currentElectiveGroupId,
+        groupRequirements,
+        currentGroupId
       );
-      courses.push(...nestedCourses);
+      courses.push(...nestedResult.courses);
+      // Merge group requirements
+      nestedResult.groupRequirements.forEach((req, id) => {
+        groupRequirements.set(id, req);
+      });
     }
   });
 
-  return courses;
+  return { courses, groupRequirements };
 }
 
 /**
- * Distribute courses across semesters based on prerequisites and credits
- * Uses topological sorting to ensure prerequisites are scheduled first
+ * Distribute courses across semesters based on prerequisites and required credits
+ * Only schedules enough courses to meet each group's required credits
  */
 function distributeCoursesAcrossSemesters(
   courses: CourseWithContext[],
+  groupRequirements: Map<string, GroupRequirement>,
+  totalRequiredCredits: number,
   startYear: number = new Date().getFullYear(),
   startSemester: Semester = "FALL"
 ): Map<string, CourseWithContext[]> {
   const coursesBySemester = new Map<string, CourseWithContext[]>();
-  const courseCodeToSemester = new Map<string, string>(); // Track when each course is scheduled
+  const courseCodeToSemester = new Map<string, string>();
   const semesterOrder: Semester[] = ["FALL", "SPRING", "SUMMER"];
   const startIndex = semesterOrder.indexOf(startSemester);
-  const maxCreditsPerSemester = 15; // Typical full-time load
+  const maxCreditsPerSemester = 15;
+  const maxYearsFromStart = 8;
+  const maxYear = startYear + maxYearsFromStart;
 
-  // Create a map of course codes to courses for quick lookup
   const courseMap = new Map<string, CourseWithContext>();
   courses.forEach(c => courseMap.set(c.course.code, c));
 
-  // Topological sort: courses without prerequisites first, then courses whose prerequisites are scheduled
   const scheduled = new Set<string>();
   const remaining = new Set(courses.map(c => c.course.code));
   
   let currentYear = startYear;
   let currentSemesterIndex = startIndex;
   let creditsThisSemester = 0;
+  let totalCreditsScheduled = 0;
 
   // Helper to get the next semester
   const getNextSemester = () => {
     const semester = semesterOrder[currentSemesterIndex];
-    const key = `${currentYear}-${semester}`;
-    
-    // Move to next semester
     currentSemesterIndex = (currentSemesterIndex + 1) % 3;
     if (currentSemesterIndex === 0) {
       currentYear++;
     }
-    
-    return { semester, key };
+    return { semester, key: `${currentYear}-${semester}` };
   };
 
   // Helper to get current semester key
@@ -135,12 +168,11 @@ function distributeCoursesAcrossSemesters(
     if (!course.prerequisites || course.prerequisites.length === 0) {
       return null;
     }
-    
     let latestSemester: string | null = null;
     for (const prereq of course.prerequisites) {
       const prereqSemester = courseCodeToSemester.get(prereq);
       if (!prereqSemester) {
-        return null; // Prerequisite not scheduled yet
+        return null;
       }
       if (!latestSemester || prereqSemester > latestSemester) {
         latestSemester = prereqSemester;
@@ -149,17 +181,117 @@ function distributeCoursesAcrossSemesters(
     return latestSemester;
   };
 
-  // Process courses in rounds until all are scheduled
-  let iterations = 0;
-  const maxIterations = courses.length * 2; // Safety limit
-  const maxYearsFromStart = 8; // Maximum years the timeline should span
-  const maxYear = startYear + maxYearsFromStart;
+  // Helper to check if a group's required credits are met
+  const isGroupSatisfied = (groupId: string): boolean => {
+    const groupReq = groupRequirements.get(groupId);
+    if (!groupReq) return true; // If group not tracked, assume satisfied
+    return groupReq.isSatisfied;
+  };
 
-  while (remaining.size > 0 && iterations < maxIterations) {
+  // Helper to check if we can schedule a course (group not satisfied, prerequisites met)
+  const canScheduleCourse = (courseWithContext: CourseWithContext): boolean => {
+    // Check if group is already satisfied
+    if (isGroupSatisfied(courseWithContext.groupId)) {
+      return false; // Group requirement already met
+    }
+
+    // Check prerequisites
+    return arePrerequisitesScheduled(courseWithContext.course);
+  };
+
+  // Helper to schedule a course
+  const scheduleCourse = (courseWithContext: CourseWithContext): boolean => {
+    const { course } = courseWithContext;
+    const credits = course.credits || 3;
+    const groupReq = groupRequirements.get(courseWithContext.groupId);
+
+    // Check if scheduling this course would exceed the group's required credits
+    if (groupReq && !groupReq.isSatisfied) {
+      const creditsAfter = groupReq.creditsScheduled + credits;
+      if (creditsAfter > groupReq.requiredCredits) {
+        // This would exceed required credits, don't schedule
+        return false;
+      }
+    }
+
+    // Check if prerequisites require a later semester
+    const latestPrereqSemester = getLatestPrerequisiteSemester(course);
+    if (latestPrereqSemester) {
+      const [prereqYearStr, prereqSemester] = latestPrereqSemester.split("-");
+      const prereqYear = parseInt(prereqYearStr, 10);
+      const prereqIndex = semesterOrder.indexOf(prereqSemester as Semester);
+      
+      let targetYear = prereqYear;
+      let targetSemesterIndex = (prereqIndex + 1) % 3;
+      if (targetSemesterIndex === 0) {
+        targetYear++;
+      }
+
+      if (targetYear < currentYear || (targetYear === currentYear && targetSemesterIndex < currentSemesterIndex)) {
+        targetYear = currentYear;
+        targetSemesterIndex = currentSemesterIndex;
+      } else if (targetYear > maxYear) {
+        targetYear = maxYear;
+        targetSemesterIndex = 2;
+      } else {
+        currentYear = targetYear;
+        currentSemesterIndex = targetSemesterIndex;
+        creditsThisSemester = 0;
+      }
+    }
+
+    // Check if current semester has room
+    const currentKey = getCurrentSemesterKey();
+    const currentSemesterCredits = coursesBySemester.get(currentKey)?.reduce(
+      (sum, c) => sum + (c.course.credits || 3), 0
+    ) || 0;
+
+    if (currentSemesterCredits + credits > maxCreditsPerSemester) {
+      getNextSemester();
+      creditsThisSemester = 0;
+      
+      if (currentYear > maxYear) {
+        return false;
+      }
+    }
+
+    const key = getCurrentSemesterKey();
+    if (!coursesBySemester.has(key)) {
+      coursesBySemester.set(key, []);
+    }
+
+    coursesBySemester.get(key)!.push(courseWithContext);
+    courseCodeToSemester.set(course.code, key);
+    scheduled.add(course.code);
+    remaining.delete(course.code);
+    creditsThisSemester += credits;
+    totalCreditsScheduled += credits;
+
+    // Update group requirement tracking
+    if (groupReq) {
+      groupReq.creditsScheduled += credits;
+      if (groupReq.creditsScheduled >= groupReq.requiredCredits) {
+        groupReq.isSatisfied = true;
+      }
+    }
+
+    if (creditsThisSemester >= maxCreditsPerSemester) {
+      getNextSemester();
+      creditsThisSemester = 0;
+    }
+
+    return true;
+  };
+
+  // Process courses in rounds until all groups are satisfied or we run out of courses
+  let iterations = 0;
+  const maxIterations = courses.length * 3;
+
+  while (totalCreditsScheduled < totalRequiredCredits && remaining.size > 0 && iterations < maxIterations) {
     iterations++;
     let scheduledThisRound = false;
 
-    // Find courses that can be scheduled (prerequisites are met)
+    // Find courses that can be scheduled
     const readyCourses: CourseWithContext[] = [];
     
     for (const courseCode of remaining) {
@@ -176,12 +308,23 @@ function distributeCoursesAcrossSemesters(
         courseCodeToSemester.set(courseCode, key);
         scheduled.add(courseCode);
         remaining.delete(courseCode);
+        
+        const credits = courseWithContext.course.credits || 3;
+        totalCreditsScheduled += credits;
+        
+        const groupReq = groupRequirements.get(courseWithContext.groupId);
+        if (groupReq) {
+          groupReq.creditsScheduled += credits;
+          if (groupReq.creditsScheduled >= groupReq.requiredCredits) {
+            groupReq.isSatisfied = true;
+          }
+        }
+        
         scheduledThisRound = true;
         continue;
       }
 
-      // Check if prerequisites are scheduled
-      if (arePrerequisitesScheduled(courseWithContext.course)) {
+      if (canScheduleCourse(courseWithContext)) {
         readyCourses.push(courseWithContext);
       }
     }
@@ -194,124 +337,45 @@ function distributeCoursesAcrossSemesters(
       if (aLatestPrereq && bLatestPrereq) {
         return aLatestPrereq.localeCompare(bLatestPrereq);
       }
-      if (aLatestPrereq) return 1; // a has prerequisites, b doesn't
-      if (bLatestPrereq) return -1; // b has prerequisites, a doesn't
-      return 0; // Both have no prerequisites
+      if (aLatestPrereq) return 1;
+      if (bLatestPrereq) return -1;
+      return 0;
     });
 
     // Schedule ready courses
     for (const courseWithContext of readyCourses) {
-      const { course } = courseWithContext;
-      const credits = course.credits || 3;
-
-      // If course has prerequisites, schedule it at least one semester after the latest prerequisite
-      const latestPrereqSemester = getLatestPrerequisiteSemester(course);
-      if (latestPrereqSemester) {
-        // Parse the prerequisite semester to determine when to schedule this course
-        const [prereqYearStr, prereqSemester] = latestPrereqSemester.split("-");
-        const prereqYear = parseInt(prereqYearStr, 10);
-        const prereqIndex = semesterOrder.indexOf(prereqSemester as Semester);
-        
-        // Schedule at least one semester after the prerequisite
-        let targetYear = prereqYear;
-        let targetSemesterIndex = (prereqIndex + 1) % 3;
-        if (targetSemesterIndex === 0) {
-          targetYear++;
-        }
-
-        // Make sure we're not scheduling in the past or too far in the future
-        if (targetYear < currentYear || (targetYear === currentYear && targetSemesterIndex < currentSemesterIndex)) {
-          // Use current semester instead
-          targetYear = currentYear;
-          targetSemesterIndex = currentSemesterIndex;
-        } else if (targetYear > maxYear) {
-          // Cap at maximum year to prevent timeline from going too far
-          targetYear = maxYear;
-          targetSemesterIndex = 2; // SUMMER (last semester of the year)
-        } else {
-          // Update current position to the target
-          currentYear = targetYear;
-          currentSemesterIndex = targetSemesterIndex;
-          creditsThisSemester = 0;
-        }
+      if (totalCreditsScheduled >= totalRequiredCredits) {
+        break; // All required credits met
       }
 
-      // Check if current semester has room
-      const currentKey = getCurrentSemesterKey();
-      const currentSemesterCredits = coursesBySemester.get(currentKey)?.reduce(
-        (sum, c) => sum + (c.course.credits || 3), 0
-      ) || 0;
-
-      if (currentSemesterCredits + credits > maxCreditsPerSemester) {
-        // Move to next semester
-        getNextSemester();
-        creditsThisSemester = 0;
-        
-        // Safety check: if we've exceeded max year, stop scheduling
-        if (currentYear > maxYear) {
-          logger.warn("Reached maximum timeline duration during course distribution", {
-            maxYear,
-            currentYear,
-            remainingCourses: remaining.size,
-          }, "ProgramAnalysisConverter");
-          break;
-        }
-      }
-
-      const key = getCurrentSemesterKey();
-      if (!coursesBySemester.has(key)) {
-        coursesBySemester.set(key, []);
-      }
-
-      coursesBySemester.get(key)!.push(courseWithContext);
-      courseCodeToSemester.set(course.code, key);
-      scheduled.add(course.code);
-      remaining.delete(course.code);
-      creditsThisSemester += credits;
-      scheduledThisRound = true;
-
-      // Move to next semester if we've filled this one
-      if (creditsThisSemester >= maxCreditsPerSemester) {
-        getNextSemester();
-        creditsThisSemester = 0;
+      if (scheduleCourse(courseWithContext)) {
+        scheduledThisRound = true;
       }
     }
 
-    // If we didn't schedule anything this round, we might have a circular dependency
-    // or missing prerequisites. Schedule remaining courses anyway to avoid infinite loop.
-    if (!scheduledThisRound && remaining.size > 0) {
-      // Schedule remaining courses in current/next semesters
+    // If we didn't schedule anything and there are remaining courses, try to schedule them anyway
+    // (might be missing prerequisites or other issues)
+    if (!scheduledThisRound && remaining.size > 0 && totalCreditsScheduled < totalRequiredCredits) {
       for (const courseCode of Array.from(remaining)) {
+        if (totalCreditsScheduled >= totalRequiredCredits) break;
+        
         const courseWithContext = courseMap.get(courseCode);
         if (!courseWithContext) continue;
 
-        const credits = courseWithContext.course.credits || 3;
-        const currentKey = getCurrentSemesterKey();
-        const currentSemesterCredits = coursesBySemester.get(currentKey)?.reduce(
-          (sum, c) => sum + (c.course.credits || 3), 0
-        ) || 0;
-
-        if (currentSemesterCredits + credits > maxCreditsPerSemester) {
-          getNextSemester();
-          creditsThisSemester = 0;
-        }
-
-        const key = getCurrentSemesterKey();
-        if (!coursesBySemester.has(key)) {
-          coursesBySemester.set(key, []);
-        }
-
-        coursesBySemester.get(key)!.push(courseWithContext);
-        courseCodeToSemester.set(courseCode, key);
-        scheduled.add(courseCode);
-        remaining.delete(courseCode);
-        creditsThisSemester += credits;
-
-        if (creditsThisSemester >= maxCreditsPerSemester) {
-          getNextSemester();
-          creditsThisSemester = 0;
+        if (scheduleCourse(courseWithContext)) {
+          scheduledThisRound = true;
         }
       }
+    }
+
+    // If we've met all required credits, stop
+    if (totalCreditsScheduled >= totalRequiredCredits) {
+      logger.info("All required credits scheduled", {
+        totalRequiredCredits,
+        totalCreditsScheduled,
+        remainingCourses: remaining.size,
+      }, "ProgramAnalysisConverter");
+      break;
     }
   }
 
@@ -343,10 +407,38 @@ function courseToMilestone(
     status,
     description: course.description || `Part of ${groupName}`,
     credits: course.credits,
+    countsTowardRequired: true, // Default to true, will be set to false for optional elective options
     category: isElective ? "ELECTIVE" : "CORE",
     isElective,
     electiveGroupId,
   };
+}
+
+/**
+ * Calculate total required credits from all groups
+ * For nested groups: if parent has requiredCredits, use that (children are subsets)
+ * Otherwise, sum children's requiredCredits
+ */
+function calculateTotalRequiredCredits(groups: RequirementGroup[]): number {
+  let total = 0;
+  
+  groups.forEach(group => {
+    if (group.groups && group.groups.length > 0) {
+      // Has nested groups
+      if (group.requiredCredits && group.requiredCredits > 0) {
+        // Parent has requiredCredits - use that (children are subsets that add up to parent)
+        total += group.requiredCredits;
+      } else {
+        // Parent doesn't have requiredCredits, sum children
+        total += calculateTotalRequiredCredits(group.groups);
+      }
+    } else {
+      // Leaf group (no nested groups)
+      total += group.requiredCredits || 0;
+    }
+  });
+  
+  return total;
 }
 
 /**
@@ -359,28 +451,35 @@ export function programAnalysisToMilestones(
 ): Milestone[] {
   const milestones: Milestone[] = [];
 
-  // Extract all courses from requirement groups
-  const courses = extractCourses(analysis.requirements.groups);
+  // Extract courses and build group requirements tracking
+  const { courses, groupRequirements } = extractCoursesAndGroups(analysis.requirements.groups);
   
+  // Calculate total required credits
+  const totalRequiredCredits = analysis.metadata.totalCredits || calculateTotalRequiredCredits(analysis.requirements.groups);
+  
+  logger.info("Extracting courses from program analysis", {
+    totalCourses: courses.length,
+    totalGroups: groupRequirements.size,
+    totalRequiredCredits,
+    programName: analysis.programName,
+  }, "ProgramAnalysisConverter");
+
   // Create a map of course code to course context for quick lookup
   const courseContextMap = new Map<string, CourseWithContext>();
   courses.forEach(courseWithContext => {
     courseContextMap.set(courseWithContext.course.code, courseWithContext);
   });
-  
-  logger.info("Extracting courses from program analysis", {
-    totalCourses: courses.length,
-    programName: analysis.programName,
-  }, "ProgramAnalysisConverter");
 
-  // Distribute courses across semesters
+  // Distribute courses across semesters (only scheduling enough to meet requirements)
   const coursesBySemester = distributeCoursesAcrossSemesters(
     courses,
+    groupRequirements,
+    totalRequiredCredits,
     startYear,
     startSemester
   );
 
-  // Convert courses to milestones
+  // Convert scheduled courses to milestones
   coursesBySemester.forEach((semesterCourses, key) => {
     const [yearStr, semester] = key.split("-");
     const year = parseInt(yearStr, 10);
@@ -395,32 +494,88 @@ export function programAnalysisToMilestones(
     });
   });
 
-  // Group electives by electiveGroupId
-  const electiveGroups = new Map<string, Milestone[]>();
+  // Add all elective courses as milestones (even if not scheduled) so they're visible
+  // Group them by electiveGroupId
+  const electiveGroups = new Map<string, CourseWithContext[]>();
+  const scheduledCourseCodes = new Set(milestones.map(m => {
+    // Extract course code from title (format: "CODE: Title" or just "CODE")
+    return m.title.split(":")[0].trim();
+  }));
 
-  milestones.forEach((milestone) => {
-    if (milestone.electiveGroupId) {
-      if (!electiveGroups.has(milestone.electiveGroupId)) {
-        electiveGroups.set(milestone.electiveGroupId, []);
+  courses.forEach(courseWithContext => {
+    if (courseWithContext.electiveGroupId) {
+      if (!electiveGroups.has(courseWithContext.electiveGroupId)) {
+        electiveGroups.set(courseWithContext.electiveGroupId, []);
       }
-      electiveGroups.get(milestone.electiveGroupId)!.push(milestone);
+      electiveGroups.get(courseWithContext.electiveGroupId)!.push(courseWithContext);
     }
   });
 
-  // Update elective milestones with requiredCount and totalOptions
-  electiveGroups.forEach((groupMilestones) => {
-    // Get required count from the first milestone's context (if available)
-    const firstMilestone = groupMilestones[0];
-    // Extract course code from title (format: "CODE: Title" or just "CODE")
-    const courseCode = firstMilestone.title.split(":")[0].trim();
-    const courseWithContext = courseContextMap.get(courseCode);
+  // For each elective group, add unscheduled courses as milestones
+  // They'll be shown in the elective group but not counted toward required credits
+  electiveGroups.forEach((groupCourses, groupId) => {
+    const groupReq = Array.from(groupRequirements.values()).find(
+      req => req.courses.some(c => c.electiveGroupId === groupId)
+    );
     
-    // Use requiredCount from context, or default to 1
-    const requiredCount = courseWithContext?.requiredCount || 1;
+    const requiredCredits = groupReq?.requiredCredits || 0;
+    const requiredCount = requiredCredits > 0 ? Math.ceil(requiredCredits / 3) : 1; // Assume 3 credits per course
     
-    groupMilestones.forEach((milestone) => {
+    // Find which courses are already scheduled
+    const scheduledCourses = groupCourses.filter(c => 
+      scheduledCourseCodes.has(c.course.code)
+    );
+    
+    // Add unscheduled courses to the timeline (they'll be in elective groups)
+    // Add them to the same semesters as scheduled courses from the group, or distribute them
+    const unscheduledCourses = groupCourses.filter(c => 
+      !scheduledCourseCodes.has(c.course.code)
+    );
+    
+    if (unscheduledCourses.length > 0) {
+      // Find semesters where courses from this group were scheduled
+      const groupSemesters = new Set<string>();
+      scheduledCourses.forEach(c => {
+        const semester = Array.from(coursesBySemester.entries()).find(
+          ([_, courses]) => courses.some(c2 => c2.course.code === c.course.code)
+        )?.[0];
+        if (semester) {
+          groupSemesters.add(semester);
+        }
+      });
+      
+      // If no scheduled courses, add to a default semester
+      if (groupSemesters.size === 0) {
+        const defaultKey = `${startYear}-${startSemester}`;
+        groupSemesters.add(defaultKey);
+      }
+      
+      // Distribute unscheduled courses across the same semesters
+      const semesterArray = Array.from(groupSemesters).sort();
+      unscheduledCourses.forEach((courseWithContext, index) => {
+        const targetSemester = semesterArray[index % semesterArray.length];
+        const [yearStr, semester] = targetSemester.split("-");
+        const year = parseInt(yearStr, 10);
+        
+        const milestone = courseToMilestone(
+          courseWithContext,
+          year,
+          semester as Semester
+        );
+        milestone.status = "PLANNED";
+        milestone.countsTowardRequired = false; // These are optional elective options, not required
+        milestones.push(milestone);
+      });
+    }
+    
+    // Update elective milestones with requiredCount and totalOptions
+    const allGroupMilestones = milestones.filter(m => 
+      m.electiveGroupId === groupId
+    );
+    
+    allGroupMilestones.forEach((milestone) => {
       milestone.requiredCount = requiredCount;
-      milestone.totalOptions = groupMilestones.length;
+      milestone.totalOptions = groupCourses.length;
     });
   });
 
@@ -455,7 +610,7 @@ export function programAnalysisToMilestones(
       milestones.push({
         id: `exam-${index}`,
         title: exam.name,
-        kind: "CERT", // Using CERT icon for exams
+        kind: "CERT",
         status: "PLANNED",
         description: exam.description,
         category: exam.required ? "CORE" : "ELECTIVE",
@@ -466,11 +621,9 @@ export function programAnalysisToMilestones(
   // Add internships
   if (analysis.internships) {
     analysis.internships.forEach((internship, index) => {
-      // Try to parse timing to get semester/year
       let semester: Semester | undefined;
       let year: number | undefined;
       
-      // Simple parsing - could be improved
       const timingLower = internship.timing.toLowerCase();
       if (timingLower.includes("summer")) {
         semester = "SUMMER";
@@ -485,7 +638,7 @@ export function programAnalysisToMilestones(
         title: internship.description || "Internship",
         kind: "INTERNSHIP",
         semester,
-        year: year || startYear + 2, // Default to 2 years from start
+        year: year || startYear + 2,
         targetDate: semester ? semesterToDate(semester, year || startYear + 2) : undefined,
         status: "PLANNED",
         description: internship.description,
@@ -499,7 +652,7 @@ export function programAnalysisToMilestones(
     .sort()
     .pop();
   
-  let degreeYear = startYear + 4; // Default to 4 years
+  let degreeYear = startYear + 4;
   let degreeSemester: Semester = "SPRING";
   
   if (lastSemester) {
@@ -508,7 +661,6 @@ export function programAnalysisToMilestones(
     degreeYear = lastYear;
     degreeSemester = semester as Semester;
     
-    // Cap the degree year to a reasonable maximum (e.g., 8 years from start)
     const maxYears = 8;
     if (degreeYear > startYear + maxYears) {
       logger.warn("Timeline exceeds maximum duration, capping at 8 years", {
@@ -543,8 +695,11 @@ export function programAnalysisToMilestones(
     totalMilestones: milestones.length,
     courseMilestones: milestones.filter(m => m.kind === "COURSE").length,
     electiveGroups: electiveGroups.size,
+    totalRequiredCredits,
+    scheduledCredits: Array.from(coursesBySemester.values()).reduce((sum, courses) => {
+      return sum + courses.reduce((s, c) => s + (c.course.credits || 0), 0);
+    }, 0),
   }, "ProgramAnalysisConverter");
 
   return milestones;
 }
-
