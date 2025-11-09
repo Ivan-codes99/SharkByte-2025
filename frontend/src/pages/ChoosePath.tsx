@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { logger } from "../lib/logger";
-import { ExternalLink, Loader2, CheckCircle2, Trash2, Search, GraduationCap, BookOpen, X, ChevronDown, XCircle } from "lucide-react";
+import { ExternalLink, Loader2, CheckCircle2, Trash2, Search, GraduationCap, BookOpen, X, ChevronDown, XCircle, Calendar } from "lucide-react";
 import { 
   analyzeProgramById, 
   searchPrograms, 
@@ -30,6 +31,7 @@ interface MDCProgram {
 }
 
 export function ChoosePath() {
+  const navigate = useNavigate();
   const [searchMode, setSearchMode] = useState<"career" | "field">("career");
   const [careerSearch, setCareerSearch] = useState("");
   const [selectedField, setSelectedField] = useState("");
@@ -45,6 +47,7 @@ export function ChoosePath() {
   const [showAllPrograms, setShowAllPrograms] = useState(true);
   const [loadingMessageIndex, setLoadingMessageIndex] = useState(0);
   const [abortController, setAbortController] = useState<AbortController | null>(null);
+  const [hasAnalysis, setHasAnalysis] = useState(false);
 
   // Load saved analysis on component mount
   useEffect(() => {
@@ -52,6 +55,7 @@ export function ChoosePath() {
     if (saved) {
       setAnalysisResult(saved);
       setHasSavedData(true);
+      setHasAnalysis(true);
       // If we have a result, clear any pending state (analysis completed)
       const pending = getPendingAnalysis();
       if (pending) {
@@ -63,8 +67,14 @@ export function ChoosePath() {
       }, "ChoosePath");
     } else {
       setHasSavedData(hasProgramAnalysis());
+      setHasAnalysis(hasProgramAnalysis());
     }
   }, []);
+
+  // Update hasAnalysis whenever analysisResult changes
+  useEffect(() => {
+    setHasAnalysis(hasProgramAnalysis());
+  }, [analysisResult]);
 
   // Check for pending analysis when programs are loaded or on mount
   useEffect(() => {
@@ -397,6 +407,7 @@ export function ChoosePath() {
       // Save to localStorage
       saveProgramAnalysis(result);
       setHasSavedData(true);
+      setHasAnalysis(true);
       
       // Clear pending analysis since we have the result
       clearPendingAnalysis();
@@ -454,6 +465,7 @@ export function ChoosePath() {
       clearPendingAnalysis();
       setAnalysisResult(null);
       setHasSavedData(false);
+      setHasAnalysis(false);
       setSelectedProgram(null);
       setPrograms([]);
       setCareerSearch("");
@@ -907,6 +919,21 @@ export function ChoosePath() {
                     })()
                   }</p>
                 </div>
+                {hasAnalysis && (
+                  <div className="mt-4 pt-4 border-t border-green-200">
+                    <Button
+                      onClick={() => {
+                        logger.action("Navigate to timeline", { hasAnalysis }, "ChoosePath");
+                        navigate("/career-pathway");
+                      }}
+                      className="w-full sm:w-auto"
+                      size="lg"
+                    >
+                      <Calendar className="h-4 w-4 mr-2" />
+                      View Timeline
+                    </Button>
+                  </div>
+                )}
               </div>
             </div>
           )}
