@@ -7,7 +7,7 @@ function FeatureCard({
   emoji, 
   title, 
   description 
-}: { 
+}: {
   emoji: string; 
   title: string; 
   description: string;
