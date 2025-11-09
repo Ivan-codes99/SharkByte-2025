@@ -35,3 +35,61 @@ export type Scholarship = {
   blurb: string;
 };
 
+export type DegreeLevel = "AA" | "AS" | "BS" | "BA" | "MS" | "MA" | "PhD" | "CERT";
+export type Institution = "MDC" | "FIU" | "UF" | "FSU" | "OTHER";
+
+export interface ProgramCourse {
+  code: string;
+  title: string;
+  credits: number;
+  prerequisites?: string[];
+  corequisite?: string;
+  description?: string;
+  semester?: Semester;
+  year?: number;
+}
+
+export interface ProgramCertification {
+  name: string;
+  description: string;
+  required: boolean;
+  timing?: string;
+  prerequisites?: string[];
+}
+
+export interface ProgramExam {
+  name: string;
+  description: string;
+  required: boolean;
+  timing?: string;
+  scoreRequirements?: {
+    minimum?: number;
+    recommended?: number;
+  };
+}
+
+export interface ProgramInternship {
+  type: "REQUIRED" | "OPTIONAL" | "RECOMMENDED";
+  timing: string;
+  description: string;
+  duration?: string;
+}
+
+export interface ProgramAnalysisResponse {
+  degreeType: DegreeLevel;
+  programName: string;
+  institution: Institution;
+  metadata: {
+    totalCredits?: number;
+    duration?: string;
+    description?: string;
+  };
+  courses: ProgramCourse[];
+  certifications?: {
+    required: ProgramCertification[];
+    recommended: ProgramCertification[];
+  };
+  exams?: ProgramExam[];
+  internships?: ProgramInternship[];
+}
+

@@ -123,3 +123,23 @@ export interface PathwayGenerationRequest {
   includeCertifications?: boolean;
 }
 
+/**
+ * Response type for PDF processing
+ */
+export interface ProgramAnalysisResponse {
+  degreeType: DegreeLevel; // AA, AS, BS, BA, etc.
+  programName: string;
+  institution: Institution;
+  metadata: {
+    totalCredits?: number;
+    duration?: string;
+    description?: string;
+  };
+  courses: Course[];
+  certifications?: {
+    required: Certification[];
+    recommended: Certification[];
+  };
+  exams?: Exam[];
+  internships?: Internship[];
+}
