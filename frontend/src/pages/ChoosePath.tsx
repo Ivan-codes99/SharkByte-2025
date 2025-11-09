@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { logger } from "../lib/logger";
-import { ExternalLink, Loader2, CheckCircle2, Trash2, Search, GraduationCap, BookOpen } from "lucide-react";
+import { ExternalLink, Loader2, CheckCircle2, Trash2, Search, GraduationCap, BookOpen, X, ChevronDown } from "lucide-react";
 import { 
   analyzeProgramById, 
   searchPrograms, 
@@ -11,7 +11,7 @@ import type { ProgramAnalysisResponse, RequirementGroup } from "../types";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Combobox } from "../components/ui/combobox";
-import { saveProgramAnalysis, getProgramAnalysis, clearProgramAnalysis, hasProgramAnalysis } from "../lib/storage";
+import { saveProgramAnalysis, getProgramAnalysis, clearProgramAnalysis, hasProgramAnalysis, savePendingAnalysis, getPendingAnalysis, clearPendingAnalysis } from "../lib/storage";
 import "../styles/pages.css";
 
 interface MDCProgram {
@@ -42,6 +42,8 @@ export function ChoosePath() {
   const [fields, setFields] = useState<string[]>([]);
   const [loadingFields, setLoadingFields] = useState(false);
   const [searching, setSearching] = useState(false);
+  const [showAllPrograms, setShowAllPrograms] = useState(true);
+  const [loadingMessageIndex, setLoadingMessageIndex] = useState(0);
 
   // Load saved analysis on component mount
   useEffect(() => {
@@ -49,6 +51,11 @@ export function ChoosePath() {
     if (saved) {
       setAnalysisResult(saved);
       setHasSavedData(true);
+      // If we have a result, clear any pending state (analysis completed)
+      const pending = getPendingAnalysis();
+      if (pending) {
+        clearPendingAnalysis();
+      }
       logger.info("Loaded saved program analysis from localStorage", {
         programName: saved.programName,
         degreeType: saved.degreeType,
@@ -58,10 +65,88 @@ export function ChoosePath() {
     }
   }, []);
 
+  // Check for pending analysis when programs are loaded or on mount
+  useEffect(() => {
+    const saved = getProgramAnalysis();
+    const pending = getPendingAnalysis();
+    
+    // Only restore pending state if we don't have a result
+    if (!saved && pending) {
+      // Try to find the program in the current list
+      const pendingProgram = programs.find(p => p.id === pending.programId);
+      
+      if (pendingProgram) {
+        // Found the program, restore full state
+        setSelectedProgram(pendingProgram);
+        setAnalyzing(true);
+        setShowAllPrograms(false);
+        logger.info("Restored pending analysis state", {
+          programId: pending.programId,
+          programName: pending.programName,
+          startTime: pending.startTime,
+        }, "ChoosePath");
+      } else if (programs.length === 0) {
+        // Programs not loaded yet, but we have pending analysis
+        // Create a minimal program object from pending state to show loading
+        const minimalProgram: MDCProgram = {
+          id: pending.programId,
+          name: pending.programName,
+          degreeType: "AA", // Default, will be updated when programs load
+          programUrl: "", // Will be updated when programs load
+          pdfLinks: {},
+          careerProspects: [],
+        };
+        setSelectedProgram(minimalProgram);
+        setAnalyzing(true);
+        logger.info("Restored pending analysis state (programs not loaded yet)", {
+          programId: pending.programId,
+          programName: pending.programName,
+          startTime: pending.startTime,
+        }, "ChoosePath");
+      } else {
+        // Programs loaded but program not found - create minimal program for display
+        const minimalProgram: MDCProgram = {
+          id: pending.programId,
+          name: pending.programName,
+          degreeType: "AA", // Default
+          programUrl: "", // Unknown URL
+          pdfLinks: {},
+          careerProspects: [],
+        };
+        setSelectedProgram(minimalProgram);
+        setAnalyzing(true);
+        logger.warn("Pending analysis found but program not in current list - using minimal program object", {
+          programId: pending.programId,
+          programName: pending.programName,
+        }, "ChoosePath");
+      }
+    }
+  }, [programs]);
+
   // Load fields on mount
   useEffect(() => {
     loadFields();
   }, []);
+
+  // Cycle through loading messages when analyzing
+  useEffect(() => {
+    if (!analyzing) {
+      setLoadingMessageIndex(0);
+      return;
+    }
+
+    const messages = [
+      "Generating your career map...",
+      "This could take a minute...",
+      "or two..."
+    ];
+
+    const interval = setInterval(() => {
+      setLoadingMessageIndex((prev) => (prev + 1) % messages.length);
+    }, 8000); // Change message every 3.5 seconds
+
+    return () => clearInterval(interval);
+  }, [analyzing]);
 
   const loadFields = async () => {
     try {
@@ -85,6 +170,7 @@ export function ChoosePath() {
     setError(null);
     setPrograms([]);
     setSelectedProgram(null);
+    setShowAllPrograms(true);
 
     try {
       logger.action("search_programs", { searchTerm: careerSearch }, "ChoosePath");
@@ -116,6 +202,7 @@ export function ChoosePath() {
     setError(null);
     setPrograms([]);
     setSelectedProgram(null);
+    setShowAllPrograms(true);
     setSearching(true);
 
     try {
@@ -155,9 +242,28 @@ export function ChoosePath() {
   };
 
   const handleProgramSelect = (program: MDCProgram) => {
-    setSelectedProgram(program);
-    setError(null);
-    logger.action("select_program", { programId: program.id, programName: program.name }, "ChoosePath");
+    // Toggle selection: if clicking the same program, unselect it
+    if (selectedProgram?.id === program.id) {
+      setSelectedProgram(null);
+      setShowAllPrograms(true);
+      logger.action("unselect_program", { programId: program.id, programName: program.name }, "ChoosePath");
+    } else {
+      setSelectedProgram(program);
+      setShowAllPrograms(false); // Collapse to show only selected program
+      setError(null);
+      logger.action("select_program", { programId: program.id, programName: program.name }, "ChoosePath");
+    }
+  };
+
+  const handleShowAllPrograms = () => {
+    setShowAllPrograms(true);
+    // Optionally scroll to programs section
+    setTimeout(() => {
+      const programsSection = document.getElementById("programs-section");
+      if (programsSection) {
+        programsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
   };
 
   const handleAnalyzeProgram = async () => {
@@ -169,6 +275,9 @@ export function ChoosePath() {
     setAnalyzing(true);
     setError(null);
     setAnalysisResult(null);
+    
+    // Save pending analysis state so it persists across navigation
+    savePendingAnalysis(selectedProgram.id, selectedProgram.name);
 
     try {
       logger.action("analyze_program_auto", {
@@ -182,6 +291,9 @@ export function ChoosePath() {
       // Save to localStorage
       saveProgramAnalysis(result);
       setHasSavedData(true);
+      
+      // Clear pending analysis since we have the result
+      clearPendingAnalysis();
       
       // Helper function to recursively count courses in nested groups
       const countCoursesInGroup = (group: RequirementGroup): number => {
@@ -208,6 +320,8 @@ export function ChoosePath() {
       const errorMessage = err instanceof Error ? err.message : "Failed to analyze program";
       setError(errorMessage);
       logger.error("Failed to analyze program", err instanceof Error ? err : new Error(String(err)));
+      // Clear pending analysis on error
+      clearPendingAnalysis();
     } finally {
       setAnalyzing(false);
     }
@@ -220,13 +334,16 @@ export function ChoosePath() {
     
     if (window.confirm("Are you sure you want to clear the saved program analysis? This action cannot be undone.")) {
       clearProgramAnalysis();
+      clearPendingAnalysis();
       setAnalysisResult(null);
       setHasSavedData(false);
       setSelectedProgram(null);
       setPrograms([]);
       setCareerSearch("");
       setSelectedField("");
+      setShowAllPrograms(true);
       setError(null);
+      setAnalyzing(false);
       
       logger.action("clear_program_analysis", undefined, "ChoosePath");
     }
@@ -277,6 +394,7 @@ export function ChoosePath() {
                   setPrograms([]);
                   setSelectedProgram(null);
                   setSelectedField("");
+                  setShowAllPrograms(true);
                 }}
               >
                 <Search className="h-4 w-4 mr-2" />
@@ -289,6 +407,7 @@ export function ChoosePath() {
                   setPrograms([]);
                   setSelectedProgram(null);
                   setCareerSearch("");
+                  setShowAllPrograms(true);
                 }}
               >
                 <GraduationCap className="h-4 w-4 mr-2" />
@@ -415,21 +534,53 @@ export function ChoosePath() {
               return fieldColors[field] || fieldColors.Other;
             };
 
+            // If a program is selected and we're in collapsed mode, show only that program
+            const programsToShow = selectedProgram && !showAllPrograms 
+              ? [selectedProgram] 
+              : programs;
+
+            // Re-group programs to show
+            const groupedToShow = programsToShow.reduce((acc, program) => {
+              const degreeType = program.degreeType;
+              if (!acc[degreeType]) {
+                acc[degreeType] = [];
+              }
+              acc[degreeType].push(program);
+              return acc;
+            }, {} as Record<string, MDCProgram[]>);
+
             return (
-              <div className="page-card mb-6">
-                <h2 className="page-section-title mb-4">
-                  Found {programs.length} Program{programs.length !== 1 ? "s" : ""}
-                </h2>
+              <div id="programs-section" className="page-card mb-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="page-section-title">
+                    {selectedProgram && !showAllPrograms 
+                      ? "Selected Program" 
+                      : `Found ${programs.length} Program${programs.length !== 1 ? "s" : ""}`}
+                  </h2>
+                  {selectedProgram && !showAllPrograms && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={handleShowAllPrograms}
+                      className="flex items-center gap-2"
+                    >
+                      <ChevronDown className="h-4 w-4" />
+                      Show All Programs
+                    </Button>
+                  )}
+                </div>
                 <div className="space-y-6">
                   {degreeOrder.map((degreeType) => {
-                    const degreePrograms = groupedByDegree[degreeType] || [];
+                    const degreePrograms = groupedToShow[degreeType] || [];
                     if (degreePrograms.length === 0) return null;
 
                     return (
                       <div key={degreeType} className="space-y-3">
-                        <h3 className="text-lg font-semibold text-primary-dark border-b pb-2">
-                          {degreeLabels[degreeType]} ({degreePrograms.length})
-                        </h3>
+                        {showAllPrograms && (
+                          <h3 className="text-lg font-semibold text-primary-dark border-b pb-2">
+                            {degreeLabels[degreeType]} ({groupedByDegree[degreeType]?.length || 0})
+                          </h3>
+                        )}
                         <div className="space-y-3">
                           {degreePrograms.map((program) => {
                             const colors = getFieldColor(program.field);
@@ -493,9 +644,25 @@ export function ChoosePath() {
                                       )}
                                     </div>
                                   </div>
-                                  {isSelected && (
-                                    <CheckCircle2 className="h-5 w-5 text-[#d45a2a] ml-2 flex-shrink-0" />
-                                  )}
+                                  <div className="flex items-center gap-2 ml-2 flex-shrink-0">
+                                    {isSelected && (
+                                      <>
+                                        <CheckCircle2 className="h-5 w-5 text-[#d45a2a]" />
+                                        <Button
+                                          variant="ghost"
+                                          size="sm"
+                                          onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleProgramSelect(program);
+                                          }}
+                                          className="h-6 w-6 p-0 text-muted hover:text-red-600"
+                                          title="Unselect program"
+                                        >
+                                          <X className="h-4 w-4" />
+                                        </Button>
+                                      </>
+                                    )}
+                                  </div>
                                 </div>
                               </div>
                             );
@@ -510,45 +677,64 @@ export function ChoosePath() {
           })()}
 
           {/* Selected Program Actions */}
-          {selectedProgram && (
-            <div className="page-card mb-6">
-              <h2 className="page-section-title mb-4">Selected Program</h2>
+          <div className="page-card mb-6">
+            <h2 className="page-section-title mb-4">Selected Program</h2>
+            {selectedProgram || analyzing ? (
               <div className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-primary-dark mb-2">{selectedProgram.name}</h3>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <a
-                      href={selectedProgram.programUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-[#d45a2a] hover:underline"
-                    >
-                      View Program Page
-                      <ExternalLink className="h-3 w-3" />
-                    </a>
-                  </div>
-                </div>
+                {selectedProgram && (
+                  <>
+                    <div>
+                      <h3 className="font-semibold text-primary-dark mb-2">{selectedProgram.name}</h3>
+                      {selectedProgram.programUrl && (
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          <a
+                            href={selectedProgram.programUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-sm text-[#d45a2a] hover:underline"
+                          >
+                            View Program Page
+                            <ExternalLink className="h-3 w-3" />
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </>
+                )}
                 <Button
                   onClick={handleAnalyzeProgram}
-                  disabled={analyzing}
+                  disabled={analyzing || !selectedProgram}
                   className="w-full sm:w-auto"
                   size="lg"
                 >
                   {analyzing ? (
                     <>
                       <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                      Analyzing Program...
+                      {(() => {
+                        const messages = [
+                          "Generating your career map...",
+                          "This could take a minute...",
+                          "or two..."
+                        ];
+                        return messages[loadingMessageIndex];
+                      })()}
                     </>
                   ) : (
                     <>
                       <BookOpen className="h-4 w-4 mr-2" />
-                      Analyze Program
+                      Generate your career map!
                     </>
                   )}
                 </Button>
               </div>
-            </div>
-          )}
+            ) : (
+              <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg">
+                <p className="text-muted text-center">
+                  No program selected. Please select a program from the list above to analyze it.
+                </p>
+              </div>
+            )}
+          </div>
 
           {/* Error Message */}
           {error && (
