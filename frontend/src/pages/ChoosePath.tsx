@@ -1,12 +1,73 @@
-import { useEffect } from "react";
+import { useState, useRef } from "react";
 import { logger } from "../lib/logger";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Upload, FileText, Loader2, CheckCircle2 } from "lucide-react";
+import { analyzeProgramPDFs } from "../lib/api";
+import type { ProgramAnalysisResponse } from "../types";
+import { Button } from "../components/ui/button";
 import "../styles/pages.css";
 
 export function ChoosePath() {
-  useEffect(() => {
-    logger.info("Choose Path page mounted", undefined, "ChoosePath");
-  }, []);
+  const [courseListFile, setCourseListFile] = useState<File | null>(null);
+  const [sequenceGuideFile, setSequenceGuideFile] = useState<File | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const [analysisResult, setAnalysisResult] = useState<ProgramAnalysisResponse | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  
+  const courseListInputRef = useRef<HTMLInputElement>(null);
+  const sequenceGuideInputRef = useRef<HTMLInputElement>(null);
+
+  const handleCourseListChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file && file.type === "application/pdf") {
+      setCourseListFile(file);
+      setError(null);
+    } else if (file) {
+      setError("Course list must be a PDF file");
+    }
+  };
+
+  const handleSequenceGuideChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file && file.type === "application/pdf") {
+      setSequenceGuideFile(file);
+      setError(null);
+    } else if (file) {
+      setError("Sequence guide must be a PDF file");
+    }
+  };
+
+  const handleUpload = async () => {
+    if (!courseListFile || !sequenceGuideFile) {
+      setError("Please upload both PDF files");
+      return;
+    }
+
+    setUploading(true);
+    setError(null);
+    setAnalysisResult(null);
+
+    try {
+      logger.action("upload_pdfs", {
+        courseListName: courseListFile.name,
+        sequenceGuideName: sequenceGuideFile.name,
+      }, "ChoosePath");
+
+      const result = await analyzeProgramPDFs(courseListFile, sequenceGuideFile);
+      setAnalysisResult(result);
+      
+      logger.info("PDFs analyzed successfully", {
+        programName: result.programName,
+        degreeType: result.degreeType,
+        courseCount: result.courses?.length || 0,
+      }, "ChoosePath");
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : "Failed to analyze PDFs";
+      setError(errorMessage);
+      logger.error("Failed to analyze PDFs", err instanceof Error ? err : new Error(String(err)));
+    } finally {
+      setUploading(false);
+    }
+  };
 
   return (
     <div className="page-container">
@@ -41,7 +102,7 @@ export function ChoosePath() {
       {/* Content Section */}
       <div className="page-content">
         <div className="max-w-4xl mx-auto">
-          <div className="page-card">
+          <div className="page-card mb-6">
             <h2 className="page-section-title mb-4">How to Choose Your Program</h2>
             <ol className="list-decimal list-inside space-y-4 text-muted">
               <li>
@@ -62,13 +123,129 @@ export function ChoosePath() {
                 <strong className="text-primary-dark">"See a course sequence guide"</strong>
               </li>
               <li>Save both PDFs to your device for reference</li>
-              <li>Return here to view your personalized timeline</li>
+              <li>Return here to upload the PDFs and view your personalized timeline</li>
             </ol>
+          </div>
+
+          {/* File Upload Section */}
+          <div className="page-card">
+            <h2 className="page-section-title mb-4">Upload Program PDFs</h2>
             
-            <div className="mt-8 p-4 bg-[#f6f3eb] rounded-lg border border-[#d45a2a]/20">
-              <p className="text-sm text-muted mb-2">
-                <strong className="text-primary-dark">Note:</strong> These PDFs contain important information about your program's course requirements and recommended sequence. Having them downloaded will help you track your progress and plan your educational journey.
-              </p>
+            <div className="space-y-6">
+              {/* Course List Upload */}
+              <div>
+                <label className="page-label mb-2">
+                  Complete Course List PDF
+                </label>
+                <div className="flex items-center gap-4">
+                  <input
+                    ref={courseListInputRef}
+                    type="file"
+                    accept="application/pdf"
+                    onChange={handleCourseListChange}
+                    className="hidden"
+                    id="courseList"
+                  />
+                  <label
+                    htmlFor="courseList"
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-[#d45a2a] rounded-lg cursor-pointer hover:bg-[#f6f3eb] transition-colors"
+                  >
+                    <Upload className="h-4 w-4" />
+                    {courseListFile ? courseListFile.name : "Choose PDF"}
+                  </label>
+                  {courseListFile && (
+                    <div className="flex items-center gap-2 text-sm text-muted">
+                      <CheckCircle2 className="h-4 w-4 text-green-600" />
+                      <span>{courseListFile.name}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Sequence Guide Upload */}
+              <div>
+                <label className="page-label mb-2">
+                  Course Sequence Guide PDF
+                </label>
+                <div className="flex items-center gap-4">
+                  <input
+                    ref={sequenceGuideInputRef}
+                    type="file"
+                    accept="application/pdf"
+                    onChange={handleSequenceGuideChange}
+                    className="hidden"
+                    id="sequenceGuide"
+                  />
+                  <label
+                    htmlFor="sequenceGuide"
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-[#d45a2a] rounded-lg cursor-pointer hover:bg-[#f6f3eb] transition-colors"
+                  >
+                    <Upload className="h-4 w-4" />
+                    {sequenceGuideFile ? sequenceGuideFile.name : "Choose PDF"}
+                  </label>
+                  {sequenceGuideFile && (
+                    <div className="flex items-center gap-2 text-sm text-muted">
+                      <CheckCircle2 className="h-4 w-4 text-green-600" />
+                      <span>{sequenceGuideFile.name}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Upload Button */}
+              <div>
+                <Button
+                  onClick={handleUpload}
+                  disabled={!courseListFile || !sequenceGuideFile || uploading}
+                  className="w-full sm:w-auto"
+                  size="lg"
+                >
+                  {uploading ? (
+                    <>
+                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                      Analyzing PDFs...
+                    </>
+                  ) : (
+                    <>
+                      <FileText className="h-4 w-4 mr-2" />
+                      Analyze Program
+                    </>
+                  )}
+                </Button>
+              </div>
+
+              {/* Error Message */}
+              {error && (
+                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-800 font-medium">Error: {error}</p>
+                </div>
+              )}
+
+              {/* Analysis Result */}
+              {analysisResult && (
+                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <div className="flex items-center gap-2 mb-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-600" />
+                    <h3 className="font-semibold text-primary-dark">Analysis Complete!</h3>
+                  </div>
+                  <div className="space-y-2 text-sm text-muted">
+                    <p><strong>Program:</strong> {analysisResult.programName}</p>
+                    <p><strong>Degree Type:</strong> {analysisResult.degreeType}</p>
+                    <p><strong>Institution:</strong> {analysisResult.institution}</p>
+                    {analysisResult.metadata?.totalCredits && (
+                      <p><strong>Total Credits:</strong> {analysisResult.metadata.totalCredits}</p>
+                    )}
+                    {analysisResult.courses && (
+                      <p><strong>Courses Found:</strong> {analysisResult.courses.length}</p>
+                    )}
+                  </div>
+                  <div className="mt-4">
+                    <pre className="bg-white p-4 rounded border text-xs overflow-auto max-h-96">
+                      {JSON.stringify(analysisResult, null, 2)}
+                    </pre>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

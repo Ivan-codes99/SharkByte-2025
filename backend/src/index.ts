@@ -10,6 +10,7 @@ import type { PathwayGenerationRequest, GeneratedPathway } from "./types";
 import { generatePathway } from "./services/pathway-generator";
 import { getCachedPathway, cachePathway } from "./lib/storage";
 import { logger } from "./lib/logger";
+import { processProgramPDFs } from "./services/pdf-processor";
 
 type Env = {
   GEMINI_API_KEY?: string;
@@ -27,6 +28,7 @@ app.use(
     origin: "*", // In production, restrict to your frontend domain
     allowMethods: ["GET", "POST", "OPTIONS"],
     allowHeaders: ["Content-Type"],
+    maxAge: 86400,
   })
 );
 
@@ -163,6 +165,90 @@ app.get("/pathways/:career", async (c) => {
       career: c.req.param("career"),
     });
     return c.json({ error: "Failed to fetch pathway" }, 500);
+  }
+});
+
+// Process program PDFs endpoint
+app.post("/programs/analyze", async (c) => {
+  const startTime = Date.now();
+  
+  try {
+    const formData = await c.req.formData();
+    const courseListEntry = formData.get("courseList");
+    const sequenceGuideEntry = formData.get("sequenceGuide");
+
+    if (!courseListEntry || !sequenceGuideEntry) {
+      logger.warn("PDF processing request missing files", {
+        hasCourseList: !!courseListEntry,
+        hasSequenceGuide: !!sequenceGuideEntry,
+      });
+      return c.json({ error: "Both courseList and sequenceGuide PDFs are required" }, 400);
+    }
+
+    // Validate that entries are Files
+    if (typeof courseListEntry === "string" || typeof sequenceGuideEntry === "string") {
+      return c.json({ error: "Both entries must be file uploads" }, 400);
+    }
+
+    const courseListFile = courseListEntry as File;
+    const sequenceGuideFile = sequenceGuideEntry as File;
+
+    // Validate file types
+    if (courseListFile.type !== "application/pdf" || sequenceGuideFile.type !== "application/pdf") {
+      return c.json({ error: "Both files must be PDF documents" }, 400);
+    }
+
+    logger.info("Processing program PDFs", {
+      courseListName: courseListFile.name,
+      courseListSize: courseListFile.size,
+      sequenceGuideName: sequenceGuideFile.name,
+      sequenceGuideSize: sequenceGuideFile.size,
+    });
+
+    // Convert files to ArrayBuffer
+    const courseListBuffer = await courseListFile.arrayBuffer();
+    const sequenceGuideBuffer = await sequenceGuideFile.arrayBuffer();
+
+    // Process with Gemini
+    const env = c.env;
+    if (!env.GEMINI_API_KEY) {
+      logger.error("Gemini API key not configured");
+      return c.json({ error: "Gemini API key not configured" }, 500);
+    }
+
+    const analysis = await processProgramPDFs(
+      courseListBuffer,
+      sequenceGuideBuffer,
+      env.GEMINI_API_KEY
+    );
+
+    const duration = Date.now() - startTime;
+    logger.performance("pdf_processing", duration, {
+      courseCount: analysis.courses.length,
+      degreeType: analysis.degreeType,
+    });
+
+    logger.info("Program PDFs processed successfully", {
+      programName: analysis.programName,
+      degreeType: analysis.degreeType,
+      courseCount: analysis.courses.length,
+    });
+
+    return c.json(analysis);
+  } catch (error) {
+    const duration = Date.now() - startTime;
+    logger.error("PDF processing error", error instanceof Error ? error : new Error(String(error)), {
+      endpoint: "/programs/analyze",
+      duration,
+    });
+    
+    return c.json(
+      {
+        error: "Failed to process PDFs",
+        message: error instanceof Error ? error.message : "Unknown error",
+      },
+      500
+    );
   }
 });
 
