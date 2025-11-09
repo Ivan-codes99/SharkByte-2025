@@ -65,7 +65,7 @@ export function Navbar() {
               letterSpacing: '0.4px'
             }}
           >
-            Career Pathway
+            Your Timeline
             {isActive("/career-pathway") && (
               <span
                 className="absolute left-2 right-2 bottom-1 h-[3px] rounded-[3px]"

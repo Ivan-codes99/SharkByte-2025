@@ -77,7 +77,7 @@ export function CareerPathway() {
         <div className="page-hero-inner">
           <div className="max-w-3xl">
             <h1 className="page-title">
-              Career Pathway
+              Your Timeline
             </h1>
             <p className="page-subtitle">
               Plan your future, prove progress, fund your journey.
@@ -182,7 +182,7 @@ export function CareerPathway() {
           ) : milestones.length > 0 ? (
             <>
               <h2 className="page-section-title">
-                Your Career Pathway
+                Your Timeline
               </h2>
               <TimelineTree 
                 milestones={milestones}
