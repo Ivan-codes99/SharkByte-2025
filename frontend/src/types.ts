@@ -14,6 +14,8 @@ export type Milestone = {
   year?: number;
   status: MilestoneStatus;
   description?: string;
+  credits?: number; // Number of credits for this course
+  countsTowardRequired?: boolean; // Whether this course counts toward required credits (true for required courses, false for optional elective options)
   // New fields for tree structure and interactivity
   category?: MilestoneCategory; // Visual categorization
   electiveGroupId?: string; // For grouping elective courses
