@@ -1,7 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Search, Filter } from "lucide-react";
-import { sampleScholarships } from "../data/scholarships.sample";
 import type { Scholarship } from "../types";
 import { ScholarshipCard } from "../components/ScholarshipCard";
 import { ProposalModal } from "../components/ProposalModal";
@@ -9,6 +8,131 @@ import { Input } from "../components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Button } from "../components/ui/button";
 import { logger } from "../lib/logger";
+import "../styles/pages.css";
+
+// Hardcoded scholarship data
+const hardcodedScholarships: Scholarship[] = [
+  {
+    id: "1",
+    title: "Tech Innovation Scholarship",
+    awardUSD: 10000,
+    deadlineISO: "2025-03-15T23:59:59Z",
+    programTags: ["Software Engineering", "Computer Science"],
+    essayWords: 500,
+    url: "https://example.com/tech-innovation",
+    blurb: "Awarded to students pursuing careers in technology and innovation. Open to undergraduate and graduate students.",
+  },
+  {
+    id: "2",
+    title: "Data Science Excellence Award",
+    awardUSD: 7500,
+    deadlineISO: "2025-04-01T23:59:59Z",
+    programTags: ["Data Science", "Machine Learning"],
+    essayWords: 750,
+    url: "https://example.com/data-science",
+    blurb: "Supporting students in data science, machine learning, and analytics programs. Requires demonstrated project work.",
+  },
+  {
+    id: "3",
+    title: "Cybersecurity Leadership Grant",
+    awardUSD: 12000,
+    deadlineISO: "2025-02-28T23:59:59Z",
+    programTags: ["Cybersecurity", "Information Security"],
+    essayWords: 600,
+    url: "https://example.com/cybersecurity",
+    blurb: "For students committed to cybersecurity careers. Includes mentorship opportunities with industry leaders.",
+  },
+  {
+    id: "4",
+    title: "Women in Tech Scholarship",
+    awardUSD: 8500,
+    deadlineISO: "2025-05-10T23:59:59Z",
+    programTags: ["Software Engineering", "Computer Science", "Data Science"],
+    essayWords: 500,
+    url: "https://example.com/women-in-tech",
+    blurb: "Empowering women pursuing technology degrees. Open to all tech-related programs.",
+  },
+  {
+    id: "5",
+    title: "Cloud Computing Excellence",
+    awardUSD: 6000,
+    deadlineISO: "2025-03-30T23:59:59Z",
+    programTags: ["Software Engineering", "Cloud Computing"],
+    essayWords: 400,
+    url: "https://example.com/cloud-computing",
+    blurb: "Supporting students with cloud certifications (AWS, Azure, GCP) and cloud-focused projects.",
+  },
+  {
+    id: "6",
+    title: "AI & Machine Learning Grant",
+    awardUSD: 15000,
+    deadlineISO: "2025-04-15T23:59:59Z",
+    programTags: ["Machine Learning", "Artificial Intelligence", "Data Science"],
+    essayWords: 1000,
+    url: "https://example.com/ai-ml",
+    blurb: "High-value scholarship for students working on AI/ML research or projects. Requires portfolio submission.",
+  },
+  {
+    id: "7",
+    title: "First-Generation Tech Student Fund",
+    awardUSD: 5000,
+    deadlineISO: "2025-06-01T23:59:59Z",
+    programTags: ["Software Engineering", "Computer Science", "Data Science", "Cybersecurity"],
+    essayWords: 500,
+    url: "https://example.com/first-gen",
+    blurb: "Supporting first-generation college students in technology programs. Need-based consideration.",
+  },
+  {
+    id: "8",
+    title: "Full Stack Developer Scholarship",
+    awardUSD: 8000,
+    deadlineISO: "2025-05-20T23:59:59Z",
+    programTags: ["Software Engineering", "Web Development"],
+    essayWords: 600,
+    url: "https://example.com/fullstack",
+    blurb: "For students building full-stack applications. Showcase your projects and coding skills.",
+  },
+  {
+    id: "9",
+    title: "Blockchain & Web3 Innovation",
+    awardUSD: 9000,
+    deadlineISO: "2025-04-30T23:59:59Z",
+    programTags: ["Software Engineering", "Blockchain"],
+    essayWords: 700,
+    url: "https://example.com/blockchain",
+    blurb: "Supporting students exploring blockchain technology, smart contracts, and decentralized applications.",
+  },
+  {
+    id: "10",
+    title: "STEM Diversity Scholarship",
+    awardUSD: 11000,
+    deadlineISO: "2025-05-05T23:59:59Z",
+    programTags: ["Software Engineering", "Computer Science", "Data Science", "Cybersecurity"],
+    essayWords: 800,
+    url: "https://example.com/stem-diversity",
+    blurb: "Promoting diversity in STEM fields. Open to underrepresented groups in technology programs.",
+  },
+  {
+    id: "11",
+    title: "Mobile App Development Grant",
+    awardUSD: 7000,
+    deadlineISO: "2025-03-25T23:59:59Z",
+    programTags: ["Software Engineering", "Mobile Development"],
+    essayWords: 500,
+    url: "https://example.com/mobile-dev",
+    blurb: "For students developing iOS or Android applications. Portfolio of mobile apps required.",
+  },
+  {
+    id: "12",
+    title: "Open Source Contributor Award",
+    awardUSD: 5500,
+    deadlineISO: "2025-06-15T23:59:59Z",
+    programTags: ["Software Engineering", "Computer Science"],
+    essayWords: 400,
+    url: "https://example.com/opensource",
+    blurb: "Recognizing students who contribute to open source projects. GitHub activity considered.",
+  },
+];
 
 export function Scholarships() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -16,7 +140,7 @@ export function Scholarships() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    logger.info("Scholarships page mounted", { totalScholarships: sampleScholarships.length }, "Scholarships");
+    logger.info("Scholarships page mounted", { totalScholarships: hardcodedScholarships.length }, "Scholarships");
   }, []);
 
   // Filter state from URL params
@@ -29,7 +153,7 @@ export function Scholarships() {
   // Get unique program tags
   const allProgramTags = useMemo(() => {
     const tags = new Set<string>();
-    sampleScholarships.forEach((s) => {
+    hardcodedScholarships.forEach((s) => {
       s.programTags.forEach((tag) => tags.add(tag));
     });
     return Array.from(tags).sort();
@@ -38,7 +162,7 @@ export function Scholarships() {
   // Filter scholarships
   const filteredScholarships = useMemo(() => {
     const startTime = performance.now();
-    const result = sampleScholarships.filter((scholarship) => {
+    const result = hardcodedScholarships.filter((scholarship) => {
       // Program filter
       if (programFilter && !scholarship.programTags.includes(programFilter)) {
         return false;
@@ -69,7 +193,7 @@ export function Scholarships() {
     });
     const duration = performance.now() - startTime;
     logger.performance("scholarship_filter", duration, {
-      total: sampleScholarships.length,
+      total: hardcodedScholarships.length,
       filtered: result.length,
       filters: { programFilter, minAward, maxAward, searchQuery },
     });
@@ -99,22 +223,22 @@ export function Scholarships() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div className="page-container">
+      <div className="page-content">
         <div className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-black mb-2">
+          <h1 className="page-title">
             Scholarships & Proposal Generator
           </h1>
-          <p className="text-gray-700">
+          <p className="page-subtitle">
             Find scholarships and generate AI-powered proposals
           </p>
         </div>
 
         {/* Filter Bar */}
-        <div className="bg-gray-50 rounded-2xl p-4 sm:p-6 mb-8 border">
+        <div className="page-filter-card">
           <div className="flex items-center gap-2 mb-4">
-            <Filter className="h-5 w-5 text-gray-600" />
-            <h2 className="text-lg font-semibold text-black">Filters</h2>
+            <Filter className="h-5 w-5 text-muted" />
+            <h2 className="text-lg font-semibold text-primary-dark">Filters</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -183,8 +307,8 @@ export function Scholarships() {
 
         {/* Results Count */}
         <div className="mb-6">
-          <p className="text-sm text-gray-600">
-            Showing {filteredScholarships.length} of {sampleScholarships.length} scholarships
+          <p className="text-sm text-muted">
+            Showing {filteredScholarships.length} of {hardcodedScholarships.length} scholarships
           </p>
         </div>
 
@@ -201,7 +325,7 @@ export function Scholarships() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-600 mb-4">No scholarships match your filters.</p>
+            <p className="text-muted mb-4">No scholarships match your filters.</p>
             <Button variant="outline" onClick={clearFilters}>
               Clear Filters
             </Button>
