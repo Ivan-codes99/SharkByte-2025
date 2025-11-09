@@ -28,7 +28,6 @@ interface ProposalModalProps {
 const proposalSchema = z.object({
   studentName: z.string().min(2, "Name must be at least 2 characters"),
   program: z.string().min(2, "Program name is required"),
-  resumeLink: z.string().url("Must be a valid URL").optional().or(z.literal("")),
   additionalNotes: z.string().optional(),
 });
 
@@ -60,7 +59,6 @@ export function ProposalModal({
         reset({
           studentName: studentInfo.name,
           program: studentInfo.program || "",
-          resumeLink: studentInfo.resumeLink || "",
           additionalNotes: "",
         });
       }
@@ -135,7 +133,10 @@ export function ProposalModal({
       const formData: ProposalFormData = {
         studentName: data.studentName,
         program: data.program,
-        resumeLink: data.resumeLink || studentInfo?.resumeLink || undefined,
+        resumeFile: studentInfo?.resumeFile ? {
+          name: studentInfo.resumeFile.name,
+          data: studentInfo.resumeFile.data,
+        } : undefined,
         additionalNotes: additionalContext || undefined,
       };
 
@@ -270,21 +271,6 @@ export function ProposalModal({
               )}
             </div>
 
-            <div>
-              <Label htmlFor="resumeLink">Resume Link (Optional)</Label>
-              <Input
-                id="resumeLink"
-                type="url"
-                {...register("resumeLink")}
-                placeholder="https://example.com/resume.pdf"
-                className={errors.resumeLink ? "border-red-500" : ""}
-              />
-              {errors.resumeLink && (
-                <p className="text-sm text-red-500 mt-1">
-                  {errors.resumeLink.message}
-                </p>
-              )}
-            </div>
 
             <div>
               <Label htmlFor="essayLength">Essay Length Constraint</Label>

@@ -336,3 +336,162 @@ export async function analyzeProgramById(programId: string, signal?: AbortSignal
   }
 }
 
+/**
+ * Process transcript PDF to extract student information
+ */
+export async function processTranscriptPDF(transcriptFile: File): Promise<{
+  name?: string;
+  institution?: string;
+  gpa?: number;
+  program?: string;
+  classStanding?: string;
+  courses?: Array<{
+    code: string;
+    title: string;
+    credits: number;
+    grade?: string;
+  }>;
+  totalCredits?: number;
+  graduationDate?: string;
+  scholarships?: import("../types").Scholarship[];
+}> {
+  try {
+    logger.api("POST", "/student/process-transcript", {
+      fileName: transcriptFile.name,
+      fileSize: transcriptFile.size,
+    });
+    const startTime = Date.now();
+
+    const formData = new FormData();
+    formData.append("transcript", transcriptFile);
+
+    const response = await fetch(`${API_BASE_URL}/student/process-transcript`, {
+      method: "POST",
+      body: formData,
+    });
+
+    const duration = Date.now() - startTime;
+    logger.performance("transcript_processing_api", duration, {
+      fileSize: transcriptFile.size,
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ error: "Unknown error" }));
+      throw new Error(error.message || `HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const analysis = await response.json();
+    logger.api("POST", "/student/process-transcript", undefined, analysis);
+    return analysis;
+  } catch (error) {
+    const errorWithContext = error instanceof Error
+      ? Object.assign(error, { endpoint: "/student/process-transcript" })
+      : { message: String(error), endpoint: "/student/process-transcript" };
+    logger.error("Failed to process transcript", errorWithContext);
+    throw error;
+  }
+}
+
+/**
+ * Process resume PDF to extract student information
+ */
+export async function processResumePDF(resumeFile: File): Promise<{
+  name?: string;
+  email?: string;
+  phone?: string;
+  workExperience?: string;
+  achievements?: string;
+  skills?: string[];
+  education?: Array<{
+    degree: string;
+    institution: string;
+    year?: string;
+  }>;
+  certifications?: string[];
+  extracurricularActivities?: string;
+  scholarships?: import("../types").Scholarship[];
+}> {
+  try {
+    logger.api("POST", "/student/process-resume", {
+      fileName: resumeFile.name,
+      fileSize: resumeFile.size,
+    });
+    const startTime = Date.now();
+
+    const formData = new FormData();
+    formData.append("resume", resumeFile);
+
+    const response = await fetch(`${API_BASE_URL}/student/process-resume`, {
+      method: "POST",
+      body: formData,
+    });
+
+    const duration = Date.now() - startTime;
+    logger.performance("resume_processing_api", duration, {
+      fileSize: resumeFile.size,
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ error: "Unknown error" }));
+      throw new Error(error.message || `HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const analysis = await response.json();
+    logger.api("POST", "/student/process-resume", undefined, analysis);
+    return analysis;
+  } catch (error) {
+    const errorWithContext = error instanceof Error
+      ? Object.assign(error, { endpoint: "/student/process-resume" })
+      : { message: String(error), endpoint: "/student/process-resume" };
+    logger.error("Failed to process resume", errorWithContext);
+    throw error;
+  }
+}
+
+/**
+ * Fetch relevant scholarships based on student information
+ */
+export async function fetchRelevantScholarships(studentInfo: {
+  program?: string;
+  gpa?: number;
+  raceEthnicity?: string;
+  isFirstGeneration?: boolean;
+  isVeteran?: boolean;
+  isInternationalStudent?: boolean;
+  classStanding?: string;
+  [key: string]: any;
+}): Promise<{ scholarships: any[] }> {
+  try {
+    logger.api("POST", "/scholarships/relevant", studentInfo);
+    const startTime = Date.now();
+
+    const response = await fetch(`${API_BASE_URL}/scholarships/relevant`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(studentInfo),
+    });
+
+    const duration = Date.now() - startTime;
+    logger.performance("scholarship_fetch_api", duration, {
+      hasProgram: !!studentInfo.program,
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ error: "Unknown error" }));
+      throw new Error(error.message || `HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    logger.api("POST", "/scholarships/relevant", undefined, data);
+    return data;
+  } catch (error) {
+    const errorWithContext = error instanceof Error
+      ? Object.assign(error, { endpoint: "/scholarships/relevant" })
+      : { message: String(error), endpoint: "/scholarships/relevant" };
+    logger.error("Failed to fetch relevant scholarships", errorWithContext);
+    throw error;
+  }
+}
+

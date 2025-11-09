@@ -4,7 +4,10 @@ import { logger } from "./logger";
 export interface ProposalFormData {
   studentName: string;
   program: string;
-  resumeLink?: string;
+  resumeFile?: {
+    name: string;
+    data: string; // Base64 encoded file data
+  };
   additionalNotes?: string;
 }
 
@@ -97,7 +100,7 @@ ${formData.additionalNotes ? `\n### Additional Notes\n\n${formData.additionalNot
 
 ## Supporting Materials
 
-${formData.resumeLink ? `- Resume: [View Resume](${formData.resumeLink})` : "- Resume available upon request"}
+${formData.resumeFile ? `- Resume: ${formData.resumeFile.name} (attached)` : "- Resume available upon request"}
 
 ## Conclusion
 

@@ -149,9 +149,12 @@ export interface StudentInfo {
     data: string; // Base64 encoded file data
     uploadedAt: string;
   };
-  resumeLink?: string;
+  resumeFile?: {
+    name: string;
+    data: string; // Base64 encoded file data
+    uploadedAt: string;
+  };
   
   // Metadata
   lastUpdated: string;
 }
-
