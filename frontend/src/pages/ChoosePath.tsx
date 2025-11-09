@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { logger } from "../lib/logger";
 import { ExternalLink, Upload, FileText, Loader2, CheckCircle2, Trash2 } from "lucide-react";
 import { analyzeProgramPDFs } from "../lib/api";
-import type { ProgramAnalysisResponse } from "../types";
+import type { ProgramAnalysisResponse, RequirementGroup } from "../types";
 import { Button } from "../components/ui/button";
 import { saveProgramAnalysis, getProgramAnalysis, clearProgramAnalysis, hasProgramAnalysis } from "../lib/storage";
 import "../styles/pages.css";
@@ -76,10 +76,26 @@ export function ChoosePath() {
       saveProgramAnalysis(result);
       setHasSavedData(true);
       
+      // Helper function to recursively count courses in nested groups
+      const countCoursesInGroup = (group: RequirementGroup): number => {
+        let count = group.courses?.length || 0;
+        if (group.groups) {
+          count += group.groups.reduce((sum, subGroup) => sum + countCoursesInGroup(subGroup), 0);
+        }
+        return count;
+      };
+      
+      // Calculate total course count from all groups (including nested)
+      const totalCourses = result.requirements.groups.reduce(
+        (sum, group) => sum + countCoursesInGroup(group),
+        0
+      );
+      
       logger.info("PDFs analyzed successfully and saved to localStorage", {
         programName: result.programName,
         degreeType: result.degreeType,
-        courseCount: result.courses?.length || 0,
+        topLevelGroups: result.requirements.groups.length,
+        totalCourses,
       }, "ChoosePath");
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : "Failed to analyze PDFs";
@@ -293,9 +309,22 @@ export function ChoosePath() {
                     {analysisResult.metadata?.totalCredits && (
                       <p><strong>Total Credits:</strong> {analysisResult.metadata.totalCredits}</p>
                     )}
-                    {analysisResult.courses && (
-                      <p><strong>Courses Found:</strong> {analysisResult.courses.length}</p>
-                    )}
+                    <p><strong>Top-Level Groups:</strong> {analysisResult.requirements.groups.length}</p>
+                    <p><strong>Total Course Options:</strong> {
+                      (() => {
+                        const countCoursesInGroup = (group: RequirementGroup): number => {
+                          let count = group.courses?.length || 0;
+                          if (group.groups) {
+                            count += group.groups.reduce((sum, subGroup) => sum + countCoursesInGroup(subGroup), 0);
+                          }
+                          return count;
+                        };
+                        return analysisResult.requirements.groups.reduce(
+                          (sum, group) => sum + countCoursesInGroup(group),
+                          0
+                        );
+                      })()
+                    }</p>
                   </div>
                   <div className="mt-4">
                     <pre className="bg-white p-4 rounded border text-xs overflow-auto max-h-96">

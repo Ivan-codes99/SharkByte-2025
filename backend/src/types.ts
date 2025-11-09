@@ -124,6 +124,40 @@ export interface PathwayGenerationRequest {
 }
 
 /**
+ * Course information for program requirements
+ */
+export interface ProgramCourse {
+  code: string; // Course code (e.g., "COP2271") or pattern (e.g., "CAI*", "CAP*")
+  title?: string; // Optional - not needed for pattern codes
+  credits?: number; // Optional - not needed for pattern codes
+  prerequisites?: string[];
+  corequisite?: string;
+  description?: string;
+  semester?: Semester;
+  year?: number;
+}
+
+/**
+ * Requirement group where students choose X credits from options
+ * Supports nested groups for hierarchical requirements
+ */
+export interface RequirementGroup {
+  name: string; // e.g., "GENERAL EDUCATION REQUIREMENTS", "COMMUNICATIONS", "ORAL COMMUNICATIONS", etc.
+  requiredCredits: number; // Number of credits needed from this group
+  courses?: ProgramCourse[]; // List of courses that can satisfy this requirement (if this is a leaf group)
+  groups?: RequirementGroup[]; // Nested subgroups (if this is a parent group)
+  description?: string; // Optional description or notes (e.g., "Any transferrable type-1 or type-2 courses")
+}
+
+/**
+ * Program requirements structure
+ * All courses are organized in groups, which can be nested
+ */
+export interface ProgramRequirements {
+  groups: RequirementGroup[]; // Top-level requirement groups (can contain nested groups)
+}
+
+/**
  * Response type for PDF processing
  */
 export interface ProgramAnalysisResponse {
@@ -135,7 +169,7 @@ export interface ProgramAnalysisResponse {
     duration?: string;
     description?: string;
   };
-  courses: Course[];
+  requirements: ProgramRequirements;
   certifications?: {
     required: Certification[];
     recommended: Certification[];
