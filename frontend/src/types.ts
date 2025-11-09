@@ -39,9 +39,9 @@ export type DegreeLevel = "AA" | "AS" | "BS" | "BA" | "MS" | "MA" | "PhD" | "CER
 export type Institution = "MDC" | "FIU" | "UF" | "FSU" | "OTHER";
 
 export interface ProgramCourse {
-  code: string;
-  title: string;
-  credits: number;
+  code: string; // Course code (e.g., "COP2271") or pattern (e.g., "CAI*", "CAP*")
+  title?: string; // Optional - not needed for pattern codes
+  credits?: number; // Optional - not needed for pattern codes
   prerequisites?: string[];
   corequisite?: string;
   description?: string;

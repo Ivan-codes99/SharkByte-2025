@@ -85,6 +85,9 @@ Please analyze these documents and extract the following information in JSON for
             "description": "Course description if available",
             "semester": "FALL" | "SPRING" | "SUMMER" (if specified),
             "year": number (if specified)
+          },
+          {
+            "code": "CAI*"
           }
         ],
         "groups": [
@@ -102,6 +105,9 @@ Please analyze these documents and extract the following information in JSON for
                 "description": "Course description if available",
                 "semester": "FALL" | "SPRING" | "SUMMER" (if specified),
                 "year": number (if specified)
+              },
+              {
+                "code": "CAP*"
               }
             ],
             "groups": [
@@ -117,6 +123,9 @@ Please analyze these documents and extract the following information in JSON for
                     "prerequisites": ["course codes"],
                     "corequisite": "course code if any",
                     "description": "Course description if available"
+                  },
+                  {
+                    "code": "CEN*"
                   }
                 ]
               }
@@ -200,14 +209,16 @@ IMPORTANT INSTRUCTIONS:
    - "groups" array (if it's a parent group with nested subgroups)
    - Both (if it has both direct courses and subgroups)
 8. CRITICAL: When a group description mentions course prefixes or patterns (e.g., "CAI*, CAP*, CEN*, CET, CGS*, CIS*, CNT*, COP*, CTS*"), you MUST:
-   - Search the Complete Course List PDF for ALL courses that match those prefixes
-   - Extract the full course information (code, title, credits, prerequisites, etc.) for each matching course
-   - Populate the "courses" array with the actual courses found, NOT leave it empty
-   - The "description" field should contain the rule/pattern, but the "courses" array must contain the actual course data
-9. Include ALL course information: prerequisites, corequisites, descriptions, recommended semesters/years (all from Course List PDF).
-10. If a course has no prerequisites, use an empty array [].
-11. Include "description" field for groups that have special notes or rules (e.g., "Any transferrable type-1 or type-2 courses. Please see academic advisor"), but ALWAYS populate the "courses" array with actual courses when they are specified or can be found in the PDF.
-12. If there's conflicting information between the two PDFs, ALWAYS prioritize the Complete Course List PDF.`;
+   - Add each prefix/pattern directly to the "courses" array as a course object
+   - Use ONLY the "code" field with the pattern (e.g., "CAI*", "CAP*", "CEN*")
+   - Do NOT include title, credits, prerequisites, or other fields for pattern codes
+   - Example: If description says "CAI*, CAP*, CEN*", the courses array should be: [{"code": "CAI*"}, {"code": "CAP*"}, {"code": "CEN*"}]
+   - The asterisk (*) means "any course with that prefix" - just use the pattern code as-is
+9. For actual courses (not patterns), include ALL course information: title, credits, prerequisites, corequisites, descriptions, recommended semesters/years (all from Course List PDF).
+10. For pattern codes (e.g., "CAI*", "CAP*"), only include the "code" field - no title, credits, prerequisites, or other fields needed.
+11. If a course has no prerequisites, use an empty array [].
+12. Include "description" field for groups that have special notes or rules (e.g., "Any transferrable type-1 or type-2 courses. Please see academic advisor").
+13. If there's conflicting information between the two PDFs, ALWAYS prioritize the Complete Course List PDF.`;
 
     const startTime = Date.now();
 
