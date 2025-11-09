@@ -4,7 +4,7 @@ import { ExternalLink, Upload, FileText, Loader2, CheckCircle2, Trash2 } from "l
 import { analyzeProgramPDFs } from "../lib/api";
 import type { ProgramAnalysisResponse } from "../types";
 import { Button } from "../components/ui/button";
-import { saveProgramAnalysis, getProgramAnalysis, clearProgramAnalysis } from "../lib/storage";
+import { saveProgramAnalysis, getProgramAnalysis, clearProgramAnalysis, hasProgramAnalysis } from "../lib/storage";
 import "../styles/pages.css";
 
 export function ChoosePath() {
@@ -13,6 +13,7 @@ export function ChoosePath() {
   const [uploading, setUploading] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<ProgramAnalysisResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [hasSavedData, setHasSavedData] = useState(false);
   
   const courseListInputRef = useRef<HTMLInputElement>(null);
   const sequenceGuideInputRef = useRef<HTMLInputElement>(null);
@@ -22,10 +23,13 @@ export function ChoosePath() {
     const saved = getProgramAnalysis();
     if (saved) {
       setAnalysisResult(saved);
+      setHasSavedData(true);
       logger.info("Loaded saved program analysis from localStorage", {
         programName: saved.programName,
         degreeType: saved.degreeType,
       }, "ChoosePath");
+    } else {
+      setHasSavedData(hasProgramAnalysis());
     }
   }, []);
 
@@ -70,6 +74,7 @@ export function ChoosePath() {
       
       // Save to localStorage
       saveProgramAnalysis(result);
+      setHasSavedData(true);
       
       logger.info("PDFs analyzed successfully and saved to localStorage", {
         programName: result.programName,
@@ -86,9 +91,14 @@ export function ChoosePath() {
   };
 
   const handleClearAnalysis = () => {
+    if (!hasSavedData) {
+      return; // Nothing to clear
+    }
+    
     if (window.confirm("Are you sure you want to clear the saved program analysis? This action cannot be undone.")) {
       clearProgramAnalysis();
       setAnalysisResult(null);
+      setHasSavedData(false);
       setCourseListFile(null);
       setSequenceGuideFile(null);
       setError(null);
@@ -165,7 +175,19 @@ export function ChoosePath() {
 
           {/* File Upload Section */}
           <div className="page-card">
-            <h2 className="page-section-title mb-4">Upload Program PDFs</h2>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="page-section-title">Upload Program PDFs</h2>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleClearAnalysis}
+                disabled={!hasSavedData}
+                className="text-red-600 hover:text-red-700 hover:bg-red-50 border-red-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <Trash2 className="h-4 w-4 mr-2" />
+                Clear Saved Data
+              </Button>
+            </div>
             
             <div className="space-y-6">
               {/* Course List Upload */}
@@ -260,20 +282,9 @@ export function ChoosePath() {
               {/* Analysis Result */}
               {analysisResult && (
                 <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-green-600" />
-                      <h3 className="font-semibold text-primary-dark">Analysis Complete!</h3>
-                    </div>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={handleClearAnalysis}
-                      className="text-red-600 hover:text-red-700 hover:bg-red-50 border-red-200"
-                    >
-                      <Trash2 className="h-4 w-4 mr-2" />
-                      Clear Data
-                    </Button>
+                  <div className="flex items-center gap-2 mb-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-600" />
+                    <h3 className="font-semibold text-primary-dark">Analysis Complete!</h3>
                   </div>
                   <div className="space-y-2 text-sm text-muted">
                     <p><strong>Program:</strong> {analysisResult.programName}</p>
