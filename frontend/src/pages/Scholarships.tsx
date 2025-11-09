@@ -6,7 +6,6 @@ import * as z from "zod";
 import { Search, Filter, Upload, FileText, X, Loader2 } from "lucide-react";
 import type { Scholarship, StudentInfo, ClassStanding, RaceEthnicity } from "../types";
 import { ScholarshipCard } from "../components/ScholarshipCard";
-import { ProposalModal } from "../components/ProposalModal";
 import { Input } from "../components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Button } from "../components/ui/button";
@@ -62,8 +61,6 @@ const RACE_ETHNICITY_OPTIONS: { value: RaceEthnicity; label: string }[] = [
 export function Scholarships() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [scholarships, setScholarships] = useState<Scholarship[]>([]);
-  const [selectedScholarship, setSelectedScholarship] = useState<Scholarship | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [showStudentInfoForm, setShowStudentInfoForm] = useState(false);
   const [transcriptFile, setTranscriptFile] = useState<File | null>(null);
   const [resumeFile, setResumeFile] = useState<File | null>(null);
@@ -72,6 +69,7 @@ export function Scholarships() {
   const [isLoadingScholarships, setIsLoadingScholarships] = useState(false);
   const [existingTranscript, setExistingTranscript] = useState<StudentInfo["transcriptFile"] | null>(null);
   const [existingResume, setExistingResume] = useState<StudentInfo["resumeFile"] | null>(null);
+  const [hasScholarshipsFromPDFs, setHasScholarshipsFromPDFs] = useState(false);
 
   const {
     register,
@@ -346,6 +344,7 @@ export function Scholarships() {
           return acc;
         }, [] as Scholarship[]);
         setScholarships(uniqueScholarships);
+        setHasScholarshipsFromPDFs(true); // Mark that scholarships were set from PDFs
         logger.info("Scholarships set from PDF processing", { count: uniqueScholarships.length }, "Scholarships");
       }
 
@@ -436,33 +435,32 @@ export function Scholarships() {
       setTranscriptFile(null);
       setResumeFile(null);
 
-      // Fetch relevant scholarships based on student info
-      setIsLoadingScholarships(true);
-      try {
-        const relevantScholarships = await fetchRelevantScholarships({
-          program: studentInfo.program,
-          gpa: studentInfo.gpa,
-          raceEthnicity: studentInfo.raceEthnicity,
-          isFirstGeneration: studentInfo.isFirstGeneration,
-          isVeteran: studentInfo.isVeteran,
-          isInternationalStudent: studentInfo.isInternationalStudent,
-          classStanding: studentInfo.classStanding,
-        });
-        
-        if (relevantScholarships.scholarships.length > 0) {
-          setScholarships(relevantScholarships.scholarships);
-          logger.info("Relevant scholarships fetched", { count: relevantScholarships.scholarships.length }, "Scholarships");
+      // Only fetch relevant scholarships if they weren't already set from PDF processing
+      if (!hasScholarshipsFromPDFs) {
+        setIsLoadingScholarships(true);
+        try {
+          const relevantScholarships = await fetchRelevantScholarships({
+            program: studentInfo.program,
+            gpa: studentInfo.gpa,
+            raceEthnicity: studentInfo.raceEthnicity,
+            isFirstGeneration: studentInfo.isFirstGeneration,
+            isVeteran: studentInfo.isVeteran,
+            isInternationalStudent: studentInfo.isInternationalStudent,
+            classStanding: studentInfo.classStanding,
+          });
+          
+          if (relevantScholarships.scholarships.length > 0) {
+            setScholarships(relevantScholarships.scholarships);
+            logger.info("Relevant scholarships fetched", { count: relevantScholarships.scholarships.length }, "Scholarships");
+          }
+        } catch (error) {
+          logger.error("Failed to fetch relevant scholarships", error, "Scholarships");
+          // Don't show error - scholarships can be added manually later
+        } finally {
+          setIsLoadingScholarships(false);
         }
-      } catch (error) {
-        logger.error("Failed to fetch relevant scholarships", error, "Scholarships");
-        // Don't show error - scholarships can be added manually later
-      } finally {
-        setIsLoadingScholarships(false);
-      }
-
-      // If a scholarship was selected before saving info, open the proposal modal
-      if (selectedScholarship) {
-        setIsModalOpen(true);
+      } else {
+        logger.info("Skipping scholarship fetch - already set from PDF processing", undefined, "Scholarships");
       }
     } catch (error) {
       logger.error("Failed to save student information", error, "Scholarships");
@@ -472,20 +470,6 @@ export function Scholarships() {
     }
   };
 
-  const handleGenerateProposal = (scholarship: Scholarship) => {
-    logger.action("generate_proposal_clicked", { scholarshipId: scholarship.id, scholarshipTitle: scholarship.title }, "Scholarships");
-    
-    // Check if student info exists before opening proposal modal
-    if (!hasStudentInfo()) {
-      logger.info("No student information found, prompting user before proposal generation", { scholarshipId: scholarship.id }, "Scholarships");
-      setShowStudentInfoForm(true);
-      setSelectedScholarship(scholarship);
-      return;
-    }
-    
-    setSelectedScholarship(scholarship);
-    setIsModalOpen(true);
-  };
 
   const handleEditStudentInfo = () => {
     logger.action("edit_student_info_clicked", undefined, "Scholarships");
@@ -522,6 +506,7 @@ export function Scholarships() {
 
       if (relevantScholarships.scholarships.length > 0) {
         setScholarships(relevantScholarships.scholarships);
+        setHasScholarshipsFromPDFs(false); // Reset flag since we're manually fetching
         logger.info("Scholarships fetched manually", { count: relevantScholarships.scholarships.length }, "Scholarships");
       } else {
         logger.info("No scholarships found", undefined, "Scholarships");
@@ -1066,13 +1051,12 @@ export function Scholarships() {
               </div>
             ) : filteredScholarships.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredScholarships.map((scholarship) => (
-                  <ScholarshipCard
-                    key={scholarship.id}
-                    scholarship={scholarship}
-                    onGenerateProposal={handleGenerateProposal}
-                  />
-                ))}
+            {filteredScholarships.map((scholarship) => (
+              <ScholarshipCard
+                key={scholarship.id}
+                scholarship={scholarship}
+              />
+            ))}
               </div>
             ) : (
               <div className="text-center py-12">
@@ -1086,12 +1070,6 @@ export function Scholarships() {
         )}
       </div>
 
-      {/* Proposal Modal */}
-      <ProposalModal
-        scholarship={selectedScholarship}
-        open={isModalOpen}
-        onOpenChange={setIsModalOpen}
-      />
     </div>
   );
 }
