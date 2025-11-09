@@ -105,37 +105,87 @@ export async function processTranscriptPDF(
 
 Extract all available information from the transcript. If a field is not available, use null or omit it.`;
 
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          contents: [
-            {
-              parts: [
+    // Retry configuration for handling transient errors (503, 429, etc.)
+    const maxRetries = 3;
+    const baseDelay = 2000; // 2 seconds base delay
+    let lastError: Error | null = null;
+    let response: Response | null = null;
+
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+      try {
+        if (attempt > 0) {
+          // Exponential backoff: 2s, 4s, 8s
+          const delay = baseDelay * Math.pow(2, attempt - 1);
+          logger.info(`Retrying transcript processing (attempt ${attempt + 1}/${maxRetries + 1}) after ${delay}ms delay`, {
+            attempt: attempt + 1,
+            maxRetries: maxRetries + 1,
+            delay,
+          });
+          await new Promise(resolve => setTimeout(resolve, delay));
+        }
+
+        response = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${apiKey}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              contents: [
                 {
-                  text: prompt,
-                },
-                {
-                  inline_data: {
-                    mime_type: "application/pdf",
-                    data: transcriptBase64,
-                  },
+                  parts: [
+                    {
+                      text: prompt,
+                    },
+                    {
+                      inline_data: {
+                        mime_type: "application/pdf",
+                        data: transcriptBase64,
+                      },
+                    },
+                  ],
                 },
               ],
-            },
-          ],
-        }),
-      }
-    );
+            }),
+          }
+        );
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      logger.error("Gemini API error for transcript processing", new Error(errorText));
-      throw new Error(`Gemini API error: ${response.status} ${response.statusText}`);
+        if (response.ok) {
+          // Success - break out of retry loop
+          break;
+        }
+
+        // Check if we should retry (503, 429, or 500 errors)
+        if (response.status === 503 || response.status === 429 || response.status === 500) {
+          const errorText = await response.text();
+          lastError = new Error(`Gemini API error: ${response.status} ${response.statusText}`);
+          logger.warn(`Gemini API returned ${response.status}, will retry`, {
+            attempt: attempt + 1,
+            maxRetries: maxRetries + 1,
+            error: errorText,
+          });
+          
+          if (attempt < maxRetries) {
+            continue; // Retry
+          }
+        }
+
+        // Non-retryable error or max retries reached
+        const errorText = await response.text();
+        logger.error("Gemini API error for transcript processing", new Error(errorText));
+        throw new Error(`Gemini API error: ${response.status} ${response.statusText}`);
+      } catch (error) {
+        if (attempt < maxRetries && (error instanceof Error && error.message.includes("503"))) {
+          lastError = error;
+          continue; // Retry on 503 errors
+        }
+        throw error;
+      }
+    }
+
+    if (!response || !response.ok) {
+      throw lastError || new Error("Failed to process transcript after retries");
     }
 
     const data = (await response.json()) as GeminiResponse;
@@ -230,37 +280,87 @@ export async function processResumePDF(
 
 Extract all available information from the resume. If a field is not available, use null or omit it.`;
 
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          contents: [
-            {
-              parts: [
+    // Retry configuration for handling transient errors (503, 429, etc.)
+    const maxRetries = 3;
+    const baseDelay = 2000; // 2 seconds base delay
+    let lastError: Error | null = null;
+    let response: Response | null = null;
+
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+      try {
+        if (attempt > 0) {
+          // Exponential backoff: 2s, 4s, 8s
+          const delay = baseDelay * Math.pow(2, attempt - 1);
+          logger.info(`Retrying resume processing (attempt ${attempt + 1}/${maxRetries + 1}) after ${delay}ms delay`, {
+            attempt: attempt + 1,
+            maxRetries: maxRetries + 1,
+            delay,
+          });
+          await new Promise(resolve => setTimeout(resolve, delay));
+        }
+
+        response = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${apiKey}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              contents: [
                 {
-                  text: prompt,
-                },
-                {
-                  inline_data: {
-                    mime_type: "application/pdf",
-                    data: resumeBase64,
-                  },
+                  parts: [
+                    {
+                      text: prompt,
+                    },
+                    {
+                      inline_data: {
+                        mime_type: "application/pdf",
+                        data: resumeBase64,
+                      },
+                    },
+                  ],
                 },
               ],
-            },
-          ],
-        }),
-      }
-    );
+            }),
+          }
+        );
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      logger.error("Gemini API error for resume processing", new Error(errorText));
-      throw new Error(`Gemini API error: ${response.status} ${response.statusText}`);
+        if (response.ok) {
+          // Success - break out of retry loop
+          break;
+        }
+
+        // Check if we should retry (503, 429, or 500 errors)
+        if (response.status === 503 || response.status === 429 || response.status === 500) {
+          const errorText = await response.text();
+          lastError = new Error(`Gemini API error: ${response.status} ${response.statusText}`);
+          logger.warn(`Gemini API returned ${response.status}, will retry`, {
+            attempt: attempt + 1,
+            maxRetries: maxRetries + 1,
+            error: errorText,
+          });
+          
+          if (attempt < maxRetries) {
+            continue; // Retry
+          }
+        }
+
+        // Non-retryable error or max retries reached
+        const errorText = await response.text();
+        logger.error("Gemini API error for resume processing", new Error(errorText));
+        throw new Error(`Gemini API error: ${response.status} ${response.statusText}`);
+      } catch (error) {
+        if (attempt < maxRetries && (error instanceof Error && error.message.includes("503"))) {
+          lastError = error;
+          continue; // Retry on 503 errors
+        }
+        throw error;
+      }
+    }
+
+    if (!response || !response.ok) {
+      throw lastError || new Error("Failed to process resume after retries");
     }
 
     const data = (await response.json()) as GeminiResponse;
@@ -384,31 +484,81 @@ Important guidelines:
 
 Return ONLY valid JSON, no additional text.`;
 
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          contents: [
-            {
-              parts: [
+    // Retry configuration for handling transient errors (503, 429, etc.)
+    const maxRetries = 3;
+    const baseDelay = 2000; // 2 seconds base delay
+    let lastError: Error | null = null;
+    let response: Response | null = null;
+
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+      try {
+        if (attempt > 0) {
+          // Exponential backoff: 2s, 4s, 8s
+          const delay = baseDelay * Math.pow(2, attempt - 1);
+          logger.info(`Retrying scholarship finding (attempt ${attempt + 1}/${maxRetries + 1}) after ${delay}ms delay`, {
+            attempt: attempt + 1,
+            maxRetries: maxRetries + 1,
+            delay,
+          });
+          await new Promise(resolve => setTimeout(resolve, delay));
+        }
+
+        response = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${apiKey}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              contents: [
                 {
-                  text: prompt,
+                  parts: [
+                    {
+                      text: prompt,
+                    },
+                  ],
                 },
               ],
-            },
-          ],
-        }),
-      }
-    );
+            }),
+          }
+        );
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      logger.error("Gemini API error for scholarship finding", new Error(errorText));
-      throw new Error(`Gemini API error: ${response.status} ${response.statusText}`);
+        if (response.ok) {
+          // Success - break out of retry loop
+          break;
+        }
+
+        // Check if we should retry (503, 429, or 500 errors)
+        if (response.status === 503 || response.status === 429 || response.status === 500) {
+          const errorText = await response.text();
+          lastError = new Error(`Gemini API error: ${response.status} ${response.statusText}`);
+          logger.warn(`Gemini API returned ${response.status}, will retry`, {
+            attempt: attempt + 1,
+            maxRetries: maxRetries + 1,
+            error: errorText,
+          });
+          
+          if (attempt < maxRetries) {
+            continue; // Retry
+          }
+        }
+
+        // Non-retryable error or max retries reached
+        const errorText = await response.text();
+        logger.error("Gemini API error for scholarship finding", new Error(errorText));
+        throw new Error(`Gemini API error: ${response.status} ${response.statusText}`);
+      } catch (error) {
+        if (attempt < maxRetries && (error instanceof Error && error.message.includes("503"))) {
+          lastError = error;
+          continue; // Retry on 503 errors
+        }
+        throw error;
+      }
+    }
+
+    if (!response || !response.ok) {
+      throw lastError || new Error("Failed to find scholarships after retries");
     }
 
     const data = (await response.json()) as GeminiResponse;
