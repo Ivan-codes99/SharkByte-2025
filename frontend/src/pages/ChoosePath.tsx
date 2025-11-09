@@ -530,7 +530,7 @@ export function ChoosePath() {
                 </div>
                 <Button
                   onClick={handleAnalyzeProgram}
-                  disabled={analyzing || !selectedProgram.pdfLinks.courseList || !selectedProgram.pdfLinks.sequenceGuide}
+                  disabled={analyzing}
                   className="w-full sm:w-auto"
                   size="lg"
                 >
@@ -547,8 +547,8 @@ export function ChoosePath() {
                   )}
                 </Button>
                 {(!selectedProgram.pdfLinks.courseList || !selectedProgram.pdfLinks.sequenceGuide) && (
-                  <p className="text-sm text-amber-600">
-                    ⚠️ This program is missing required PDFs. Please use the manual upload option below.
+                  <p className="text-sm text-blue-600">
+                    ℹ️ PDFs will be automatically fetched from the program page when you click "Analyze Program".
                   </p>
                 )}
               </div>
