@@ -10,7 +10,8 @@
     "type-check": "tsc --noEmit",
     "scrape": "tsx src/scripts/scrape-mdc-programs.ts",
     "fix-spacing": "tsx src/scripts/fix-spacing-issues.ts",
-    "analyze": "tsx src/scripts/analyze-scraped-data.ts"
+    "analyze": "tsx src/scripts/analyze-scraped-data.ts",
+    "merge-careers": "tsx src/scripts/merge-similar-careers.ts"
   },
   "keywords": [
     "education",

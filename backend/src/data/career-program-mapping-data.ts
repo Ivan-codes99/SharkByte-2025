@@ -613,6 +613,271 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Business Intelligence Analyst",
           "Data Scientist"
         ]
+      },
+      {
+        "id": "oracledbacertificate",
+        "name": "Oracle Certified Database Administrator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/oracledbacertificate/",
+        "careersUrl": "https://www.mdc.edu/oracledbacertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Database Administrator",
+          "Computer Network Architect"
+        ]
+      },
+      {
+        "id": "cybersecurity-analyst",
+        "name": "Cybersecurity Analyst",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cybersecurity-analyst",
+        "careersUrl": "https://www.mdc.edu/cybersecurity-analyst/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cybersecurity Analyst"
+        ]
+      },
+      {
+        "id": "appliedaibs",
+        "name": "Bachelor Of Science (BS) In Applied Artificial Intelligence",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/appliedaibs/",
+        "careersUrl": "https://www.mdc.edu/appliedaibs/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Bachelor Of Science (BS) In Applied Artificial Intelligence"
+        ]
+      },
+      {
+        "id": "businessadministration",
+        "name": "Business Administration Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/businessadministration/",
+        "careersUrl": "https://www.mdc.edu/businessadministration/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Advertising",
+          "Management",
+          "Marketing",
+          "Public Relations",
+          "Sales",
+          "Supervision",
+          "Finance",
+          "Banking"
+        ]
+      },
+      {
+        "id": "appliedai",
+        "name": "Applied Artificial Intelligence - Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/appliedai/",
+        "careersUrl": "https://www.mdc.edu/appliedai/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Applied Artificial Intelligence - Associate In Science"
+        ]
+      },
+      {
+        "id": "businessadministrationas",
+        "name": "Business Administration Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessadministrationas/",
+        "careersUrl": "https://www.mdc.edu/businessadministrationas/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Assistant Manager",
+          "Marketing Specialist",
+          "Human Resources Generalist",
+          "Junior Business Analyst",
+          "Junior Account Manager"
+        ]
+      },
+      {
+        "id": "businessintelligence",
+        "name": "Business Intelligence Specialist Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessintelligence/",
+        "careersUrl": "https://www.mdc.edu/businessintelligence/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Development Associate",
+          "Business Intelligence Specialist",
+          "Business Systems Analyst"
+        ]
+      },
+      {
+        "id": "businessapplications",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessapplications",
+        "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Application programmers",
+          "Programmer specialists",
+          "Computer programmers",
+          "Programmer Analysts"
+        ]
+      },
+      {
+        "id": "entrepreneurship",
+        "name": "Business Entrepreneurship Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/entrepreneurship/",
+        "careersUrl": "https://www.mdc.edu/entrepreneurship/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Entrepreneurship Associate In Science"
+        ]
+      },
+      {
+        "id": "musicbusinessmanagement",
+        "name": "Music Business - Business Management Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/musicbusinessmanagement/",
+        "careersUrl": "https://www.mdc.edu/musicbusinessmanagement/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Artist Or Tour Management",
+          "A&R (artists And Repertoire) Representative",
+          "Marketing Or Brand Coordinator",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Social Media And Digital Content Manager",
+          "Music Distribution Or Streaming Specialist"
+        ]
+      },
+      {
+        "id": "musicbusinessproduction",
+        "name": "Music Business - Performance And Production Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/musicbusinessproduction/",
+        "careersUrl": "https://www.mdc.edu/musicbusinessproduction/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Artist Or Tour Manager",
+          "Sound Engineers And Technicians",
+          "Music Producer",
+          "A&amp;r (artists And Repertoire) Representative",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Music Distribution Or Streaming Specialist"
+        ]
+      },
+      {
+        "id": "aiawareness",
+        "name": "Artificial Intelligence Awareness",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/aiawareness/",
+        "careersUrl": "https://www.mdc.edu/aiawareness/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Artificial Intelligence Awareness"
+        ]
+      },
+      {
+        "id": "aipractitioner",
+        "name": "Artificial Intelligence Practitioner",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/aipractitioner/",
+        "careersUrl": "https://www.mdc.edu/aipractitioner/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Artificial Intelligence Practitioner"
+        ]
+      },
+      {
+        "id": "industry-operations",
+        "name": "Business Industry Operations",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/industry-operations/",
+        "careersUrl": "https://www.mdc.edu/industry-operations/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Industry Operations"
+        ]
+      },
+      {
+        "id": "businessintelligencecertificate",
+        "name": "Business Intelligence Professional College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessintelligencecertificate/",
+        "careersUrl": "https://www.mdc.edu/businessintelligencecertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Intelligence Professional College Credit Certificate"
+        ]
+      },
+      {
+        "id": "businessoperationsmarketing",
+        "name": "Business Operations Marketing",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessoperationsmarketing",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Operations Marketing"
+        ]
+      },
+      {
+        "id": "smallbusinessoperations",
+        "name": "Smallbusiness Operations",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/smallbusinessoperations",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Smallbusiness Operations"
+        ]
+      },
+      {
+        "id": "generalbusiness",
+        "name": "Generalbusiness",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/generalbusiness",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Generalbusiness"
+        ]
+      },
+      {
+        "id": "internationalbusinesscertificate",
+        "name": "Internationalbusinesscertificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/internationalbusinesscertificate",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Internationalbusinesscertificate"
+        ]
+      },
+      {
+        "id": "businessspecialistmarketing",
+        "name": "Businessspecialist Marketing",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessspecialistmarketing",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Businessspecialist Marketing"
+        ]
+      },
+      {
+        "id": "smallbusinessspecialist",
+        "name": "Smallbusinessspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/smallbusinessspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Smallbusinessspecialist"
+        ]
+      },
+      {
+        "id": "intelligence-studies",
+        "name": "Intelligence Studies",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/intelligence-studies/",
+        "careersUrl": "https://www.mdc.edu/intelligence-studies/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Intelligence Studies"
+        ]
       }
     ],
     "field": "Other"
@@ -655,6 +920,130 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Business Intelligence Analyst",
           "Data Scientist"
         ]
+      },
+      {
+        "id": "computerinformationtechnology",
+        "name": "Computer Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
+        "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer And Information Systems Manager",
+          "Computer Network Architect",
+          "Database Administrator",
+          "Computer Support System",
+          "Computer Operator",
+          "Software Developer"
+        ]
+      },
+      {
+        "id": "oracledbacertificate",
+        "name": "Oracle Certified Database Administrator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/oracledbacertificate/",
+        "careersUrl": "https://www.mdc.edu/oracledbacertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Database Administrator",
+          "Computer Network Architect"
+        ]
+      },
+      {
+        "id": "earlychildhoodadministrator",
+        "name": "Early Childhood Education - Administrators Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/earlychildhoodadministrator/",
+        "careersUrl": "https://www.mdc.edu/earlychildhoodadministrator/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Education Administrator",
+          "Instructional Coordinator"
+        ]
+      },
+      {
+        "id": "earlychildhoodadmincertificate",
+        "name": "Early Childhood Administrator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/earlychildhoodadmincertificate/",
+        "careersUrl": "https://www.mdc.edu/earlychildhoodadmincertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Education Administrator",
+          "Instructional Coordinator"
+        ]
+      },
+      {
+        "id": "architectureaa",
+        "name": "Architecture Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architectureaa/",
+        "careersUrl": "https://www.mdc.edu/architectureaa/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architect",
+          "Landscape Architect",
+          "Architecture Drafter",
+          "Urban And Regional Planner",
+          "Architecture Teacher, Postsecondary"
+        ]
+      },
+      {
+        "id": "architecturaldesign",
+        "name": "Architectural Design And Construction Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/architecturaldesign/",
+        "careersUrl": "https://www.mdc.edu/architecturaldesign/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Drafter",
+          "Civil Engineer",
+          "Construction Manager",
+          "Landscape Architect"
+        ]
+      },
+      {
+        "id": "architecturalengineering",
+        "name": "Architectural Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architecturalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Engineering"
+        ]
+      },
+      {
+        "id": "informationsystemsnetworking",
+        "name": "Information Systems Technology Networking Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/informationsystemsnetworking/",
+        "careersUrl": "https://www.mdc.edu/informationsystemsnetworking/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Networking Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "gis",
+        "name": "Geographic Information Systems College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/gis/",
+        "careersUrl": "https://www.mdc.edu/gis/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Geographic Information Systems College Credit Certificate"
+        ]
       }
     ],
     "field": "Other"
@@ -676,6 +1065,271 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Business Intelligence Analyst",
           "Data Scientist"
         ]
+      },
+      {
+        "id": "oracledbacertificate",
+        "name": "Oracle Certified Database Administrator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/oracledbacertificate/",
+        "careersUrl": "https://www.mdc.edu/oracledbacertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Database Administrator",
+          "Computer Network Architect"
+        ]
+      },
+      {
+        "id": "cybersecurity-analyst",
+        "name": "Cybersecurity Analyst",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cybersecurity-analyst",
+        "careersUrl": "https://www.mdc.edu/cybersecurity-analyst/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cybersecurity Analyst"
+        ]
+      },
+      {
+        "id": "appliedaibs",
+        "name": "Bachelor Of Science (BS) In Applied Artificial Intelligence",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/appliedaibs/",
+        "careersUrl": "https://www.mdc.edu/appliedaibs/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Bachelor Of Science (BS) In Applied Artificial Intelligence"
+        ]
+      },
+      {
+        "id": "businessadministration",
+        "name": "Business Administration Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/businessadministration/",
+        "careersUrl": "https://www.mdc.edu/businessadministration/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Advertising",
+          "Management",
+          "Marketing",
+          "Public Relations",
+          "Sales",
+          "Supervision",
+          "Finance",
+          "Banking"
+        ]
+      },
+      {
+        "id": "appliedai",
+        "name": "Applied Artificial Intelligence - Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/appliedai/",
+        "careersUrl": "https://www.mdc.edu/appliedai/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Applied Artificial Intelligence - Associate In Science"
+        ]
+      },
+      {
+        "id": "businessadministrationas",
+        "name": "Business Administration Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessadministrationas/",
+        "careersUrl": "https://www.mdc.edu/businessadministrationas/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Assistant Manager",
+          "Marketing Specialist",
+          "Human Resources Generalist",
+          "Junior Business Analyst",
+          "Junior Account Manager"
+        ]
+      },
+      {
+        "id": "businessintelligence",
+        "name": "Business Intelligence Specialist Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessintelligence/",
+        "careersUrl": "https://www.mdc.edu/businessintelligence/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Development Associate",
+          "Business Intelligence Specialist",
+          "Business Systems Analyst"
+        ]
+      },
+      {
+        "id": "businessapplications",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessapplications",
+        "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Application programmers",
+          "Programmer specialists",
+          "Computer programmers",
+          "Programmer Analysts"
+        ]
+      },
+      {
+        "id": "entrepreneurship",
+        "name": "Business Entrepreneurship Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/entrepreneurship/",
+        "careersUrl": "https://www.mdc.edu/entrepreneurship/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Entrepreneurship Associate In Science"
+        ]
+      },
+      {
+        "id": "musicbusinessmanagement",
+        "name": "Music Business - Business Management Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/musicbusinessmanagement/",
+        "careersUrl": "https://www.mdc.edu/musicbusinessmanagement/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Artist Or Tour Management",
+          "A&R (artists And Repertoire) Representative",
+          "Marketing Or Brand Coordinator",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Social Media And Digital Content Manager",
+          "Music Distribution Or Streaming Specialist"
+        ]
+      },
+      {
+        "id": "musicbusinessproduction",
+        "name": "Music Business - Performance And Production Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/musicbusinessproduction/",
+        "careersUrl": "https://www.mdc.edu/musicbusinessproduction/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Artist Or Tour Manager",
+          "Sound Engineers And Technicians",
+          "Music Producer",
+          "A&amp;r (artists And Repertoire) Representative",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Music Distribution Or Streaming Specialist"
+        ]
+      },
+      {
+        "id": "aiawareness",
+        "name": "Artificial Intelligence Awareness",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/aiawareness/",
+        "careersUrl": "https://www.mdc.edu/aiawareness/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Artificial Intelligence Awareness"
+        ]
+      },
+      {
+        "id": "aipractitioner",
+        "name": "Artificial Intelligence Practitioner",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/aipractitioner/",
+        "careersUrl": "https://www.mdc.edu/aipractitioner/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Artificial Intelligence Practitioner"
+        ]
+      },
+      {
+        "id": "industry-operations",
+        "name": "Business Industry Operations",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/industry-operations/",
+        "careersUrl": "https://www.mdc.edu/industry-operations/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Industry Operations"
+        ]
+      },
+      {
+        "id": "businessintelligencecertificate",
+        "name": "Business Intelligence Professional College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessintelligencecertificate/",
+        "careersUrl": "https://www.mdc.edu/businessintelligencecertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Intelligence Professional College Credit Certificate"
+        ]
+      },
+      {
+        "id": "businessoperationsmarketing",
+        "name": "Business Operations Marketing",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessoperationsmarketing",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Operations Marketing"
+        ]
+      },
+      {
+        "id": "smallbusinessoperations",
+        "name": "Smallbusiness Operations",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/smallbusinessoperations",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Smallbusiness Operations"
+        ]
+      },
+      {
+        "id": "generalbusiness",
+        "name": "Generalbusiness",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/generalbusiness",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Generalbusiness"
+        ]
+      },
+      {
+        "id": "internationalbusinesscertificate",
+        "name": "Internationalbusinesscertificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/internationalbusinesscertificate",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Internationalbusinesscertificate"
+        ]
+      },
+      {
+        "id": "businessspecialistmarketing",
+        "name": "Businessspecialist Marketing",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessspecialistmarketing",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Businessspecialist Marketing"
+        ]
+      },
+      {
+        "id": "smallbusinessspecialist",
+        "name": "Smallbusinessspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/smallbusinessspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Smallbusinessspecialist"
+        ]
+      },
+      {
+        "id": "intelligence-studies",
+        "name": "Intelligence Studies",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/intelligence-studies/",
+        "careersUrl": "https://www.mdc.edu/intelligence-studies/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Intelligence Studies"
+        ]
       }
     ],
     "field": "Business"
@@ -696,6 +1350,271 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Database Architect",
           "Business Intelligence Analyst",
           "Data Scientist"
+        ]
+      },
+      {
+        "id": "oracledbacertificate",
+        "name": "Oracle Certified Database Administrator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/oracledbacertificate/",
+        "careersUrl": "https://www.mdc.edu/oracledbacertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Database Administrator",
+          "Computer Network Architect"
+        ]
+      },
+      {
+        "id": "cybersecurity-analyst",
+        "name": "Cybersecurity Analyst",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cybersecurity-analyst",
+        "careersUrl": "https://www.mdc.edu/cybersecurity-analyst/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cybersecurity Analyst"
+        ]
+      },
+      {
+        "id": "appliedaibs",
+        "name": "Bachelor Of Science (BS) In Applied Artificial Intelligence",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/appliedaibs/",
+        "careersUrl": "https://www.mdc.edu/appliedaibs/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Bachelor Of Science (BS) In Applied Artificial Intelligence"
+        ]
+      },
+      {
+        "id": "businessadministration",
+        "name": "Business Administration Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/businessadministration/",
+        "careersUrl": "https://www.mdc.edu/businessadministration/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Advertising",
+          "Management",
+          "Marketing",
+          "Public Relations",
+          "Sales",
+          "Supervision",
+          "Finance",
+          "Banking"
+        ]
+      },
+      {
+        "id": "appliedai",
+        "name": "Applied Artificial Intelligence - Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/appliedai/",
+        "careersUrl": "https://www.mdc.edu/appliedai/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Applied Artificial Intelligence - Associate In Science"
+        ]
+      },
+      {
+        "id": "businessadministrationas",
+        "name": "Business Administration Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessadministrationas/",
+        "careersUrl": "https://www.mdc.edu/businessadministrationas/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Assistant Manager",
+          "Marketing Specialist",
+          "Human Resources Generalist",
+          "Junior Business Analyst",
+          "Junior Account Manager"
+        ]
+      },
+      {
+        "id": "businessintelligence",
+        "name": "Business Intelligence Specialist Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessintelligence/",
+        "careersUrl": "https://www.mdc.edu/businessintelligence/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Development Associate",
+          "Business Intelligence Specialist",
+          "Business Systems Analyst"
+        ]
+      },
+      {
+        "id": "businessapplications",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessapplications",
+        "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Application programmers",
+          "Programmer specialists",
+          "Computer programmers",
+          "Programmer Analysts"
+        ]
+      },
+      {
+        "id": "entrepreneurship",
+        "name": "Business Entrepreneurship Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/entrepreneurship/",
+        "careersUrl": "https://www.mdc.edu/entrepreneurship/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Entrepreneurship Associate In Science"
+        ]
+      },
+      {
+        "id": "musicbusinessmanagement",
+        "name": "Music Business - Business Management Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/musicbusinessmanagement/",
+        "careersUrl": "https://www.mdc.edu/musicbusinessmanagement/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Artist Or Tour Management",
+          "A&R (artists And Repertoire) Representative",
+          "Marketing Or Brand Coordinator",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Social Media And Digital Content Manager",
+          "Music Distribution Or Streaming Specialist"
+        ]
+      },
+      {
+        "id": "musicbusinessproduction",
+        "name": "Music Business - Performance And Production Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/musicbusinessproduction/",
+        "careersUrl": "https://www.mdc.edu/musicbusinessproduction/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Artist Or Tour Manager",
+          "Sound Engineers And Technicians",
+          "Music Producer",
+          "A&amp;r (artists And Repertoire) Representative",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Music Distribution Or Streaming Specialist"
+        ]
+      },
+      {
+        "id": "aiawareness",
+        "name": "Artificial Intelligence Awareness",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/aiawareness/",
+        "careersUrl": "https://www.mdc.edu/aiawareness/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Artificial Intelligence Awareness"
+        ]
+      },
+      {
+        "id": "aipractitioner",
+        "name": "Artificial Intelligence Practitioner",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/aipractitioner/",
+        "careersUrl": "https://www.mdc.edu/aipractitioner/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Artificial Intelligence Practitioner"
+        ]
+      },
+      {
+        "id": "industry-operations",
+        "name": "Business Industry Operations",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/industry-operations/",
+        "careersUrl": "https://www.mdc.edu/industry-operations/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Industry Operations"
+        ]
+      },
+      {
+        "id": "businessintelligencecertificate",
+        "name": "Business Intelligence Professional College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessintelligencecertificate/",
+        "careersUrl": "https://www.mdc.edu/businessintelligencecertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Intelligence Professional College Credit Certificate"
+        ]
+      },
+      {
+        "id": "businessoperationsmarketing",
+        "name": "Business Operations Marketing",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessoperationsmarketing",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Operations Marketing"
+        ]
+      },
+      {
+        "id": "smallbusinessoperations",
+        "name": "Smallbusiness Operations",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/smallbusinessoperations",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Smallbusiness Operations"
+        ]
+      },
+      {
+        "id": "generalbusiness",
+        "name": "Generalbusiness",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/generalbusiness",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Generalbusiness"
+        ]
+      },
+      {
+        "id": "internationalbusinesscertificate",
+        "name": "Internationalbusinesscertificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/internationalbusinesscertificate",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Internationalbusinesscertificate"
+        ]
+      },
+      {
+        "id": "businessspecialistmarketing",
+        "name": "Businessspecialist Marketing",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessspecialistmarketing",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Businessspecialist Marketing"
+        ]
+      },
+      {
+        "id": "smallbusinessspecialist",
+        "name": "Smallbusinessspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/smallbusinessspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Smallbusinessspecialist"
+        ]
+      },
+      {
+        "id": "intelligence-studies",
+        "name": "Intelligence Studies",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/intelligence-studies/",
+        "careersUrl": "https://www.mdc.edu/intelligence-studies/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Intelligence Studies"
         ]
       }
     ],
@@ -4838,6 +5757,359 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Security Analyst",
           "Computer Forensic Examiners"
         ]
+      },
+      {
+        "id": "cybersecurityas",
+        "name": "Cybersecurity Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/cybersecurityas",
+        "careersUrl": "https://www.mdc.edu/cybersecurityas/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Security Operations Center (SOC) Analyst",
+          "Cybersecurity Specialist",
+          "Incident Responder",
+          "Security System Administrator",
+          "Security Consultant",
+          "Cybersecurity Analyst",
+          "Cybersecurity Manager / Administrator"
+        ]
+      },
+      {
+        "id": "cybersecurity-analyst",
+        "name": "Cybersecurity Analyst",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cybersecurity-analyst",
+        "careersUrl": "https://www.mdc.edu/cybersecurity-analyst/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cybersecurity Analyst"
+        ]
+      },
+      {
+        "id": "cybersecuritybs",
+        "name": "Cybersecurity Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/cybersecuritybs/",
+        "careersUrl": "https://www.mdc.edu/cybersecuritybs/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cybersecurity Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "healthinformatics",
+        "name": "Healthcare Informatics Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthinformatics/",
+        "careersUrl": "https://www.mdc.edu/healthinformatics/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Physician’s offices",
+          "Government",
+          "Hospitals",
+          "Nursing and residential care facilities"
+        ]
+      },
+      {
+        "id": "businessintelligence",
+        "name": "Business Intelligence Specialist Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessintelligence/",
+        "careersUrl": "https://www.mdc.edu/businessintelligence/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Development Associate",
+          "Business Intelligence Specialist",
+          "Business Systems Analyst"
+        ]
+      },
+      {
+        "id": "graphicdesignspecialist",
+        "name": "Graphic Design Support - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/graphicdesignspecialist/",
+        "careersUrl": "https://www.mdc.edu/graphicdesignspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Desktop Publisher",
+          "Graphic Design Assistant",
+          "Commercial And Industrial Design Assistant"
+        ]
+      },
+      {
+        "id": "buildingconstructionspecialist",
+        "name": "Building Construction Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/buildingconstructionspecialist/",
+        "careersUrl": "https://www.mdc.edu/buildingconstructionspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Construction laborer",
+          "Helper - Painter, Paperhanger, Platere And Stucco Mason",
+          "Helper - Pipelayer, Plumber, Pipelifter And Steamfitter",
+          "Helper - Installation, Maintenance, And Repair Worker"
+        ]
+      },
+      {
+        "id": "managementspecialist",
+        "name": "Managementspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/managementspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Managementspecialist"
+        ]
+      },
+      {
+        "id": "hrspecialist",
+        "name": "Hrspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/hrspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Hrspecialist"
+        ]
+      },
+      {
+        "id": "businessspecialistmarketing",
+        "name": "Businessspecialist Marketing",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessspecialistmarketing",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Businessspecialist Marketing"
+        ]
+      },
+      {
+        "id": "smallbusinessspecialist",
+        "name": "Smallbusinessspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/smallbusinessspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Smallbusinessspecialist"
+        ]
+      },
+      {
+        "id": "digitalmarketing",
+        "name": "Digital Marketing Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/digitalmarketing/",
+        "careersUrl": "https://www.mdc.edu/digitalmarketing/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Advertising And Promotions Managers",
+          "Marketing Managers",
+          "Marketing Research Analyst",
+          "Marketing Specialists"
+        ]
+      },
+      {
+        "id": "engineeringtechnology",
+        "name": "Engineering Technology Support Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/engineeringtechnology/",
+        "careersUrl": "https://www.mdc.edu/engineeringtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Engineering Support Specialist",
+          "Engineering Specialist"
+        ]
+      },
+      {
+        "id": "foodbeveragespecialist",
+        "name": "Foodbeveragespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/foodbeveragespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Foodbeveragespecialist"
+        ]
+      },
+      {
+        "id": "healthcareservices",
+        "name": "Health Science - Health Care Service Specialist - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthcareservices",
+        "careersUrl": "https://www.mdc.edu/healthcareservices/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Health Science - Health Care Service Specialist - College Credit Certificate"
+        ]
+      },
+      {
+        "id": "horticulturespecialist",
+        "name": "Horticulturespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/horticulturespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Horticulturespecialist"
+        ]
+      },
+      {
+        "id": "transportationlogisticsspecialist",
+        "name": "Transportationlogisticsspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/transportationlogisticsspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Transportationlogisticsspecialist"
+        ]
+      },
+      {
+        "id": "rapidprototyping",
+        "name": "Rapid Prototyping Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/rapidprototyping/",
+        "careersUrl": "https://www.mdc.edu/rapidprototyping/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Rapid Prototyper",
+          "3D Modeler/Designer"
+        ]
+      },
+      {
+        "id": "roomsdivisionspecialist",
+        "name": "Roomsdivisionspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/roomsdivisionspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Roomsdivisionspecialist"
+        ]
+      },
+      {
+        "id": "solarenergysystemsspecialist",
+        "name": "Solar Energy Systems Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/solarenergysystemsspecialist/",
+        "careersUrl": "https://www.mdc.edu/solarenergysystemsspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Solar Photovoltaic (PV) Installer",
+          "Solar System Installer",
+          "Solar Technician",
+          "Solar Energy Designer",
+          "Field Electric Technician",
+          "Solar Installation Coordinator",
+          "Tesla Energy Field Operations Team"
+        ]
+      },
+      {
+        "id": "taxspecialist",
+        "name": "Taxspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/taxspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Taxspecialist"
+        ]
+      },
+      {
+        "id": "computerinformationtechnology",
+        "name": "Computer Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
+        "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer And Information Systems Manager",
+          "Computer Network Architect",
+          "Database Administrator",
+          "Computer Support System",
+          "Computer Operator",
+          "Software Developer"
+        ]
+      },
+      {
+        "id": "informationsystemsnetworking",
+        "name": "Information Systems Technology Networking Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/informationsystemsnetworking/",
+        "careersUrl": "https://www.mdc.edu/informationsystemsnetworking/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Networking Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "itsupport",
+        "name": "Information Technology Support College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/itsupport/",
+        "careersUrl": "https://www.mdc.edu/itsupport/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer User Support Specialist",
+          "Computer Operator"
+        ]
+      },
+      {
+        "id": "homelandsecurity",
+        "name": "Homeland Security - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/homelandsecurity/",
+        "careersUrl": "https://www.mdc.edu/homelandsecurity/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Emergency Management Director",
+          "Security Management Specialist",
+          "Criminal Investigator And Agent",
+          "Immigration And Custom Inspector",
+          "Intelligence Analyst"
+        ]
+      },
+      {
+        "id": "healthinformation",
+        "name": "Health Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/healthinformation/",
+        "careersUrl": "https://www.mdc.edu/healthinformation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Health Information Technician",
+          "Medical Coder",
+          "Medical Biller",
+          "Documentation Specialist"
+        ]
+      },
+      {
+        "id": "gis",
+        "name": "Geographic Information Systems College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/gis/",
+        "careersUrl": "https://www.mdc.edu/gis/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Geographic Information Systems College Credit Certificate"
+        ]
+      },
+      {
+        "id": "privatesecurity",
+        "name": "Private Security Officer Career Technical Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/privatesecurity/",
+        "careersUrl": "https://www.mdc.edu/privatesecurity/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Security",
+          "Security Officer",
+          "Loss Prevention Agent",
+          "Body Guard"
+        ]
       }
     ],
     "field": "Criminal Justice"
@@ -4930,6 +6202,502 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Database Administrator",
           "Computer Network Architect"
         ]
+      },
+      {
+        "id": "informationsystemsnetworking",
+        "name": "Information Systems Technology Networking Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/informationsystemsnetworking/",
+        "careersUrl": "https://www.mdc.edu/informationsystemsnetworking/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Networking Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "earlychildhoodadministrator",
+        "name": "Early Childhood Education - Administrators Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/earlychildhoodadministrator/",
+        "careersUrl": "https://www.mdc.edu/earlychildhoodadministrator/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Education Administrator",
+          "Instructional Coordinator"
+        ]
+      },
+      {
+        "id": "earlychildhoodadmincertificate",
+        "name": "Early Childhood Administrator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/earlychildhoodadmincertificate/",
+        "careersUrl": "https://www.mdc.edu/earlychildhoodadmincertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Education Administrator",
+          "Instructional Coordinator"
+        ]
+      },
+      {
+        "id": "cloudcomputing",
+        "name": "Networking Services Technology Enterprise Cloud Computing Concentration Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/cloudcomputing/",
+        "careersUrl": "https://www.mdc.edu/cloudcomputing/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cloud Solutions Architect Cloud Computing Analyst Cloud (network) Engineer",
+          "Cloud Administrator Cloud Application Architect Computer Systems Analyst"
+        ]
+      },
+      {
+        "id": "networkinfrastructure",
+        "name": "Networking Services Technology - Network Infrastructure Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/networkinfrastructure/",
+        "careersUrl": "https://www.mdc.edu/networkinfrastructure/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Networking Services Technology - Network Infrastructure Associate In Science"
+        ]
+      },
+      {
+        "id": "cisco",
+        "name": "Cisco Certified Network Associate (ccna) College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cisco/",
+        "careersUrl": "https://www.mdc.edu/cisco/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cisco Network Administrator",
+          "Computer Repair",
+          "Microsoft Database Administrator",
+          "Oracle Database Administrator"
+        ]
+      },
+      {
+        "id": "networksystems",
+        "name": "Network Systems",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/networksystems",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Network Systems"
+        ]
+      },
+      {
+        "id": "networkingcpp",
+        "name": "Networking - Certificate Of Professional Preparation",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/networkingcpp",
+        "careersUrl": "https://www.mdc.edu/networkingcpp/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Networking - Certificate Of Professional Preparation"
+        ]
+      },
+      {
+        "id": "healthinformatics",
+        "name": "Healthcare Informatics Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthinformatics/",
+        "careersUrl": "https://www.mdc.edu/healthinformatics/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Physician’s offices",
+          "Government",
+          "Hospitals",
+          "Nursing and residential care facilities"
+        ]
+      },
+      {
+        "id": "businessintelligence",
+        "name": "Business Intelligence Specialist Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessintelligence/",
+        "careersUrl": "https://www.mdc.edu/businessintelligence/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Development Associate",
+          "Business Intelligence Specialist",
+          "Business Systems Analyst"
+        ]
+      },
+      {
+        "id": "graphicdesignspecialist",
+        "name": "Graphic Design Support - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/graphicdesignspecialist/",
+        "careersUrl": "https://www.mdc.edu/graphicdesignspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Desktop Publisher",
+          "Graphic Design Assistant",
+          "Commercial And Industrial Design Assistant"
+        ]
+      },
+      {
+        "id": "buildingconstructionspecialist",
+        "name": "Building Construction Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/buildingconstructionspecialist/",
+        "careersUrl": "https://www.mdc.edu/buildingconstructionspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Construction laborer",
+          "Helper - Painter, Paperhanger, Platere And Stucco Mason",
+          "Helper - Pipelayer, Plumber, Pipelifter And Steamfitter",
+          "Helper - Installation, Maintenance, And Repair Worker"
+        ]
+      },
+      {
+        "id": "managementspecialist",
+        "name": "Managementspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/managementspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Managementspecialist"
+        ]
+      },
+      {
+        "id": "hrspecialist",
+        "name": "Hrspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/hrspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Hrspecialist"
+        ]
+      },
+      {
+        "id": "businessspecialistmarketing",
+        "name": "Businessspecialist Marketing",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessspecialistmarketing",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Businessspecialist Marketing"
+        ]
+      },
+      {
+        "id": "smallbusinessspecialist",
+        "name": "Smallbusinessspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/smallbusinessspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Smallbusinessspecialist"
+        ]
+      },
+      {
+        "id": "digitalmarketing",
+        "name": "Digital Marketing Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/digitalmarketing/",
+        "careersUrl": "https://www.mdc.edu/digitalmarketing/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Advertising And Promotions Managers",
+          "Marketing Managers",
+          "Marketing Research Analyst",
+          "Marketing Specialists"
+        ]
+      },
+      {
+        "id": "engineeringtechnology",
+        "name": "Engineering Technology Support Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/engineeringtechnology/",
+        "careersUrl": "https://www.mdc.edu/engineeringtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Engineering Support Specialist",
+          "Engineering Specialist"
+        ]
+      },
+      {
+        "id": "foodbeveragespecialist",
+        "name": "Foodbeveragespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/foodbeveragespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Foodbeveragespecialist"
+        ]
+      },
+      {
+        "id": "healthcareservices",
+        "name": "Health Science - Health Care Service Specialist - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthcareservices",
+        "careersUrl": "https://www.mdc.edu/healthcareservices/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Health Science - Health Care Service Specialist - College Credit Certificate"
+        ]
+      },
+      {
+        "id": "horticulturespecialist",
+        "name": "Horticulturespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/horticulturespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Horticulturespecialist"
+        ]
+      },
+      {
+        "id": "transportationlogisticsspecialist",
+        "name": "Transportationlogisticsspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/transportationlogisticsspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Transportationlogisticsspecialist"
+        ]
+      },
+      {
+        "id": "rapidprototyping",
+        "name": "Rapid Prototyping Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/rapidprototyping/",
+        "careersUrl": "https://www.mdc.edu/rapidprototyping/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Rapid Prototyper",
+          "3D Modeler/Designer"
+        ]
+      },
+      {
+        "id": "roomsdivisionspecialist",
+        "name": "Roomsdivisionspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/roomsdivisionspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Roomsdivisionspecialist"
+        ]
+      },
+      {
+        "id": "solarenergysystemsspecialist",
+        "name": "Solar Energy Systems Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/solarenergysystemsspecialist/",
+        "careersUrl": "https://www.mdc.edu/solarenergysystemsspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Solar Photovoltaic (PV) Installer",
+          "Solar System Installer",
+          "Solar Technician",
+          "Solar Energy Designer",
+          "Field Electric Technician",
+          "Solar Installation Coordinator",
+          "Tesla Energy Field Operations Team"
+        ]
+      },
+      {
+        "id": "taxspecialist",
+        "name": "Taxspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/taxspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Taxspecialist"
+        ]
+      },
+      {
+        "id": "architectureaa",
+        "name": "Architecture Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architectureaa/",
+        "careersUrl": "https://www.mdc.edu/architectureaa/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architect",
+          "Landscape Architect",
+          "Architecture Drafter",
+          "Urban And Regional Planner",
+          "Architecture Teacher, Postsecondary"
+        ]
+      },
+      {
+        "id": "architecturaldesign",
+        "name": "Architectural Design And Construction Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/architecturaldesign/",
+        "careersUrl": "https://www.mdc.edu/architecturaldesign/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Drafter",
+          "Civil Engineer",
+          "Construction Manager",
+          "Landscape Architect"
+        ]
+      },
+      {
+        "id": "animation",
+        "name": "Computer Arts Animation Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/animation/",
+        "careersUrl": "https://www.mdc.edu/animation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "3D Modeling",
+          "Animation",
+          "3D Graphic Design And Illustration",
+          "Animation Dynamics"
+        ]
+      },
+      {
+        "id": "computerscience",
+        "name": "Computer Science",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/computerscience",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Science"
+        ]
+      },
+      {
+        "id": "architecturalengineering",
+        "name": "Architectural Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architecturalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Engineering"
+        ]
+      },
+      {
+        "id": "computerengineering",
+        "name": "Computer Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/computerengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Engineering"
+        ]
+      },
+      {
+        "id": "caddesigner",
+        "name": "Computer Aided Design Operator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/caddesigner/",
+        "careersUrl": "https://www.mdc.edu/caddesigner/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Aided Design Operator",
+          "Architectural Drafter",
+          "Civil Drafter",
+          "Electronics Drafter"
+        ]
+      },
+      {
+        "id": "computercrimeinvestigation",
+        "name": "Computer Crime Investigation Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computercrimeinvestigation/",
+        "careersUrl": "https://www.mdc.edu/computercrimeinvestigation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Digital Forensic Analyst",
+          "Cyber Threat Investigator",
+          "Security Analyst",
+          "Computer Forensic Examiners"
+        ]
+      },
+      {
+        "id": "computerengineeringas",
+        "name": "Computer Engineeringas",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerengineeringas",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Engineeringas"
+        ]
+      },
+      {
+        "id": "businessapplications",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessapplications",
+        "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Application programmers",
+          "Programmer specialists",
+          "Computer programmers",
+          "Programmer Analysts"
+        ]
+      },
+      {
+        "id": "internetofthings",
+        "name": "Computer Programming And Analysis - Internet Of Things (iot) Applications Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/internetofthings/",
+        "careersUrl": "https://www.mdc.edu/internetofthings/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "IoT Programmer IoT Developer IoT Consultant Product Application Assistant"
+        ]
+      },
+      {
+        "id": "pcrepair",
+        "name": "Microcomputer Repairer/installer College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/pcrepair/",
+        "careersUrl": "https://www.mdc.edu/pcrepair/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cisco Network Administrator",
+          "Computer Repair",
+          "Microsoft Database Administrator",
+          "Oracle Database Administrator"
+        ]
+      },
+      {
+        "id": "cadassistant",
+        "name": "Computer Aided Design Assistant College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cadassistant/",
+        "careersUrl": "https://www.mdc.edu/cadassistant/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Aided Design Assistant College Credit Certificate"
+        ]
+      },
+      {
+        "id": "computerprogramming",
+        "name": "Computer Programming",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/computerprogramming",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Programming"
+        ]
+      },
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "gis",
+        "name": "Geographic Information Systems College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/gis/",
+        "careersUrl": "https://www.mdc.edu/gis/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Geographic Information Systems College Credit Certificate"
+        ]
       }
     ],
     "field": "Other"
@@ -4963,6 +6731,117 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Database Administrator",
           "Computer Network Architect"
+        ]
+      },
+      {
+        "id": "dataanalytics",
+        "name": "Data Analytics Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/dataanalytics/",
+        "careersUrl": "https://www.mdc.edu/dataanalytics/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Data Analyst",
+          "Data Warehousing Specialist",
+          "Database Architect",
+          "Business Intelligence Analyst",
+          "Data Scientist"
+        ]
+      },
+      {
+        "id": "earlychildhoodadministrator",
+        "name": "Early Childhood Education - Administrators Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/earlychildhoodadministrator/",
+        "careersUrl": "https://www.mdc.edu/earlychildhoodadministrator/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Education Administrator",
+          "Instructional Coordinator"
+        ]
+      },
+      {
+        "id": "earlychildhoodadmincertificate",
+        "name": "Early Childhood Administrator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/earlychildhoodadmincertificate/",
+        "careersUrl": "https://www.mdc.edu/earlychildhoodadmincertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Education Administrator",
+          "Instructional Coordinator"
+        ]
+      },
+      {
+        "id": "architectureaa",
+        "name": "Architecture Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architectureaa/",
+        "careersUrl": "https://www.mdc.edu/architectureaa/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architect",
+          "Landscape Architect",
+          "Architecture Drafter",
+          "Urban And Regional Planner",
+          "Architecture Teacher, Postsecondary"
+        ]
+      },
+      {
+        "id": "architecturaldesign",
+        "name": "Architectural Design And Construction Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/architecturaldesign/",
+        "careersUrl": "https://www.mdc.edu/architecturaldesign/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Drafter",
+          "Civil Engineer",
+          "Construction Manager",
+          "Landscape Architect"
+        ]
+      },
+      {
+        "id": "architecturalengineering",
+        "name": "Architectural Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architecturalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Engineering"
+        ]
+      },
+      {
+        "id": "informationsystemsnetworking",
+        "name": "Information Systems Technology Networking Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/informationsystemsnetworking/",
+        "careersUrl": "https://www.mdc.edu/informationsystemsnetworking/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Networking Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "gis",
+        "name": "Geographic Information Systems College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/gis/",
+        "careersUrl": "https://www.mdc.edu/gis/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Geographic Information Systems College Credit Certificate"
         ]
       }
     ],
@@ -5041,6 +6920,90 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Computer Support System",
           "Computer Operator",
           "Software Developer"
+        ]
+      },
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "mobileappdeveloper",
+        "name": "Mobileappdeveloper",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/mobileappdeveloper",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Mobileappdeveloper"
+        ]
+      },
+      {
+        "id": "softwareengineeringcpp",
+        "name": "Software Engineering - Certificate Of Professional Preparation",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/softwareengineeringcpp",
+        "careersUrl": "https://www.mdc.edu/softwareengineeringcpp/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Software Engineering - Certificate Of Professional Preparation"
+        ]
+      },
+      {
+        "id": "businessapplications",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessapplications",
+        "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Application programmers",
+          "Programmer specialists",
+          "Computer programmers",
+          "Programmer Analysts"
+        ]
+      },
+      {
+        "id": "internetofthings",
+        "name": "Computer Programming And Analysis - Internet Of Things (iot) Applications Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/internetofthings/",
+        "careersUrl": "https://www.mdc.edu/internetofthings/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "IoT Programmer IoT Developer IoT Consultant Product Application Assistant"
+        ]
+      },
+      {
+        "id": "computerprogramming",
+        "name": "Computer Programming",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/computerprogramming",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Programming"
+        ]
+      },
+      {
+        "id": "broadcast",
+        "name": "Radio And Television Broadcast Programming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/broadcast/",
+        "careersUrl": "https://www.mdc.edu/broadcast/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Camera operators",
+          "Broadcast technicians",
+          "Video editors",
+          "Sound engineers",
+          "Writers",
+          "Producers",
+          "Directors"
         ]
       }
     ],
@@ -5568,6 +7531,356 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Cybersecurity Analyst",
           "Cybersecurity Manager / Administrator"
         ]
+      },
+      {
+        "id": "computercrimeinvestigation",
+        "name": "Computer Crime Investigation Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computercrimeinvestigation/",
+        "careersUrl": "https://www.mdc.edu/computercrimeinvestigation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Digital Forensic Analyst",
+          "Cyber Threat Investigator",
+          "Security Analyst",
+          "Computer Forensic Examiners"
+        ]
+      },
+      {
+        "id": "cybersecurity-analyst",
+        "name": "Cybersecurity Analyst",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cybersecurity-analyst",
+        "careersUrl": "https://www.mdc.edu/cybersecurity-analyst/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cybersecurity Analyst"
+        ]
+      },
+      {
+        "id": "cybersecuritybs",
+        "name": "Cybersecurity Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/cybersecuritybs/",
+        "careersUrl": "https://www.mdc.edu/cybersecuritybs/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cybersecurity Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "healthinformatics",
+        "name": "Healthcare Informatics Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthinformatics/",
+        "careersUrl": "https://www.mdc.edu/healthinformatics/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Physician’s offices",
+          "Government",
+          "Hospitals",
+          "Nursing and residential care facilities"
+        ]
+      },
+      {
+        "id": "businessintelligence",
+        "name": "Business Intelligence Specialist Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessintelligence/",
+        "careersUrl": "https://www.mdc.edu/businessintelligence/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Development Associate",
+          "Business Intelligence Specialist",
+          "Business Systems Analyst"
+        ]
+      },
+      {
+        "id": "graphicdesignspecialist",
+        "name": "Graphic Design Support - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/graphicdesignspecialist/",
+        "careersUrl": "https://www.mdc.edu/graphicdesignspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Desktop Publisher",
+          "Graphic Design Assistant",
+          "Commercial And Industrial Design Assistant"
+        ]
+      },
+      {
+        "id": "buildingconstructionspecialist",
+        "name": "Building Construction Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/buildingconstructionspecialist/",
+        "careersUrl": "https://www.mdc.edu/buildingconstructionspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Construction laborer",
+          "Helper - Painter, Paperhanger, Platere And Stucco Mason",
+          "Helper - Pipelayer, Plumber, Pipelifter And Steamfitter",
+          "Helper - Installation, Maintenance, And Repair Worker"
+        ]
+      },
+      {
+        "id": "managementspecialist",
+        "name": "Managementspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/managementspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Managementspecialist"
+        ]
+      },
+      {
+        "id": "hrspecialist",
+        "name": "Hrspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/hrspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Hrspecialist"
+        ]
+      },
+      {
+        "id": "businessspecialistmarketing",
+        "name": "Businessspecialist Marketing",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessspecialistmarketing",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Businessspecialist Marketing"
+        ]
+      },
+      {
+        "id": "smallbusinessspecialist",
+        "name": "Smallbusinessspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/smallbusinessspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Smallbusinessspecialist"
+        ]
+      },
+      {
+        "id": "digitalmarketing",
+        "name": "Digital Marketing Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/digitalmarketing/",
+        "careersUrl": "https://www.mdc.edu/digitalmarketing/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Advertising And Promotions Managers",
+          "Marketing Managers",
+          "Marketing Research Analyst",
+          "Marketing Specialists"
+        ]
+      },
+      {
+        "id": "engineeringtechnology",
+        "name": "Engineering Technology Support Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/engineeringtechnology/",
+        "careersUrl": "https://www.mdc.edu/engineeringtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Engineering Support Specialist",
+          "Engineering Specialist"
+        ]
+      },
+      {
+        "id": "foodbeveragespecialist",
+        "name": "Foodbeveragespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/foodbeveragespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Foodbeveragespecialist"
+        ]
+      },
+      {
+        "id": "healthcareservices",
+        "name": "Health Science - Health Care Service Specialist - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthcareservices",
+        "careersUrl": "https://www.mdc.edu/healthcareservices/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Health Science - Health Care Service Specialist - College Credit Certificate"
+        ]
+      },
+      {
+        "id": "horticulturespecialist",
+        "name": "Horticulturespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/horticulturespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Horticulturespecialist"
+        ]
+      },
+      {
+        "id": "transportationlogisticsspecialist",
+        "name": "Transportationlogisticsspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/transportationlogisticsspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Transportationlogisticsspecialist"
+        ]
+      },
+      {
+        "id": "rapidprototyping",
+        "name": "Rapid Prototyping Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/rapidprototyping/",
+        "careersUrl": "https://www.mdc.edu/rapidprototyping/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Rapid Prototyper",
+          "3D Modeler/Designer"
+        ]
+      },
+      {
+        "id": "roomsdivisionspecialist",
+        "name": "Roomsdivisionspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/roomsdivisionspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Roomsdivisionspecialist"
+        ]
+      },
+      {
+        "id": "solarenergysystemsspecialist",
+        "name": "Solar Energy Systems Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/solarenergysystemsspecialist/",
+        "careersUrl": "https://www.mdc.edu/solarenergysystemsspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Solar Photovoltaic (PV) Installer",
+          "Solar System Installer",
+          "Solar Technician",
+          "Solar Energy Designer",
+          "Field Electric Technician",
+          "Solar Installation Coordinator",
+          "Tesla Energy Field Operations Team"
+        ]
+      },
+      {
+        "id": "taxspecialist",
+        "name": "Taxspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/taxspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Taxspecialist"
+        ]
+      },
+      {
+        "id": "computerinformationtechnology",
+        "name": "Computer Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
+        "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer And Information Systems Manager",
+          "Computer Network Architect",
+          "Database Administrator",
+          "Computer Support System",
+          "Computer Operator",
+          "Software Developer"
+        ]
+      },
+      {
+        "id": "informationsystemsnetworking",
+        "name": "Information Systems Technology Networking Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/informationsystemsnetworking/",
+        "careersUrl": "https://www.mdc.edu/informationsystemsnetworking/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Networking Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "itsupport",
+        "name": "Information Technology Support College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/itsupport/",
+        "careersUrl": "https://www.mdc.edu/itsupport/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer User Support Specialist",
+          "Computer Operator"
+        ]
+      },
+      {
+        "id": "homelandsecurity",
+        "name": "Homeland Security - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/homelandsecurity/",
+        "careersUrl": "https://www.mdc.edu/homelandsecurity/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Emergency Management Director",
+          "Security Management Specialist",
+          "Criminal Investigator And Agent",
+          "Immigration And Custom Inspector",
+          "Intelligence Analyst"
+        ]
+      },
+      {
+        "id": "healthinformation",
+        "name": "Health Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/healthinformation/",
+        "careersUrl": "https://www.mdc.edu/healthinformation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Health Information Technician",
+          "Medical Coder",
+          "Medical Biller",
+          "Documentation Specialist"
+        ]
+      },
+      {
+        "id": "gis",
+        "name": "Geographic Information Systems College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/gis/",
+        "careersUrl": "https://www.mdc.edu/gis/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Geographic Information Systems College Credit Certificate"
+        ]
+      },
+      {
+        "id": "privatesecurity",
+        "name": "Private Security Officer Career Technical Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/privatesecurity/",
+        "careersUrl": "https://www.mdc.edu/privatesecurity/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Security",
+          "Security Officer",
+          "Loss Prevention Agent",
+          "Body Guard"
+        ]
       }
     ],
     "field": "Criminal Justice"
@@ -5670,6 +7983,345 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "Cybersecurity Analyst"
+        ]
+      },
+      {
+        "id": "computercrimeinvestigation",
+        "name": "Computer Crime Investigation Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computercrimeinvestigation/",
+        "careersUrl": "https://www.mdc.edu/computercrimeinvestigation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Digital Forensic Analyst",
+          "Cyber Threat Investigator",
+          "Security Analyst",
+          "Computer Forensic Examiners"
+        ]
+      },
+      {
+        "id": "cybersecuritybs",
+        "name": "Cybersecurity Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/cybersecuritybs/",
+        "careersUrl": "https://www.mdc.edu/cybersecuritybs/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cybersecurity Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "healthinformatics",
+        "name": "Healthcare Informatics Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthinformatics/",
+        "careersUrl": "https://www.mdc.edu/healthinformatics/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Physician’s offices",
+          "Government",
+          "Hospitals",
+          "Nursing and residential care facilities"
+        ]
+      },
+      {
+        "id": "businessintelligence",
+        "name": "Business Intelligence Specialist Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessintelligence/",
+        "careersUrl": "https://www.mdc.edu/businessintelligence/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Development Associate",
+          "Business Intelligence Specialist",
+          "Business Systems Analyst"
+        ]
+      },
+      {
+        "id": "graphicdesignspecialist",
+        "name": "Graphic Design Support - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/graphicdesignspecialist/",
+        "careersUrl": "https://www.mdc.edu/graphicdesignspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Desktop Publisher",
+          "Graphic Design Assistant",
+          "Commercial And Industrial Design Assistant"
+        ]
+      },
+      {
+        "id": "buildingconstructionspecialist",
+        "name": "Building Construction Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/buildingconstructionspecialist/",
+        "careersUrl": "https://www.mdc.edu/buildingconstructionspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Construction laborer",
+          "Helper - Painter, Paperhanger, Platere And Stucco Mason",
+          "Helper - Pipelayer, Plumber, Pipelifter And Steamfitter",
+          "Helper - Installation, Maintenance, And Repair Worker"
+        ]
+      },
+      {
+        "id": "managementspecialist",
+        "name": "Managementspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/managementspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Managementspecialist"
+        ]
+      },
+      {
+        "id": "hrspecialist",
+        "name": "Hrspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/hrspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Hrspecialist"
+        ]
+      },
+      {
+        "id": "businessspecialistmarketing",
+        "name": "Businessspecialist Marketing",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessspecialistmarketing",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Businessspecialist Marketing"
+        ]
+      },
+      {
+        "id": "smallbusinessspecialist",
+        "name": "Smallbusinessspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/smallbusinessspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Smallbusinessspecialist"
+        ]
+      },
+      {
+        "id": "digitalmarketing",
+        "name": "Digital Marketing Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/digitalmarketing/",
+        "careersUrl": "https://www.mdc.edu/digitalmarketing/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Advertising And Promotions Managers",
+          "Marketing Managers",
+          "Marketing Research Analyst",
+          "Marketing Specialists"
+        ]
+      },
+      {
+        "id": "engineeringtechnology",
+        "name": "Engineering Technology Support Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/engineeringtechnology/",
+        "careersUrl": "https://www.mdc.edu/engineeringtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Engineering Support Specialist",
+          "Engineering Specialist"
+        ]
+      },
+      {
+        "id": "foodbeveragespecialist",
+        "name": "Foodbeveragespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/foodbeveragespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Foodbeveragespecialist"
+        ]
+      },
+      {
+        "id": "healthcareservices",
+        "name": "Health Science - Health Care Service Specialist - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthcareservices",
+        "careersUrl": "https://www.mdc.edu/healthcareservices/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Health Science - Health Care Service Specialist - College Credit Certificate"
+        ]
+      },
+      {
+        "id": "horticulturespecialist",
+        "name": "Horticulturespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/horticulturespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Horticulturespecialist"
+        ]
+      },
+      {
+        "id": "transportationlogisticsspecialist",
+        "name": "Transportationlogisticsspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/transportationlogisticsspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Transportationlogisticsspecialist"
+        ]
+      },
+      {
+        "id": "rapidprototyping",
+        "name": "Rapid Prototyping Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/rapidprototyping/",
+        "careersUrl": "https://www.mdc.edu/rapidprototyping/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Rapid Prototyper",
+          "3D Modeler/Designer"
+        ]
+      },
+      {
+        "id": "roomsdivisionspecialist",
+        "name": "Roomsdivisionspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/roomsdivisionspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Roomsdivisionspecialist"
+        ]
+      },
+      {
+        "id": "solarenergysystemsspecialist",
+        "name": "Solar Energy Systems Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/solarenergysystemsspecialist/",
+        "careersUrl": "https://www.mdc.edu/solarenergysystemsspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Solar Photovoltaic (PV) Installer",
+          "Solar System Installer",
+          "Solar Technician",
+          "Solar Energy Designer",
+          "Field Electric Technician",
+          "Solar Installation Coordinator",
+          "Tesla Energy Field Operations Team"
+        ]
+      },
+      {
+        "id": "taxspecialist",
+        "name": "Taxspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/taxspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Taxspecialist"
+        ]
+      },
+      {
+        "id": "computerinformationtechnology",
+        "name": "Computer Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
+        "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer And Information Systems Manager",
+          "Computer Network Architect",
+          "Database Administrator",
+          "Computer Support System",
+          "Computer Operator",
+          "Software Developer"
+        ]
+      },
+      {
+        "id": "informationsystemsnetworking",
+        "name": "Information Systems Technology Networking Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/informationsystemsnetworking/",
+        "careersUrl": "https://www.mdc.edu/informationsystemsnetworking/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Networking Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "itsupport",
+        "name": "Information Technology Support College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/itsupport/",
+        "careersUrl": "https://www.mdc.edu/itsupport/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer User Support Specialist",
+          "Computer Operator"
+        ]
+      },
+      {
+        "id": "homelandsecurity",
+        "name": "Homeland Security - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/homelandsecurity/",
+        "careersUrl": "https://www.mdc.edu/homelandsecurity/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Emergency Management Director",
+          "Security Management Specialist",
+          "Criminal Investigator And Agent",
+          "Immigration And Custom Inspector",
+          "Intelligence Analyst"
+        ]
+      },
+      {
+        "id": "healthinformation",
+        "name": "Health Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/healthinformation/",
+        "careersUrl": "https://www.mdc.edu/healthinformation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Health Information Technician",
+          "Medical Coder",
+          "Medical Biller",
+          "Documentation Specialist"
+        ]
+      },
+      {
+        "id": "gis",
+        "name": "Geographic Information Systems College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/gis/",
+        "careersUrl": "https://www.mdc.edu/gis/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Geographic Information Systems College Credit Certificate"
+        ]
+      },
+      {
+        "id": "privatesecurity",
+        "name": "Private Security Officer Career Technical Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/privatesecurity/",
+        "careersUrl": "https://www.mdc.edu/privatesecurity/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Security",
+          "Security Officer",
+          "Loss Prevention Agent",
+          "Body Guard"
         ]
       }
     ],
@@ -13477,5 +16129,2460 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       }
     ],
     "field": "Other"
+  },
+  {
+    "career": "Software Engineer",
+    "programs": [
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "softwareengineeringcpp",
+        "name": "Software Engineering - Certificate Of Professional Preparation",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/softwareengineeringcpp",
+        "careersUrl": "https://www.mdc.edu/softwareengineeringcpp/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Software Engineering - Certificate Of Professional Preparation"
+        ]
+      },
+      {
+        "id": "computerinformationtechnology",
+        "name": "Computer Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
+        "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer And Information Systems Manager",
+          "Computer Network Architect",
+          "Database Administrator",
+          "Computer Support System",
+          "Computer Operator",
+          "Software Developer"
+        ]
+      },
+      {
+        "id": "mobileappdeveloper",
+        "name": "Mobileappdeveloper",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/mobileappdeveloper",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Mobileappdeveloper"
+        ]
+      },
+      {
+        "id": "businessapplications",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessapplications",
+        "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Application programmers",
+          "Programmer specialists",
+          "Computer programmers",
+          "Programmer Analysts"
+        ]
+      },
+      {
+        "id": "internetofthings",
+        "name": "Computer Programming And Analysis - Internet Of Things (iot) Applications Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/internetofthings/",
+        "careersUrl": "https://www.mdc.edu/internetofthings/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "IoT Programmer IoT Developer IoT Consultant Product Application Assistant"
+        ]
+      },
+      {
+        "id": "computerprogramming",
+        "name": "Computer Programming",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/computerprogramming",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Programming"
+        ]
+      },
+      {
+        "id": "broadcast",
+        "name": "Radio And Television Broadcast Programming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/broadcast/",
+        "careersUrl": "https://www.mdc.edu/broadcast/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Camera operators",
+          "Broadcast technicians",
+          "Video editors",
+          "Sound engineers",
+          "Writers",
+          "Producers",
+          "Directors"
+        ]
+      }
+    ],
+    "field": "Technology"
+  },
+  {
+    "career": "Computer Programmer",
+    "programs": [
+      {
+        "id": "businessapplications",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessapplications",
+        "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Application programmers",
+          "Programmer specialists",
+          "Computer programmers",
+          "Programmer Analysts"
+        ]
+      },
+      {
+        "id": "computerinformationtechnology",
+        "name": "Computer Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
+        "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer And Information Systems Manager",
+          "Computer Network Architect",
+          "Database Administrator",
+          "Computer Support System",
+          "Computer Operator",
+          "Software Developer"
+        ]
+      },
+      {
+        "id": "animation",
+        "name": "Computer Arts Animation Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/animation/",
+        "careersUrl": "https://www.mdc.edu/animation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "3D Modeling",
+          "Animation",
+          "3D Graphic Design And Illustration",
+          "Animation Dynamics"
+        ]
+      },
+      {
+        "id": "computerscience",
+        "name": "Computer Science",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/computerscience",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Science"
+        ]
+      },
+      {
+        "id": "computerengineering",
+        "name": "Computer Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/computerengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Engineering"
+        ]
+      },
+      {
+        "id": "caddesigner",
+        "name": "Computer Aided Design Operator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/caddesigner/",
+        "careersUrl": "https://www.mdc.edu/caddesigner/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Aided Design Operator",
+          "Architectural Drafter",
+          "Civil Drafter",
+          "Electronics Drafter"
+        ]
+      },
+      {
+        "id": "computercrimeinvestigation",
+        "name": "Computer Crime Investigation Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computercrimeinvestigation/",
+        "careersUrl": "https://www.mdc.edu/computercrimeinvestigation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Digital Forensic Analyst",
+          "Cyber Threat Investigator",
+          "Security Analyst",
+          "Computer Forensic Examiners"
+        ]
+      },
+      {
+        "id": "computerengineeringas",
+        "name": "Computer Engineeringas",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerengineeringas",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Engineeringas"
+        ]
+      },
+      {
+        "id": "internetofthings",
+        "name": "Computer Programming And Analysis - Internet Of Things (iot) Applications Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/internetofthings/",
+        "careersUrl": "https://www.mdc.edu/internetofthings/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "IoT Programmer IoT Developer IoT Consultant Product Application Assistant"
+        ]
+      },
+      {
+        "id": "pcrepair",
+        "name": "Microcomputer Repairer/installer College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/pcrepair/",
+        "careersUrl": "https://www.mdc.edu/pcrepair/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cisco Network Administrator",
+          "Computer Repair",
+          "Microsoft Database Administrator",
+          "Oracle Database Administrator"
+        ]
+      },
+      {
+        "id": "cadassistant",
+        "name": "Computer Aided Design Assistant College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cadassistant/",
+        "careersUrl": "https://www.mdc.edu/cadassistant/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Aided Design Assistant College Credit Certificate"
+        ]
+      },
+      {
+        "id": "computerprogramming",
+        "name": "Computer Programming",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/computerprogramming",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Programming"
+        ]
+      },
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "mobileappdeveloper",
+        "name": "Mobileappdeveloper",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/mobileappdeveloper",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Mobileappdeveloper"
+        ]
+      },
+      {
+        "id": "softwareengineeringcpp",
+        "name": "Software Engineering - Certificate Of Professional Preparation",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/softwareengineeringcpp",
+        "careersUrl": "https://www.mdc.edu/softwareengineeringcpp/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Software Engineering - Certificate Of Professional Preparation"
+        ]
+      },
+      {
+        "id": "electronicsengineeringbs",
+        "name": "Electronics Engineering Technology Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/electronicsengineeringbs/",
+        "careersUrl": "https://www.mdc.edu/electronicsengineeringbs/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Engineering Technologists",
+          "Project managers",
+          "Field Engineering Technicians",
+          "Electrical Engineering Technician",
+          "Electronics Engineering Technician"
+        ]
+      },
+      {
+        "id": "architecturalengineering",
+        "name": "Architectural Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architecturalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Engineering"
+        ]
+      },
+      {
+        "id": "engineeringscience",
+        "name": "Engineering Science",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/engineeringscience",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Engineering Science"
+        ]
+      },
+      {
+        "id": "chemicalengineering",
+        "name": "Chemical Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/chemicalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Chemical Engineering"
+        ]
+      },
+      {
+        "id": "civilengineering",
+        "name": "Civil Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/civilengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Civil Engineering"
+        ]
+      },
+      {
+        "id": "electricalengineering",
+        "name": "Electrical Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/electricalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Electrical Engineering"
+        ]
+      },
+      {
+        "id": "industrialengineering",
+        "name": "Industrial Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/industrialengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Industrial Engineering"
+        ]
+      },
+      {
+        "id": "mechanicalengineering",
+        "name": "Mechanical Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/mechanicalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Mechanical Engineering"
+        ]
+      },
+      {
+        "id": "oceanengineering",
+        "name": "Ocean Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/oceanengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Ocean Engineering"
+        ]
+      },
+      {
+        "id": "biomedicalengineering",
+        "name": "Biomedical Engineering",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/biomedicalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Biomedical Engineering"
+        ]
+      },
+      {
+        "id": "biochemicalengineering",
+        "name": "Biochemical Engineering",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/biochemicalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Biochemical Engineering"
+        ]
+      },
+      {
+        "id": "civilengineeringas",
+        "name": "Civil Engineeringas",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/civilengineeringas",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Civil Engineeringas"
+        ]
+      },
+      {
+        "id": "electronicsengineeringtechnology",
+        "name": "Electronics Engineering Technology",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/electronicsengineeringtechnology",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Electronics Engineering Technology"
+        ]
+      },
+      {
+        "id": "engineeringtechnology",
+        "name": "Engineering Technology Support Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/engineeringtechnology/",
+        "careersUrl": "https://www.mdc.edu/engineeringtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Engineering Support Specialist",
+          "Engineering Specialist"
+        ]
+      },
+      {
+        "id": "biochemicalengineeringcertificate",
+        "name": "Biochemical Engineeringcertificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/biochemicalengineeringcertificate",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Biochemical Engineeringcertificate"
+        ]
+      },
+      {
+        "id": "internetofthingscertificate",
+        "name": "Internet Of Things (iot) Applications College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/internetofthingscertificate/",
+        "careersUrl": "https://www.mdc.edu/internetofthingscertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "IoT Programmer IoT Developer IoT Consultant Product Application Assistant"
+        ]
+      },
+      {
+        "id": "accountingapplications",
+        "name": "Accountingapplications",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/accountingapplications",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Accountingapplications"
+        ]
+      },
+      {
+        "id": "broadcast",
+        "name": "Radio And Television Broadcast Programming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/broadcast/",
+        "careersUrl": "https://www.mdc.edu/broadcast/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Camera operators",
+          "Broadcast technicians",
+          "Video editors",
+          "Sound engineers",
+          "Writers",
+          "Producers",
+          "Directors"
+        ]
+      }
+    ],
+    "field": "Technology"
+  },
+  {
+    "career": "Application Developer",
+    "programs": [
+      {
+        "id": "businessapplications",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessapplications",
+        "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Application programmers",
+          "Programmer specialists",
+          "Computer programmers",
+          "Programmer Analysts"
+        ]
+      },
+      {
+        "id": "internetofthings",
+        "name": "Computer Programming And Analysis - Internet Of Things (iot) Applications Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/internetofthings/",
+        "careersUrl": "https://www.mdc.edu/internetofthings/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "IoT Programmer IoT Developer IoT Consultant Product Application Assistant"
+        ]
+      },
+      {
+        "id": "mobileappdeveloper",
+        "name": "Mobileappdeveloper",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/mobileappdeveloper",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Mobileappdeveloper"
+        ]
+      },
+      {
+        "id": "internetofthingscertificate",
+        "name": "Internet Of Things (iot) Applications College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/internetofthingscertificate/",
+        "careersUrl": "https://www.mdc.edu/internetofthingscertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "IoT Programmer IoT Developer IoT Consultant Product Application Assistant"
+        ]
+      },
+      {
+        "id": "accountingapplications",
+        "name": "Accountingapplications",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/accountingapplications",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Accountingapplications"
+        ]
+      },
+      {
+        "id": "computerinformationtechnology",
+        "name": "Computer Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
+        "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer And Information Systems Manager",
+          "Computer Network Architect",
+          "Database Administrator",
+          "Computer Support System",
+          "Computer Operator",
+          "Software Developer"
+        ]
+      },
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "softwareengineeringcpp",
+        "name": "Software Engineering - Certificate Of Professional Preparation",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/softwareengineeringcpp",
+        "careersUrl": "https://www.mdc.edu/softwareengineeringcpp/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Software Engineering - Certificate Of Professional Preparation"
+        ]
+      },
+      {
+        "id": "electronicsengineeringbs",
+        "name": "Electronics Engineering Technology Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/electronicsengineeringbs/",
+        "careersUrl": "https://www.mdc.edu/electronicsengineeringbs/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Engineering Technologists",
+          "Project managers",
+          "Field Engineering Technicians",
+          "Electrical Engineering Technician",
+          "Electronics Engineering Technician"
+        ]
+      },
+      {
+        "id": "architecturalengineering",
+        "name": "Architectural Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architecturalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Engineering"
+        ]
+      },
+      {
+        "id": "engineeringscience",
+        "name": "Engineering Science",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/engineeringscience",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Engineering Science"
+        ]
+      },
+      {
+        "id": "chemicalengineering",
+        "name": "Chemical Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/chemicalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Chemical Engineering"
+        ]
+      },
+      {
+        "id": "civilengineering",
+        "name": "Civil Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/civilengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Civil Engineering"
+        ]
+      },
+      {
+        "id": "computerengineering",
+        "name": "Computer Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/computerengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Engineering"
+        ]
+      },
+      {
+        "id": "electricalengineering",
+        "name": "Electrical Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/electricalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Electrical Engineering"
+        ]
+      },
+      {
+        "id": "industrialengineering",
+        "name": "Industrial Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/industrialengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Industrial Engineering"
+        ]
+      },
+      {
+        "id": "mechanicalengineering",
+        "name": "Mechanical Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/mechanicalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Mechanical Engineering"
+        ]
+      },
+      {
+        "id": "oceanengineering",
+        "name": "Ocean Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/oceanengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Ocean Engineering"
+        ]
+      },
+      {
+        "id": "biomedicalengineering",
+        "name": "Biomedical Engineering",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/biomedicalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Biomedical Engineering"
+        ]
+      },
+      {
+        "id": "biochemicalengineering",
+        "name": "Biochemical Engineering",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/biochemicalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Biochemical Engineering"
+        ]
+      },
+      {
+        "id": "civilengineeringas",
+        "name": "Civil Engineeringas",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/civilengineeringas",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Civil Engineeringas"
+        ]
+      },
+      {
+        "id": "computerengineeringas",
+        "name": "Computer Engineeringas",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerengineeringas",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Engineeringas"
+        ]
+      },
+      {
+        "id": "electronicsengineeringtechnology",
+        "name": "Electronics Engineering Technology",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/electronicsengineeringtechnology",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Electronics Engineering Technology"
+        ]
+      },
+      {
+        "id": "engineeringtechnology",
+        "name": "Engineering Technology Support Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/engineeringtechnology/",
+        "careersUrl": "https://www.mdc.edu/engineeringtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Engineering Support Specialist",
+          "Engineering Specialist"
+        ]
+      },
+      {
+        "id": "biochemicalengineeringcertificate",
+        "name": "Biochemical Engineeringcertificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/biochemicalengineeringcertificate",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Biochemical Engineeringcertificate"
+        ]
+      },
+      {
+        "id": "animation",
+        "name": "Computer Arts Animation Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/animation/",
+        "careersUrl": "https://www.mdc.edu/animation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "3D Modeling",
+          "Animation",
+          "3D Graphic Design And Illustration",
+          "Animation Dynamics"
+        ]
+      },
+      {
+        "id": "computerscience",
+        "name": "Computer Science",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/computerscience",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Science"
+        ]
+      },
+      {
+        "id": "caddesigner",
+        "name": "Computer Aided Design Operator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/caddesigner/",
+        "careersUrl": "https://www.mdc.edu/caddesigner/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Aided Design Operator",
+          "Architectural Drafter",
+          "Civil Drafter",
+          "Electronics Drafter"
+        ]
+      },
+      {
+        "id": "computercrimeinvestigation",
+        "name": "Computer Crime Investigation Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computercrimeinvestigation/",
+        "careersUrl": "https://www.mdc.edu/computercrimeinvestigation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Digital Forensic Analyst",
+          "Cyber Threat Investigator",
+          "Security Analyst",
+          "Computer Forensic Examiners"
+        ]
+      },
+      {
+        "id": "pcrepair",
+        "name": "Microcomputer Repairer/installer College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/pcrepair/",
+        "careersUrl": "https://www.mdc.edu/pcrepair/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cisco Network Administrator",
+          "Computer Repair",
+          "Microsoft Database Administrator",
+          "Oracle Database Administrator"
+        ]
+      },
+      {
+        "id": "cadassistant",
+        "name": "Computer Aided Design Assistant College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cadassistant/",
+        "careersUrl": "https://www.mdc.edu/cadassistant/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Aided Design Assistant College Credit Certificate"
+        ]
+      },
+      {
+        "id": "computerprogramming",
+        "name": "Computer Programming",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/computerprogramming",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Programming"
+        ]
+      },
+      {
+        "id": "broadcast",
+        "name": "Radio And Television Broadcast Programming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/broadcast/",
+        "careersUrl": "https://www.mdc.edu/broadcast/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Camera operators",
+          "Broadcast technicians",
+          "Video editors",
+          "Sound engineers",
+          "Writers",
+          "Producers",
+          "Directors"
+        ]
+      }
+    ],
+    "field": "Technology"
+  },
+  {
+    "career": "Network Administrator",
+    "programs": [
+      {
+        "id": "oracledbacertificate",
+        "name": "Oracle Certified Database Administrator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/oracledbacertificate/",
+        "careersUrl": "https://www.mdc.edu/oracledbacertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Database Administrator",
+          "Computer Network Architect"
+        ]
+      },
+      {
+        "id": "earlychildhoodadministrator",
+        "name": "Early Childhood Education - Administrators Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/earlychildhoodadministrator/",
+        "careersUrl": "https://www.mdc.edu/earlychildhoodadministrator/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Education Administrator",
+          "Instructional Coordinator"
+        ]
+      },
+      {
+        "id": "earlychildhoodadmincertificate",
+        "name": "Early Childhood Administrator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/earlychildhoodadmincertificate/",
+        "careersUrl": "https://www.mdc.edu/earlychildhoodadmincertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Education Administrator",
+          "Instructional Coordinator"
+        ]
+      },
+      {
+        "id": "informationsystemsnetworking",
+        "name": "Information Systems Technology Networking Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/informationsystemsnetworking/",
+        "careersUrl": "https://www.mdc.edu/informationsystemsnetworking/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Networking Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "cloudcomputing",
+        "name": "Networking Services Technology Enterprise Cloud Computing Concentration Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/cloudcomputing/",
+        "careersUrl": "https://www.mdc.edu/cloudcomputing/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cloud Solutions Architect Cloud Computing Analyst Cloud (network) Engineer",
+          "Cloud Administrator Cloud Application Architect Computer Systems Analyst"
+        ]
+      },
+      {
+        "id": "networkinfrastructure",
+        "name": "Networking Services Technology - Network Infrastructure Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/networkinfrastructure/",
+        "careersUrl": "https://www.mdc.edu/networkinfrastructure/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Networking Services Technology - Network Infrastructure Associate In Science"
+        ]
+      },
+      {
+        "id": "cisco",
+        "name": "Cisco Certified Network Associate (ccna) College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cisco/",
+        "careersUrl": "https://www.mdc.edu/cisco/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cisco Network Administrator",
+          "Computer Repair",
+          "Microsoft Database Administrator",
+          "Oracle Database Administrator"
+        ]
+      },
+      {
+        "id": "networksystems",
+        "name": "Network Systems",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/networksystems",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Network Systems"
+        ]
+      },
+      {
+        "id": "networkingcpp",
+        "name": "Networking - Certificate Of Professional Preparation",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/networkingcpp",
+        "careersUrl": "https://www.mdc.edu/networkingcpp/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Networking - Certificate Of Professional Preparation"
+        ]
+      },
+      {
+        "id": "businessintelligence",
+        "name": "Business Intelligence Specialist Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessintelligence/",
+        "careersUrl": "https://www.mdc.edu/businessintelligence/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Development Associate",
+          "Business Intelligence Specialist",
+          "Business Systems Analyst"
+        ]
+      },
+      {
+        "id": "businessspecialistmarketing",
+        "name": "Businessspecialist Marketing",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessspecialistmarketing",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Businessspecialist Marketing"
+        ]
+      },
+      {
+        "id": "smallbusinessspecialist",
+        "name": "Smallbusinessspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/smallbusinessspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Smallbusinessspecialist"
+        ]
+      },
+      {
+        "id": "healthinformatics",
+        "name": "Healthcare Informatics Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthinformatics/",
+        "careersUrl": "https://www.mdc.edu/healthinformatics/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Physician’s offices",
+          "Government",
+          "Hospitals",
+          "Nursing and residential care facilities"
+        ]
+      },
+      {
+        "id": "graphicdesignspecialist",
+        "name": "Graphic Design Support - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/graphicdesignspecialist/",
+        "careersUrl": "https://www.mdc.edu/graphicdesignspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Desktop Publisher",
+          "Graphic Design Assistant",
+          "Commercial And Industrial Design Assistant"
+        ]
+      },
+      {
+        "id": "buildingconstructionspecialist",
+        "name": "Building Construction Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/buildingconstructionspecialist/",
+        "careersUrl": "https://www.mdc.edu/buildingconstructionspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Construction laborer",
+          "Helper - Painter, Paperhanger, Platere And Stucco Mason",
+          "Helper - Pipelayer, Plumber, Pipelifter And Steamfitter",
+          "Helper - Installation, Maintenance, And Repair Worker"
+        ]
+      },
+      {
+        "id": "managementspecialist",
+        "name": "Managementspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/managementspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Managementspecialist"
+        ]
+      },
+      {
+        "id": "hrspecialist",
+        "name": "Hrspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/hrspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Hrspecialist"
+        ]
+      },
+      {
+        "id": "digitalmarketing",
+        "name": "Digital Marketing Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/digitalmarketing/",
+        "careersUrl": "https://www.mdc.edu/digitalmarketing/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Advertising And Promotions Managers",
+          "Marketing Managers",
+          "Marketing Research Analyst",
+          "Marketing Specialists"
+        ]
+      },
+      {
+        "id": "engineeringtechnology",
+        "name": "Engineering Technology Support Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/engineeringtechnology/",
+        "careersUrl": "https://www.mdc.edu/engineeringtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Engineering Support Specialist",
+          "Engineering Specialist"
+        ]
+      },
+      {
+        "id": "foodbeveragespecialist",
+        "name": "Foodbeveragespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/foodbeveragespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Foodbeveragespecialist"
+        ]
+      },
+      {
+        "id": "healthcareservices",
+        "name": "Health Science - Health Care Service Specialist - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthcareservices",
+        "careersUrl": "https://www.mdc.edu/healthcareservices/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Health Science - Health Care Service Specialist - College Credit Certificate"
+        ]
+      },
+      {
+        "id": "horticulturespecialist",
+        "name": "Horticulturespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/horticulturespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Horticulturespecialist"
+        ]
+      },
+      {
+        "id": "transportationlogisticsspecialist",
+        "name": "Transportationlogisticsspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/transportationlogisticsspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Transportationlogisticsspecialist"
+        ]
+      },
+      {
+        "id": "rapidprototyping",
+        "name": "Rapid Prototyping Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/rapidprototyping/",
+        "careersUrl": "https://www.mdc.edu/rapidprototyping/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Rapid Prototyper",
+          "3D Modeler/Designer"
+        ]
+      },
+      {
+        "id": "roomsdivisionspecialist",
+        "name": "Roomsdivisionspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/roomsdivisionspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Roomsdivisionspecialist"
+        ]
+      },
+      {
+        "id": "solarenergysystemsspecialist",
+        "name": "Solar Energy Systems Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/solarenergysystemsspecialist/",
+        "careersUrl": "https://www.mdc.edu/solarenergysystemsspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Solar Photovoltaic (PV) Installer",
+          "Solar System Installer",
+          "Solar Technician",
+          "Solar Energy Designer",
+          "Field Electric Technician",
+          "Solar Installation Coordinator",
+          "Tesla Energy Field Operations Team"
+        ]
+      },
+      {
+        "id": "taxspecialist",
+        "name": "Taxspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/taxspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Taxspecialist"
+        ]
+      },
+      {
+        "id": "computerinformationtechnology",
+        "name": "Computer Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
+        "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer And Information Systems Manager",
+          "Computer Network Architect",
+          "Database Administrator",
+          "Computer Support System",
+          "Computer Operator",
+          "Software Developer"
+        ]
+      },
+      {
+        "id": "architectureaa",
+        "name": "Architecture Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architectureaa/",
+        "careersUrl": "https://www.mdc.edu/architectureaa/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architect",
+          "Landscape Architect",
+          "Architecture Drafter",
+          "Urban And Regional Planner",
+          "Architecture Teacher, Postsecondary"
+        ]
+      },
+      {
+        "id": "architecturaldesign",
+        "name": "Architectural Design And Construction Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/architecturaldesign/",
+        "careersUrl": "https://www.mdc.edu/architecturaldesign/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Drafter",
+          "Civil Engineer",
+          "Construction Manager",
+          "Landscape Architect"
+        ]
+      },
+      {
+        "id": "animation",
+        "name": "Computer Arts Animation Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/animation/",
+        "careersUrl": "https://www.mdc.edu/animation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "3D Modeling",
+          "Animation",
+          "3D Graphic Design And Illustration",
+          "Animation Dynamics"
+        ]
+      },
+      {
+        "id": "computerscience",
+        "name": "Computer Science",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/computerscience",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Science"
+        ]
+      },
+      {
+        "id": "architecturalengineering",
+        "name": "Architectural Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architecturalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Engineering"
+        ]
+      },
+      {
+        "id": "computerengineering",
+        "name": "Computer Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/computerengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Engineering"
+        ]
+      },
+      {
+        "id": "caddesigner",
+        "name": "Computer Aided Design Operator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/caddesigner/",
+        "careersUrl": "https://www.mdc.edu/caddesigner/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Aided Design Operator",
+          "Architectural Drafter",
+          "Civil Drafter",
+          "Electronics Drafter"
+        ]
+      },
+      {
+        "id": "computercrimeinvestigation",
+        "name": "Computer Crime Investigation Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computercrimeinvestigation/",
+        "careersUrl": "https://www.mdc.edu/computercrimeinvestigation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Digital Forensic Analyst",
+          "Cyber Threat Investigator",
+          "Security Analyst",
+          "Computer Forensic Examiners"
+        ]
+      },
+      {
+        "id": "computerengineeringas",
+        "name": "Computer Engineeringas",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerengineeringas",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Engineeringas"
+        ]
+      },
+      {
+        "id": "businessapplications",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessapplications",
+        "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Application programmers",
+          "Programmer specialists",
+          "Computer programmers",
+          "Programmer Analysts"
+        ]
+      },
+      {
+        "id": "internetofthings",
+        "name": "Computer Programming And Analysis - Internet Of Things (iot) Applications Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/internetofthings/",
+        "careersUrl": "https://www.mdc.edu/internetofthings/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "IoT Programmer IoT Developer IoT Consultant Product Application Assistant"
+        ]
+      },
+      {
+        "id": "pcrepair",
+        "name": "Microcomputer Repairer/installer College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/pcrepair/",
+        "careersUrl": "https://www.mdc.edu/pcrepair/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cisco Network Administrator",
+          "Computer Repair",
+          "Microsoft Database Administrator",
+          "Oracle Database Administrator"
+        ]
+      },
+      {
+        "id": "cadassistant",
+        "name": "Computer Aided Design Assistant College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cadassistant/",
+        "careersUrl": "https://www.mdc.edu/cadassistant/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Aided Design Assistant College Credit Certificate"
+        ]
+      },
+      {
+        "id": "computerprogramming",
+        "name": "Computer Programming",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/computerprogramming",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Programming"
+        ]
+      },
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "gis",
+        "name": "Geographic Information Systems College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/gis/",
+        "careersUrl": "https://www.mdc.edu/gis/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Geographic Information Systems College Credit Certificate"
+        ]
+      }
+    ],
+    "field": "Technology"
+  },
+  {
+    "career": "Network Specialist",
+    "programs": [
+      {
+        "id": "businessintelligence",
+        "name": "Business Intelligence Specialist Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessintelligence/",
+        "careersUrl": "https://www.mdc.edu/businessintelligence/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Development Associate",
+          "Business Intelligence Specialist",
+          "Business Systems Analyst"
+        ]
+      },
+      {
+        "id": "businessspecialistmarketing",
+        "name": "Businessspecialist Marketing",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessspecialistmarketing",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Businessspecialist Marketing"
+        ]
+      },
+      {
+        "id": "smallbusinessspecialist",
+        "name": "Smallbusinessspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/smallbusinessspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Smallbusinessspecialist"
+        ]
+      },
+      {
+        "id": "informationsystemsnetworking",
+        "name": "Information Systems Technology Networking Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/informationsystemsnetworking/",
+        "careersUrl": "https://www.mdc.edu/informationsystemsnetworking/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Networking Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "healthinformatics",
+        "name": "Healthcare Informatics Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthinformatics/",
+        "careersUrl": "https://www.mdc.edu/healthinformatics/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Physician’s offices",
+          "Government",
+          "Hospitals",
+          "Nursing and residential care facilities"
+        ]
+      },
+      {
+        "id": "graphicdesignspecialist",
+        "name": "Graphic Design Support - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/graphicdesignspecialist/",
+        "careersUrl": "https://www.mdc.edu/graphicdesignspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Desktop Publisher",
+          "Graphic Design Assistant",
+          "Commercial And Industrial Design Assistant"
+        ]
+      },
+      {
+        "id": "buildingconstructionspecialist",
+        "name": "Building Construction Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/buildingconstructionspecialist/",
+        "careersUrl": "https://www.mdc.edu/buildingconstructionspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Construction laborer",
+          "Helper - Painter, Paperhanger, Platere And Stucco Mason",
+          "Helper - Pipelayer, Plumber, Pipelifter And Steamfitter",
+          "Helper - Installation, Maintenance, And Repair Worker"
+        ]
+      },
+      {
+        "id": "managementspecialist",
+        "name": "Managementspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/managementspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Managementspecialist"
+        ]
+      },
+      {
+        "id": "hrspecialist",
+        "name": "Hrspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/hrspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Hrspecialist"
+        ]
+      },
+      {
+        "id": "digitalmarketing",
+        "name": "Digital Marketing Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/digitalmarketing/",
+        "careersUrl": "https://www.mdc.edu/digitalmarketing/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Advertising And Promotions Managers",
+          "Marketing Managers",
+          "Marketing Research Analyst",
+          "Marketing Specialists"
+        ]
+      },
+      {
+        "id": "engineeringtechnology",
+        "name": "Engineering Technology Support Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/engineeringtechnology/",
+        "careersUrl": "https://www.mdc.edu/engineeringtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Engineering Support Specialist",
+          "Engineering Specialist"
+        ]
+      },
+      {
+        "id": "foodbeveragespecialist",
+        "name": "Foodbeveragespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/foodbeveragespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Foodbeveragespecialist"
+        ]
+      },
+      {
+        "id": "healthcareservices",
+        "name": "Health Science - Health Care Service Specialist - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthcareservices",
+        "careersUrl": "https://www.mdc.edu/healthcareservices/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Health Science - Health Care Service Specialist - College Credit Certificate"
+        ]
+      },
+      {
+        "id": "horticulturespecialist",
+        "name": "Horticulturespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/horticulturespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Horticulturespecialist"
+        ]
+      },
+      {
+        "id": "transportationlogisticsspecialist",
+        "name": "Transportationlogisticsspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/transportationlogisticsspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Transportationlogisticsspecialist"
+        ]
+      },
+      {
+        "id": "rapidprototyping",
+        "name": "Rapid Prototyping Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/rapidprototyping/",
+        "careersUrl": "https://www.mdc.edu/rapidprototyping/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Rapid Prototyper",
+          "3D Modeler/Designer"
+        ]
+      },
+      {
+        "id": "roomsdivisionspecialist",
+        "name": "Roomsdivisionspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/roomsdivisionspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Roomsdivisionspecialist"
+        ]
+      },
+      {
+        "id": "solarenergysystemsspecialist",
+        "name": "Solar Energy Systems Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/solarenergysystemsspecialist/",
+        "careersUrl": "https://www.mdc.edu/solarenergysystemsspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Solar Photovoltaic (PV) Installer",
+          "Solar System Installer",
+          "Solar Technician",
+          "Solar Energy Designer",
+          "Field Electric Technician",
+          "Solar Installation Coordinator",
+          "Tesla Energy Field Operations Team"
+        ]
+      },
+      {
+        "id": "taxspecialist",
+        "name": "Taxspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/taxspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Taxspecialist"
+        ]
+      },
+      {
+        "id": "cloudcomputing",
+        "name": "Networking Services Technology Enterprise Cloud Computing Concentration Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/cloudcomputing/",
+        "careersUrl": "https://www.mdc.edu/cloudcomputing/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cloud Solutions Architect Cloud Computing Analyst Cloud (network) Engineer",
+          "Cloud Administrator Cloud Application Architect Computer Systems Analyst"
+        ]
+      },
+      {
+        "id": "networkinfrastructure",
+        "name": "Networking Services Technology - Network Infrastructure Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/networkinfrastructure/",
+        "careersUrl": "https://www.mdc.edu/networkinfrastructure/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Networking Services Technology - Network Infrastructure Associate In Science"
+        ]
+      },
+      {
+        "id": "cisco",
+        "name": "Cisco Certified Network Associate (ccna) College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cisco/",
+        "careersUrl": "https://www.mdc.edu/cisco/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cisco Network Administrator",
+          "Computer Repair",
+          "Microsoft Database Administrator",
+          "Oracle Database Administrator"
+        ]
+      },
+      {
+        "id": "networksystems",
+        "name": "Network Systems",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/networksystems",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Network Systems"
+        ]
+      },
+      {
+        "id": "networkingcpp",
+        "name": "Networking - Certificate Of Professional Preparation",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/networkingcpp",
+        "careersUrl": "https://www.mdc.edu/networkingcpp/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Networking - Certificate Of Professional Preparation"
+        ]
+      },
+      {
+        "id": "oracledbacertificate",
+        "name": "Oracle Certified Database Administrator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/oracledbacertificate/",
+        "careersUrl": "https://www.mdc.edu/oracledbacertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Database Administrator",
+          "Computer Network Architect"
+        ]
+      },
+      {
+        "id": "earlychildhoodadministrator",
+        "name": "Early Childhood Education - Administrators Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/earlychildhoodadministrator/",
+        "careersUrl": "https://www.mdc.edu/earlychildhoodadministrator/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Education Administrator",
+          "Instructional Coordinator"
+        ]
+      },
+      {
+        "id": "earlychildhoodadmincertificate",
+        "name": "Early Childhood Administrator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/earlychildhoodadmincertificate/",
+        "careersUrl": "https://www.mdc.edu/earlychildhoodadmincertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Education Administrator",
+          "Instructional Coordinator"
+        ]
+      },
+      {
+        "id": "computerinformationtechnology",
+        "name": "Computer Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
+        "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer And Information Systems Manager",
+          "Computer Network Architect",
+          "Database Administrator",
+          "Computer Support System",
+          "Computer Operator",
+          "Software Developer"
+        ]
+      },
+      {
+        "id": "architectureaa",
+        "name": "Architecture Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architectureaa/",
+        "careersUrl": "https://www.mdc.edu/architectureaa/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architect",
+          "Landscape Architect",
+          "Architecture Drafter",
+          "Urban And Regional Planner",
+          "Architecture Teacher, Postsecondary"
+        ]
+      },
+      {
+        "id": "architecturaldesign",
+        "name": "Architectural Design And Construction Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/architecturaldesign/",
+        "careersUrl": "https://www.mdc.edu/architecturaldesign/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Drafter",
+          "Civil Engineer",
+          "Construction Manager",
+          "Landscape Architect"
+        ]
+      },
+      {
+        "id": "animation",
+        "name": "Computer Arts Animation Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/animation/",
+        "careersUrl": "https://www.mdc.edu/animation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "3D Modeling",
+          "Animation",
+          "3D Graphic Design And Illustration",
+          "Animation Dynamics"
+        ]
+      },
+      {
+        "id": "computerscience",
+        "name": "Computer Science",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/computerscience",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Science"
+        ]
+      },
+      {
+        "id": "architecturalengineering",
+        "name": "Architectural Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architecturalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Engineering"
+        ]
+      },
+      {
+        "id": "computerengineering",
+        "name": "Computer Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/computerengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Engineering"
+        ]
+      },
+      {
+        "id": "caddesigner",
+        "name": "Computer Aided Design Operator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/caddesigner/",
+        "careersUrl": "https://www.mdc.edu/caddesigner/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Aided Design Operator",
+          "Architectural Drafter",
+          "Civil Drafter",
+          "Electronics Drafter"
+        ]
+      },
+      {
+        "id": "computercrimeinvestigation",
+        "name": "Computer Crime Investigation Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computercrimeinvestigation/",
+        "careersUrl": "https://www.mdc.edu/computercrimeinvestigation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Digital Forensic Analyst",
+          "Cyber Threat Investigator",
+          "Security Analyst",
+          "Computer Forensic Examiners"
+        ]
+      },
+      {
+        "id": "computerengineeringas",
+        "name": "Computer Engineeringas",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerengineeringas",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Engineeringas"
+        ]
+      },
+      {
+        "id": "businessapplications",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessapplications",
+        "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Application programmers",
+          "Programmer specialists",
+          "Computer programmers",
+          "Programmer Analysts"
+        ]
+      },
+      {
+        "id": "internetofthings",
+        "name": "Computer Programming And Analysis - Internet Of Things (iot) Applications Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/internetofthings/",
+        "careersUrl": "https://www.mdc.edu/internetofthings/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "IoT Programmer IoT Developer IoT Consultant Product Application Assistant"
+        ]
+      },
+      {
+        "id": "pcrepair",
+        "name": "Microcomputer Repairer/installer College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/pcrepair/",
+        "careersUrl": "https://www.mdc.edu/pcrepair/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cisco Network Administrator",
+          "Computer Repair",
+          "Microsoft Database Administrator",
+          "Oracle Database Administrator"
+        ]
+      },
+      {
+        "id": "cadassistant",
+        "name": "Computer Aided Design Assistant College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cadassistant/",
+        "careersUrl": "https://www.mdc.edu/cadassistant/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Aided Design Assistant College Credit Certificate"
+        ]
+      },
+      {
+        "id": "computerprogramming",
+        "name": "Computer Programming",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/computerprogramming",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer Programming"
+        ]
+      },
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "gis",
+        "name": "Geographic Information Systems College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/gis/",
+        "careersUrl": "https://www.mdc.edu/gis/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Geographic Information Systems College Credit Certificate"
+        ]
+      }
+    ],
+    "field": "Technology"
+  },
+  {
+    "career": "Database Manager",
+    "programs": [
+      {
+        "id": "oracledbacertificate",
+        "name": "Oracle Certified Database Administrator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/oracledbacertificate/",
+        "careersUrl": "https://www.mdc.edu/oracledbacertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Database Administrator",
+          "Computer Network Architect"
+        ]
+      },
+      {
+        "id": "computerinformationtechnology",
+        "name": "Computer Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
+        "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer And Information Systems Manager",
+          "Computer Network Architect",
+          "Database Administrator",
+          "Computer Support System",
+          "Computer Operator",
+          "Software Developer"
+        ]
+      },
+      {
+        "id": "dataanalytics",
+        "name": "Data Analytics Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/dataanalytics/",
+        "careersUrl": "https://www.mdc.edu/dataanalytics/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Data Analyst",
+          "Data Warehousing Specialist",
+          "Database Architect",
+          "Business Intelligence Analyst",
+          "Data Scientist"
+        ]
+      },
+      {
+        "id": "earlychildhoodadministrator",
+        "name": "Early Childhood Education - Administrators Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/earlychildhoodadministrator/",
+        "careersUrl": "https://www.mdc.edu/earlychildhoodadministrator/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Education Administrator",
+          "Instructional Coordinator"
+        ]
+      },
+      {
+        "id": "earlychildhoodadmincertificate",
+        "name": "Early Childhood Administrator College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/earlychildhoodadmincertificate/",
+        "careersUrl": "https://www.mdc.edu/earlychildhoodadmincertificate/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Education Administrator",
+          "Instructional Coordinator"
+        ]
+      },
+      {
+        "id": "architectureaa",
+        "name": "Architecture Associate In Arts",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architectureaa/",
+        "careersUrl": "https://www.mdc.edu/architectureaa/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architect",
+          "Landscape Architect",
+          "Architecture Drafter",
+          "Urban And Regional Planner",
+          "Architecture Teacher, Postsecondary"
+        ]
+      },
+      {
+        "id": "architecturaldesign",
+        "name": "Architectural Design And Construction Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/architecturaldesign/",
+        "careersUrl": "https://www.mdc.edu/architecturaldesign/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Drafter",
+          "Civil Engineer",
+          "Construction Manager",
+          "Landscape Architect"
+        ]
+      },
+      {
+        "id": "architecturalengineering",
+        "name": "Architectural Engineering",
+        "degreeType": "AA",
+        "programUrl": "https://www.mdc.edu/architecturalengineering",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Architectural Engineering"
+        ]
+      },
+      {
+        "id": "informationsystemsnetworking",
+        "name": "Information Systems Technology Networking Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/informationsystemsnetworking/",
+        "careersUrl": "https://www.mdc.edu/informationsystemsnetworking/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Networking Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "gis",
+        "name": "Geographic Information Systems College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/gis/",
+        "careersUrl": "https://www.mdc.edu/gis/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Geographic Information Systems College Credit Certificate"
+        ]
+      }
+    ],
+    "field": "Technology"
+  },
+  {
+    "career": "Information Security Analyst",
+    "programs": [
+      {
+        "id": "cybersecuritybs",
+        "name": "Cybersecurity Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/cybersecuritybs/",
+        "careersUrl": "https://www.mdc.edu/cybersecuritybs/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cybersecurity Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "cybersecurity-analyst",
+        "name": "Cybersecurity Analyst",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/cybersecurity-analyst",
+        "careersUrl": "https://www.mdc.edu/cybersecurity-analyst/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Cybersecurity Analyst"
+        ]
+      },
+      {
+        "id": "computerinformationtechnology",
+        "name": "Computer Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
+        "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer And Information Systems Manager",
+          "Computer Network Architect",
+          "Database Administrator",
+          "Computer Support System",
+          "Computer Operator",
+          "Software Developer"
+        ]
+      },
+      {
+        "id": "informationsystemsnetworking",
+        "name": "Information Systems Technology Networking Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/informationsystemsnetworking/",
+        "careersUrl": "https://www.mdc.edu/informationsystemsnetworking/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Networking Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "softwareengineering",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
+        "degreeType": "BS",
+        "programUrl": "https://www.mdc.edu/softwareengineering/",
+        "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
+        ]
+      },
+      {
+        "id": "cybersecurityas",
+        "name": "Cybersecurity Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/cybersecurityas",
+        "careersUrl": "https://www.mdc.edu/cybersecurityas/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Security Operations Center (SOC) Analyst",
+          "Cybersecurity Specialist",
+          "Incident Responder",
+          "Security System Administrator",
+          "Security Consultant",
+          "Cybersecurity Analyst",
+          "Cybersecurity Manager / Administrator"
+        ]
+      },
+      {
+        "id": "itsupport",
+        "name": "Information Technology Support College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/itsupport/",
+        "careersUrl": "https://www.mdc.edu/itsupport/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Computer User Support Specialist",
+          "Computer Operator"
+        ]
+      },
+      {
+        "id": "homelandsecurity",
+        "name": "Homeland Security - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/homelandsecurity/",
+        "careersUrl": "https://www.mdc.edu/homelandsecurity/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Emergency Management Director",
+          "Security Management Specialist",
+          "Criminal Investigator And Agent",
+          "Immigration And Custom Inspector",
+          "Intelligence Analyst"
+        ]
+      },
+      {
+        "id": "healthinformation",
+        "name": "Health Information Technology Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/healthinformation/",
+        "careersUrl": "https://www.mdc.edu/healthinformation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Health Information Technician",
+          "Medical Coder",
+          "Medical Biller",
+          "Documentation Specialist"
+        ]
+      },
+      {
+        "id": "gis",
+        "name": "Geographic Information Systems College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/gis/",
+        "careersUrl": "https://www.mdc.edu/gis/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Geographic Information Systems College Credit Certificate"
+        ]
+      },
+      {
+        "id": "privatesecurity",
+        "name": "Private Security Officer Career Technical Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/privatesecurity/",
+        "careersUrl": "https://www.mdc.edu/privatesecurity/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Security",
+          "Security Officer",
+          "Loss Prevention Agent",
+          "Body Guard"
+        ]
+      },
+      {
+        "id": "computercrimeinvestigation",
+        "name": "Computer Crime Investigation Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/computercrimeinvestigation/",
+        "careersUrl": "https://www.mdc.edu/computercrimeinvestigation/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Digital Forensic Analyst",
+          "Cyber Threat Investigator",
+          "Security Analyst",
+          "Computer Forensic Examiners"
+        ]
+      },
+      {
+        "id": "healthinformatics",
+        "name": "Healthcare Informatics Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthinformatics/",
+        "careersUrl": "https://www.mdc.edu/healthinformatics/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Physician’s offices",
+          "Government",
+          "Hospitals",
+          "Nursing and residential care facilities"
+        ]
+      },
+      {
+        "id": "businessintelligence",
+        "name": "Business Intelligence Specialist Associate In Science",
+        "degreeType": "AS",
+        "programUrl": "https://www.mdc.edu/businessintelligence/",
+        "careersUrl": "https://www.mdc.edu/businessintelligence/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Business Development Associate",
+          "Business Intelligence Specialist",
+          "Business Systems Analyst"
+        ]
+      },
+      {
+        "id": "graphicdesignspecialist",
+        "name": "Graphic Design Support - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/graphicdesignspecialist/",
+        "careersUrl": "https://www.mdc.edu/graphicdesignspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Desktop Publisher",
+          "Graphic Design Assistant",
+          "Commercial And Industrial Design Assistant"
+        ]
+      },
+      {
+        "id": "buildingconstructionspecialist",
+        "name": "Building Construction Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/buildingconstructionspecialist/",
+        "careersUrl": "https://www.mdc.edu/buildingconstructionspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Construction laborer",
+          "Helper - Painter, Paperhanger, Platere And Stucco Mason",
+          "Helper - Pipelayer, Plumber, Pipelifter And Steamfitter",
+          "Helper - Installation, Maintenance, And Repair Worker"
+        ]
+      },
+      {
+        "id": "managementspecialist",
+        "name": "Managementspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/managementspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Managementspecialist"
+        ]
+      },
+      {
+        "id": "hrspecialist",
+        "name": "Hrspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/hrspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Hrspecialist"
+        ]
+      },
+      {
+        "id": "businessspecialistmarketing",
+        "name": "Businessspecialist Marketing",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/businessspecialistmarketing",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Businessspecialist Marketing"
+        ]
+      },
+      {
+        "id": "smallbusinessspecialist",
+        "name": "Smallbusinessspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/smallbusinessspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Smallbusinessspecialist"
+        ]
+      },
+      {
+        "id": "digitalmarketing",
+        "name": "Digital Marketing Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/digitalmarketing/",
+        "careersUrl": "https://www.mdc.edu/digitalmarketing/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Advertising And Promotions Managers",
+          "Marketing Managers",
+          "Marketing Research Analyst",
+          "Marketing Specialists"
+        ]
+      },
+      {
+        "id": "engineeringtechnology",
+        "name": "Engineering Technology Support Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/engineeringtechnology/",
+        "careersUrl": "https://www.mdc.edu/engineeringtechnology/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Engineering Support Specialist",
+          "Engineering Specialist"
+        ]
+      },
+      {
+        "id": "foodbeveragespecialist",
+        "name": "Foodbeveragespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/foodbeveragespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Foodbeveragespecialist"
+        ]
+      },
+      {
+        "id": "healthcareservices",
+        "name": "Health Science - Health Care Service Specialist - College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/healthcareservices",
+        "careersUrl": "https://www.mdc.edu/healthcareservices/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Health Science - Health Care Service Specialist - College Credit Certificate"
+        ]
+      },
+      {
+        "id": "horticulturespecialist",
+        "name": "Horticulturespecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/horticulturespecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Horticulturespecialist"
+        ]
+      },
+      {
+        "id": "transportationlogisticsspecialist",
+        "name": "Transportationlogisticsspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/transportationlogisticsspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Transportationlogisticsspecialist"
+        ]
+      },
+      {
+        "id": "rapidprototyping",
+        "name": "Rapid Prototyping Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/rapidprototyping/",
+        "careersUrl": "https://www.mdc.edu/rapidprototyping/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Rapid Prototyper",
+          "3D Modeler/Designer"
+        ]
+      },
+      {
+        "id": "roomsdivisionspecialist",
+        "name": "Roomsdivisionspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/roomsdivisionspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Roomsdivisionspecialist"
+        ]
+      },
+      {
+        "id": "solarenergysystemsspecialist",
+        "name": "Solar Energy Systems Specialist College Credit Certificate",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/solarenergysystemsspecialist/",
+        "careersUrl": "https://www.mdc.edu/solarenergysystemsspecialist/careers.aspx",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Solar Photovoltaic (PV) Installer",
+          "Solar System Installer",
+          "Solar Technician",
+          "Solar Energy Designer",
+          "Field Electric Technician",
+          "Solar Installation Coordinator",
+          "Tesla Energy Field Operations Team"
+        ]
+      },
+      {
+        "id": "taxspecialist",
+        "name": "Taxspecialist",
+        "degreeType": "CERT",
+        "programUrl": "https://www.mdc.edu/taxspecialist",
+        "pdfLinks": {},
+        "careerProspects": [
+          "Taxspecialist"
+        ]
+      }
+    ],
+    "field": "Technology"
   }
 ];
+
+
+
+
+
+
+
+
+
