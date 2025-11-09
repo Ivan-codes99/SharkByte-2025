@@ -605,32 +605,6 @@ export function ChoosePath() {
             </div>
           )}
 
-          {/* Fallback: Manual Upload Option */}
-          <div className="page-card mt-6">
-            <h2 className="page-section-title mb-4">Manual Upload (Fallback)</h2>
-            <p className="text-muted mb-4">
-              If you can't find your program above or prefer to upload PDFs manually, you can still use the 
-              traditional method. Visit the{" "}
-              <a
-                href="https://www.mdc.edu/academics/programs/default.aspx"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#d45a2a] hover:underline font-semibold"
-              >
-                MDC Programs page
-              </a>{" "}
-              to download the PDFs and upload them here.
-            </p>
-            <a
-              href="https://www.mdc.edu/academics/programs/default.aspx"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#d45a2a] text-white rounded-full font-semibold hover:bg-[#b44620] transition-colors"
-            >
-              Visit MDC Programs Page
-              <ExternalLink className="h-4 w-4" />
-            </a>
-          </div>
         </div>
       </div>
     </div>
