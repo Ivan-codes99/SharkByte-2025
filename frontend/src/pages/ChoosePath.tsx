@@ -1,9 +1,10 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { logger } from "../lib/logger";
-import { ExternalLink, Upload, FileText, Loader2, CheckCircle2 } from "lucide-react";
+import { ExternalLink, Upload, FileText, Loader2, CheckCircle2, Trash2 } from "lucide-react";
 import { analyzeProgramPDFs } from "../lib/api";
 import type { ProgramAnalysisResponse } from "../types";
 import { Button } from "../components/ui/button";
+import { saveProgramAnalysis, getProgramAnalysis, clearProgramAnalysis } from "../lib/storage";
 import "../styles/pages.css";
 
 export function ChoosePath() {
@@ -15,6 +16,18 @@ export function ChoosePath() {
   
   const courseListInputRef = useRef<HTMLInputElement>(null);
   const sequenceGuideInputRef = useRef<HTMLInputElement>(null);
+
+  // Load saved analysis on component mount
+  useEffect(() => {
+    const saved = getProgramAnalysis();
+    if (saved) {
+      setAnalysisResult(saved);
+      logger.info("Loaded saved program analysis from localStorage", {
+        programName: saved.programName,
+        degreeType: saved.degreeType,
+      }, "ChoosePath");
+    }
+  }, []);
 
   const handleCourseListChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -55,7 +68,10 @@ export function ChoosePath() {
       const result = await analyzeProgramPDFs(courseListFile, sequenceGuideFile);
       setAnalysisResult(result);
       
-      logger.info("PDFs analyzed successfully", {
+      // Save to localStorage
+      saveProgramAnalysis(result);
+      
+      logger.info("PDFs analyzed successfully and saved to localStorage", {
         programName: result.programName,
         degreeType: result.degreeType,
         courseCount: result.courses?.length || 0,
@@ -66,6 +82,26 @@ export function ChoosePath() {
       logger.error("Failed to analyze PDFs", err instanceof Error ? err : new Error(String(err)));
     } finally {
       setUploading(false);
+    }
+  };
+
+  const handleClearAnalysis = () => {
+    if (window.confirm("Are you sure you want to clear the saved program analysis? This action cannot be undone.")) {
+      clearProgramAnalysis();
+      setAnalysisResult(null);
+      setCourseListFile(null);
+      setSequenceGuideFile(null);
+      setError(null);
+      
+      // Reset file inputs
+      if (courseListInputRef.current) {
+        courseListInputRef.current.value = "";
+      }
+      if (sequenceGuideInputRef.current) {
+        sequenceGuideInputRef.current.value = "";
+      }
+      
+      logger.action("clear_program_analysis", undefined, "ChoosePath");
     }
   };
 
@@ -224,9 +260,20 @@ export function ChoosePath() {
               {/* Analysis Result */}
               {analysisResult && (
                 <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <div className="flex items-center gap-2 mb-3">
-                    <CheckCircle2 className="h-5 w-5 text-green-600" />
-                    <h3 className="font-semibold text-primary-dark">Analysis Complete!</h3>
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-green-600" />
+                      <h3 className="font-semibold text-primary-dark">Analysis Complete!</h3>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={handleClearAnalysis}
+                      className="text-red-600 hover:text-red-700 hover:bg-red-50 border-red-200"
+                    >
+                      <Trash2 className="h-4 w-4 mr-2" />
+                      Clear Data
+                    </Button>
                   </div>
                   <div className="space-y-2 text-sm text-muted">
                     <p><strong>Program:</strong> {analysisResult.programName}</p>
