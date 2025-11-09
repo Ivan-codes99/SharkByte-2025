@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
+import { Home } from "./pages/Home";
 import { CareerPathway } from "./pages/CareerPathway";
 import { Scholarships } from "./pages/Scholarships";
 import { logger } from "./lib/logger";
@@ -14,7 +15,8 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="/" element={<CareerPathway />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/career-pathway" element={<CareerPathway />} />
       <Route path="/scholarships" element={<Scholarships />} />
     </Routes>
   );
@@ -23,7 +25,7 @@ function AppRoutes() {
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen">
         <Navbar />
         <AppRoutes />
       </div>

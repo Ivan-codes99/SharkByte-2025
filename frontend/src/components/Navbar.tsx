@@ -36,6 +36,17 @@ export function Navbar() {
                 : "text-gray-700"
             )}
           >
+            Home
+          </Link>
+          <Link
+            to="/career-pathway"
+            className={cn(
+              "px-3 py-2 text-sm font-semibold transition-colors hover:text-primary",
+              isActive("/career-pathway")
+                ? "text-primary border-b-2 border-primary"
+                : "text-gray-700"
+            )}
+          >
             Career Pathway
           </Link>
           <Link
