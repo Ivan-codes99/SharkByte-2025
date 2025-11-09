@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "scrape": "tsx src/scripts/scrape-mdc-programs.ts"
   },
   "keywords": [
     "education",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "wrangler": "^4.46.0"
   }

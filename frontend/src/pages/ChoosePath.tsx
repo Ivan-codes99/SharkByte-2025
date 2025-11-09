@@ -1,22 +1,49 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { logger } from "../lib/logger";
-import { ExternalLink, Upload, FileText, Loader2, CheckCircle2, Trash2 } from "lucide-react";
-import { analyzeProgramPDFs } from "../lib/api";
+import { ExternalLink, Loader2, CheckCircle2, Trash2, Search, GraduationCap, BookOpen } from "lucide-react";
+import { 
+  analyzeProgramById, 
+  searchPrograms, 
+  getProgramsByCareer, 
+  getFields,
+  getProgramsByField,
+  getCareers
+} from "../lib/api";
 import type { ProgramAnalysisResponse, RequirementGroup } from "../types";
 import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Combobox } from "../components/ui/combobox";
 import { saveProgramAnalysis, getProgramAnalysis, clearProgramAnalysis, hasProgramAnalysis } from "../lib/storage";
 import "../styles/pages.css";
 
+interface MDCProgram {
+  id: string;
+  name: string;
+  degreeType: "AA" | "AS" | "BS" | "BA" | "CERT";
+  programUrl: string;
+  pdfLinks: {
+    courseList?: string;
+    sequenceGuide?: string;
+  };
+  careerProspects: string[];
+  school?: string;
+  concentration?: string;
+}
+
 export function ChoosePath() {
-  const [courseListFile, setCourseListFile] = useState<File | null>(null);
-  const [sequenceGuideFile, setSequenceGuideFile] = useState<File | null>(null);
-  const [uploading, setUploading] = useState(false);
+  const [searchMode, setSearchMode] = useState<"career" | "field">("career");
+  const [careerSearch, setCareerSearch] = useState("");
+  const [selectedField, setSelectedField] = useState("");
+  const [programs, setPrograms] = useState<MDCProgram[]>([]);
+  const [selectedProgram, setSelectedProgram] = useState<MDCProgram | null>(null);
+  const [analyzing, setAnalyzing] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<ProgramAnalysisResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [hasSavedData, setHasSavedData] = useState(false);
-  
-  const courseListInputRef = useRef<HTMLInputElement>(null);
-  const sequenceGuideInputRef = useRef<HTMLInputElement>(null);
+  const [fields, setFields] = useState<string[]>([]);
+  const [careers, setCareers] = useState<string[]>([]);
+  const [loadingFields, setLoadingFields] = useState(false);
+  const [searching, setSearching] = useState(false);
 
   // Load saved analysis on component mount
   useEffect(() => {
@@ -33,43 +60,129 @@ export function ChoosePath() {
     }
   }, []);
 
-  const handleCourseListChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file && file.type === "application/pdf") {
-      setCourseListFile(file);
-      setError(null);
-    } else if (file) {
-      setError("Course list must be a PDF file");
+  // Load fields and careers on mount
+  useEffect(() => {
+    loadFields();
+    loadCareers();
+  }, []);
+
+  const loadFields = async () => {
+    try {
+      setLoadingFields(true);
+      const fieldsData = await getFields();
+      setFields(fieldsData);
+    } catch (err) {
+      logger.error("Failed to load fields", err instanceof Error ? err : new Error(String(err)));
+    } finally {
+      setLoadingFields(false);
     }
   };
 
-  const handleSequenceGuideChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file && file.type === "application/pdf") {
-      setSequenceGuideFile(file);
-      setError(null);
-    } else if (file) {
-      setError("Sequence guide must be a PDF file");
+  const loadCareers = async () => {
+    try {
+      const careersData = await getCareers();
+      setCareers(careersData);
+    } catch (err) {
+      logger.error("Failed to load careers", err instanceof Error ? err : new Error(String(err)));
     }
   };
 
-  const handleUpload = async () => {
-    if (!courseListFile || !sequenceGuideFile) {
-      setError("Please upload both PDF files");
+  const handleCareerSearch = async () => {
+    if (!careerSearch.trim()) {
+      setError("Please enter a career prospect to search");
       return;
     }
 
-    setUploading(true);
+    setSearching(true);
+    setError(null);
+    setPrograms([]);
+    setSelectedProgram(null);
+
+    try {
+      logger.action("search_programs", { searchTerm: careerSearch }, "ChoosePath");
+      const result = await searchPrograms(careerSearch.trim());
+      setPrograms(result.programs);
+      
+      if (result.programs.length === 0) {
+        setError(`No programs found for "${careerSearch}". Try a different search term.`);
+      } else {
+        logger.info(`Found ${result.programs.length} programs for search: ${careerSearch}`);
+      }
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : "Failed to search programs";
+      setError(errorMessage);
+      logger.error("Failed to search programs", err instanceof Error ? err : new Error(String(err)));
+    } finally {
+      setSearching(false);
+    }
+  };
+
+  const handleFieldSelect = async (field: string) => {
+    if (!field) {
+      setPrograms([]);
+      setSelectedProgram(null);
+      return;
+    }
+
+    setSelectedField(field);
+    setError(null);
+    setPrograms([]);
+    setSelectedProgram(null);
+    setSearching(true);
+
+    try {
+      logger.action("get_programs_by_field", { field }, "ChoosePath");
+      const result = await getProgramsByField(field);
+      
+      // Flatten all programs from all career mappings
+      const allPrograms: MDCProgram[] = [];
+      result.mappings.forEach(mapping => {
+        mapping.programs.forEach((program: MDCProgram) => {
+          if (!allPrograms.find(p => p.id === program.id)) {
+            allPrograms.push(program);
+          }
+        });
+      });
+      
+      setPrograms(allPrograms);
+      
+      if (allPrograms.length === 0) {
+        setError(`No programs found for field "${field}"`);
+      } else {
+        logger.info(`Found ${allPrograms.length} programs for field: ${field}`);
+      }
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : "Failed to get programs";
+      setError(errorMessage);
+      logger.error("Failed to get programs by field", err instanceof Error ? err : new Error(String(err)));
+    } finally {
+      setSearching(false);
+    }
+  };
+
+  const handleProgramSelect = (program: MDCProgram) => {
+    setSelectedProgram(program);
+    setError(null);
+    logger.action("select_program", { programId: program.id, programName: program.name }, "ChoosePath");
+  };
+
+  const handleAnalyzeProgram = async () => {
+    if (!selectedProgram) {
+      setError("Please select a program first");
+      return;
+    }
+
+    setAnalyzing(true);
     setError(null);
     setAnalysisResult(null);
 
     try {
-      logger.action("upload_pdfs", {
-        courseListName: courseListFile.name,
-        sequenceGuideName: sequenceGuideFile.name,
+      logger.action("analyze_program_auto", {
+        programId: selectedProgram.id,
+        programName: selectedProgram.name,
       }, "ChoosePath");
 
-      const result = await analyzeProgramPDFs(courseListFile, sequenceGuideFile);
+      const result = await analyzeProgramById(selectedProgram.id);
       setAnalysisResult(result);
       
       // Save to localStorage
@@ -91,41 +204,35 @@ export function ChoosePath() {
         0
       );
       
-      logger.info("PDFs analyzed successfully and saved to localStorage", {
+      logger.info("Program analyzed successfully and saved to localStorage", {
         programName: result.programName,
         degreeType: result.degreeType,
         topLevelGroups: result.requirements.groups.length,
         totalCourses,
       }, "ChoosePath");
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : "Failed to analyze PDFs";
+      const errorMessage = err instanceof Error ? err.message : "Failed to analyze program";
       setError(errorMessage);
-      logger.error("Failed to analyze PDFs", err instanceof Error ? err : new Error(String(err)));
+      logger.error("Failed to analyze program", err instanceof Error ? err : new Error(String(err)));
     } finally {
-      setUploading(false);
+      setAnalyzing(false);
     }
   };
 
   const handleClearAnalysis = () => {
     if (!hasSavedData) {
-      return; // Nothing to clear
+      return;
     }
     
     if (window.confirm("Are you sure you want to clear the saved program analysis? This action cannot be undone.")) {
       clearProgramAnalysis();
       setAnalysisResult(null);
       setHasSavedData(false);
-      setCourseListFile(null);
-      setSequenceGuideFile(null);
+      setSelectedProgram(null);
+      setPrograms([]);
+      setCareerSearch("");
+      setSelectedField("");
       setError(null);
-      
-      // Reset file inputs
-      if (courseListInputRef.current) {
-        courseListInputRef.current.value = "";
-      }
-      if (sequenceGuideInputRef.current) {
-        sequenceGuideInputRef.current.value = "";
-      }
       
       logger.action("clear_program_analysis", undefined, "ChoosePath");
     }
@@ -138,25 +245,11 @@ export function ChoosePath() {
         <div className="page-hero-inner">
           <div className="max-w-3xl">
             <h1 className="page-title">
-              Choose Path
+              Choose Your Path
             </h1>
             <p className="page-subtitle">
-              Navigate to the Miami Dade College programs page and search for your desired program.
+              Search for your desired career or browse by field to find MDC programs that match your goals.
             </p>
-            <div className="mt-8">
-              <a
-                href="https://www.mdc.edu/academics/programs/default.aspx"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#d45a2a] text-white rounded-full font-semibold hover:bg-[#b44620] transition-colors"
-                style={{
-                  boxShadow: "0 18px 60px rgba(212,90,42,0.10)",
-                }}
-              >
-                Visit MDC Programs Page
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -164,176 +257,296 @@ export function ChoosePath() {
       {/* Content Section */}
       <div className="page-content">
         <div className="max-w-4xl mx-auto">
-          <div className="page-card mb-6">
-            <h2 className="page-section-title mb-4">How to Choose Your Program</h2>
-            <ol className="list-decimal list-inside space-y-4 text-muted">
-              <li>
-                Visit the{" "}
-                <a
-                  href="https://www.mdc.edu/academics/programs/default.aspx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#d45a2a] hover:underline font-semibold"
-                >
-                  MDC Programs page
-                </a>{" "}
-                (link above) and search for your desired program
-              </li>
-              <li>
-                On the program page, download both PDFs:{" "}
-                <strong className="text-primary-dark">"See a complete course list"</strong> and{" "}
-                <strong className="text-primary-dark">"See a course sequence guide"</strong>
-              </li>
-              <li>Save both PDFs to your device for reference</li>
-              <li>Return here to upload the PDFs and view your personalized timeline</li>
-            </ol>
-          </div>
-
-          {/* File Upload Section */}
-          <div className="page-card">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="page-section-title">Upload Program PDFs</h2>
+          {/* Clear Saved Data Button */}
+          {hasSavedData && (
+            <div className="mb-6 flex justify-end">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={handleClearAnalysis}
-                disabled={!hasSavedData}
-                className="text-red-600 hover:text-red-700 hover:bg-red-50 border-red-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="text-red-600 hover:text-red-700 hover:bg-red-50 border-red-200"
               >
                 <Trash2 className="h-4 w-4 mr-2" />
                 Clear Saved Data
               </Button>
             </div>
-            
-            <div className="space-y-6">
-              {/* Course List Upload */}
-              <div>
-                <label className="page-label mb-2">
-                  Complete Course List PDF
-                </label>
-                <div className="flex items-center gap-4">
-                  <input
-                    ref={courseListInputRef}
-                    type="file"
-                    accept="application/pdf"
-                    onChange={handleCourseListChange}
-                    className="hidden"
-                    id="courseList"
+          )}
+
+          {/* Search Mode Selection */}
+          <div className="page-card mb-6">
+            <h2 className="page-section-title mb-4">Find Your Program</h2>
+            <div className="flex gap-4 mb-6">
+              <Button
+                variant={searchMode === "career" ? "default" : "outline"}
+                onClick={() => {
+                  setSearchMode("career");
+                  setPrograms([]);
+                  setSelectedProgram(null);
+                  setSelectedField("");
+                }}
+              >
+                <Search className="h-4 w-4 mr-2" />
+                Search by Career
+              </Button>
+              <Button
+                variant={searchMode === "field" ? "default" : "outline"}
+                onClick={() => {
+                  setSearchMode("field");
+                  setPrograms([]);
+                  setSelectedProgram(null);
+                  setCareerSearch("");
+                }}
+              >
+                <GraduationCap className="h-4 w-4 mr-2" />
+                Browse by Field
+              </Button>
+            </div>
+
+            {/* Career Search Mode */}
+            {searchMode === "career" && (
+              <div className="space-y-4">
+                <div className="flex gap-2">
+                  <Input
+                    type="text"
+                    placeholder="Enter career prospect (e.g., Software Developer, Teacher, Nurse)"
+                    value={careerSearch}
+                    onChange={(e) => setCareerSearch(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        handleCareerSearch();
+                      }
+                    }}
+                    className="flex-1"
                   />
-                  <label
-                    htmlFor="courseList"
-                    className="inline-flex items-center gap-2 px-4 py-2 border border-[#d45a2a] rounded-lg cursor-pointer hover:bg-[#f6f3eb] transition-colors"
+                  <Button
+                    onClick={handleCareerSearch}
+                    disabled={searching || !careerSearch.trim()}
                   >
-                    <Upload className="h-4 w-4" />
-                    {courseListFile ? courseListFile.name : "Choose PDF"}
-                  </label>
-                  {courseListFile && (
-                    <div className="flex items-center gap-2 text-sm text-muted">
-                      <CheckCircle2 className="h-4 w-4 text-green-600" />
-                      <span>{courseListFile.name}</span>
+                    {searching ? (
+                      <>
+                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                        Searching...
+                      </>
+                    ) : (
+                      <>
+                        <Search className="h-4 w-4 mr-2" />
+                        Search
+                      </>
+                    )}
+                  </Button>
+                </div>
+                <p className="text-sm text-muted">
+                  Examples: Software Developer, Computer Systems Analyst, Secondary School Teacher, 
+                  Airport Security, Information Security Analyst, Civil Engineer, Coach, Athletic Trainer
+                </p>
+              </div>
+            )}
+
+            {/* Field Browse Mode */}
+            {searchMode === "field" && (
+              <div className="space-y-4">
+                <Combobox
+                  options={fields.map(field => ({ value: field, label: field }))}
+                  value={selectedField}
+                  onValueChange={handleFieldSelect}
+                  placeholder={loadingFields ? "Loading fields..." : "Select a field (e.g., Technology, Medicine, Education)"}
+                  searchPlaceholder="Search fields..."
+                  emptyMessage="No fields found."
+                  disabled={loadingFields}
+                />
+              </div>
+            )}
+          </div>
+
+          {/* Programs List */}
+          {programs.length > 0 && (
+            <div className="page-card mb-6">
+              <h2 className="page-section-title mb-4">
+                Found {programs.length} Program{programs.length !== 1 ? "s" : ""}
+              </h2>
+              <div className="space-y-3">
+                {programs.map((program) => (
+                  <div
+                    key={program.id}
+                      className={`p-4 border rounded-lg cursor-pointer transition-colors ${
+                        selectedProgram?.id === program.id
+                          ? "border-[#d45a2a] bg-[#f6f3eb]"
+                          : "border-gray-200 hover:border-[#d45a2a] hover:bg-gray-50"
+                      }`}
+                      onClick={() => handleProgramSelect(program)}
+                    >
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-primary-dark mb-1">
+                            {program.name}
+                          </h3>
+                          <div className="flex flex-wrap gap-2 text-sm text-muted mb-2">
+                            <span className="px-2 py-1 bg-gray-100 rounded">
+                              {program.degreeType}
+                            </span>
+                            {program.school && (
+                              <span className="px-2 py-1 bg-gray-100 rounded">
+                                {program.school}
+                              </span>
+                            )}
+                            {program.concentration && (
+                              <span className="px-2 py-1 bg-gray-100 rounded">
+                                {program.concentration}
+                              </span>
+                            )}
+                          </div>
+                          {program.careerProspects.length > 0 && (
+                            <p className="text-sm text-muted">
+                              <strong>Career Prospects:</strong> {program.careerProspects.slice(0, 3).join(", ")}
+                              {program.careerProspects.length > 3 && ` +${program.careerProspects.length - 3} more`}
+                            </p>
+                          )}
+                          <div className="mt-2 flex gap-2 text-xs text-muted">
+                            {program.pdfLinks.courseList && (
+                              <span className="flex items-center gap-1">
+                                <BookOpen className="h-3 w-3" />
+                                Course List
+                              </span>
+                            )}
+                            {program.pdfLinks.sequenceGuide && (
+                              <span className="flex items-center gap-1">
+                                <BookOpen className="h-3 w-3" />
+                                Sequence Guide
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        {selectedProgram?.id === program.id && (
+                          <CheckCircle2 className="h-5 w-5 text-[#d45a2a] ml-2 flex-shrink-0" />
+                        )}
+                      </div>
                     </div>
-                  )}
+                  ))}
                 </div>
               </div>
+            )}
 
-              {/* Sequence Guide Upload */}
-              <div>
-                <label className="page-label mb-2">
-                  Course Sequence Guide PDF
-                </label>
-                <div className="flex items-center gap-4">
-                  <input
-                    ref={sequenceGuideInputRef}
-                    type="file"
-                    accept="application/pdf"
-                    onChange={handleSequenceGuideChange}
-                    className="hidden"
-                    id="sequenceGuide"
-                  />
-                  <label
-                    htmlFor="sequenceGuide"
-                    className="inline-flex items-center gap-2 px-4 py-2 border border-[#d45a2a] rounded-lg cursor-pointer hover:bg-[#f6f3eb] transition-colors"
-                  >
-                    <Upload className="h-4 w-4" />
-                    {sequenceGuideFile ? sequenceGuideFile.name : "Choose PDF"}
-                  </label>
-                  {sequenceGuideFile && (
-                    <div className="flex items-center gap-2 text-sm text-muted">
-                      <CheckCircle2 className="h-4 w-4 text-green-600" />
-                      <span>{sequenceGuideFile.name}</span>
-                    </div>
-                  )}
+          {/* Selected Program Actions */}
+          {selectedProgram && (
+            <div className="page-card mb-6">
+              <h2 className="page-section-title mb-4">Selected Program</h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-semibold text-primary-dark mb-2">{selectedProgram.name}</h3>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <a
+                      href={selectedProgram.programUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm text-[#d45a2a] hover:underline"
+                    >
+                      View Program Page
+                      <ExternalLink className="h-3 w-3" />
+                    </a>
+                  </div>
                 </div>
-              </div>
-
-              {/* Upload Button */}
-              <div>
                 <Button
-                  onClick={handleUpload}
-                  disabled={!courseListFile || !sequenceGuideFile || uploading}
+                  onClick={handleAnalyzeProgram}
+                  disabled={analyzing || !selectedProgram.pdfLinks.courseList || !selectedProgram.pdfLinks.sequenceGuide}
                   className="w-full sm:w-auto"
                   size="lg"
                 >
-                  {uploading ? (
+                  {analyzing ? (
                     <>
                       <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                      Analyzing PDFs...
+                      Analyzing Program...
                     </>
                   ) : (
                     <>
-                      <FileText className="h-4 w-4 mr-2" />
+                      <BookOpen className="h-4 w-4 mr-2" />
                       Analyze Program
                     </>
                   )}
                 </Button>
+                {(!selectedProgram.pdfLinks.courseList || !selectedProgram.pdfLinks.sequenceGuide) && (
+                  <p className="text-sm text-amber-600">
+                    ⚠️ This program is missing required PDFs. Please use the manual upload option below.
+                  </p>
+                )}
               </div>
-
-              {/* Error Message */}
-              {error && (
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <p className="text-red-800 font-medium">Error: {error}</p>
-                </div>
-              )}
-
-              {/* Analysis Result */}
-              {analysisResult && (
-                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <div className="flex items-center gap-2 mb-3">
-                    <CheckCircle2 className="h-5 w-5 text-green-600" />
-                    <h3 className="font-semibold text-primary-dark">Analysis Complete!</h3>
-                  </div>
-                  <div className="space-y-2 text-sm text-muted">
-                    <p><strong>Program:</strong> {analysisResult.programName}</p>
-                    <p><strong>Degree Type:</strong> {analysisResult.degreeType}</p>
-                    <p><strong>Institution:</strong> {analysisResult.institution}</p>
-                    {analysisResult.metadata?.totalCredits && (
-                      <p><strong>Total Credits:</strong> {analysisResult.metadata.totalCredits}</p>
-                    )}
-                    <p><strong>Top-Level Groups:</strong> {analysisResult.requirements.groups.length}</p>
-                    <p><strong>Total Course Options:</strong> {
-                      (() => {
-                        const countCoursesInGroup = (group: RequirementGroup): number => {
-                          let count = group.courses?.length || 0;
-                          if (group.groups) {
-                            count += group.groups.reduce((sum, subGroup) => sum + countCoursesInGroup(subGroup), 0);
-                          }
-                          return count;
-                        };
-                        return analysisResult.requirements.groups.reduce(
-                          (sum, group) => sum + countCoursesInGroup(group),
-                          0
-                        );
-                      })()
-                    }</p>
-                  </div>
-                  <div className="mt-4">
-                    <pre className="bg-white p-4 rounded border text-xs overflow-auto max-h-96">
-                      {JSON.stringify(analysisResult, null, 2)}
-                    </pre>
-                  </div>
-                </div>
-              )}
             </div>
+          )}
+
+          {/* Error Message */}
+          {error && (
+            <div className="page-card mb-6">
+              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-800 font-medium">Error: {error}</p>
+              </div>
+            </div>
+          )}
+
+          {/* Analysis Result */}
+          {analysisResult && (
+            <div className="page-card">
+              <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                <div className="flex items-center gap-2 mb-3">
+                  <CheckCircle2 className="h-5 w-5 text-green-600" />
+                  <h3 className="font-semibold text-primary-dark">Analysis Complete!</h3>
+                </div>
+                <div className="space-y-2 text-sm text-muted">
+                  <p><strong>Program:</strong> {analysisResult.programName}</p>
+                  <p><strong>Degree Type:</strong> {analysisResult.degreeType}</p>
+                  <p><strong>Institution:</strong> {analysisResult.institution}</p>
+                  {analysisResult.metadata?.totalCredits && (
+                    <p><strong>Total Credits:</strong> {analysisResult.metadata.totalCredits}</p>
+                  )}
+                  <p><strong>Top-Level Groups:</strong> {analysisResult.requirements.groups.length}</p>
+                  <p><strong>Total Course Options:</strong> {
+                    (() => {
+                      const countCoursesInGroup = (group: RequirementGroup): number => {
+                        let count = group.courses?.length || 0;
+                        if (group.groups) {
+                          count += group.groups.reduce((sum, subGroup) => sum + countCoursesInGroup(subGroup), 0);
+                        }
+                        return count;
+                      };
+                      return analysisResult.requirements.groups.reduce(
+                        (sum, group) => sum + countCoursesInGroup(group),
+                        0
+                      );
+                    })()
+                  }</p>
+                </div>
+                <div className="mt-4">
+                  <pre className="bg-white p-4 rounded border text-xs overflow-auto max-h-96">
+                    {JSON.stringify(analysisResult, null, 2)}
+                  </pre>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Fallback: Manual Upload Option */}
+          <div className="page-card mt-6">
+            <h2 className="page-section-title mb-4">Manual Upload (Fallback)</h2>
+            <p className="text-muted mb-4">
+              If you can't find your program above or prefer to upload PDFs manually, you can still use the 
+              traditional method. Visit the{" "}
+              <a
+                href="https://www.mdc.edu/academics/programs/default.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#d45a2a] hover:underline font-semibold"
+              >
+                MDC Programs page
+              </a>{" "}
+              to download the PDFs and upload them here.
+            </p>
+            <a
+              href="https://www.mdc.edu/academics/programs/default.aspx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#d45a2a] text-white rounded-full font-semibold hover:bg-[#b44620] transition-colors"
+            >
+              Visit MDC Programs Page
+              <ExternalLink className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </div>
