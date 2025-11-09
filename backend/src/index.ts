@@ -686,11 +686,19 @@ app.post("/programs/:programId/analyze", async (c) => {
     // 1. FIRST: courseList (Complete Course List) - CANONICAL/PRIMARY source
     // 2. SECOND: sequenceGuide (Course Sequence Guide) - SECONDARY source
     logger.info("Sending PDFs to Gemini in order: 1) Course List (primary), 2) Sequence Guide (secondary)");
+    
+    // Note: This operation will continue even if the client disconnects
+    // Cloudflare Workers will complete the processing regardless of client connection status
     const analysis = await processProgramPDFs(
       pdfs.courseList,      // FIRST - PRIMARY/CANONICAL source
       pdfs.sequenceGuide,   // SECOND - SECONDARY source
       env.GEMINI_API_KEY
     );
+    
+    logger.info("Gemini processing completed, analysis received", {
+      programId,
+      programName: analysis.programName,
+    });
     
     const duration = Date.now() - startTime;
     
@@ -722,6 +730,11 @@ app.post("/programs/:programId/analyze", async (c) => {
       degreeType: analysis.degreeType,
     });
     
+    logger.info("Returning analysis response to client", {
+      programId,
+      responseSize: JSON.stringify(analysis).length,
+    });
+
     return c.json(analysis);
   } catch (error) {
     const duration = Date.now() - startTime;

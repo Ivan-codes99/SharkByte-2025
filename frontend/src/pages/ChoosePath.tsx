@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { logger } from "../lib/logger";
-import { ExternalLink, Loader2, CheckCircle2, Trash2, Search, GraduationCap, BookOpen, X, ChevronDown } from "lucide-react";
+import { ExternalLink, Loader2, CheckCircle2, Trash2, Search, GraduationCap, BookOpen, X, ChevronDown, XCircle } from "lucide-react";
 import { 
   analyzeProgramById, 
   searchPrograms, 
@@ -44,6 +44,7 @@ export function ChoosePath() {
   const [searching, setSearching] = useState(false);
   const [showAllPrograms, setShowAllPrograms] = useState(true);
   const [loadingMessageIndex, setLoadingMessageIndex] = useState(0);
+  const [abortController, setAbortController] = useState<AbortController | null>(null);
 
   // Load saved analysis on component mount
   useEffect(() => {
@@ -69,6 +70,17 @@ export function ChoosePath() {
   useEffect(() => {
     const saved = getProgramAnalysis();
     const pending = getPendingAnalysis();
+    
+    // Check if pending analysis is stale (older than 10 minutes)
+    const PENDING_TIMEOUT = 10 * 60 * 1000; // 10 minutes
+    if (pending && Date.now() - pending.startTime > PENDING_TIMEOUT) {
+      logger.warn("Pending analysis is stale, clearing it", {
+        programId: pending.programId,
+        age: Date.now() - pending.startTime,
+      }, "ChoosePath");
+      clearPendingAnalysis();
+      return;
+    }
     
     // Only restore pending state if we don't have a result
     if (!saved && pending) {
@@ -127,6 +139,72 @@ export function ChoosePath() {
   useEffect(() => {
     loadFields();
   }, []);
+
+  // Cleanup on unmount - clear pending state if component is unmounting while analyzing
+  useEffect(() => {
+    return () => {
+      // On unmount, if we're still analyzing, the pending state will persist
+      // This is intentional so it can be restored when user navigates back
+      // But we don't need to do anything special here
+    };
+  }, []);
+
+  // Check for completed analysis when page becomes visible (user navigates back)
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && analyzing) {
+        // Check if result has arrived while we were away
+        const saved = getProgramAnalysis();
+        if (saved) {
+          // Result is available, clear pending and update state
+          clearPendingAnalysis();
+          setAnalysisResult(saved);
+          setHasSavedData(true);
+          setAnalyzing(false);
+          logger.info("Found completed analysis result on visibility change", {
+            programName: saved.programName,
+          }, "ChoosePath");
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [analyzing]);
+
+  // Periodically check if analysis has completed (in case it finished while user was away)
+  useEffect(() => {
+    if (!analyzing) return;
+
+    const checkInterval = setInterval(() => {
+      const saved = getProgramAnalysis();
+      const pending = getPendingAnalysis();
+      
+      // If we have a result and pending state, clear pending and show result
+      if (saved && pending) {
+        clearPendingAnalysis();
+        setAnalysisResult(saved);
+        setHasSavedData(true);
+        setAnalyzing(false);
+        logger.info("Found completed analysis result during periodic check", {
+          programName: saved.programName,
+        }, "ChoosePath");
+      }
+      // Also check if we have a result but no pending (already completed)
+      else if (saved && !pending && analyzing) {
+        setAnalysisResult(saved);
+        setHasSavedData(true);
+        setAnalyzing(false);
+        logger.info("Found completed analysis result (no pending state) during periodic check", {
+          programName: saved.programName,
+        }, "ChoosePath");
+      }
+    }, 2000); // Check every 2 seconds
+
+    return () => clearInterval(checkInterval);
+  }, [analyzing]);
 
   // Cycle through loading messages when analyzing
   useEffect(() => {
@@ -266,11 +344,33 @@ export function ChoosePath() {
     }, 100);
   };
 
+  const handleCancelAnalysis = () => {
+    // Abort the current request if it exists
+    if (abortController) {
+      abortController.abort();
+      setAbortController(null);
+    }
+    
+    // Clear pending state
+    clearPendingAnalysis();
+    setAnalyzing(false);
+    setError(null);
+    
+    logger.action("cancel_analysis", {
+      programId: selectedProgram?.id,
+      programName: selectedProgram?.name,
+    }, "ChoosePath");
+  };
+
   const handleAnalyzeProgram = async () => {
     if (!selectedProgram) {
       setError("Please select a program first");
       return;
     }
+
+    // Create abort controller for this request
+    const controller = new AbortController();
+    setAbortController(controller);
 
     setAnalyzing(true);
     setError(null);
@@ -285,7 +385,13 @@ export function ChoosePath() {
         programName: selectedProgram.name,
       }, "ChoosePath");
 
-      const result = await analyzeProgramById(selectedProgram.id);
+      const result = await analyzeProgramById(selectedProgram.id, controller.signal);
+      
+      // Check if request was aborted
+      if (controller.signal.aborted) {
+        return;
+      }
+      
       setAnalysisResult(result);
       
       // Save to localStorage
@@ -294,6 +400,8 @@ export function ChoosePath() {
       
       // Clear pending analysis since we have the result
       clearPendingAnalysis();
+      setAnalyzing(false); // Explicitly stop loading
+      setAbortController(null);
       
       // Helper function to recursively count courses in nested groups
       const countCoursesInGroup = (group: RequirementGroup): number => {
@@ -317,13 +425,22 @@ export function ChoosePath() {
         totalCourses,
       }, "ChoosePath");
     } catch (err) {
+      // Don't show error if request was aborted
+      if (err instanceof Error && err.name === 'AbortError') {
+        logger.info("Analysis request was cancelled", undefined, "ChoosePath");
+        return;
+      }
+      
       const errorMessage = err instanceof Error ? err.message : "Failed to analyze program";
       setError(errorMessage);
       logger.error("Failed to analyze program", err instanceof Error ? err : new Error(String(err)));
       // Clear pending analysis on error
       clearPendingAnalysis();
     } finally {
-      setAnalyzing(false);
+      if (!controller.signal.aborted) {
+        setAnalyzing(false);
+      }
+      setAbortController(null);
     }
   };
 
@@ -701,31 +818,44 @@ export function ChoosePath() {
                     </div>
                   </>
                 )}
-                <Button
-                  onClick={handleAnalyzeProgram}
-                  disabled={analyzing || !selectedProgram}
-                  className="w-full sm:w-auto"
-                  size="lg"
-                >
-                  {analyzing ? (
-                    <>
-                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                      {(() => {
-                        const messages = [
-                          "Generating your career map...",
-                          "This could take a minute...",
-                          "or two..."
-                        ];
-                        return messages[loadingMessageIndex];
-                      })()}
-                    </>
-                  ) : (
-                    <>
-                      <BookOpen className="h-4 w-4 mr-2" />
-                      Generate your career map!
-                    </>
+                <div className="flex gap-3 flex-wrap">
+                  <Button
+                    onClick={handleAnalyzeProgram}
+                    disabled={analyzing || !selectedProgram}
+                    className="flex-1 sm:flex-none"
+                    size="lg"
+                  >
+                    {analyzing ? (
+                      <>
+                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                        {(() => {
+                          const messages = [
+                            "Generating your career map...",
+                            "This could take a minute...",
+                            "or two..."
+                          ];
+                          return messages[loadingMessageIndex];
+                        })()}
+                      </>
+                    ) : (
+                      <>
+                        <BookOpen className="h-4 w-4 mr-2" />
+                        Generate your career map!
+                      </>
+                    )}
+                  </Button>
+                  {analyzing && (
+                    <Button
+                      onClick={handleCancelAnalysis}
+                      variant="outline"
+                      size="lg"
+                      className="flex-1 sm:flex-none"
+                    >
+                      <XCircle className="h-4 w-4 mr-2" />
+                      Cancel
+                    </Button>
                   )}
-                </Button>
+                </div>
               </div>
             ) : (
               <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg">

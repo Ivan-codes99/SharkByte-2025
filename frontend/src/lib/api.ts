@@ -305,7 +305,7 @@ export async function getFields(): Promise<string[]> {
 /**
  * Analyze program automatically by fetching PDFs from MDC
  */
-export async function analyzeProgramById(programId: string): Promise<ProgramAnalysisResponse> {
+export async function analyzeProgramById(programId: string, signal?: AbortSignal): Promise<ProgramAnalysisResponse> {
   try {
     logger.api("POST", `/programs/${programId}/analyze`);
     const startTime = Date.now();
@@ -313,6 +313,7 @@ export async function analyzeProgramById(programId: string): Promise<ProgramAnal
 
     const response = await fetch(`${API_BASE_URL}/programs/${encodedProgramId}/analyze`, {
       method: "POST",
+      signal,
     });
 
     const duration = Date.now() - startTime;
