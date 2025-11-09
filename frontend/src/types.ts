@@ -49,6 +49,18 @@ export interface ProgramCourse {
   year?: number;
 }
 
+export interface RequirementGroup {
+  name: string; // e.g., "GENERAL EDUCATION REQUIREMENTS", "COMMUNICATIONS", "ORAL COMMUNICATIONS", etc.
+  requiredCredits: number; // Number of credits needed from this group
+  courses?: ProgramCourse[]; // List of courses that can satisfy this requirement (if this is a leaf group)
+  groups?: RequirementGroup[]; // Nested subgroups (if this is a parent group)
+  description?: string; // Optional description or notes (e.g., "Any transferrable type-1 or type-2 courses")
+}
+
+export interface ProgramRequirements {
+  groups: RequirementGroup[]; // Top-level requirement groups (can contain nested groups)
+}
+
 export interface ProgramCertification {
   name: string;
   description: string;
@@ -84,7 +96,7 @@ export interface ProgramAnalysisResponse {
     duration?: string;
     description?: string;
   };
-  courses: ProgramCourse[];
+  requirements: ProgramRequirements;
   certifications?: {
     required: ProgramCertification[];
     recommended: ProgramCertification[];

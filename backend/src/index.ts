@@ -6,7 +6,7 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger as honoLogger } from "hono/logger";
-import type { PathwayGenerationRequest, GeneratedPathway } from "./types";
+import type { PathwayGenerationRequest, GeneratedPathway, RequirementGroup } from "./types";
 import { generatePathway } from "./services/pathway-generator";
 import { getCachedPathway, cachePathway } from "./lib/storage";
 import { logger } from "./lib/logger";
@@ -223,15 +223,33 @@ app.post("/programs/analyze", async (c) => {
     );
 
     const duration = Date.now() - startTime;
+    
+    // Helper function to recursively count courses in nested groups
+    const countCoursesInGroup = (group: RequirementGroup): number => {
+      let count = group.courses?.length || 0;
+      if (group.groups) {
+        count += group.groups.reduce((sum, subGroup) => sum + countCoursesInGroup(subGroup), 0);
+      }
+      return count;
+    };
+    
+    // Calculate total course count from all groups (including nested)
+    const totalCourses = analysis.requirements.groups.reduce(
+      (sum, group) => sum + countCoursesInGroup(group),
+      0
+    );
+    
     logger.performance("pdf_processing", duration, {
-      courseCount: analysis.courses.length,
+      topLevelGroups: analysis.requirements.groups.length,
+      totalCourses,
       degreeType: analysis.degreeType,
     });
 
     logger.info("Program PDFs processed successfully", {
       programName: analysis.programName,
       degreeType: analysis.degreeType,
-      courseCount: analysis.courses.length,
+      topLevelGroups: analysis.requirements.groups.length,
+      totalCourses,
     });
 
     return c.json(analysis);
