@@ -353,6 +353,13 @@ IMPORTANT INSTRUCTIONS:
       responseLength: aiText.length,
     });
 
+    // Log the full Gemini output
+    logger.info("Gemini API response output", {
+      operation: "process_pdfs",
+      responseLength: aiText.length,
+      response: aiText,
+    });
+
     // Extract JSON from the response (may be wrapped in markdown code blocks)
     let jsonText = aiText.trim();
     if (jsonText.startsWith("```json")) {
