@@ -682,9 +682,13 @@ app.post("/programs/:programId/analyze", async (c) => {
       return c.json({ error: "Both course list and sequence guide PDFs are required" }, 400);
     }
     
+    // Process with Gemini - IMPORTANT: Order matters!
+    // 1. FIRST: courseList (Complete Course List) - CANONICAL/PRIMARY source
+    // 2. SECOND: sequenceGuide (Course Sequence Guide) - SECONDARY source
+    logger.info("Sending PDFs to Gemini in order: 1) Course List (primary), 2) Sequence Guide (secondary)");
     const analysis = await processProgramPDFs(
-      pdfs.courseList,
-      pdfs.sequenceGuide,
+      pdfs.courseList,      // FIRST - PRIMARY/CANONICAL source
+      pdfs.sequenceGuide,   // SECOND - SECONDARY source
       env.GEMINI_API_KEY
     );
     

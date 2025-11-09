@@ -546,11 +546,6 @@ export function ChoosePath() {
                     </>
                   )}
                 </Button>
-                {(!selectedProgram.pdfLinks.courseList || !selectedProgram.pdfLinks.sequenceGuide) && (
-                  <p className="text-sm text-blue-600">
-                    ℹ️ PDFs will be automatically fetched from the program page when you click "Analyze Program".
-                  </p>
-                )}
               </div>
             </div>
           )}

@@ -18,10 +18,14 @@ interface GeminiResponse {
 
 /**
  * Process PDF files and extract program information using Gemini
+ * 
+ * IMPORTANT: PDF order matters!
+ * - courseListPDF (FIRST): Complete Course List - CANONICAL/PRIMARY source
+ * - sequenceGuidePDF (SECOND): Course Sequence Guide - SECONDARY source
  */
 export async function processProgramPDFs(
-  courseListPDF: ArrayBuffer,
-  sequenceGuidePDF: ArrayBuffer,
+  courseListPDF: ArrayBuffer,      // FIRST - PRIMARY/CANONICAL source
+  sequenceGuidePDF: ArrayBuffer,   // SECOND - SECONDARY source
   apiKey: string
 ): Promise<ProgramAnalysisResponse> {
   try {
@@ -257,12 +261,14 @@ IMPORTANT INSTRUCTIONS:
                       text: prompt,
                     },
                     {
+                      // FIRST PDF: Complete Course List (CANONICAL/PRIMARY source)
                       inline_data: {
                         mime_type: "application/pdf",
                         data: courseListBase64,
                       },
                     },
                     {
+                      // SECOND PDF: Course Sequence Guide (SECONDARY source)
                       inline_data: {
                         mime_type: "application/pdf",
                         data: sequenceGuideBase64,
