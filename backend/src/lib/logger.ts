@@ -1,5 +1,5 @@
 /**
- * Comprehensive Logging Utility for PathFundAI Backend
+ * Comprehensive Logging Utility for SharkScholar Backend
  * Provides structured logging with different log levels and context
  */
 

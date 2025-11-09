@@ -1,5 +1,5 @@
 /**
- * PathFundAI Backend - Cloudflare Workers Entry Point
+ * SharkScholar Backend - Cloudflare Workers Entry Point
  * Main API server using Hono framework
  */
 
@@ -58,7 +58,7 @@ app.use("*", async (c, next) => {
 app.get("/", (c) => {
   logger.info("Health check requested");
   return c.json({
-    service: "PathFundAI Backend",
+    service: "SharkScholar Backend",
     version: "1.0.0",
     status: "healthy",
   });

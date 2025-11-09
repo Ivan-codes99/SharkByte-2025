@@ -2,7 +2,7 @@
 
 ## Overview
 
-A comprehensive logging solution has been implemented throughout the PathFundAI frontend project to aid in debugging and monitoring application behavior.
+A comprehensive logging solution has been implemented throughout the SharkScholar frontend project to aid in debugging and monitoring application behavior.
 
 ## Logger Features
 

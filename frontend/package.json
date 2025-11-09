@@ -45,7 +45,7 @@
     "typescript-eslint": "^8.45.0",
     "vite": "^7.1.7"
   },
-  "description": "A production-ready React (Vite + TypeScript) UI for PathFundAI with a SharkByte/MDC-inspired color system.",
+  "description": "A production-ready React (Vite + TypeScript) UI for SharkScholar with a SharkByte/MDC-inspired color system.",
   "main": "eslint.config.js",
   "keywords": [],
   "author": "",

@@ -1,7 +1,7 @@
 {
-  "name": "pathfundai-backend",
+  "name": "sharkscholar-backend",
   "version": "1.0.0",
-  "description": "PathFundAI Backend - Educational Pathway Generation API",
+  "description": "SharkScholar Backend - Educational Pathway Generation API",
   "main": "src/index.ts",
   "type": "module",
   "scripts": {

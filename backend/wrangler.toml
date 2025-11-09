@@ -1,10 +1,10 @@
-name = "pathfundai-backend"
+name = "sharkscholar-backend"
 main = "src/index.ts"
 compatibility_date = "2024-11-08"
 compatibility_flags = ["nodejs_compat"]
 
 [env.production]
-name = "pathfundai-backend"
+name = "sharkscholar-backend"
 
 # KV Namespace for caching program data
 # Run: wrangler kv:namespace create "PROGRAM_CACHE"
@@ -14,11 +14,11 @@ name = "pathfundai-backend"
 # id = "your-kv-namespace-id"
 
 # D1 Database for structured data (optional)
-# Run: wrangler d1 create pathfundai-db
+# Run: wrangler d1 create sharkscholar-db
 # Then add the binding here
 # [[d1_databases]]
 # binding = "DB"
-# database_name = "pathfundai-db"
+# database_name = "sharkscholar-db"
 # database_id = "your-database-id"
 
 [vars]

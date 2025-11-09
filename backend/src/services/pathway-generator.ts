@@ -266,7 +266,7 @@ export async function generatePathway(
     totalDuration: calculateTotalDuration(primaryPathway),
     metadata: {
       generatedAt: new Date().toISOString(),
-      source: "PathFundAI Backend",
+      source: "SharkScholar Backend",
       aiEnhanced: !!geminiApiKey,
     },
   };

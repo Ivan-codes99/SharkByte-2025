@@ -1,5 +1,5 @@
 /**
- * API Client for PathFundAI Backend
+ * API Client for SharkScholar Backend
  */
 
 import type { GeneratedPathway, PathwayGenerationRequest } from "../types/pathway";

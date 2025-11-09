@@ -22,7 +22,7 @@ export function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8" style={{ maxWidth: '1200px' }}>
         <Link to="/" className="flex items-center space-x-2">
           <span className="text-xl font-bold tracking-tight" style={{ color: '#0f1724', letterSpacing: '1px' }}>
-            PathFundAI
+            SharkScholar
           </span>
         </Link>
 

@@ -37,7 +37,7 @@ export function Home() {
         <div className="hero-inner container">
           <h1 className="hero-title">Make the most out of every student's education</h1>
           <p className="hero-sub">
-            Degree management with PathFundAI makes forging the path towards graduation smarter and simpler for students and the leaders that support them.
+            Degree management with SharkScholar makes forging the path towards graduation smarter and simpler for students and the leaders that support them.
           </p>
         </div>
       </section>
@@ -56,7 +56,7 @@ export function Home() {
       <section className="features-section">
         <div className="features-inner container">
           <div className="features-header">
-            <div className="kicker">WHY PATHFUNDAI</div>
+            <div className="kicker">WHY SHARKSCHOLAR</div>
             <h2 className="features-title">Imagine a college experience where every moment is meaningful</h2>
           </div>
 

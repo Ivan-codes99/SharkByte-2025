@@ -7,7 +7,7 @@ import type { ProgramAnalysisResponse } from "../types";
 import { logger } from "./logger";
 
 const STORAGE_KEYS = {
-  PROGRAM_ANALYSIS: "pathfundai_program_analysis",
+  PROGRAM_ANALYSIS: "sharkscholar_program_analysis",
 } as const;
 
 /**
