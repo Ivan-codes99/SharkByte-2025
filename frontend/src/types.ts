@@ -39,14 +39,26 @@ export type DegreeLevel = "AA" | "AS" | "BS" | "BA" | "MS" | "MA" | "PhD" | "CER
 export type Institution = "MDC" | "FIU" | "UF" | "FSU" | "OTHER";
 
 export interface ProgramCourse {
-  code: string;
-  title: string;
-  credits: number;
+  code: string; // Course code (e.g., "COP2271") or pattern (e.g., "CAI*", "CAP*")
+  title?: string; // Optional - not needed for pattern codes
+  credits?: number; // Optional - not needed for pattern codes
   prerequisites?: string[];
   corequisite?: string;
   description?: string;
   semester?: Semester;
   year?: number;
+}
+
+export interface RequirementGroup {
+  name: string; // e.g., "GENERAL EDUCATION REQUIREMENTS", "COMMUNICATIONS", "ORAL COMMUNICATIONS", etc.
+  requiredCredits: number; // Number of credits needed from this group
+  courses?: ProgramCourse[]; // List of courses that can satisfy this requirement (if this is a leaf group)
+  groups?: RequirementGroup[]; // Nested subgroups (if this is a parent group)
+  description?: string; // Optional description or notes (e.g., "Any transferrable type-1 or type-2 courses")
+}
+
+export interface ProgramRequirements {
+  groups: RequirementGroup[]; // Top-level requirement groups (can contain nested groups)
 }
 
 export interface ProgramCertification {
@@ -84,7 +96,7 @@ export interface ProgramAnalysisResponse {
     duration?: string;
     description?: string;
   };
-  courses: ProgramCourse[];
+  requirements: ProgramRequirements;
   certifications?: {
     required: ProgramCertification[];
     recommended: ProgramCertification[];

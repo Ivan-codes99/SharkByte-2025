@@ -203,3 +203,136 @@ export async function analyzeProgramPDFs(
   }
 }
 
+/**
+ * Get programs by career
+ */
+export async function getProgramsByCareer(career: string): Promise<{ career: string; programs: any[] }> {
+  try {
+    logger.api("GET", `/programs/by-career/${career}`);
+    const encodedCareer = encodeURIComponent(career);
+    const response = await fetch(`${API_BASE_URL}/programs/by-career/${encodedCareer}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    logger.api("GET", `/programs/by-career/${career}`, undefined, data);
+    return data;
+  } catch (error) {
+    const errorWithContext = error instanceof Error
+      ? Object.assign(error, { endpoint: `/programs/by-career/${career}` })
+      : { message: String(error), endpoint: `/programs/by-career/${career}` };
+    logger.error("Failed to get programs by career", errorWithContext);
+    throw error;
+  }
+}
+
+/**
+ * Search programs by career (fuzzy search)
+ */
+export async function searchPrograms(searchTerm: string): Promise<{ searchTerm: string; programs: any[] }> {
+  try {
+    logger.api("GET", `/programs/search?q=${searchTerm}`);
+    const encodedSearch = encodeURIComponent(searchTerm);
+    const response = await fetch(`${API_BASE_URL}/programs/search?q=${encodedSearch}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    logger.api("GET", `/programs/search`, undefined, data);
+    return data;
+  } catch (error) {
+    const errorWithContext = error instanceof Error
+      ? Object.assign(error, { endpoint: `/programs/search` })
+      : { message: String(error), endpoint: `/programs/search` };
+    logger.error("Failed to search programs", errorWithContext);
+    throw error;
+  }
+}
+
+/**
+ * Get programs by field
+ */
+export async function getProgramsByField(field: string): Promise<{ field: string; mappings: any[] }> {
+  try {
+    logger.api("GET", `/programs/by-field/${field}`);
+    const encodedField = encodeURIComponent(field);
+    const response = await fetch(`${API_BASE_URL}/programs/by-field/${encodedField}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    logger.api("GET", `/programs/by-field/${field}`, undefined, data);
+    return data;
+  } catch (error) {
+    const errorWithContext = error instanceof Error
+      ? Object.assign(error, { endpoint: `/programs/by-field/${field}` })
+      : { message: String(error), endpoint: `/programs/by-field/${field}` };
+    logger.error("Failed to get programs by field", errorWithContext);
+    throw error;
+  }
+}
+
+/**
+ * Get all fields
+ */
+export async function getFields(): Promise<string[]> {
+  try {
+    logger.api("GET", "/fields");
+    const response = await fetch(`${API_BASE_URL}/fields`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    logger.api("GET", "/fields", undefined, data);
+    return data.fields;
+  } catch (error) {
+    const errorWithContext = error instanceof Error
+      ? Object.assign(error, { endpoint: "/fields" })
+      : { message: String(error), endpoint: "/fields" };
+    logger.error("Failed to get fields", errorWithContext);
+    throw error;
+  }
+}
+
+/**
+ * Analyze program automatically by fetching PDFs from MDC
+ */
+export async function analyzeProgramById(programId: string, signal?: AbortSignal): Promise<ProgramAnalysisResponse> {
+  try {
+    logger.api("POST", `/programs/${programId}/analyze`);
+    const startTime = Date.now();
+    const encodedProgramId = encodeURIComponent(programId);
+
+    const response = await fetch(`${API_BASE_URL}/programs/${encodedProgramId}/analyze`, {
+      method: "POST",
+      signal,
+    });
+
+    const duration = Date.now() - startTime;
+    logger.performance("program_auto_analysis_api", duration, { programId });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ error: "Unknown error" }));
+      throw new Error(error.message || `HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const analysis = await response.json();
+    logger.api("POST", `/programs/${programId}/analyze`, undefined, analysis);
+    return analysis;
+  } catch (error) {
+    const errorWithContext = error instanceof Error
+      ? Object.assign(error, { endpoint: `/programs/${programId}/analyze` })
+      : { message: String(error), endpoint: `/programs/${programId}/analyze` };
+    logger.error("Failed to analyze program", errorWithContext);
+    throw error;
+  }
+}
+
