@@ -9,6 +9,7 @@ import { Input } from "../components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Button } from "../components/ui/button";
 import { logger } from "../lib/logger";
+import "../styles/pages.css";
 
 export function Scholarships() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -99,22 +100,22 @@ export function Scholarships() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div className="page-container">
+      <div className="page-content">
         <div className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-black mb-2">
+          <h1 className="page-title">
             Scholarships & Proposal Generator
           </h1>
-          <p className="text-gray-700">
+          <p className="page-subtitle">
             Find scholarships and generate AI-powered proposals
           </p>
         </div>
 
         {/* Filter Bar */}
-        <div className="bg-gray-50 rounded-2xl p-4 sm:p-6 mb-8 border">
+        <div className="page-filter-card">
           <div className="flex items-center gap-2 mb-4">
-            <Filter className="h-5 w-5 text-gray-600" />
-            <h2 className="text-lg font-semibold text-black">Filters</h2>
+            <Filter className="h-5 w-5 text-muted" />
+            <h2 className="text-lg font-semibold text-primary-dark">Filters</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -183,7 +184,7 @@ export function Scholarships() {
 
         {/* Results Count */}
         <div className="mb-6">
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-muted">
             Showing {filteredScholarships.length} of {sampleScholarships.length} scholarships
           </p>
         </div>
@@ -201,7 +202,7 @@ export function Scholarships() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-600 mb-4">No scholarships match your filters.</p>
+            <p className="text-muted mb-4">No scholarships match your filters.</p>
             <Button variant="outline" onClick={clearFilters}>
               Clear Filters
             </Button>

@@ -9,6 +9,7 @@ import { Combobox } from "../components/ui/combobox";
 import { Loader2, GraduationCap } from "lucide-react";
 import { Badge } from "../components/ui/badge";
 import { getInstitutionName } from "../lib/pathway-converter";
+import "../styles/pages.css";
 
 export function CareerPathway() {
   const [milestones, setMilestones] = useState<Milestone[]>([]);
@@ -70,22 +71,22 @@ export function CareerPathway() {
   }, [milestones.length]);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="page-container">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary-50 to-primary-100 border-b">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="page-hero">
+        <div className="page-hero-inner">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-black mb-4">
-              PathFundAI
+            <h1 className="page-title">
+              Career Pathway
             </h1>
-            <p className="text-lg sm:text-xl text-gray-700 font-semibold mb-6">
+            <p className="page-subtitle">
               Plan your future, prove progress, fund your journey.
             </p>
 
             {/* Career Selection */}
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-end">
               <div className="flex-1 min-w-0">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="page-label">
                   Select Career
                 </label>
                 <Combobox
@@ -107,7 +108,7 @@ export function CareerPathway() {
 
               {pathway && pathway.primaryPathway.length > 1 && (
                 <div className="flex-1 min-w-0">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="page-label">
                     Transfer Institution
                   </label>
                   <Combobox
@@ -165,7 +166,7 @@ export function CareerPathway() {
       </div>
 
       {/* Timeline Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="page-content">
         <div className="max-w-4xl mx-auto">
           {error && (
             <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
@@ -176,11 +177,11 @@ export function CareerPathway() {
           {loading ? (
             <div className="flex flex-col items-center justify-center py-12">
               <Loader2 className="h-8 w-8 animate-spin text-primary mb-4" />
-              <p className="text-gray-600">Generating your pathway...</p>
+              <p className="text-muted">Generating your pathway...</p>
             </div>
           ) : milestones.length > 0 ? (
             <>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-black mb-8">
+              <h2 className="page-section-title">
                 Your Career Pathway
               </h2>
               <TimelineTree 
@@ -203,7 +204,7 @@ export function CareerPathway() {
             </>
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-600">Select a career to generate your pathway</p>
+              <p className="text-muted">Select a career to generate your pathway</p>
             </div>
           )}
         </div>
