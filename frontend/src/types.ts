@@ -18,12 +18,13 @@ export type Milestone = {
   countsTowardRequired?: boolean; // Whether this course counts toward required credits (true for required courses, false for optional elective options)
   // New fields for tree structure and interactivity
   category?: MilestoneCategory; // Visual categorization
-  electiveGroupId?: string; // For grouping elective courses
-  isElective?: boolean; // Whether this is an elective course
-  selected?: boolean; // For user-selected electives
-  requiredCount?: number; // For elective groups: "choose X of Y"
-  totalOptions?: number; // Total options in an elective group
-  children?: Milestone[]; // For tree structure (e.g., elective groups with options)
+  groupId?: string; // The requirement group this course belongs to
+  groupName?: string; // Display name of the requirement group
+  requiredCredits?: number; // Required credits for this group
+  selected?: boolean; // For user-selected courses in groups with multiple options
+  requiredCount?: number; // For groups: "choose X of Y" courses
+  totalOptions?: number; // Total options in a group
+  children?: Milestone[]; // For tree structure (e.g., groups with options)
 };
 
 export type Scholarship = {

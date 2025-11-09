@@ -157,7 +157,7 @@ function MilestoneCard({
   const statusInfo = statusConfig[milestone.status];
   const hasDescription = milestone.description && milestone.description.trim().length > 0;
   const isDegree = milestone.category === "DEGREE" || isLevelHeader(milestone);
-  const isElective = milestone.isElective || milestone.category === "ELECTIVE";
+  const isElective = milestone.category === "ELECTIVE";
 
   // Status change handler
   const handleStatusClick = () => {
@@ -417,32 +417,41 @@ export function TimelineTree({
     logger.action("Elective selection changed", { milestoneId, selected }, "TimelineTree");
   };
 
-  // Group milestones by elective groups
-  const organizeMilestones = (milestones: Milestone[]): (Milestone | { type: "elective-group"; groupId: string; milestones: Milestone[] })[] => {
-    const result: (Milestone | { type: "elective-group"; groupId: string; milestones: Milestone[] })[] = [];
-    const electiveGroups = new Map<string, Milestone[]>();
-    const regularMilestones: Milestone[] = [];
+  // Group milestones by requirement groups
+  // All courses belong to a group, and groups can appear in multiple semesters
+  const organizeMilestones = (milestones: Milestone[]): (Milestone | { type: "group"; groupId: string; groupName: string; milestones: Milestone[] })[] => {
+    const result: (Milestone | { type: "group"; groupId: string; groupName: string; milestones: Milestone[] })[] = [];
+    const groups = new Map<string, { groupName: string; milestones: Milestone[] }>();
+    const ungroupedMilestones: Milestone[] = [];
 
     milestones.forEach((milestone) => {
-      if (milestone.electiveGroupId) {
-        if (!electiveGroups.has(milestone.electiveGroupId)) {
-          electiveGroups.set(milestone.electiveGroupId, []);
+      // Only group course milestones
+      if (milestone.kind === "COURSE" && milestone.groupId) {
+        if (!groups.has(milestone.groupId)) {
+          groups.set(milestone.groupId, {
+            groupName: milestone.groupName || milestone.groupId,
+            milestones: [],
+          });
         }
-        electiveGroups.get(milestone.electiveGroupId)!.push(milestone);
+        groups.get(milestone.groupId)!.milestones.push(milestone);
       } else {
-        regularMilestones.push(milestone);
+        // Non-course milestones (certifications, internships, etc.) are not grouped
+        ungroupedMilestones.push(milestone);
       }
     });
 
-    // Add regular milestones first
-    result.push(...regularMilestones);
+    // Add ungrouped milestones first
+    result.push(...ungroupedMilestones);
 
-    // Add elective groups
-    electiveGroups.forEach((groupMilestones, groupId) => {
+    // Add groups (only show groups with multiple courses or if they have requiredCount/totalOptions)
+    groups.forEach((groupData, groupId) => {
+      // Always show groups, even if they have only one course
+      // This ensures all courses are visually grouped
       result.push({
-        type: "elective-group",
+        type: "group",
         groupId,
-        milestones: groupMilestones,
+        groupName: groupData.groupName,
+        milestones: groupData.milestones,
       });
     });
 
@@ -581,8 +590,8 @@ export function TimelineTree({
               <div className={cn("mb-8", isNestedMonth ? "ml-20" : "ml-20")}>
                 <div className="space-y-4">
                   {organizedMilestones.map((item) => {
-                    if ('type' in item && item.type === "elective-group") {
-                      // Render elective group as a special expandable section
+                    if ('type' in item && item.type === "group") {
+                      // Render requirement group as an expandable section
                       const groupId = item.groupId;
                       const isExpanded = expandedGroups.has(groupId);
                       const selectedCount = item.milestones.filter(m => {
@@ -590,42 +599,55 @@ export function TimelineTree({
                         return (state || m).selected;
                       }).length;
                       const firstMilestone = item.milestones[0];
-                      const requiredCount = firstMilestone.requiredCount || 1;
+                      const requiredCount = firstMilestone.requiredCount || item.milestones.length;
+                      const requiredCredits = firstMilestone.requiredCredits || 0;
 
-                      // Extract a cleaner group name from the electiveGroupId
-                      const groupName = firstMilestone.electiveGroupId 
-                        ? firstMilestone.electiveGroupId.replace(/^elective-/, "").split(" > ").pop() || "Electives"
-                        : "Electives";
+                      // Extract a group name that shows enough context to distinguish it
+                      // If the group name has multiple parts, show the last 2 parts to provide context
+                      const groupNameParts = item.groupName.split(" > ");
+                      let groupName: string;
+                      if (groupNameParts.length > 2) {
+                        // Show last 2 parts: e.g., "LOWER DIVISION REQUIREMENTS > Group B"
+                        groupName = groupNameParts.slice(-2).join(" > ");
+                      } else {
+                        // Show the full name if it's short enough
+                        groupName = item.groupName;
+                      }
                       
-                      // Calculate total credits for this elective group
+                      // Calculate total credits for this group
                       const groupTotalCredits = item.milestones.reduce((sum, m) => sum + (m.credits || 0), 0);
+                      // Calculate credits that count toward required
+                      const requiredCreditsScheduled = item.milestones
+                        .filter(m => m.countsTowardRequired !== false)
+                        .reduce((sum, m) => sum + (m.credits || 0), 0);
 
                       return (
-                        <div key={groupId} className="border-l-4 border-blue-400 bg-blue-50 rounded-lg p-4 shadow-sm">
+                        <div key={groupId} className="border-l-4 border-primary-400 bg-primary-50 rounded-lg p-4 shadow-sm">
                           <button
                             onClick={() => toggleGroup(groupId)}
                             className="w-full flex items-center gap-2 mb-3"
                           >
                             <ChevronRight className={cn(
-                              "h-5 w-5 text-blue-600 transition-transform flex-shrink-0",
+                              "h-5 w-5 text-primary-600 transition-transform flex-shrink-0",
                               isExpanded && "rotate-90"
                             )} />
                             <div className="flex-1 text-left">
                               <div className="flex items-center gap-2">
-                                <p className="font-semibold text-blue-900 text-lg">
+                                <p className="font-semibold text-primary-900 text-lg">
                                   {groupName}
                                 </p>
-                                <Badge variant="outline" className="text-xs bg-blue-100 border-blue-300 text-blue-800">
-                                  Elective Group
-                                </Badge>
                               </div>
                               <div className="flex items-center gap-3 mt-1">
-                                <p className="text-sm text-blue-700">
-                                  Choose {requiredCount} of {item.milestones.length} courses
-                                  {selectedCount > 0 && ` • ${selectedCount} selected`}
-                                </p>
+                                {requiredCredits > 0 && (
+                                  <p className="text-sm text-primary-700">
+                                    {requiredCredits} credits required
+                                    {requiredCount < item.milestones.length && ` • Choose ${requiredCount} of ${item.milestones.length} courses`}
+                                    {selectedCount > 0 && ` • ${selectedCount} selected`}
+                                  </p>
+                                )}
                                 {groupTotalCredits > 0 && (
-                                  <p className="text-sm font-medium text-blue-800">
+                                  <p className="text-sm font-medium text-primary-800">
+                                    {requiredCreditsScheduled > 0 && `${requiredCreditsScheduled} required / `}
                                     {groupTotalCredits} total credits
                                   </p>
                                 )}
@@ -656,7 +678,7 @@ export function TimelineTree({
                         </div>
                       );
                     } else {
-                      // Render regular milestone
+                      // Render regular milestone (non-course items like certifications, internships)
                       const milestone = item as Milestone;
                       const currentMilestone = milestoneStates.get(milestone.id) || milestone;
                       
