@@ -11,6 +11,7 @@ import { generatePathway } from "./services/pathway-generator";
 import { getCachedPathway, cachePathway } from "./lib/storage";
 import { logger } from "./lib/logger";
 import { processProgramPDFs } from "./services/pdf-processor";
+import { processTranscriptPDF, processResumePDF } from "./services/student-document-processor";
 import {
   getAllCareerProspects,
   getAllFields,
@@ -747,6 +748,167 @@ app.post("/programs/:programId/analyze", async (c) => {
     return c.json(
       {
         error: "Failed to analyze program",
+        message: error instanceof Error ? error.message : "Unknown error",
+      },
+      500
+    );
+  }
+});
+
+// Process transcript PDF endpoint
+app.post("/student/process-transcript", async (c) => {
+  const startTime = Date.now();
+  
+  try {
+    const formData = await c.req.formData();
+    const transcriptEntry = formData.get("transcript");
+
+    if (!transcriptEntry) {
+      return c.json({ error: "Transcript PDF is required" }, 400);
+    }
+
+    if (typeof transcriptEntry === "string") {
+      return c.json({ error: "Transcript must be a file upload" }, 400);
+    }
+
+    const transcriptFile = transcriptEntry as File;
+
+    if (transcriptFile.type !== "application/pdf") {
+      return c.json({ error: "File must be a PDF document" }, 400);
+    }
+
+    logger.info("Processing transcript PDF", {
+      transcriptName: transcriptFile.name,
+      transcriptSize: transcriptFile.size,
+    });
+
+    const transcriptBuffer = await transcriptFile.arrayBuffer();
+
+    const env = c.env;
+    if (!env.GEMINI_API_KEY) {
+      logger.error("Gemini API key not configured");
+      return c.json({ error: "Gemini API key not configured" }, 500);
+    }
+
+    const analysis = await processTranscriptPDF(transcriptBuffer, env.GEMINI_API_KEY);
+
+    const duration = Date.now() - startTime;
+    logger.performance("transcript_processing", duration, {
+      transcriptName: transcriptFile.name,
+    });
+
+    return c.json(analysis);
+  } catch (error) {
+    const duration = Date.now() - startTime;
+    logger.error("Failed to process transcript", error instanceof Error ? error : new Error(String(error)), {
+      duration,
+    });
+    return c.json(
+      {
+        error: "Failed to process transcript",
+        message: error instanceof Error ? error.message : "Unknown error",
+      },
+      500
+    );
+  }
+});
+
+// Process resume PDF endpoint
+app.post("/student/process-resume", async (c) => {
+  const startTime = Date.now();
+  
+  try {
+    const formData = await c.req.formData();
+    const resumeEntry = formData.get("resume");
+
+    if (!resumeEntry) {
+      return c.json({ error: "Resume PDF is required" }, 400);
+    }
+
+    if (typeof resumeEntry === "string") {
+      return c.json({ error: "Resume must be a file upload" }, 400);
+    }
+
+    const resumeFile = resumeEntry as File;
+
+    if (resumeFile.type !== "application/pdf") {
+      return c.json({ error: "File must be a PDF document" }, 400);
+    }
+
+    logger.info("Processing resume PDF", {
+      resumeName: resumeFile.name,
+      resumeSize: resumeFile.size,
+    });
+
+    const resumeBuffer = await resumeFile.arrayBuffer();
+
+    const env = c.env;
+    if (!env.GEMINI_API_KEY) {
+      logger.error("Gemini API key not configured");
+      return c.json({ error: "Gemini API key not configured" }, 500);
+    }
+
+    const analysis = await processResumePDF(resumeBuffer, env.GEMINI_API_KEY);
+
+    const duration = Date.now() - startTime;
+    logger.performance("resume_processing", duration, {
+      resumeName: resumeFile.name,
+    });
+
+    return c.json(analysis);
+  } catch (error) {
+    const duration = Date.now() - startTime;
+    logger.error("Failed to process resume", error instanceof Error ? error : new Error(String(error)), {
+      duration,
+    });
+    return c.json(
+      {
+        error: "Failed to process resume",
+        message: error instanceof Error ? error.message : "Unknown error",
+      },
+      500
+    );
+  }
+});
+
+// Fetch relevant scholarships endpoint
+app.post("/scholarships/relevant", async (c) => {
+  const startTime = Date.now();
+  
+  try {
+    const studentInfo = await c.req.json();
+    
+    logger.info("Fetching relevant scholarships", {
+      hasProgram: !!studentInfo.program,
+      hasGPA: !!studentInfo.gpa,
+      hasRaceEthnicity: !!studentInfo.raceEthnicity,
+    });
+
+    const env = c.env;
+    if (!env.GEMINI_API_KEY) {
+      logger.error("Gemini API key not configured");
+      return c.json({ error: "Gemini API key not configured" }, 500);
+    }
+
+    // Use Gemini to find relevant scholarships
+    const { findRelevantScholarships } = await import("./services/student-document-processor");
+    const result = await findRelevantScholarships(studentInfo, env.GEMINI_API_KEY);
+
+    const duration = Date.now() - startTime;
+    logger.performance("scholarship_matching", duration, {
+      studentInfoProvided: !!studentInfo,
+      scholarshipsFound: result.scholarships.length,
+    });
+
+    return c.json({ scholarships: result.scholarships });
+  } catch (error) {
+    const duration = Date.now() - startTime;
+    logger.error("Failed to fetch relevant scholarships", error instanceof Error ? error : new Error(String(error)), {
+      duration,
+    });
+    return c.json(
+      {
+        error: "Failed to fetch relevant scholarships",
         message: error instanceof Error ? error.message : "Unknown error",
       },
       500

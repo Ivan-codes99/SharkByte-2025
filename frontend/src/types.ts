@@ -105,3 +105,56 @@ export interface ProgramAnalysisResponse {
   internships?: ProgramInternship[];
 }
 
+export type ClassStanding = "FRESHMAN" | "SOPHOMORE" | "JUNIOR" | "SENIOR" | "GRADUATE" | "OTHER";
+
+export type RaceEthnicity = 
+  | "AMERICAN_INDIAN_OR_ALASKA_NATIVE"
+  | "ASIAN"
+  | "BLACK_OR_AFRICAN_AMERICAN"
+  | "HISPANIC_OR_LATINO"
+  | "NATIVE_HAWAIIAN_OR_PACIFIC_ISLANDER"
+  | "WHITE"
+  | "TWO_OR_MORE_RACES"
+  | "PREFER_NOT_TO_SAY"
+  | "OTHER";
+
+export interface StudentInfo {
+  // Basic Information
+  name: string;
+  email?: string;
+  phone?: string;
+  
+  // Academic Information
+  classStanding?: ClassStanding;
+  program?: string;
+  gpa?: number;
+  institution?: string;
+  
+  // Demographic Information (for scholarship eligibility)
+  raceEthnicity?: RaceEthnicity;
+  isFirstGeneration?: boolean;
+  isVeteran?: boolean;
+  isInternationalStudent?: boolean;
+  
+  // Additional Information
+  achievements?: string;
+  workExperience?: string;
+  extracurricularActivities?: string;
+  careerGoals?: string;
+  financialNeed?: string;
+  
+  // Documents
+  transcriptFile?: {
+    name: string;
+    data: string; // Base64 encoded file data
+    uploadedAt: string;
+  };
+  resumeFile?: {
+    name: string;
+    data: string; // Base64 encoded file data
+    uploadedAt: string;
+  };
+  
+  // Metadata
+  lastUpdated: string;
+}
