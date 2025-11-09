@@ -1,74 +1,280 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { TimelineTree } from "../components/TimelineTree";
-import { generatePathway, getCareers } from "../lib/api";
-import { pathwayToMilestones } from "../lib/pathway-converter";
-import type { GeneratedPathway } from "../types/pathway";
 import type { Milestone } from "../types";
 import { logger } from "../lib/logger";
-import { Combobox } from "../components/ui/combobox";
-import { Loader2, GraduationCap } from "lucide-react";
-import { Badge } from "../components/ui/badge";
-import { getInstitutionName } from "../lib/pathway-converter";
+import { semesterToDate } from "../lib/semester";
 import "../styles/pages.css";
 
+// Hardcoded milestones for Software Engineer at Florida International University
+const hardcodedMilestones: Milestone[] = [
+  // Fall 2024 - MDC (Associate Degree)
+  {
+    id: "1",
+    title: "Programming I (COP2271)",
+    kind: "COURSE",
+    semester: "FALL",
+    year: 2024,
+    targetDate: semesterToDate("FALL", 2024),
+    status: "DONE",
+    description: "Introduction to programming fundamentals",
+    category: "CORE",
+  },
+  {
+    id: "2",
+    title: "Calculus I (MAC2311)",
+    kind: "COURSE",
+    semester: "FALL",
+    year: 2024,
+    targetDate: semesterToDate("FALL", 2024),
+    status: "DONE",
+    description: "Differential and integral calculus",
+    category: "CORE",
+  },
+  {
+    id: "3",
+    title: "General Physics I (PHY2048)",
+    kind: "COURSE",
+    semester: "FALL",
+    year: 2024,
+    targetDate: semesterToDate("FALL", 2024),
+    status: "DONE",
+    description: "Mechanics and thermodynamics",
+    category: "CORE",
+  },
+  
+  // Spring 2025 - MDC
+  {
+    id: "4",
+    title: "Object-Oriented Programming (COP2274)",
+    kind: "COURSE",
+    semester: "SPRING",
+    year: 2025,
+    targetDate: semesterToDate("SPRING", 2025),
+    status: "DONE",
+    description: "Java programming and OOP principles",
+    category: "CORE",
+  },
+  {
+    id: "5",
+    title: "Data Structures (COP3530)",
+    kind: "COURSE",
+    semester: "SPRING",
+    year: 2025,
+    targetDate: semesterToDate("SPRING", 2025),
+    status: "DONE",
+    description: "Arrays, linked lists, stacks, queues, trees",
+    category: "CORE",
+  },
+  {
+    id: "6",
+    title: "Calculus II (MAC2312)",
+    kind: "COURSE",
+    semester: "SPRING",
+    year: 2025,
+    targetDate: semesterToDate("SPRING", 2025),
+    status: "DONE",
+    description: "Advanced integration techniques",
+    category: "CORE",
+  },
+  
+  // Fall 2025 - Transfer to FIU
+  {
+    id: "7",
+    title: "Programming I (COP2210) - FIU",
+    kind: "COURSE",
+    semester: "FALL",
+    year: 2025,
+    targetDate: semesterToDate("FALL", 2025),
+    status: "DONE",
+    description: "Transferred from MDC COP2271",
+    category: "CORE",
+  },
+  {
+    id: "8",
+    title: "Object-Oriented Programming (COP3337) - FIU",
+    kind: "COURSE",
+    semester: "FALL",
+    year: 2025,
+    targetDate: semesterToDate("FALL", 2025),
+    status: "DONE",
+    description: "Transferred from MDC COP2274",
+    category: "CORE",
+  },
+  {
+    id: "9",
+    title: "Data Structures (COP3530) - FIU",
+    kind: "COURSE",
+    semester: "FALL",
+    year: 2025,
+    targetDate: semesterToDate("FALL", 2025),
+    status: "DONE",
+    description: "Transferred from MDC COP3530",
+    category: "CORE",
+  },
+  {
+    id: "10",
+    title: "Computer Organization (CDA3101) - FIU",
+    kind: "COURSE",
+    semester: "FALL",
+    year: 2025,
+    targetDate: semesterToDate("FALL", 2025),
+    status: "IN_PROGRESS",
+    description: "Computer architecture and assembly language",
+    category: "CORE",
+  },
+  {
+    id: "11",
+    title: "Discrete Structures (COT3100) - FIU",
+    kind: "COURSE",
+    semester: "FALL",
+    year: 2025,
+    targetDate: semesterToDate("FALL", 2025),
+    status: "IN_PROGRESS",
+    description: "Logic, sets, graphs, and algorithms",
+    category: "CORE",
+  },
+  
+  // Spring 2026 - FIU
+  {
+    id: "12",
+    title: "Algorithms (COP3531) - FIU",
+    kind: "COURSE",
+    semester: "SPRING",
+    year: 2026,
+    targetDate: semesterToDate("SPRING", 2026),
+    status: "IN_PROGRESS",
+    description: "Algorithm design and analysis",
+    category: "CORE",
+  },
+  {
+    id: "13",
+    title: "Software Engineering (CEN4010) - FIU",
+    kind: "COURSE",
+    semester: "SPRING",
+    year: 2026,
+    targetDate: semesterToDate("SPRING", 2026),
+    status: "IN_PROGRESS",
+    description: "Software development lifecycle and methodologies",
+    category: "CORE",
+  },
+  {
+    id: "14",
+    title: "Database Systems (COP4703) - FIU",
+    kind: "COURSE",
+    semester: "SPRING",
+    year: 2026,
+    targetDate: semesterToDate("SPRING", 2026),
+    status: "IN_PROGRESS",
+    description: "Database design and SQL",
+    category: "CORE",
+  },
+  {
+    id: "15",
+    title: "Operating Systems (COP4610) - FIU",
+    kind: "COURSE",
+    semester: "SPRING",
+    year: 2026,
+    targetDate: semesterToDate("SPRING", 2026),
+    status: "IN_PROGRESS",
+    description: "Process management and system programming",
+    category: "CORE",
+  },
+  
+  // Summer 2026
+  {
+    id: "16",
+    title: "Software Engineering Internship",
+    kind: "INTERNSHIP",
+    semester: "SUMMER",
+    year: 2026,
+    targetDate: semesterToDate("SUMMER", 2026),
+    status: "PLANNED",
+    description: "Summer internship at tech company, working on full-stack applications",
+  },
+  {
+    id: "17",
+    title: "AWS Cloud Practitioner Certification",
+    kind: "CERT",
+    targetDate: "2026-07-15",
+    status: "PLANNED",
+    description: "Cloud computing fundamentals and AWS services",
+  },
+  
+  // Fall 2026 - FIU
+  {
+    id: "18",
+    title: "Computer Networks (CNT4713) - FIU",
+    kind: "COURSE",
+    semester: "FALL",
+    year: 2026,
+    targetDate: semesterToDate("FALL", 2026),
+    status: "PLANNED",
+    description: "Network protocols and architecture",
+    category: "CORE",
+  },
+  {
+    id: "19",
+    title: "Web Development (CEN4721) - FIU",
+    kind: "COURSE",
+    semester: "FALL",
+    year: 2026,
+    targetDate: semesterToDate("FALL", 2026),
+    status: "PLANNED",
+    description: "Full-stack web development",
+    category: "ELECTIVE",
+  },
+  {
+    id: "20",
+    title: "Mobile Application Development - FIU",
+    kind: "COURSE",
+    semester: "FALL",
+    year: 2026,
+    targetDate: semesterToDate("FALL", 2026),
+    status: "PLANNED",
+    description: "iOS and Android development",
+    category: "ELECTIVE",
+    isElective: true,
+  },
+  
+  // Spring 2027 - FIU
+  {
+    id: "21",
+    title: "Senior Design Project - FIU",
+    kind: "COURSE",
+    semester: "SPRING",
+    year: 2027,
+    targetDate: semesterToDate("SPRING", 2027),
+    status: "PLANNED",
+    description: "Capstone project: develop a complete software system",
+    category: "DEGREE",
+  },
+  {
+    id: "22",
+    title: "Cybersecurity (CIS4361) - FIU",
+    kind: "COURSE",
+    semester: "SPRING",
+    year: 2027,
+    targetDate: semesterToDate("SPRING", 2027),
+    status: "PLANNED",
+    description: "Security principles and practices",
+    category: "ELECTIVE",
+    isElective: true,
+  },
+  {
+    id: "23",
+    title: "Bachelor's Degree in Computer Science - FIU",
+    kind: "COURSE",
+    semester: "SPRING",
+    year: 2027,
+    targetDate: semesterToDate("SPRING", 2027),
+    status: "PLANNED",
+    description: "Graduation from Florida International University",
+    category: "DEGREE",
+  },
+];
+
 export function CareerPathway() {
-  const [milestones, setMilestones] = useState<Milestone[]>([]);
-  const [pathway, setPathway] = useState<GeneratedPathway | null>(null);
-  const [careers, setCareers] = useState<string[]>([]);
-  const [selectedCareer, setSelectedCareer] = useState<string>("");
-  const [selectedAlternative, setSelectedAlternative] = useState<number | undefined>(undefined);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  // Load available careers on mount
-  useEffect(() => {
-    getCareers()
-      .then((careerList) => {
-        setCareers(careerList);
-        if (careerList.length > 0) {
-          setSelectedCareer(careerList[0]);
-        }
-      })
-      .catch((err) => {
-        logger.error("Failed to load careers", err);
-        setError("Failed to load available careers");
-      });
-  }, []);
-
-  // Generate pathway when career is selected
-  useEffect(() => {
-    if (!selectedCareer) return;
-
-    setLoading(true);
-    setError(null);
-
-    generatePathway({
-      career: selectedCareer,
-      includeGraduate: true,
-      includeCertifications: true,
-    })
-      .then((generatedPathway) => {
-        setPathway(generatedPathway);
-        const convertedMilestones = pathwayToMilestones(generatedPathway, selectedAlternative);
-        setMilestones(convertedMilestones);
-        logger.info("Pathway generated", {
-          career: selectedCareer,
-          milestoneCount: convertedMilestones.length,
-          levels: generatedPathway.primaryPathway.length,
-        });
-      })
-      .catch((err) => {
-        logger.error("Failed to generate pathway", err);
-        setError(err instanceof Error ? err.message : "Failed to generate pathway");
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, [selectedCareer, selectedAlternative]);
-
-  useEffect(() => {
-    logger.info("Career Pathway page mounted", { milestoneCount: milestones.length }, "CareerPathway");
-  }, [milestones.length]);
+  const [milestones, setMilestones] = useState<Milestone[]>(hardcodedMilestones);
 
   return (
     <div className="page-container">
@@ -80,87 +286,8 @@ export function CareerPathway() {
               Your Timeline
             </h1>
             <p className="page-subtitle">
-              Plan your future, prove progress, fund your journey.
+              Software Engineer pathway at Florida International University
             </p>
-
-            {/* Career Selection */}
-            <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-end">
-              <div className="flex-1 min-w-0">
-                <label className="page-label">
-                  Select Career
-                </label>
-                <Combobox
-                  options={careers.map((career) => ({
-                    value: career,
-                    label: career,
-                  }))}
-                  value={selectedCareer}
-                  onValueChange={(value) => {
-                    setSelectedCareer(value);
-                    setSelectedAlternative(undefined);
-                  }}
-                  placeholder="Search and select a career..."
-                  searchPlaceholder="Search careers..."
-                  emptyMessage="No careers found."
-                  disabled={loading || careers.length === 0}
-                />
-              </div>
-
-              {pathway && pathway.primaryPathway.length > 1 && (
-                <div className="flex-1 min-w-0">
-                  <label className="page-label">
-                    Transfer Institution
-                  </label>
-                  <Combobox
-                    options={[
-                      {
-                        value: "primary",
-                        label: `${getInstitutionName(pathway.primaryPathway[1]?.institution || "MDC")} (Primary)`,
-                      },
-                      ...pathway.alternativePathways.map((alt, index) => {
-                        const transferInst = alt.levels.find((l) => l.level === "BS")?.institution || "Transfer";
-                        return {
-                          value: `alt-${index}`,
-                          label: getInstitutionName(transferInst),
-                        };
-                      }),
-                    ]}
-                    value={selectedAlternative === undefined ? "primary" : `alt-${selectedAlternative}`}
-                    onValueChange={(value) => {
-                      if (value === "primary") {
-                        setSelectedAlternative(undefined);
-                      } else {
-                        setSelectedAlternative(parseInt(value.replace("alt-", "")));
-                      }
-                    }}
-                    placeholder="Select transfer institution..."
-                    searchPlaceholder="Search institutions..."
-                    emptyMessage="No institutions found."
-                    disabled={loading}
-                  />
-                </div>
-              )}
-            </div>
-
-            {/* Pathway Info */}
-            {pathway && (
-              <div className="mt-6 flex flex-wrap gap-2 items-center">
-                <Badge variant="secondary" className="text-sm">
-                  <GraduationCap className="h-3 w-3 mr-1" />
-                  {pathway.totalDuration || "N/A"}
-                </Badge>
-                {pathway.metadata.aiEnhanced && (
-                  <Badge variant="outline" className="text-sm">
-                    AI Enhanced
-                  </Badge>
-                )}
-                {pathway.metadata.cached && (
-                  <Badge variant="outline" className="text-sm">
-                    Cached
-                  </Badge>
-                )}
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -168,48 +295,28 @@ export function CareerPathway() {
       {/* Timeline Section */}
       <div className="page-content">
         <div className="max-w-4xl mx-auto">
-          {error && (
-            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-red-800 font-medium">Error: {error}</p>
-            </div>
-          )}
-
-          {loading ? (
-            <div className="flex flex-col items-center justify-center py-12">
-              <Loader2 className="h-8 w-8 animate-spin text-primary mb-4" />
-              <p className="text-muted">Generating your pathway...</p>
-            </div>
-          ) : milestones.length > 0 ? (
-            <>
-              <h2 className="page-section-title">
-                Your Timeline
-              </h2>
-              <TimelineTree 
-                milestones={milestones}
-                onMilestoneStatusChange={(milestoneId, status) => {
-                  logger.action("Milestone status updated", { milestoneId, status }, "CareerPathway");
-                  // Update local state
-                  setMilestones(prev => 
-                    prev.map(m => m.id === milestoneId ? { ...m, status } : m)
-                  );
-                }}
-                onElectiveSelectionChange={(milestoneId, selected) => {
-                  logger.action("Elective selection updated", { milestoneId, selected }, "CareerPathway");
-                  // Update local state
-                  setMilestones(prev => 
-                    prev.map(m => m.id === milestoneId ? { ...m, selected } : m)
-                  );
-                }}
-              />
-            </>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-muted">Select a career to generate your pathway</p>
-            </div>
-          )}
+          <h2 className="page-section-title">
+            Your Timeline
+          </h2>
+          <TimelineTree 
+            milestones={milestones}
+            onMilestoneStatusChange={(milestoneId, status) => {
+              logger.action("Milestone status updated", { milestoneId, status }, "CareerPathway");
+              // Update local state
+              setMilestones(prev => 
+                prev.map(m => m.id === milestoneId ? { ...m, status } : m)
+              );
+            }}
+            onElectiveSelectionChange={(milestoneId, selected) => {
+              logger.action("Elective selection updated", { milestoneId, selected }, "CareerPathway");
+              // Update local state
+              setMilestones(prev => 
+                prev.map(m => m.id === milestoneId ? { ...m, selected } : m)
+              );
+            }}
+          />
         </div>
       </div>
     </div>
   );
 }
-

@@ -52,6 +52,30 @@ export function Navbar() {
             )}
           </Link>
           <Link
+            to="/choose-path"
+            className={cn(
+              "px-3 py-2 text-sm font-semibold transition-colors relative",
+              "hover:translate-y-[-2px]",
+              isActive("/choose-path")
+                ? "text-[#d45a2a]"
+                : "text-[#0f1724]"
+            )}
+            style={{
+              fontWeight: 600,
+              letterSpacing: '0.4px'
+            }}
+          >
+            Choose Path
+            {isActive("/choose-path") && (
+              <span
+                className="absolute left-2 right-2 bottom-1 h-[3px] rounded-[3px]"
+                style={{
+                  background: 'linear-gradient(90deg, #2563eb, #d45a2a)',
+                }}
+              />
+            )}
+          </Link>
+          <Link
             to="/career-pathway"
             className={cn(
               "px-3 py-2 text-sm font-semibold transition-colors relative",
