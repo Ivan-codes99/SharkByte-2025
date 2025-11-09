@@ -9,56 +9,56 @@ import type { CareerProgramMapping } from "./career-program-mapping";
 
 export const careerToProgramsMapping: CareerProgramMapping[] = [
   {
-    "career": "Leadership and Management",
+    "career": "Leadership And Management",
     "programs": [
       {
         "id": "bsn",
-        "name": "Nursing BSN Bachelor of Science in Nursing",
+        "name": "Nursing BSN Bachelor Of Science In Nursing",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/bsn/",
         "careersUrl": "https://www.mdc.edu/bsn/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Leadership and Management",
-          "Research and Evidence Based Practice",
+          "Leadership And Management",
+          "Research And Evidence Based Practice",
           "Nursing Informatics",
-          "Quality and Safety",
+          "Quality And Safety",
           "Community/ Public Health Nursing",
           "Nursing Advocacy",
           "Nurse Practitioner",
           "Nurse Midwife",
           "Nurse Anesthetist",
           "Nursing Education",
-          "Doctor of Nursing Practice (DNP)",
-          "Ph.D. in Nursing"
+          "Doctor Of Nursing Practice (DNP)",
+          "Ph.d. In Nursing"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Research and Evidence Based Practice",
+    "career": "Research And Evidence Based Practice",
     "programs": [
       {
         "id": "bsn",
-        "name": "Nursing BSN Bachelor of Science in Nursing",
+        "name": "Nursing BSN Bachelor Of Science In Nursing",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/bsn/",
         "careersUrl": "https://www.mdc.edu/bsn/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Leadership and Management",
-          "Research and Evidence Based Practice",
+          "Leadership And Management",
+          "Research And Evidence Based Practice",
           "Nursing Informatics",
-          "Quality and Safety",
+          "Quality And Safety",
           "Community/ Public Health Nursing",
           "Nursing Advocacy",
           "Nurse Practitioner",
           "Nurse Midwife",
           "Nurse Anesthetist",
           "Nursing Education",
-          "Doctor of Nursing Practice (DNP)",
-          "Ph.D. in Nursing"
+          "Doctor Of Nursing Practice (DNP)",
+          "Ph.d. In Nursing"
         ]
       }
     ],
@@ -69,52 +69,52 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "bsn",
-        "name": "Nursing BSN Bachelor of Science in Nursing",
+        "name": "Nursing BSN Bachelor Of Science In Nursing",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/bsn/",
         "careersUrl": "https://www.mdc.edu/bsn/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Leadership and Management",
-          "Research and Evidence Based Practice",
+          "Leadership And Management",
+          "Research And Evidence Based Practice",
           "Nursing Informatics",
-          "Quality and Safety",
+          "Quality And Safety",
           "Community/ Public Health Nursing",
           "Nursing Advocacy",
           "Nurse Practitioner",
           "Nurse Midwife",
           "Nurse Anesthetist",
           "Nursing Education",
-          "Doctor of Nursing Practice (DNP)",
-          "Ph.D. in Nursing"
+          "Doctor Of Nursing Practice (DNP)",
+          "Ph.d. In Nursing"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Quality and Safety",
+    "career": "Quality And Safety",
     "programs": [
       {
         "id": "bsn",
-        "name": "Nursing BSN Bachelor of Science in Nursing",
+        "name": "Nursing BSN Bachelor Of Science In Nursing",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/bsn/",
         "careersUrl": "https://www.mdc.edu/bsn/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Leadership and Management",
-          "Research and Evidence Based Practice",
+          "Leadership And Management",
+          "Research And Evidence Based Practice",
           "Nursing Informatics",
-          "Quality and Safety",
+          "Quality And Safety",
           "Community/ Public Health Nursing",
           "Nursing Advocacy",
           "Nurse Practitioner",
           "Nurse Midwife",
           "Nurse Anesthetist",
           "Nursing Education",
-          "Doctor of Nursing Practice (DNP)",
-          "Ph.D. in Nursing"
+          "Doctor Of Nursing Practice (DNP)",
+          "Ph.d. In Nursing"
         ]
       }
     ],
@@ -125,24 +125,24 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "bsn",
-        "name": "Nursing BSN Bachelor of Science in Nursing",
+        "name": "Nursing BSN Bachelor Of Science In Nursing",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/bsn/",
         "careersUrl": "https://www.mdc.edu/bsn/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Leadership and Management",
-          "Research and Evidence Based Practice",
+          "Leadership And Management",
+          "Research And Evidence Based Practice",
           "Nursing Informatics",
-          "Quality and Safety",
+          "Quality And Safety",
           "Community/ Public Health Nursing",
           "Nursing Advocacy",
           "Nurse Practitioner",
           "Nurse Midwife",
           "Nurse Anesthetist",
           "Nursing Education",
-          "Doctor of Nursing Practice (DNP)",
-          "Ph.D. in Nursing"
+          "Doctor Of Nursing Practice (DNP)",
+          "Ph.d. In Nursing"
         ]
       }
     ],
@@ -153,24 +153,24 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "bsn",
-        "name": "Nursing BSN Bachelor of Science in Nursing",
+        "name": "Nursing BSN Bachelor Of Science In Nursing",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/bsn/",
         "careersUrl": "https://www.mdc.edu/bsn/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Leadership and Management",
-          "Research and Evidence Based Practice",
+          "Leadership And Management",
+          "Research And Evidence Based Practice",
           "Nursing Informatics",
-          "Quality and Safety",
+          "Quality And Safety",
           "Community/ Public Health Nursing",
           "Nursing Advocacy",
           "Nurse Practitioner",
           "Nurse Midwife",
           "Nurse Anesthetist",
           "Nursing Education",
-          "Doctor of Nursing Practice (DNP)",
-          "Ph.D. in Nursing"
+          "Doctor Of Nursing Practice (DNP)",
+          "Ph.d. In Nursing"
         ]
       }
     ],
@@ -181,24 +181,24 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "bsn",
-        "name": "Nursing BSN Bachelor of Science in Nursing",
+        "name": "Nursing BSN Bachelor Of Science In Nursing",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/bsn/",
         "careersUrl": "https://www.mdc.edu/bsn/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Leadership and Management",
-          "Research and Evidence Based Practice",
+          "Leadership And Management",
+          "Research And Evidence Based Practice",
           "Nursing Informatics",
-          "Quality and Safety",
+          "Quality And Safety",
           "Community/ Public Health Nursing",
           "Nursing Advocacy",
           "Nurse Practitioner",
           "Nurse Midwife",
           "Nurse Anesthetist",
           "Nursing Education",
-          "Doctor of Nursing Practice (DNP)",
-          "Ph.D. in Nursing"
+          "Doctor Of Nursing Practice (DNP)",
+          "Ph.d. In Nursing"
         ]
       }
     ],
@@ -209,24 +209,24 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "bsn",
-        "name": "Nursing BSN Bachelor of Science in Nursing",
+        "name": "Nursing BSN Bachelor Of Science In Nursing",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/bsn/",
         "careersUrl": "https://www.mdc.edu/bsn/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Leadership and Management",
-          "Research and Evidence Based Practice",
+          "Leadership And Management",
+          "Research And Evidence Based Practice",
           "Nursing Informatics",
-          "Quality and Safety",
+          "Quality And Safety",
           "Community/ Public Health Nursing",
           "Nursing Advocacy",
           "Nurse Practitioner",
           "Nurse Midwife",
           "Nurse Anesthetist",
           "Nursing Education",
-          "Doctor of Nursing Practice (DNP)",
-          "Ph.D. in Nursing"
+          "Doctor Of Nursing Practice (DNP)",
+          "Ph.d. In Nursing"
         ]
       }
     ],
@@ -237,24 +237,24 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "bsn",
-        "name": "Nursing BSN Bachelor of Science in Nursing",
+        "name": "Nursing BSN Bachelor Of Science In Nursing",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/bsn/",
         "careersUrl": "https://www.mdc.edu/bsn/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Leadership and Management",
-          "Research and Evidence Based Practice",
+          "Leadership And Management",
+          "Research And Evidence Based Practice",
           "Nursing Informatics",
-          "Quality and Safety",
+          "Quality And Safety",
           "Community/ Public Health Nursing",
           "Nursing Advocacy",
           "Nurse Practitioner",
           "Nurse Midwife",
           "Nurse Anesthetist",
           "Nursing Education",
-          "Doctor of Nursing Practice (DNP)",
-          "Ph.D. in Nursing"
+          "Doctor Of Nursing Practice (DNP)",
+          "Ph.d. In Nursing"
         ]
       }
     ],
@@ -265,97 +265,97 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "bsn",
-        "name": "Nursing BSN Bachelor of Science in Nursing",
+        "name": "Nursing BSN Bachelor Of Science In Nursing",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/bsn/",
         "careersUrl": "https://www.mdc.edu/bsn/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Leadership and Management",
-          "Research and Evidence Based Practice",
+          "Leadership And Management",
+          "Research And Evidence Based Practice",
           "Nursing Informatics",
-          "Quality and Safety",
+          "Quality And Safety",
           "Community/ Public Health Nursing",
           "Nursing Advocacy",
           "Nurse Practitioner",
           "Nurse Midwife",
           "Nurse Anesthetist",
           "Nursing Education",
-          "Doctor of Nursing Practice (DNP)",
-          "Ph.D. in Nursing"
+          "Doctor Of Nursing Practice (DNP)",
+          "Ph.d. In Nursing"
         ]
       }
     ],
     "field": "Education"
   },
   {
-    "career": "Doctor of Nursing Practice (DNP)",
+    "career": "Doctor Of Nursing Practice (DNP)",
     "programs": [
       {
         "id": "bsn",
-        "name": "Nursing BSN Bachelor of Science in Nursing",
+        "name": "Nursing BSN Bachelor Of Science In Nursing",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/bsn/",
         "careersUrl": "https://www.mdc.edu/bsn/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Leadership and Management",
-          "Research and Evidence Based Practice",
+          "Leadership And Management",
+          "Research And Evidence Based Practice",
           "Nursing Informatics",
-          "Quality and Safety",
+          "Quality And Safety",
           "Community/ Public Health Nursing",
           "Nursing Advocacy",
           "Nurse Practitioner",
           "Nurse Midwife",
           "Nurse Anesthetist",
           "Nursing Education",
-          "Doctor of Nursing Practice (DNP)",
-          "Ph.D. in Nursing"
+          "Doctor Of Nursing Practice (DNP)",
+          "Ph.d. In Nursing"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Ph.D. in Nursing",
+    "career": "Ph.d. In Nursing",
     "programs": [
       {
         "id": "bsn",
-        "name": "Nursing BSN Bachelor of Science in Nursing",
+        "name": "Nursing BSN Bachelor Of Science In Nursing",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/bsn/",
         "careersUrl": "https://www.mdc.edu/bsn/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Leadership and Management",
-          "Research and Evidence Based Practice",
+          "Leadership And Management",
+          "Research And Evidence Based Practice",
           "Nursing Informatics",
-          "Quality and Safety",
+          "Quality And Safety",
           "Community/ Public Health Nursing",
           "Nursing Advocacy",
           "Nurse Practitioner",
           "Nurse Midwife",
           "Nurse Anesthetist",
           "Nursing Education",
-          "Doctor of Nursing Practice (DNP)",
-          "Ph.D. in Nursing"
+          "Doctor Of Nursing Practice (DNP)",
+          "Ph.d. In Nursing"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Logistics Food Services Government Aviation Management Business Management and Administration",
+    "career": "Logistics Food Services Government Aviation Management Business Management And Administration",
     "programs": [
       {
         "id": "leadershipandmanagementinnovation",
-        "name": "Leadership and Management Innovation Bachelor of Applied Science",
+        "name": "Leadership And Management Innovation Bachelor Of Applied Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/leadershipandmanagementinnovation/",
         "careersUrl": "https://www.mdc.edu/leadershipandmanagementinnovation/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Logistics Food Services Government Aviation Management Business Management and Administration"
+          "Logistics Food Services Government Aviation Management Business Management And Administration"
         ]
       }
     ],
@@ -410,51 +410,51 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Bachelor of Applied Science in Leadership and Management Innovation - with a concentration in Digital Marketing",
+    "career": "Bachelor Of Applied Science In Leadership And Management Innovation - With A Concentration In Digital Marketing",
     "programs": [
       {
         "id": "digitalmarketingbas",
-        "name": "Bachelor of Applied Science in Leadership and Management Innovation - with a concentration in Digital Marketing",
+        "name": "Bachelor Of Applied Science In Leadership And Management Innovation - With A Concentration In Digital Marketing",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/digitalmarketingbas",
         "careersUrl": "https://www.mdc.edu/digitalmarketingbas/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Bachelor of Applied Science in Leadership and Management Innovation - with a concentration in Digital Marketing"
+          "Bachelor Of Applied Science In Leadership And Management Innovation - With A Concentration In Digital Marketing"
         ]
       }
     ],
     "field": "Business"
   },
   {
-    "career": "Supply Chain Management Bachelor of Applied Science",
+    "career": "Supply Chain Management Bachelor Of Applied Science",
     "programs": [
       {
         "id": "supplychainmanagement",
-        "name": "Supply Chain Management Bachelor of Applied Science",
+        "name": "Supply Chain Management Bachelor Of Applied Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/supplychainmanagement/",
         "careersUrl": "https://www.mdc.edu/supplychainmanagement/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Supply Chain Management Bachelor of Applied Science"
+          "Supply Chain Management Bachelor Of Applied Science"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Supply Chain Management – Procurement Management Concentration (B.A.S.)",
+    "career": "Supply Chain Management – Procurement Management Concentration (b.a.s.)",
     "programs": [
       {
         "id": "procurement-management",
-        "name": "Supply Chain Management – Procurement Management Concentration (B.A.S.)",
+        "name": "Supply Chain Management – Procurement Management Concentration (b.a.s.)",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/procurement-management",
         "careersUrl": "https://www.mdc.edu/procurement-management/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Supply Chain Management – Procurement Management Concentration (B.A.S.)"
+          "Supply Chain Management – Procurement Management Concentration (b.a.s.)"
         ]
       }
     ],
@@ -478,51 +478,51 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Supply Chain Management with a Concentration in Supply Chain Analytics",
+    "career": "Supply Chain Management With A Concentration In Supply Chain Analytics",
     "programs": [
       {
         "id": "supplychainanalytics",
-        "name": "Supply Chain Management with a Concentration in Supply Chain Analytics",
+        "name": "Supply Chain Management With A Concentration In Supply Chain Analytics",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/supplychainanalytics",
         "careersUrl": "https://www.mdc.edu/supplychainanalytics/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Supply Chain Management with a Concentration in Supply Chain Analytics"
+          "Supply Chain Management With A Concentration In Supply Chain Analytics"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Early Childhood Education Bachelor of Science",
+    "career": "Early Childhood Education Bachelor Of Science",
     "programs": [
       {
         "id": "earlychildhood",
-        "name": "Early Childhood Education Bachelor of Science",
+        "name": "Early Childhood Education Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/earlychildhood/",
         "careersUrl": "https://www.mdc.edu/earlychildhood/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Early Childhood Education Bachelor of Science"
+          "Early Childhood Education Bachelor Of Science"
         ]
       }
     ],
     "field": "Education"
   },
   {
-    "career": "Exceptional Student Education (K-12) Bachelor of Science",
+    "career": "Exceptional Student Education (k-12) Bachelor Of Science",
     "programs": [
       {
         "id": "ese",
-        "name": "Exceptional Student Education (K-12) Bachelor of Science",
+        "name": "Exceptional Student Education (k-12) Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/ese/",
         "careersUrl": "https://www.mdc.edu/ese/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Exceptional Student Education (K-12) Bachelor of Science"
+          "Exceptional Student Education (k-12) Bachelor Of Science"
         ]
       }
     ],
@@ -563,34 +563,34 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Education"
   },
   {
-    "career": "Bachelor of Science (BS) in Applied Artificial Intelligence",
+    "career": "Bachelor Of Science (BS) In Applied Artificial Intelligence",
     "programs": [
       {
         "id": "appliedaibs",
-        "name": "Bachelor of Science (BS) in Applied Artificial Intelligence",
+        "name": "Bachelor Of Science (BS) In Applied Artificial Intelligence",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/appliedaibs/",
         "careersUrl": "https://www.mdc.edu/appliedaibs/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Bachelor of Science (BS) in Applied Artificial Intelligence"
+          "Bachelor Of Science (BS) In Applied Artificial Intelligence"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Cybersecurity Bachelor of Science",
+    "career": "Cybersecurity Bachelor Of Science",
     "programs": [
       {
         "id": "cybersecuritybs",
-        "name": "Cybersecurity Bachelor of Science",
+        "name": "Cybersecurity Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/cybersecuritybs/",
         "careersUrl": "https://www.mdc.edu/cybersecuritybs/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Cybersecurity Bachelor of Science"
+          "Cybersecurity Bachelor Of Science"
         ]
       }
     ],
@@ -601,7 +601,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "dataanalytics",
-        "name": "Data Analytics Bachelor of Science",
+        "name": "Data Analytics Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/dataanalytics/",
         "careersUrl": "https://www.mdc.edu/dataanalytics/careers.aspx",
@@ -622,7 +622,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "dataanalytics",
-        "name": "Data Analytics Bachelor of Science",
+        "name": "Data Analytics Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/dataanalytics/",
         "careersUrl": "https://www.mdc.edu/dataanalytics/careers.aspx",
@@ -643,7 +643,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "dataanalytics",
-        "name": "Data Analytics Bachelor of Science",
+        "name": "Data Analytics Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/dataanalytics/",
         "careersUrl": "https://www.mdc.edu/dataanalytics/careers.aspx",
@@ -664,7 +664,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "dataanalytics",
-        "name": "Data Analytics Bachelor of Science",
+        "name": "Data Analytics Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/dataanalytics/",
         "careersUrl": "https://www.mdc.edu/dataanalytics/careers.aspx",
@@ -685,7 +685,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "dataanalytics",
-        "name": "Data Analytics Bachelor of Science",
+        "name": "Data Analytics Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/dataanalytics/",
         "careersUrl": "https://www.mdc.edu/dataanalytics/careers.aspx",
@@ -706,7 +706,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "electronicsengineeringbs",
-        "name": "Electronics Engineering Technology Bachelor of Science",
+        "name": "Electronics Engineering Technology Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/electronicsengineeringbs/",
         "careersUrl": "https://www.mdc.edu/electronicsengineeringbs/careers.aspx",
@@ -727,7 +727,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "electronicsengineeringbs",
-        "name": "Electronics Engineering Technology Bachelor of Science",
+        "name": "Electronics Engineering Technology Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/electronicsengineeringbs/",
         "careersUrl": "https://www.mdc.edu/electronicsengineeringbs/careers.aspx",
@@ -748,7 +748,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "electronicsengineeringbs",
-        "name": "Electronics Engineering Technology Bachelor of Science",
+        "name": "Electronics Engineering Technology Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/electronicsengineeringbs/",
         "careersUrl": "https://www.mdc.edu/electronicsengineeringbs/careers.aspx",
@@ -769,7 +769,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "electronicsengineeringbs",
-        "name": "Electronics Engineering Technology Bachelor of Science",
+        "name": "Electronics Engineering Technology Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/electronicsengineeringbs/",
         "careersUrl": "https://www.mdc.edu/electronicsengineeringbs/careers.aspx",
@@ -790,7 +790,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "electronicsengineeringbs",
-        "name": "Electronics Engineering Technology Bachelor of Science",
+        "name": "Electronics Engineering Technology Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/electronicsengineeringbs/",
         "careersUrl": "https://www.mdc.edu/electronicsengineeringbs/careers.aspx",
@@ -811,65 +811,65 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "filmtvproduction",
-        "name": "Film, Television and Digital Production Bachelor of Applied Science",
+        "name": "Film, Television And Digital Production Bachelor Of Applied Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/filmtvproduction/",
         "careersUrl": "https://www.mdc.edu/filmtvproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Camera Operator",
-          "Sound Recordist/Sound Editor",
-          "Post-Production Technician/Editor",
+          "Sound Recordist/sound Editor",
+          "Post-production Technician/editor",
           "TV Graphics Designer",
           "TV Studio Floor Manager",
           "Studio Broadcasting Technical Personnel",
-          "Media Producer and Director"
+          "Media Producer And Director"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Sound Recordist/Sound Editor",
+    "career": "Sound Recordist/sound Editor",
     "programs": [
       {
         "id": "filmtvproduction",
-        "name": "Film, Television and Digital Production Bachelor of Applied Science",
+        "name": "Film, Television And Digital Production Bachelor Of Applied Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/filmtvproduction/",
         "careersUrl": "https://www.mdc.edu/filmtvproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Camera Operator",
-          "Sound Recordist/Sound Editor",
-          "Post-Production Technician/Editor",
+          "Sound Recordist/sound Editor",
+          "Post-production Technician/editor",
           "TV Graphics Designer",
           "TV Studio Floor Manager",
           "Studio Broadcasting Technical Personnel",
-          "Media Producer and Director"
+          "Media Producer And Director"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Post-Production Technician/Editor",
+    "career": "Post-production Technician/editor",
     "programs": [
       {
         "id": "filmtvproduction",
-        "name": "Film, Television and Digital Production Bachelor of Applied Science",
+        "name": "Film, Television And Digital Production Bachelor Of Applied Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/filmtvproduction/",
         "careersUrl": "https://www.mdc.edu/filmtvproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Camera Operator",
-          "Sound Recordist/Sound Editor",
-          "Post-Production Technician/Editor",
+          "Sound Recordist/sound Editor",
+          "Post-production Technician/editor",
           "TV Graphics Designer",
           "TV Studio Floor Manager",
           "Studio Broadcasting Technical Personnel",
-          "Media Producer and Director"
+          "Media Producer And Director"
         ]
       }
     ],
@@ -880,19 +880,19 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "filmtvproduction",
-        "name": "Film, Television and Digital Production Bachelor of Applied Science",
+        "name": "Film, Television And Digital Production Bachelor Of Applied Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/filmtvproduction/",
         "careersUrl": "https://www.mdc.edu/filmtvproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Camera Operator",
-          "Sound Recordist/Sound Editor",
-          "Post-Production Technician/Editor",
+          "Sound Recordist/sound Editor",
+          "Post-production Technician/editor",
           "TV Graphics Designer",
           "TV Studio Floor Manager",
           "Studio Broadcasting Technical Personnel",
-          "Media Producer and Director"
+          "Media Producer And Director"
         ]
       }
     ],
@@ -903,19 +903,19 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "filmtvproduction",
-        "name": "Film, Television and Digital Production Bachelor of Applied Science",
+        "name": "Film, Television And Digital Production Bachelor Of Applied Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/filmtvproduction/",
         "careersUrl": "https://www.mdc.edu/filmtvproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Camera Operator",
-          "Sound Recordist/Sound Editor",
-          "Post-Production Technician/Editor",
+          "Sound Recordist/sound Editor",
+          "Post-production Technician/editor",
           "TV Graphics Designer",
           "TV Studio Floor Manager",
           "Studio Broadcasting Technical Personnel",
-          "Media Producer and Director"
+          "Media Producer And Director"
         ]
       }
     ],
@@ -926,110 +926,110 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "filmtvproduction",
-        "name": "Film, Television and Digital Production Bachelor of Applied Science",
+        "name": "Film, Television And Digital Production Bachelor Of Applied Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/filmtvproduction/",
         "careersUrl": "https://www.mdc.edu/filmtvproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Camera Operator",
-          "Sound Recordist/Sound Editor",
-          "Post-Production Technician/Editor",
+          "Sound Recordist/sound Editor",
+          "Post-production Technician/editor",
           "TV Graphics Designer",
           "TV Studio Floor Manager",
           "Studio Broadcasting Technical Personnel",
-          "Media Producer and Director"
+          "Media Producer And Director"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Media Producer and Director",
+    "career": "Media Producer And Director",
     "programs": [
       {
         "id": "filmtvproduction",
-        "name": "Film, Television and Digital Production Bachelor of Applied Science",
+        "name": "Film, Television And Digital Production Bachelor Of Applied Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/filmtvproduction/",
         "careersUrl": "https://www.mdc.edu/filmtvproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Camera Operator",
-          "Sound Recordist/Sound Editor",
-          "Post-Production Technician/Editor",
+          "Sound Recordist/sound Editor",
+          "Post-production Technician/editor",
           "TV Graphics Designer",
           "TV Studio Floor Manager",
           "Studio Broadcasting Technical Personnel",
-          "Media Producer and Director"
+          "Media Producer And Director"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Information Systems Technology Networking Concentration Bachelor of Science",
+    "career": "Information Systems Technology Networking Concentration Bachelor Of Science",
     "programs": [
       {
         "id": "informationsystemsnetworking",
-        "name": "Information Systems Technology Networking Concentration Bachelor of Science",
+        "name": "Information Systems Technology Networking Concentration Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/informationsystemsnetworking/",
         "careersUrl": "https://www.mdc.edu/informationsystemsnetworking/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Information Systems Technology Networking Concentration Bachelor of Science"
+          "Information Systems Technology Networking Concentration Bachelor Of Science"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Information Systems Technology Software Engineering Concentration Bachelor of Science",
+    "career": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
     "programs": [
       {
         "id": "softwareengineering",
-        "name": "Information Systems Technology Software Engineering Concentration Bachelor of Science",
+        "name": "Information Systems Technology Software Engineering Concentration Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/softwareengineering/",
         "careersUrl": "https://www.mdc.edu/softwareengineering/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Information Systems Technology Software Engineering Concentration Bachelor of Science"
+          "Information Systems Technology Software Engineering Concentration Bachelor Of Science"
         ]
       }
     ],
     "field": "Technology"
   },
   {
-    "career": "Health Science Medical Laboratory Science Concentration Bachelor of Applied Science",
+    "career": "Health Science Medical Laboratory Science Concentration Bachelor Of Applied Science",
     "programs": [
       {
         "id": "medicallaboratorysciences",
-        "name": "Health Science Medical Laboratory Science Concentration Bachelor of Applied Science",
+        "name": "Health Science Medical Laboratory Science Concentration Bachelor Of Applied Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/medicallaboratorysciences/",
         "careersUrl": "https://www.mdc.edu/medicallaboratorysciences/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Health Science Medical Laboratory Science Concentration Bachelor of Applied Science"
+          "Health Science Medical Laboratory Science Concentration Bachelor Of Applied Science"
         ]
       }
     ],
     "field": "Medicine"
   },
   {
-    "career": "Health Science Histotechnology Concentration Bachelor of Applied Science",
+    "career": "Health Science Histotechnology Concentration Bachelor Of Applied Science",
     "programs": [
       {
         "id": "histotechnologybas",
-        "name": "Health Science Histotechnology Concentration Bachelor of Applied Science",
+        "name": "Health Science Histotechnology Concentration Bachelor Of Applied Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/histotechnologybas/",
         "careersUrl": "https://www.mdc.edu/histotechnologybas/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Health Science Histotechnology Concentration Bachelor of Applied Science"
+          "Health Science Histotechnology Concentration Bachelor Of Applied Science"
         ]
       }
     ],
@@ -1057,7 +1057,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "csi",
-        "name": "Crime Scene Investigation Bachelor of Applied Science in Public Safety Management",
+        "name": "Crime Scene Investigation Bachelor Of Applied Science In Public Safety Management",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/csi/",
         "careersUrl": "https://www.mdc.edu/csi/careers.aspx",
@@ -1076,7 +1076,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "csi",
-        "name": "Crime Scene Investigation Bachelor of Applied Science in Public Safety Management",
+        "name": "Crime Scene Investigation Bachelor Of Applied Science In Public Safety Management",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/csi/",
         "careersUrl": "https://www.mdc.edu/csi/careers.aspx",
@@ -1095,7 +1095,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "csi",
-        "name": "Crime Scene Investigation Bachelor of Applied Science in Public Safety Management",
+        "name": "Crime Scene Investigation Bachelor Of Applied Science In Public Safety Management",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/csi/",
         "careersUrl": "https://www.mdc.edu/csi/careers.aspx",
@@ -1114,7 +1114,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "criminaljusticebas",
-        "name": "Criminal Justice Bachelor of Applied Science in Public Safety Management",
+        "name": "Criminal Justice Bachelor Of Applied Science In Public Safety Management",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/criminaljusticebas/",
         "careersUrl": "https://www.mdc.edu/criminaljusticebas/careers.aspx",
@@ -1133,7 +1133,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "criminaljusticebas",
-        "name": "Criminal Justice Bachelor of Applied Science in Public Safety Management",
+        "name": "Criminal Justice Bachelor Of Applied Science In Public Safety Management",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/criminaljusticebas/",
         "careersUrl": "https://www.mdc.edu/criminaljusticebas/careers.aspx",
@@ -1152,7 +1152,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "criminaljusticebas",
-        "name": "Criminal Justice Bachelor of Applied Science in Public Safety Management",
+        "name": "Criminal Justice Bachelor Of Applied Science In Public Safety Management",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/criminaljusticebas/",
         "careersUrl": "https://www.mdc.edu/criminaljusticebas/careers.aspx",
@@ -1171,7 +1171,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "emergencymanagement",
-        "name": "Emergency Management Bachelor of Applied Science in Public Safety Management",
+        "name": "Emergency Management Bachelor Of Applied Science In Public Safety Management",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/emergencymanagement/",
         "careersUrl": "https://www.mdc.edu/emergencymanagement/careers.aspx",
@@ -1190,7 +1190,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "emergencymanagement",
-        "name": "Emergency Management Bachelor of Applied Science in Public Safety Management",
+        "name": "Emergency Management Bachelor Of Applied Science In Public Safety Management",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/emergencymanagement/",
         "careersUrl": "https://www.mdc.edu/emergencymanagement/careers.aspx",
@@ -1209,7 +1209,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "emergencymanagement",
-        "name": "Emergency Management Bachelor of Applied Science in Public Safety Management",
+        "name": "Emergency Management Bachelor Of Applied Science In Public Safety Management",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/emergencymanagement/",
         "careersUrl": "https://www.mdc.edu/emergencymanagement/careers.aspx",
@@ -1228,7 +1228,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "biopharmaceutical",
-        "name": "Biological Sciences - Biopharmaceutical Bachelor of Science",
+        "name": "Biological Sciences - Biopharmaceutical Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/biopharmaceutical/",
         "careersUrl": "https://www.mdc.edu/biopharmaceutical/careers.aspx",
@@ -1236,8 +1236,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Biochemical Engineer",
           "Clinical Research Associate",
-          "Environmental Health and Safety Technician",
-          "Instrumentation/Calibration Technician"
+          "Environmental Health And Safety Technician",
+          "Instrumentation/calibration Technician"
         ]
       }
     ],
@@ -1248,7 +1248,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "biopharmaceutical",
-        "name": "Biological Sciences - Biopharmaceutical Bachelor of Science",
+        "name": "Biological Sciences - Biopharmaceutical Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/biopharmaceutical/",
         "careersUrl": "https://www.mdc.edu/biopharmaceutical/careers.aspx",
@@ -1256,19 +1256,19 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Biochemical Engineer",
           "Clinical Research Associate",
-          "Environmental Health and Safety Technician",
-          "Instrumentation/Calibration Technician"
+          "Environmental Health And Safety Technician",
+          "Instrumentation/calibration Technician"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Environmental Health and Safety Technician",
+    "career": "Environmental Health And Safety Technician",
     "programs": [
       {
         "id": "biopharmaceutical",
-        "name": "Biological Sciences - Biopharmaceutical Bachelor of Science",
+        "name": "Biological Sciences - Biopharmaceutical Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/biopharmaceutical/",
         "careersUrl": "https://www.mdc.edu/biopharmaceutical/careers.aspx",
@@ -1276,19 +1276,19 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Biochemical Engineer",
           "Clinical Research Associate",
-          "Environmental Health and Safety Technician",
-          "Instrumentation/Calibration Technician"
+          "Environmental Health And Safety Technician",
+          "Instrumentation/calibration Technician"
         ]
       }
     ],
     "field": "Medicine"
   },
   {
-    "career": "Instrumentation/Calibration Technician",
+    "career": "Instrumentation/calibration Technician",
     "programs": [
       {
         "id": "biopharmaceutical",
-        "name": "Biological Sciences - Biopharmaceutical Bachelor of Science",
+        "name": "Biological Sciences - Biopharmaceutical Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/biopharmaceutical/",
         "careersUrl": "https://www.mdc.edu/biopharmaceutical/careers.aspx",
@@ -1296,25 +1296,25 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Biochemical Engineer",
           "Clinical Research Associate",
-          "Environmental Health and Safety Technician",
-          "Instrumentation/Calibration Technician"
+          "Environmental Health And Safety Technician",
+          "Instrumentation/calibration Technician"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Biological Sciences - Biotechnology Bachelor of Science",
+    "career": "Biological Sciences - Biotechnology Bachelor Of Science",
     "programs": [
       {
         "id": "biotechnology",
-        "name": "Biological Sciences - Biotechnology Bachelor of Science",
+        "name": "Biological Sciences - Biotechnology Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/biotechnology/",
         "careersUrl": "https://www.mdc.edu/biotechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Biological Sciences - Biotechnology Bachelor of Science"
+          "Biological Sciences - Biotechnology Bachelor Of Science"
         ]
       }
     ],
@@ -1325,7 +1325,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "scienceeducation",
-        "name": "Biological Sciences - Science Education Bachelor of Science",
+        "name": "Biological Sciences - Science Education Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/scienceeducation/",
         "careersUrl": "https://www.mdc.edu/scienceeducation/careers.aspx",
@@ -1334,7 +1334,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Biologist",
           "Bioinformatics Scientist",
           "Biological Technician",
-          "Elementary, Middle School and Secondary School Teacher"
+          "Elementary, Middle School And Secondary School Teacher"
         ]
       }
     ],
@@ -1345,7 +1345,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "scienceeducation",
-        "name": "Biological Sciences - Science Education Bachelor of Science",
+        "name": "Biological Sciences - Science Education Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/scienceeducation/",
         "careersUrl": "https://www.mdc.edu/scienceeducation/careers.aspx",
@@ -1354,7 +1354,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Biologist",
           "Bioinformatics Scientist",
           "Biological Technician",
-          "Elementary, Middle School and Secondary School Teacher"
+          "Elementary, Middle School And Secondary School Teacher"
         ]
       }
     ],
@@ -1365,7 +1365,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "scienceeducation",
-        "name": "Biological Sciences - Science Education Bachelor of Science",
+        "name": "Biological Sciences - Science Education Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/scienceeducation/",
         "careersUrl": "https://www.mdc.edu/scienceeducation/careers.aspx",
@@ -1374,18 +1374,18 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Biologist",
           "Bioinformatics Scientist",
           "Biological Technician",
-          "Elementary, Middle School and Secondary School Teacher"
+          "Elementary, Middle School And Secondary School Teacher"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Elementary, Middle School and Secondary School Teacher",
+    "career": "Elementary, Middle School And Secondary School Teacher",
     "programs": [
       {
         "id": "scienceeducation",
-        "name": "Biological Sciences - Science Education Bachelor of Science",
+        "name": "Biological Sciences - Science Education Bachelor Of Science",
         "degreeType": "BS",
         "programUrl": "https://www.mdc.edu/scienceeducation/",
         "careersUrl": "https://www.mdc.edu/scienceeducation/careers.aspx",
@@ -1394,7 +1394,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Biologist",
           "Bioinformatics Scientist",
           "Biological Technician",
-          "Elementary, Middle School and Secondary School Teacher"
+          "Elementary, Middle School And Secondary School Teacher"
         ]
       }
     ],
@@ -1405,7 +1405,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "accounting",
-        "name": "Accounting Associate in Arts",
+        "name": "Accounting Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/accounting/",
         "careersUrl": "https://www.mdc.edu/accounting/careers.aspx",
@@ -1427,7 +1427,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "accounting",
-        "name": "Accounting Associate in Arts",
+        "name": "Accounting Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/accounting/",
         "careersUrl": "https://www.mdc.edu/accounting/careers.aspx",
@@ -1449,7 +1449,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "accounting",
-        "name": "Accounting Associate in Arts",
+        "name": "Accounting Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/accounting/",
         "careersUrl": "https://www.mdc.edu/accounting/careers.aspx",
@@ -1471,7 +1471,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "accounting",
-        "name": "Accounting Associate in Arts",
+        "name": "Accounting Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/accounting/",
         "careersUrl": "https://www.mdc.edu/accounting/careers.aspx",
@@ -1493,7 +1493,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "accounting",
-        "name": "Accounting Associate in Arts",
+        "name": "Accounting Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/accounting/",
         "careersUrl": "https://www.mdc.edu/accounting/careers.aspx",
@@ -1515,7 +1515,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "accounting",
-        "name": "Accounting Associate in Arts",
+        "name": "Accounting Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/accounting/",
         "careersUrl": "https://www.mdc.edu/accounting/careers.aspx",
@@ -1583,7 +1583,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "architectureaa",
-        "name": "Architecture Associate in Arts",
+        "name": "Architecture Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/architectureaa/",
         "careersUrl": "https://www.mdc.edu/architectureaa/careers.aspx",
@@ -1592,7 +1592,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Architect",
           "Landscape Architect",
           "Architecture Drafter",
-          "Urban and Regional Planner",
+          "Urban And Regional Planner",
           "Architecture Teacher, Postsecondary"
         ]
       }
@@ -1604,7 +1604,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "architectureaa",
-        "name": "Architecture Associate in Arts",
+        "name": "Architecture Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/architectureaa/",
         "careersUrl": "https://www.mdc.edu/architectureaa/careers.aspx",
@@ -1613,13 +1613,13 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Architect",
           "Landscape Architect",
           "Architecture Drafter",
-          "Urban and Regional Planner",
+          "Urban And Regional Planner",
           "Architecture Teacher, Postsecondary"
         ]
       },
       {
         "id": "architecturaldesign",
-        "name": "Architectural Design and Construction Technology Associate in Science",
+        "name": "Architectural Design And Construction Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/architecturaldesign/",
         "careersUrl": "https://www.mdc.edu/architecturaldesign/careers.aspx",
@@ -1639,7 +1639,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "architectureaa",
-        "name": "Architecture Associate in Arts",
+        "name": "Architecture Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/architectureaa/",
         "careersUrl": "https://www.mdc.edu/architectureaa/careers.aspx",
@@ -1648,7 +1648,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Architect",
           "Landscape Architect",
           "Architecture Drafter",
-          "Urban and Regional Planner",
+          "Urban And Regional Planner",
           "Architecture Teacher, Postsecondary"
         ]
       }
@@ -1656,11 +1656,11 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Urban and Regional Planner",
+    "career": "Urban And Regional Planner",
     "programs": [
       {
         "id": "architectureaa",
-        "name": "Architecture Associate in Arts",
+        "name": "Architecture Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/architectureaa/",
         "careersUrl": "https://www.mdc.edu/architectureaa/careers.aspx",
@@ -1669,7 +1669,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Architect",
           "Landscape Architect",
           "Architecture Drafter",
-          "Urban and Regional Planner",
+          "Urban And Regional Planner",
           "Architecture Teacher, Postsecondary"
         ]
       }
@@ -1681,7 +1681,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "architectureaa",
-        "name": "Architecture Associate in Arts",
+        "name": "Architecture Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/architectureaa/",
         "careersUrl": "https://www.mdc.edu/architectureaa/careers.aspx",
@@ -1690,7 +1690,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Architect",
           "Landscape Architect",
           "Architecture Drafter",
-          "Urban and Regional Planner",
+          "Urban And Regional Planner",
           "Architecture Teacher, Postsecondary"
         ]
       }
@@ -1714,17 +1714,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Art or Art Education Associate in Arts",
+    "career": "Art Or Art Education Associate In Arts",
     "programs": [
       {
         "id": "art",
-        "name": "Art or Art Education Associate in Arts",
+        "name": "Art Or Art Education Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/art",
         "careersUrl": "https://www.mdc.edu/art/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Art or Art Education Associate in Arts"
+          "Art Or Art Education Associate In Arts"
         ]
       }
     ],
@@ -1751,7 +1751,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "biology",
-        "name": "Biology Associate in Arts",
+        "name": "Biology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/biology/",
         "careersUrl": "https://www.mdc.edu/biology/careers.aspx",
@@ -1771,7 +1771,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "biology",
-        "name": "Biology Associate in Arts",
+        "name": "Biology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/biology/",
         "careersUrl": "https://www.mdc.edu/biology/careers.aspx",
@@ -1791,7 +1791,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "biology",
-        "name": "Biology Associate in Arts",
+        "name": "Biology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/biology/",
         "careersUrl": "https://www.mdc.edu/biology/careers.aspx",
@@ -1811,7 +1811,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "biology",
-        "name": "Biology Associate in Arts",
+        "name": "Biology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/biology/",
         "careersUrl": "https://www.mdc.edu/biology/careers.aspx",
@@ -1827,17 +1827,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Biotechnology Associate in Arts",
+    "career": "Biotechnology Associate In Arts",
     "programs": [
       {
         "id": "biotechnologyaa",
-        "name": "Biotechnology Associate in Arts",
+        "name": "Biotechnology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/biotechnologyaa/",
         "careersUrl": "https://www.mdc.edu/biotechnologyaa/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Biotechnology Associate in Arts"
+          "Biotechnology Associate In Arts"
         ]
       }
     ],
@@ -1864,7 +1864,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessadministration",
-        "name": "Business Administration Associate in Arts",
+        "name": "Business Administration Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/businessadministration/",
         "careersUrl": "https://www.mdc.edu/businessadministration/careers.aspx",
@@ -1888,7 +1888,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessadministration",
-        "name": "Business Administration Associate in Arts",
+        "name": "Business Administration Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/businessadministration/",
         "careersUrl": "https://www.mdc.edu/businessadministration/careers.aspx",
@@ -1912,7 +1912,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessadministration",
-        "name": "Business Administration Associate in Arts",
+        "name": "Business Administration Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/businessadministration/",
         "careersUrl": "https://www.mdc.edu/businessadministration/careers.aspx",
@@ -1936,7 +1936,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessadministration",
-        "name": "Business Administration Associate in Arts",
+        "name": "Business Administration Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/businessadministration/",
         "careersUrl": "https://www.mdc.edu/businessadministration/careers.aspx",
@@ -1960,7 +1960,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessadministration",
-        "name": "Business Administration Associate in Arts",
+        "name": "Business Administration Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/businessadministration/",
         "careersUrl": "https://www.mdc.edu/businessadministration/careers.aspx",
@@ -1984,7 +1984,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessadministration",
-        "name": "Business Administration Associate in Arts",
+        "name": "Business Administration Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/businessadministration/",
         "careersUrl": "https://www.mdc.edu/businessadministration/careers.aspx",
@@ -2008,7 +2008,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessadministration",
-        "name": "Business Administration Associate in Arts",
+        "name": "Business Administration Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/businessadministration/",
         "careersUrl": "https://www.mdc.edu/businessadministration/careers.aspx",
@@ -2032,7 +2032,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessadministration",
-        "name": "Business Administration Associate in Arts",
+        "name": "Business Administration Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/businessadministration/",
         "careersUrl": "https://www.mdc.edu/businessadministration/careers.aspx",
@@ -2050,7 +2050,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "banking",
-        "name": "Financial Services - Banking Associate in Science",
+        "name": "Financial Services - Banking Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/banking/",
         "careersUrl": "https://www.mdc.edu/banking/careers.aspx",
@@ -2061,7 +2061,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Business &amp; Commercial Lender",
           "Financial Services Representative",
           "Mortgage Broker / Lender",
-          "Operations Manager or Supervisor"
+          "Operations Manager Or Supervisor"
         ]
       }
     ],
@@ -2088,7 +2088,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "animation",
-        "name": "Computer Arts Animation Associate in Arts",
+        "name": "Computer Arts Animation Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/animation/",
         "careersUrl": "https://www.mdc.edu/animation/careers.aspx",
@@ -2096,7 +2096,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "3D Modeling",
           "Animation",
-          "3D Graphic Design and Illustration",
+          "3D Graphic Design And Illustration",
           "Animation Dynamics"
         ]
       }
@@ -2108,7 +2108,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "animation",
-        "name": "Computer Arts Animation Associate in Arts",
+        "name": "Computer Arts Animation Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/animation/",
         "careersUrl": "https://www.mdc.edu/animation/careers.aspx",
@@ -2116,7 +2116,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "3D Modeling",
           "Animation",
-          "3D Graphic Design and Illustration",
+          "3D Graphic Design And Illustration",
           "Animation Dynamics"
         ]
       }
@@ -2124,11 +2124,11 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "3D Graphic Design and Illustration",
+    "career": "3D Graphic Design And Illustration",
     "programs": [
       {
         "id": "animation",
-        "name": "Computer Arts Animation Associate in Arts",
+        "name": "Computer Arts Animation Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/animation/",
         "careersUrl": "https://www.mdc.edu/animation/careers.aspx",
@@ -2136,7 +2136,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "3D Modeling",
           "Animation",
-          "3D Graphic Design and Illustration",
+          "3D Graphic Design And Illustration",
           "Animation Dynamics"
         ]
       }
@@ -2148,7 +2148,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "animation",
-        "name": "Computer Arts Animation Associate in Arts",
+        "name": "Computer Arts Animation Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/animation/",
         "careersUrl": "https://www.mdc.edu/animation/careers.aspx",
@@ -2156,7 +2156,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "3D Modeling",
           "Animation",
-          "3D Graphic Design and Illustration",
+          "3D Graphic Design And Illustration",
           "Animation Dynamics"
         ]
       }
@@ -2200,32 +2200,32 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "criminaljustice",
-        "name": "Criminal Justice Administration Associate in Arts",
+        "name": "Criminal Justice Administration Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/criminaljustice/",
         "careersUrl": "https://www.mdc.edu/criminaljustice/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Juvenile Justice Private Security Corrections Law Enforcement",
-          "Probation and Parole Detention Centers Community-based Intervention programs"
+          "Probation And Parole Detention Centers Community-based Intervention Programs"
         ]
       }
     ],
     "field": "Criminal Justice"
   },
   {
-    "career": "Probation and Parole Detention Centers Community-based Intervention programs",
+    "career": "Probation And Parole Detention Centers Community-based Intervention Programs",
     "programs": [
       {
         "id": "criminaljustice",
-        "name": "Criminal Justice Administration Associate in Arts",
+        "name": "Criminal Justice Administration Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/criminaljustice/",
         "careersUrl": "https://www.mdc.edu/criminaljustice/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Juvenile Justice Private Security Corrections Law Enforcement",
-          "Probation and Parole Detention Centers Community-based Intervention programs"
+          "Probation And Parole Detention Centers Community-based Intervention Programs"
         ]
       }
     ],
@@ -2284,7 +2284,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "economics",
-        "name": "Economics Associate in Arts",
+        "name": "Economics Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/economics/",
         "careersUrl": "https://www.mdc.edu/economics/careers.aspx",
@@ -2305,7 +2305,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "economics",
-        "name": "Economics Associate in Arts",
+        "name": "Economics Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/economics/",
         "careersUrl": "https://www.mdc.edu/economics/careers.aspx",
@@ -2326,7 +2326,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "economics",
-        "name": "Economics Associate in Arts",
+        "name": "Economics Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/economics/",
         "careersUrl": "https://www.mdc.edu/economics/careers.aspx",
@@ -2347,7 +2347,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "economics",
-        "name": "Economics Associate in Arts",
+        "name": "Economics Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/economics/",
         "careersUrl": "https://www.mdc.edu/economics/careers.aspx",
@@ -2368,7 +2368,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "economics",
-        "name": "Economics Associate in Arts",
+        "name": "Economics Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/economics/",
         "careersUrl": "https://www.mdc.edu/economics/careers.aspx",
@@ -2565,15 +2565,15 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "environmentalsciences",
-        "name": "Environmental Sciences Associate in Arts",
+        "name": "Environmental Sciences Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/environmentalsciences/",
         "careersUrl": "https://www.mdc.edu/environmentalsciences/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Environmental Compliance Inspector",
-          "Forest Dire Inspector and Prevention Specialist",
-          "Forest and Conservation Technician",
+          "Forest Dire Inspector And Prevention Specialist",
+          "Forest And Conservation Technician",
           "Hydrologist"
         ]
       }
@@ -2581,19 +2581,19 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Forest Dire Inspector and Prevention Specialist",
+    "career": "Forest Dire Inspector And Prevention Specialist",
     "programs": [
       {
         "id": "environmentalsciences",
-        "name": "Environmental Sciences Associate in Arts",
+        "name": "Environmental Sciences Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/environmentalsciences/",
         "careersUrl": "https://www.mdc.edu/environmentalsciences/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Environmental Compliance Inspector",
-          "Forest Dire Inspector and Prevention Specialist",
-          "Forest and Conservation Technician",
+          "Forest Dire Inspector And Prevention Specialist",
+          "Forest And Conservation Technician",
           "Hydrologist"
         ]
       }
@@ -2601,19 +2601,19 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Forest and Conservation Technician",
+    "career": "Forest And Conservation Technician",
     "programs": [
       {
         "id": "environmentalsciences",
-        "name": "Environmental Sciences Associate in Arts",
+        "name": "Environmental Sciences Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/environmentalsciences/",
         "careersUrl": "https://www.mdc.edu/environmentalsciences/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Environmental Compliance Inspector",
-          "Forest Dire Inspector and Prevention Specialist",
-          "Forest and Conservation Technician",
+          "Forest Dire Inspector And Prevention Specialist",
+          "Forest And Conservation Technician",
           "Hydrologist"
         ]
       }
@@ -2625,15 +2625,15 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "environmentalsciences",
-        "name": "Environmental Sciences Associate in Arts",
+        "name": "Environmental Sciences Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/environmentalsciences/",
         "careersUrl": "https://www.mdc.edu/environmentalsciences/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Environmental Compliance Inspector",
-          "Forest Dire Inspector and Prevention Specialist",
-          "Forest and Conservation Technician",
+          "Forest Dire Inspector And Prevention Specialist",
+          "Forest And Conservation Technician",
           "Hydrologist"
         ]
       }
@@ -2721,16 +2721,16 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Health Servicesadministration",
+    "career": "Health Services Administration",
     "programs": [
       {
         "id": "healthservicesadministration",
-        "name": "Health Servicesadministration",
+        "name": "Health Services Administration",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/healthservicesadministration",
         "pdfLinks": {},
         "careerProspects": [
-          "Health Servicesadministration"
+          "Health Services Administration"
         ]
       }
     ],
@@ -2757,7 +2757,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "hospitalityadministration",
-        "name": "Hospitality Administration/Travel and Tourism Associate in Arts",
+        "name": "Hospitality Administration/travel And Tourism Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/hospitalityadministration/",
         "careersUrl": "https://www.mdc.edu/hospitalityadministration/careers.aspx",
@@ -2765,7 +2765,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Catering Sales Manager",
           "Concierge",
-          "Director of Hotel Operations",
+          "Director Of Hotel Operations",
           "Banquet Manager"
         ]
       }
@@ -2777,7 +2777,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "hospitalityadministration",
-        "name": "Hospitality Administration/Travel and Tourism Associate in Arts",
+        "name": "Hospitality Administration/travel And Tourism Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/hospitalityadministration/",
         "careersUrl": "https://www.mdc.edu/hospitalityadministration/careers.aspx",
@@ -2785,7 +2785,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Catering Sales Manager",
           "Concierge",
-          "Director of Hotel Operations",
+          "Director Of Hotel Operations",
           "Banquet Manager"
         ]
       }
@@ -2793,11 +2793,11 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Director of Hotel Operations",
+    "career": "Director Of Hotel Operations",
     "programs": [
       {
         "id": "hospitalityadministration",
-        "name": "Hospitality Administration/Travel and Tourism Associate in Arts",
+        "name": "Hospitality Administration/travel And Tourism Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/hospitalityadministration/",
         "careersUrl": "https://www.mdc.edu/hospitalityadministration/careers.aspx",
@@ -2805,7 +2805,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Catering Sales Manager",
           "Concierge",
-          "Director of Hotel Operations",
+          "Director Of Hotel Operations",
           "Banquet Manager"
         ]
       }
@@ -2817,7 +2817,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "hospitalityadministration",
-        "name": "Hospitality Administration/Travel and Tourism Associate in Arts",
+        "name": "Hospitality Administration/travel And Tourism Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/hospitalityadministration/",
         "careersUrl": "https://www.mdc.edu/hospitalityadministration/careers.aspx",
@@ -2825,13 +2825,13 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Catering Sales Manager",
           "Concierge",
-          "Director of Hotel Operations",
+          "Director Of Hotel Operations",
           "Banquet Manager"
         ]
       },
       {
         "id": "culinaryartsmanagement",
-        "name": "Culinary Arts Management Associate in Science",
+        "name": "Culinary Arts Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/culinaryartsmanagement/",
         "careersUrl": "https://www.mdc.edu/culinaryartsmanagement/careers.aspx",
@@ -2852,20 +2852,20 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "interiordesign",
-        "name": "Interior Design Associate in Arts",
+        "name": "Interior Design Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/interiordesign/",
         "careersUrl": "https://www.mdc.edu/interiordesign/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Interior Designer",
-          "Set and Exhibit Designer",
+          "Set And Exhibit Designer",
           "Lighting Designer"
         ]
       },
       {
         "id": "interiordesigntechnology",
-        "name": "Interior Design Technology Associate in Science",
+        "name": "Interior Design Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/interiordesigntechnology/",
         "careersUrl": "https://www.mdc.edu/interiordesigntechnology/careers.aspx",
@@ -2881,18 +2881,18 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Set and Exhibit Designer",
+    "career": "Set And Exhibit Designer",
     "programs": [
       {
         "id": "interiordesign",
-        "name": "Interior Design Associate in Arts",
+        "name": "Interior Design Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/interiordesign/",
         "careersUrl": "https://www.mdc.edu/interiordesign/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Interior Designer",
-          "Set and Exhibit Designer",
+          "Set And Exhibit Designer",
           "Lighting Designer"
         ]
       }
@@ -2904,14 +2904,14 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "interiordesign",
-        "name": "Interior Design Associate in Arts",
+        "name": "Interior Design Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/interiordesign/",
         "careersUrl": "https://www.mdc.edu/interiordesign/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Interior Designer",
-          "Set and Exhibit Designer",
+          "Set And Exhibit Designer",
           "Lighting Designer"
         ]
       }
@@ -2923,7 +2923,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "internationalrelations",
-        "name": "International Relations Associate in Arts",
+        "name": "International Relations Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/internationalrelations/",
         "careersUrl": "https://www.mdc.edu/internationalrelations/careers.aspx",
@@ -2944,7 +2944,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "internationalrelations",
-        "name": "International Relations Associate in Arts",
+        "name": "International Relations Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/internationalrelations/",
         "careersUrl": "https://www.mdc.edu/internationalrelations/careers.aspx",
@@ -2965,7 +2965,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "internationalrelations",
-        "name": "International Relations Associate in Arts",
+        "name": "International Relations Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/internationalrelations/",
         "careersUrl": "https://www.mdc.edu/internationalrelations/careers.aspx",
@@ -2986,7 +2986,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "internationalrelations",
-        "name": "International Relations Associate in Arts",
+        "name": "International Relations Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/internationalrelations/",
         "careersUrl": "https://www.mdc.edu/internationalrelations/careers.aspx",
@@ -3007,7 +3007,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "internationalrelations",
-        "name": "International Relations Associate in Arts",
+        "name": "International Relations Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/internationalrelations/",
         "careersUrl": "https://www.mdc.edu/internationalrelations/careers.aspx",
@@ -3040,36 +3040,36 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Newspapers Magazines Book publishing Radio Television and film",
+    "career": "Newspapers Magazines Book Publishing Radio Television And Film",
     "programs": [
       {
         "id": "journalism",
-        "name": "Mass Communication/Journalism Associate in Arts",
+        "name": "Mass Communication/journalism Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/journalism/",
         "careersUrl": "https://www.mdc.edu/journalism/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Newspapers Magazines Book publishing Radio Television and film",
-          "Online Media Blogs Social media sites Public relations"
+          "Newspapers Magazines Book Publishing Radio Television And Film",
+          "Online Media Blogs Social Media Sites Public Relations"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Online Media Blogs Social media sites Public relations",
+    "career": "Online Media Blogs Social Media Sites Public Relations",
     "programs": [
       {
         "id": "journalism",
-        "name": "Mass Communication/Journalism Associate in Arts",
+        "name": "Mass Communication/journalism Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/journalism/",
         "careersUrl": "https://www.mdc.edu/journalism/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Newspapers Magazines Book publishing Radio Television and film",
-          "Online Media Blogs Social media sites Public relations"
+          "Newspapers Magazines Book Publishing Radio Television And Film",
+          "Online Media Blogs Social Media Sites Public Relations"
         ]
       }
     ],
@@ -3336,16 +3336,16 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "psychology",
-        "name": "Psychology Associate in Arts",
+        "name": "Psychology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/psychology/",
         "careersUrl": "https://www.mdc.edu/psychology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Mental Health Services",
-          "Child-care/Day-Care Centers",
+          "Child-care/day-care Centers",
           "Substance Abuse Treatment Centers",
-          "Government and/or Privately Operated Vocational Rehabilitation",
+          "Government And/or Privately Operated Vocational Rehabilitation",
           "Mental Health Facilities"
         ]
       }
@@ -3353,20 +3353,20 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Medicine"
   },
   {
-    "career": "Child-care/Day-Care Centers",
+    "career": "Child-care/day-care Centers",
     "programs": [
       {
         "id": "psychology",
-        "name": "Psychology Associate in Arts",
+        "name": "Psychology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/psychology/",
         "careersUrl": "https://www.mdc.edu/psychology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Mental Health Services",
-          "Child-care/Day-Care Centers",
+          "Child-care/day-care Centers",
           "Substance Abuse Treatment Centers",
-          "Government and/or Privately Operated Vocational Rehabilitation",
+          "Government And/or Privately Operated Vocational Rehabilitation",
           "Mental Health Facilities"
         ]
       }
@@ -3378,16 +3378,16 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "psychology",
-        "name": "Psychology Associate in Arts",
+        "name": "Psychology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/psychology/",
         "careersUrl": "https://www.mdc.edu/psychology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Mental Health Services",
-          "Child-care/Day-Care Centers",
+          "Child-care/day-care Centers",
           "Substance Abuse Treatment Centers",
-          "Government and/or Privately Operated Vocational Rehabilitation",
+          "Government And/or Privately Operated Vocational Rehabilitation",
           "Mental Health Facilities"
         ]
       }
@@ -3395,20 +3395,20 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Government and/or Privately Operated Vocational Rehabilitation",
+    "career": "Government And/or Privately Operated Vocational Rehabilitation",
     "programs": [
       {
         "id": "psychology",
-        "name": "Psychology Associate in Arts",
+        "name": "Psychology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/psychology/",
         "careersUrl": "https://www.mdc.edu/psychology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Mental Health Services",
-          "Child-care/Day-Care Centers",
+          "Child-care/day-care Centers",
           "Substance Abuse Treatment Centers",
-          "Government and/or Privately Operated Vocational Rehabilitation",
+          "Government And/or Privately Operated Vocational Rehabilitation",
           "Mental Health Facilities"
         ]
       }
@@ -3420,16 +3420,16 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "psychology",
-        "name": "Psychology Associate in Arts",
+        "name": "Psychology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/psychology/",
         "careersUrl": "https://www.mdc.edu/psychology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Mental Health Services",
-          "Child-care/Day-Care Centers",
+          "Child-care/day-care Centers",
           "Substance Abuse Treatment Centers",
-          "Government and/or Privately Operated Vocational Rehabilitation",
+          "Government And/or Privately Operated Vocational Rehabilitation",
           "Mental Health Facilities"
         ]
       }
@@ -3451,7 +3451,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "sociology",
-        "name": "Sociology Associate in Arts",
+        "name": "Sociology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/sociology/",
         "careersUrl": "https://www.mdc.edu/sociology/careers.aspx",
@@ -3519,7 +3519,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "sociology",
-        "name": "Sociology Associate in Arts",
+        "name": "Sociology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/sociology/",
         "careersUrl": "https://www.mdc.edu/sociology/careers.aspx",
@@ -3539,7 +3539,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "sociology",
-        "name": "Sociology Associate in Arts",
+        "name": "Sociology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/sociology/",
         "careersUrl": "https://www.mdc.edu/sociology/careers.aspx",
@@ -3553,7 +3553,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "signlanguage",
-        "name": "Sign Language Interpretation Associate in Science",
+        "name": "Sign Language Interpretation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/signlanguage/",
         "careersUrl": "https://www.mdc.edu/signlanguage/careers.aspx",
@@ -3591,7 +3591,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "sociology",
-        "name": "Sociology Associate in Arts",
+        "name": "Sociology Associate In Arts",
         "degreeType": "AA",
         "programUrl": "https://www.mdc.edu/sociology/",
         "careersUrl": "https://www.mdc.edu/sociology/careers.aspx",
@@ -3819,7 +3819,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "accountingtechnology",
-        "name": "Accounting Technology Associate in Science",
+        "name": "Accounting Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/accountingtechnology/",
         "careersUrl": "https://www.mdc.edu/accountingtechnology/careers.aspx",
@@ -3840,7 +3840,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "accountingtechnology",
-        "name": "Accounting Technology Associate in Science",
+        "name": "Accounting Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/accountingtechnology/",
         "careersUrl": "https://www.mdc.edu/accountingtechnology/careers.aspx",
@@ -3861,7 +3861,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "accountingtechnology",
-        "name": "Accounting Technology Associate in Science",
+        "name": "Accounting Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/accountingtechnology/",
         "careersUrl": "https://www.mdc.edu/accountingtechnology/careers.aspx",
@@ -3882,7 +3882,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "accountingtechnology",
-        "name": "Accounting Technology Associate in Science",
+        "name": "Accounting Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/accountingtechnology/",
         "careersUrl": "https://www.mdc.edu/accountingtechnology/careers.aspx",
@@ -3903,7 +3903,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "accountingtechnology",
-        "name": "Accounting Technology Associate in Science",
+        "name": "Accounting Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/accountingtechnology/",
         "careersUrl": "https://www.mdc.edu/accountingtechnology/careers.aspx",
@@ -3920,34 +3920,34 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Animation and Game Art Associate in Science",
+    "career": "Animation And Game Art Associate In Science",
     "programs": [
       {
         "id": "animationgameart",
-        "name": "Animation and Game Art Associate in Science",
+        "name": "Animation And Game Art Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/animationgameart/",
         "careersUrl": "https://www.mdc.edu/animationgameart/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Animation and Game Art Associate in Science"
+          "Animation And Game Art Associate In Science"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Applied Artificial Intelligence - Associate in Science",
+    "career": "Applied Artificial Intelligence - Associate In Science",
     "programs": [
       {
         "id": "appliedai",
-        "name": "Applied Artificial Intelligence - Associate in Science",
+        "name": "Applied Artificial Intelligence - Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/appliedai/",
         "careersUrl": "https://www.mdc.edu/appliedai/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Applied Artificial Intelligence - Associate in Science"
+          "Applied Artificial Intelligence - Associate In Science"
         ]
       }
     ],
@@ -3958,7 +3958,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "architecturaldesign",
-        "name": "Architectural Design and Construction Technology Associate in Science",
+        "name": "Architectural Design And Construction Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/architecturaldesign/",
         "careersUrl": "https://www.mdc.edu/architecturaldesign/careers.aspx",
@@ -3992,7 +3992,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "architecturaldesign",
-        "name": "Architectural Design and Construction Technology Associate in Science",
+        "name": "Architectural Design And Construction Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/architecturaldesign/",
         "careersUrl": "https://www.mdc.edu/architecturaldesign/careers.aspx",
@@ -4012,7 +4012,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "architecturaldesign",
-        "name": "Architectural Design and Construction Technology Associate in Science",
+        "name": "Architectural Design And Construction Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/architecturaldesign/",
         "careersUrl": "https://www.mdc.edu/architecturaldesign/careers.aspx",
@@ -4026,7 +4026,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "constructiontechnology",
-        "name": "Building Construction Technology Associate in Science",
+        "name": "Building Construction Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/constructiontechnology/",
         "careersUrl": "https://www.mdc.edu/constructiontechnology/careers.aspx",
@@ -4046,17 +4046,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Business"
   },
   {
-    "career": "Aviation Administration Associate in Science",
+    "career": "Aviation Administration Associate In Science",
     "programs": [
       {
         "id": "aviationadministration",
-        "name": "Aviation Administration Associate in Science",
+        "name": "Aviation Administration Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/aviationadministration/",
         "careersUrl": "https://www.mdc.edu/aviationadministration/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Aviation Administration Associate in Science"
+          "Aviation Administration Associate In Science"
         ]
       }
     ],
@@ -4067,7 +4067,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "aviationmaintenance",
-        "name": "Aviation Maintenance Management Associate in Science",
+        "name": "Aviation Maintenance Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/aviationmaintenance/",
         "careersUrl": "https://www.mdc.edu/aviationmaintenance/careers.aspx",
@@ -4083,7 +4083,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "aviationmanagement",
-        "name": "Airline/Aviation Management - College Credit Certificate",
+        "name": "Airline/aviation Management - College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/aviationmanagement/",
         "careersUrl": "https://www.mdc.edu/aviationmanagement/careers.aspx",
@@ -4092,7 +4092,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Pilot",
           "Transportation Manager",
           "Logistician",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Manager",
           "Air Traffic Controller",
           "Airfield Operation Specialist"
@@ -4106,7 +4106,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "aviationmaintenance",
-        "name": "Aviation Maintenance Management Associate in Science",
+        "name": "Aviation Maintenance Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/aviationmaintenance/",
         "careersUrl": "https://www.mdc.edu/aviationmaintenance/careers.aspx",
@@ -4128,7 +4128,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "aviationmaintenance",
-        "name": "Aviation Maintenance Management Associate in Science",
+        "name": "Aviation Maintenance Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/aviationmaintenance/",
         "careersUrl": "https://www.mdc.edu/aviationmaintenance/careers.aspx",
@@ -4150,7 +4150,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "aviationmaintenance",
-        "name": "Aviation Maintenance Management Associate in Science",
+        "name": "Aviation Maintenance Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/aviationmaintenance/",
         "careersUrl": "https://www.mdc.edu/aviationmaintenance/careers.aspx",
@@ -4172,7 +4172,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "aviationmaintenance",
-        "name": "Aviation Maintenance Management Associate in Science",
+        "name": "Aviation Maintenance Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/aviationmaintenance/",
         "careersUrl": "https://www.mdc.edu/aviationmaintenance/careers.aspx",
@@ -4194,7 +4194,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "aviationmaintenance",
-        "name": "Aviation Maintenance Management Associate in Science",
+        "name": "Aviation Maintenance Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/aviationmaintenance/",
         "careersUrl": "https://www.mdc.edu/aviationmaintenance/careers.aspx",
@@ -4228,16 +4228,16 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Medicine"
   },
   {
-    "career": "Bio Technologyas",
+    "career": "Biotechnologyas",
     "programs": [
       {
         "id": "biotechnologyas",
-        "name": "Bio Technologyas",
+        "name": "Biotechnologyas",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/biotechnologyas",
         "pdfLinks": {},
         "careerProspects": [
-          "Bio Technologyas"
+          "Biotechnologyas"
         ]
       }
     ],
@@ -4280,7 +4280,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "constructiontechnology",
-        "name": "Building Construction Technology Associate in Science",
+        "name": "Building Construction Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/constructiontechnology/",
         "careersUrl": "https://www.mdc.edu/constructiontechnology/careers.aspx",
@@ -4304,7 +4304,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "constructiontechnology",
-        "name": "Building Construction Technology Associate in Science",
+        "name": "Building Construction Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/constructiontechnology/",
         "careersUrl": "https://www.mdc.edu/constructiontechnology/careers.aspx",
@@ -4328,7 +4328,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "constructiontechnology",
-        "name": "Building Construction Technology Associate in Science",
+        "name": "Building Construction Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/constructiontechnology/",
         "careersUrl": "https://www.mdc.edu/constructiontechnology/careers.aspx",
@@ -4352,7 +4352,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "constructiontechnology",
-        "name": "Building Construction Technology Associate in Science",
+        "name": "Building Construction Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/constructiontechnology/",
         "careersUrl": "https://www.mdc.edu/constructiontechnology/careers.aspx",
@@ -4376,7 +4376,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "constructiontechnology",
-        "name": "Building Construction Technology Associate in Science",
+        "name": "Building Construction Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/constructiontechnology/",
         "careersUrl": "https://www.mdc.edu/constructiontechnology/careers.aspx",
@@ -4400,7 +4400,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "constructiontechnology",
-        "name": "Building Construction Technology Associate in Science",
+        "name": "Building Construction Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/constructiontechnology/",
         "careersUrl": "https://www.mdc.edu/constructiontechnology/careers.aspx",
@@ -4424,7 +4424,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "constructiontechnology",
-        "name": "Building Construction Technology Associate in Science",
+        "name": "Building Construction Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/constructiontechnology/",
         "careersUrl": "https://www.mdc.edu/constructiontechnology/careers.aspx",
@@ -4448,7 +4448,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessadministrationas",
-        "name": "Business Administration Associate in Science",
+        "name": "Business Administration Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/businessadministrationas/",
         "careersUrl": "https://www.mdc.edu/businessadministrationas/careers.aspx",
@@ -4469,7 +4469,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessadministrationas",
-        "name": "Business Administration Associate in Science",
+        "name": "Business Administration Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/businessadministrationas/",
         "careersUrl": "https://www.mdc.edu/businessadministrationas/careers.aspx",
@@ -4490,7 +4490,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessadministrationas",
-        "name": "Business Administration Associate in Science",
+        "name": "Business Administration Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/businessadministrationas/",
         "careersUrl": "https://www.mdc.edu/businessadministrationas/careers.aspx",
@@ -4511,7 +4511,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessadministrationas",
-        "name": "Business Administration Associate in Science",
+        "name": "Business Administration Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/businessadministrationas/",
         "careersUrl": "https://www.mdc.edu/businessadministrationas/careers.aspx",
@@ -4532,7 +4532,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessadministrationas",
-        "name": "Business Administration Associate in Science",
+        "name": "Business Administration Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/businessadministrationas/",
         "careersUrl": "https://www.mdc.edu/businessadministrationas/careers.aspx",
@@ -4553,7 +4553,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessintelligence",
-        "name": "Business Intelligence Specialist Associate in Science",
+        "name": "Business Intelligence Specialist Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/businessintelligence/",
         "careersUrl": "https://www.mdc.edu/businessintelligence/careers.aspx",
@@ -4572,7 +4572,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessintelligence",
-        "name": "Business Intelligence Specialist Associate in Science",
+        "name": "Business Intelligence Specialist Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/businessintelligence/",
         "careersUrl": "https://www.mdc.edu/businessintelligence/careers.aspx",
@@ -4591,7 +4591,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessintelligence",
-        "name": "Business Intelligence Specialist Associate in Science",
+        "name": "Business Intelligence Specialist Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/businessintelligence/",
         "careersUrl": "https://www.mdc.edu/businessintelligence/careers.aspx",
@@ -4622,19 +4622,19 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Medical or Clinical Laboratory Technologist (Hospital Laboratory)",
+    "career": "Medical Or Clinical Laboratory Technologist (hospital Laboratory)",
     "programs": [
       {
         "id": "medicaltechnology",
-        "name": "Clinical Laboratory Science Associate in Science",
+        "name": "Clinical Laboratory Science Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/medicaltechnology/",
         "careersUrl": "https://www.mdc.edu/medicaltechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Medical or Clinical Laboratory Technologist (Hospital Laboratory)",
+          "Medical Or Clinical Laboratory Technologist (hospital Laboratory)",
           "Industrial Labs",
-          "Medical Laboratory or Clinical Laboratory Technologist (Public Health Laboratory)",
+          "Medical Laboratory Or Clinical Laboratory Technologist (public Health Laboratory)",
           "Technical Representative",
           "Medical Sales",
           "Medical Research",
@@ -4649,15 +4649,15 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "medicaltechnology",
-        "name": "Clinical Laboratory Science Associate in Science",
+        "name": "Clinical Laboratory Science Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/medicaltechnology/",
         "careersUrl": "https://www.mdc.edu/medicaltechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Medical or Clinical Laboratory Technologist (Hospital Laboratory)",
+          "Medical Or Clinical Laboratory Technologist (hospital Laboratory)",
           "Industrial Labs",
-          "Medical Laboratory or Clinical Laboratory Technologist (Public Health Laboratory)",
+          "Medical Laboratory Or Clinical Laboratory Technologist (public Health Laboratory)",
           "Technical Representative",
           "Medical Sales",
           "Medical Research",
@@ -4668,19 +4668,19 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Medical Laboratory or Clinical Laboratory Technologist (Public Health Laboratory)",
+    "career": "Medical Laboratory Or Clinical Laboratory Technologist (public Health Laboratory)",
     "programs": [
       {
         "id": "medicaltechnology",
-        "name": "Clinical Laboratory Science Associate in Science",
+        "name": "Clinical Laboratory Science Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/medicaltechnology/",
         "careersUrl": "https://www.mdc.edu/medicaltechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Medical or Clinical Laboratory Technologist (Hospital Laboratory)",
+          "Medical Or Clinical Laboratory Technologist (hospital Laboratory)",
           "Industrial Labs",
-          "Medical Laboratory or Clinical Laboratory Technologist (Public Health Laboratory)",
+          "Medical Laboratory Or Clinical Laboratory Technologist (public Health Laboratory)",
           "Technical Representative",
           "Medical Sales",
           "Medical Research",
@@ -4695,15 +4695,15 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "medicaltechnology",
-        "name": "Clinical Laboratory Science Associate in Science",
+        "name": "Clinical Laboratory Science Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/medicaltechnology/",
         "careersUrl": "https://www.mdc.edu/medicaltechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Medical or Clinical Laboratory Technologist (Hospital Laboratory)",
+          "Medical Or Clinical Laboratory Technologist (hospital Laboratory)",
           "Industrial Labs",
-          "Medical Laboratory or Clinical Laboratory Technologist (Public Health Laboratory)",
+          "Medical Laboratory Or Clinical Laboratory Technologist (public Health Laboratory)",
           "Technical Representative",
           "Medical Sales",
           "Medical Research",
@@ -4718,15 +4718,15 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "medicaltechnology",
-        "name": "Clinical Laboratory Science Associate in Science",
+        "name": "Clinical Laboratory Science Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/medicaltechnology/",
         "careersUrl": "https://www.mdc.edu/medicaltechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Medical or Clinical Laboratory Technologist (Hospital Laboratory)",
+          "Medical Or Clinical Laboratory Technologist (hospital Laboratory)",
           "Industrial Labs",
-          "Medical Laboratory or Clinical Laboratory Technologist (Public Health Laboratory)",
+          "Medical Laboratory Or Clinical Laboratory Technologist (public Health Laboratory)",
           "Technical Representative",
           "Medical Sales",
           "Medical Research",
@@ -4741,15 +4741,15 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "medicaltechnology",
-        "name": "Clinical Laboratory Science Associate in Science",
+        "name": "Clinical Laboratory Science Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/medicaltechnology/",
         "careersUrl": "https://www.mdc.edu/medicaltechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Medical or Clinical Laboratory Technologist (Hospital Laboratory)",
+          "Medical Or Clinical Laboratory Technologist (hospital Laboratory)",
           "Industrial Labs",
-          "Medical Laboratory or Clinical Laboratory Technologist (Public Health Laboratory)",
+          "Medical Laboratory Or Clinical Laboratory Technologist (public Health Laboratory)",
           "Technical Representative",
           "Medical Sales",
           "Medical Research",
@@ -4764,15 +4764,15 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "medicaltechnology",
-        "name": "Clinical Laboratory Science Associate in Science",
+        "name": "Clinical Laboratory Science Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/medicaltechnology/",
         "careersUrl": "https://www.mdc.edu/medicaltechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Medical or Clinical Laboratory Technologist (Hospital Laboratory)",
+          "Medical Or Clinical Laboratory Technologist (hospital Laboratory)",
           "Industrial Labs",
-          "Medical Laboratory or Clinical Laboratory Technologist (Public Health Laboratory)",
+          "Medical Laboratory Or Clinical Laboratory Technologist (public Health Laboratory)",
           "Technical Representative",
           "Medical Sales",
           "Medical Research",
@@ -4787,7 +4787,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "computercrimeinvestigation",
-        "name": "Computer Crime Investigation Associate in Science",
+        "name": "Computer Crime Investigation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/computercrimeinvestigation/",
         "careersUrl": "https://www.mdc.edu/computercrimeinvestigation/careers.aspx",
@@ -4807,7 +4807,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "computercrimeinvestigation",
-        "name": "Computer Crime Investigation Associate in Science",
+        "name": "Computer Crime Investigation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/computercrimeinvestigation/",
         "careersUrl": "https://www.mdc.edu/computercrimeinvestigation/careers.aspx",
@@ -4827,7 +4827,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "computercrimeinvestigation",
-        "name": "Computer Crime Investigation Associate in Science",
+        "name": "Computer Crime Investigation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/computercrimeinvestigation/",
         "careersUrl": "https://www.mdc.edu/computercrimeinvestigation/careers.aspx",
@@ -4847,7 +4847,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "computercrimeinvestigation",
-        "name": "Computer Crime Investigation Associate in Science",
+        "name": "Computer Crime Investigation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/computercrimeinvestigation/",
         "careersUrl": "https://www.mdc.edu/computercrimeinvestigation/careers.aspx",
@@ -4879,17 +4879,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Technology"
   },
   {
-    "career": "Computer and Information Systems Manager",
+    "career": "Computer And Information Systems Manager",
     "programs": [
       {
         "id": "computerinformationtechnology",
-        "name": "Computer Information Technology Associate in Science",
+        "name": "Computer Information Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
         "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Computer and Information Systems Manager",
+          "Computer And Information Systems Manager",
           "Computer Network Architect",
           "Database Administrator",
           "Computer Support System",
@@ -4905,13 +4905,13 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "computerinformationtechnology",
-        "name": "Computer Information Technology Associate in Science",
+        "name": "Computer Information Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
         "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Computer and Information Systems Manager",
+          "Computer And Information Systems Manager",
           "Computer Network Architect",
           "Database Administrator",
           "Computer Support System",
@@ -4939,13 +4939,13 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "computerinformationtechnology",
-        "name": "Computer Information Technology Associate in Science",
+        "name": "Computer Information Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
         "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Computer and Information Systems Manager",
+          "Computer And Information Systems Manager",
           "Computer Network Architect",
           "Database Administrator",
           "Computer Support System",
@@ -4973,13 +4973,13 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "computerinformationtechnology",
-        "name": "Computer Information Technology Associate in Science",
+        "name": "Computer Information Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
         "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Computer and Information Systems Manager",
+          "Computer And Information Systems Manager",
           "Computer Network Architect",
           "Database Administrator",
           "Computer Support System",
@@ -4995,13 +4995,13 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "computerinformationtechnology",
-        "name": "Computer Information Technology Associate in Science",
+        "name": "Computer Information Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
         "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Computer and Information Systems Manager",
+          "Computer And Information Systems Manager",
           "Computer Network Architect",
           "Database Administrator",
           "Computer Support System",
@@ -5029,13 +5029,13 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "computerinformationtechnology",
-        "name": "Computer Information Technology Associate in Science",
+        "name": "Computer Information Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/computerinformationtechnology/",
         "careersUrl": "https://www.mdc.edu/computerinformationtechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Computer and Information Systems Manager",
+          "Computer And Information Systems Manager",
           "Computer Network Architect",
           "Database Administrator",
           "Computer Support System",
@@ -5051,7 +5051,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessapplications",
-        "name": "Computer Programming and Analysis - Business Application Programmming Associate in Science",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/businessapplications",
         "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
@@ -5071,7 +5071,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessapplications",
-        "name": "Computer Programming and Analysis - Business Application Programmming Associate in Science",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/businessapplications",
         "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
@@ -5091,7 +5091,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessapplications",
-        "name": "Computer Programming and Analysis - Business Application Programmming Associate in Science",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/businessapplications",
         "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
@@ -5111,7 +5111,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "businessapplications",
-        "name": "Computer Programming and Analysis - Business Application Programmming Associate in Science",
+        "name": "Computer Programming And Analysis - Business Application Programmming Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/businessapplications",
         "careersUrl": "https://www.mdc.edu/businessapplications/careers.aspx",
@@ -5127,28 +5127,28 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Technology"
   },
   {
-    "career": "IoT programmer IoT developer IoT consultant Product Application Assistant",
+    "career": "IoT Programmer IoT Developer IoT Consultant Product Application Assistant",
     "programs": [
       {
         "id": "internetofthings",
-        "name": "Computer Programming and Analysis - Internet of Things (IoT) Applications Associate in Science",
+        "name": "Computer Programming And Analysis - Internet Of Things (iot) Applications Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/internetofthings/",
         "careersUrl": "https://www.mdc.edu/internetofthings/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "IoT programmer IoT developer IoT consultant Product Application Assistant"
+          "IoT Programmer IoT Developer IoT Consultant Product Application Assistant"
         ]
       },
       {
         "id": "internetofthingscertificate",
-        "name": "Internet of Things (IoT) Applications College Credit Certificate",
+        "name": "Internet Of Things (iot) Applications College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/internetofthingscertificate/",
         "careersUrl": "https://www.mdc.edu/internetofthingscertificate/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "IoT programmer IoT developer IoT consultant Product Application Assistant"
+          "IoT Programmer IoT Developer IoT Consultant Product Application Assistant"
         ]
       }
     ],
@@ -5175,7 +5175,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "crimescenetechnologycsi",
-        "name": "Crime Scene Technology - Crime Scene Investigation  Associate in Science",
+        "name": "Crime Scene Technology - Crime Scene Investigation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/crimescenetechnologycsi/",
         "careersUrl": "https://www.mdc.edu/crimescenetechnologycsi/careers.aspx",
@@ -5190,7 +5190,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "crimescenetechnologyforensic",
-        "name": "Crime Scene Technology - Forensic Science Associate in Science",
+        "name": "Crime Scene Technology - Forensic Science Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/crimescenetechnologyforensic/",
         "careersUrl": "https://www.mdc.edu/crimescenetechnologyforensic/careers.aspx",
@@ -5211,7 +5211,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "crimescenetechnologycsi",
-        "name": "Crime Scene Technology - Crime Scene Investigation  Associate in Science",
+        "name": "Crime Scene Technology - Crime Scene Investigation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/crimescenetechnologycsi/",
         "careersUrl": "https://www.mdc.edu/crimescenetechnologycsi/careers.aspx",
@@ -5232,7 +5232,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "crimescenetechnologycsi",
-        "name": "Crime Scene Technology - Crime Scene Investigation  Associate in Science",
+        "name": "Crime Scene Technology - Crime Scene Investigation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/crimescenetechnologycsi/",
         "careersUrl": "https://www.mdc.edu/crimescenetechnologycsi/careers.aspx",
@@ -5253,7 +5253,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "crimescenetechnologycsi",
-        "name": "Crime Scene Technology - Crime Scene Investigation  Associate in Science",
+        "name": "Crime Scene Technology - Crime Scene Investigation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/crimescenetechnologycsi/",
         "careersUrl": "https://www.mdc.edu/crimescenetechnologycsi/careers.aspx",
@@ -5268,7 +5268,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "crimescenetechnologyforensic",
-        "name": "Crime Scene Technology - Forensic Science Associate in Science",
+        "name": "Crime Scene Technology - Forensic Science Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/crimescenetechnologyforensic/",
         "careersUrl": "https://www.mdc.edu/crimescenetechnologyforensic/careers.aspx",
@@ -5289,7 +5289,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "crimescenetechnologycsi",
-        "name": "Crime Scene Technology - Crime Scene Investigation  Associate in Science",
+        "name": "Crime Scene Technology - Crime Scene Investigation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/crimescenetechnologycsi/",
         "careersUrl": "https://www.mdc.edu/crimescenetechnologycsi/careers.aspx",
@@ -5304,7 +5304,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "crimescenetechnologyforensic",
-        "name": "Crime Scene Technology - Forensic Science Associate in Science",
+        "name": "Crime Scene Technology - Forensic Science Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/crimescenetechnologyforensic/",
         "careersUrl": "https://www.mdc.edu/crimescenetechnologyforensic/careers.aspx",
@@ -5325,7 +5325,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "crimescenetechnologyforensic",
-        "name": "Crime Scene Technology - Forensic Science Associate in Science",
+        "name": "Crime Scene Technology - Forensic Science Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/crimescenetechnologyforensic/",
         "careersUrl": "https://www.mdc.edu/crimescenetechnologyforensic/careers.aspx",
@@ -5346,7 +5346,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "crimescenetechnologyforensic",
-        "name": "Crime Scene Technology - Forensic Science Associate in Science",
+        "name": "Crime Scene Technology - Forensic Science Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/crimescenetechnologyforensic/",
         "careersUrl": "https://www.mdc.edu/crimescenetechnologyforensic/careers.aspx",
@@ -5367,7 +5367,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "criminaljusticetechnology",
-        "name": "Criminal Justice Technology Associate in Science",
+        "name": "Criminal Justice Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/criminaljusticetechnology/",
         "careersUrl": "https://www.mdc.edu/criminaljusticetechnology/careers.aspx",
@@ -5375,7 +5375,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Law Enforcement",
           "Corrections",
-          "Probation and Parole",
+          "Probation And Parole",
           "Detention Centers"
         ]
       }
@@ -5387,7 +5387,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "criminaljusticetechnology",
-        "name": "Criminal Justice Technology Associate in Science",
+        "name": "Criminal Justice Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/criminaljusticetechnology/",
         "careersUrl": "https://www.mdc.edu/criminaljusticetechnology/careers.aspx",
@@ -5395,7 +5395,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Law Enforcement",
           "Corrections",
-          "Probation and Parole",
+          "Probation And Parole",
           "Detention Centers"
         ]
       }
@@ -5403,11 +5403,11 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Probation and Parole",
+    "career": "Probation And Parole",
     "programs": [
       {
         "id": "criminaljusticetechnology",
-        "name": "Criminal Justice Technology Associate in Science",
+        "name": "Criminal Justice Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/criminaljusticetechnology/",
         "careersUrl": "https://www.mdc.edu/criminaljusticetechnology/careers.aspx",
@@ -5415,7 +5415,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Law Enforcement",
           "Corrections",
-          "Probation and Parole",
+          "Probation And Parole",
           "Detention Centers"
         ]
       }
@@ -5427,7 +5427,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "criminaljusticetechnology",
-        "name": "Criminal Justice Technology Associate in Science",
+        "name": "Criminal Justice Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/criminaljusticetechnology/",
         "careersUrl": "https://www.mdc.edu/criminaljusticetechnology/careers.aspx",
@@ -5435,7 +5435,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Law Enforcement",
           "Corrections",
-          "Probation and Parole",
+          "Probation And Parole",
           "Detention Centers"
         ]
       }
@@ -5447,7 +5447,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "culinaryartsmanagement",
-        "name": "Culinary Arts Management Associate in Science",
+        "name": "Culinary Arts Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/culinaryartsmanagement/",
         "careersUrl": "https://www.mdc.edu/culinaryartsmanagement/careers.aspx",
@@ -5468,7 +5468,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "culinaryartsmanagement",
-        "name": "Culinary Arts Management Associate in Science",
+        "name": "Culinary Arts Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/culinaryartsmanagement/",
         "careersUrl": "https://www.mdc.edu/culinaryartsmanagement/careers.aspx",
@@ -5489,7 +5489,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "culinaryartsmanagement",
-        "name": "Culinary Arts Management Associate in Science",
+        "name": "Culinary Arts Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/culinaryartsmanagement/",
         "careersUrl": "https://www.mdc.edu/culinaryartsmanagement/careers.aspx",
@@ -5510,7 +5510,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "culinaryartsmanagement",
-        "name": "Culinary Arts Management Associate in Science",
+        "name": "Culinary Arts Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/culinaryartsmanagement/",
         "careersUrl": "https://www.mdc.edu/culinaryartsmanagement/careers.aspx",
@@ -5531,7 +5531,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "cybersecurityas",
-        "name": "Cybersecurity Associate in Science",
+        "name": "Cybersecurity Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/cybersecurityas",
         "careersUrl": "https://www.mdc.edu/cybersecurityas/careers.aspx",
@@ -5554,7 +5554,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "cybersecurityas",
-        "name": "Cybersecurity Associate in Science",
+        "name": "Cybersecurity Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/cybersecurityas",
         "careersUrl": "https://www.mdc.edu/cybersecurityas/careers.aspx",
@@ -5577,7 +5577,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "cybersecurityas",
-        "name": "Cybersecurity Associate in Science",
+        "name": "Cybersecurity Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/cybersecurityas",
         "careersUrl": "https://www.mdc.edu/cybersecurityas/careers.aspx",
@@ -5600,7 +5600,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "cybersecurityas",
-        "name": "Cybersecurity Associate in Science",
+        "name": "Cybersecurity Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/cybersecurityas",
         "careersUrl": "https://www.mdc.edu/cybersecurityas/careers.aspx",
@@ -5623,7 +5623,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "cybersecurityas",
-        "name": "Cybersecurity Associate in Science",
+        "name": "Cybersecurity Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/cybersecurityas",
         "careersUrl": "https://www.mdc.edu/cybersecurityas/careers.aspx",
@@ -5646,7 +5646,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "cybersecurityas",
-        "name": "Cybersecurity Associate in Science",
+        "name": "Cybersecurity Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/cybersecurityas",
         "careersUrl": "https://www.mdc.edu/cybersecurityas/careers.aspx",
@@ -5680,7 +5680,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "cybersecurityas",
-        "name": "Cybersecurity Associate in Science",
+        "name": "Cybersecurity Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/cybersecurityas",
         "careersUrl": "https://www.mdc.edu/cybersecurityas/careers.aspx",
@@ -5719,7 +5719,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "dentalhygiene",
-        "name": "Dental Hygiene Associate in Science",
+        "name": "Dental Hygiene Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/dentalhygiene/",
         "careersUrl": "https://www.mdc.edu/dentalhygiene/careers.aspx",
@@ -5737,7 +5737,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "dentalhygiene",
-        "name": "Dental Hygiene Associate in Science",
+        "name": "Dental Hygiene Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/dentalhygiene/",
         "careersUrl": "https://www.mdc.edu/dentalhygiene/careers.aspx",
@@ -5772,21 +5772,21 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "earlychildhoodas",
-        "name": "Early Childhood Education Associate in Science",
+        "name": "Early Childhood Education Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodas/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodas/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Education Administrator",
-          "Preschool Teacher (Except Special Education)",
-          "Kindergarten Teacher (Except Special Education)",
+          "Preschool Teacher (except Special Education)",
+          "Kindergarten Teacher (except Special Education)",
           "Childcare Worker"
         ]
       },
       {
         "id": "earlychildhoodadministrator",
-        "name": "Early Childhood Education - Administrators Associate in Science",
+        "name": "Early Childhood Education - Administrators Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodadministrator/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodadministrator/careers.aspx",
@@ -5798,7 +5798,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "earlychildhoodinfant",
-        "name": "Early Childhood Education - Infant Toddler Associate in Science",
+        "name": "Early Childhood Education - Infant Toddler Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodinfant/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodinfant/careers.aspx",
@@ -5807,20 +5807,20 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Education Administrator",
           "Instructional Coordinator",
           "Teacher Assistant",
-          "Special Education Teacher, Preschool, Kindergarten and Elementary School",
+          "Special Education Teacher, Preschool, Kindergarten And Elementary School",
           "Childcare Worker"
         ]
       },
       {
         "id": "earlychildhoodpreschool",
-        "name": "Early Childhood Education - Preschool Associate in Science",
+        "name": "Early Childhood Education - Preschool Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodpreschool/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodpreschool/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Education Administrator",
-          "Preschool Teacher (Except Special Education)",
+          "Preschool Teacher (except Special Education)",
           "Childcare Worker"
         ]
       },
@@ -5838,7 +5838,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "educatorpreparation",
-        "name": "Educator preparation Institute College Credit Certificate",
+        "name": "Educator Preparation Institute College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/educatorpreparation/",
         "careersUrl": "https://www.mdc.edu/educatorpreparation/careers.aspx",
@@ -5855,32 +5855,32 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Education"
   },
   {
-    "career": "Preschool Teacher (Except Special Education)",
+    "career": "Preschool Teacher (except Special Education)",
     "programs": [
       {
         "id": "earlychildhoodas",
-        "name": "Early Childhood Education Associate in Science",
+        "name": "Early Childhood Education Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodas/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodas/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Education Administrator",
-          "Preschool Teacher (Except Special Education)",
-          "Kindergarten Teacher (Except Special Education)",
+          "Preschool Teacher (except Special Education)",
+          "Kindergarten Teacher (except Special Education)",
           "Childcare Worker"
         ]
       },
       {
         "id": "earlychildhoodpreschool",
-        "name": "Early Childhood Education - Preschool Associate in Science",
+        "name": "Early Childhood Education - Preschool Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodpreschool/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodpreschool/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Education Administrator",
-          "Preschool Teacher (Except Special Education)",
+          "Preschool Teacher (except Special Education)",
           "Childcare Worker"
         ]
       }
@@ -5888,19 +5888,19 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Education"
   },
   {
-    "career": "Kindergarten Teacher (Except Special Education)",
+    "career": "Kindergarten Teacher (except Special Education)",
     "programs": [
       {
         "id": "earlychildhoodas",
-        "name": "Early Childhood Education Associate in Science",
+        "name": "Early Childhood Education Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodas/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodas/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Education Administrator",
-          "Preschool Teacher (Except Special Education)",
-          "Kindergarten Teacher (Except Special Education)",
+          "Preschool Teacher (except Special Education)",
+          "Kindergarten Teacher (except Special Education)",
           "Childcare Worker"
         ]
       }
@@ -5912,21 +5912,21 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "earlychildhoodas",
-        "name": "Early Childhood Education Associate in Science",
+        "name": "Early Childhood Education Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodas/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodas/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Education Administrator",
-          "Preschool Teacher (Except Special Education)",
-          "Kindergarten Teacher (Except Special Education)",
+          "Preschool Teacher (except Special Education)",
+          "Kindergarten Teacher (except Special Education)",
           "Childcare Worker"
         ]
       },
       {
         "id": "earlychildhoodinfant",
-        "name": "Early Childhood Education - Infant Toddler Associate in Science",
+        "name": "Early Childhood Education - Infant Toddler Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodinfant/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodinfant/careers.aspx",
@@ -5935,26 +5935,26 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Education Administrator",
           "Instructional Coordinator",
           "Teacher Assistant",
-          "Special Education Teacher, Preschool, Kindergarten and Elementary School",
+          "Special Education Teacher, Preschool, Kindergarten And Elementary School",
           "Childcare Worker"
         ]
       },
       {
         "id": "earlychildhoodpreschool",
-        "name": "Early Childhood Education - Preschool Associate in Science",
+        "name": "Early Childhood Education - Preschool Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodpreschool/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodpreschool/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Education Administrator",
-          "Preschool Teacher (Except Special Education)",
+          "Preschool Teacher (except Special Education)",
           "Childcare Worker"
         ]
       },
       {
         "id": "infanttoddler",
-        "name": "Infant/Toddler Specialization College Credit Certificate",
+        "name": "Infant/toddler Specialization College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/infanttoddler/",
         "careersUrl": "https://www.mdc.edu/infanttoddler/careers.aspx",
@@ -5973,7 +5973,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "earlychildhoodadministrator",
-        "name": "Early Childhood Education - Administrators Associate in Science",
+        "name": "Early Childhood Education - Administrators Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodadministrator/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodadministrator/careers.aspx",
@@ -5985,7 +5985,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "earlychildhoodinfant",
-        "name": "Early Childhood Education - Infant Toddler Associate in Science",
+        "name": "Early Childhood Education - Infant Toddler Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodinfant/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodinfant/careers.aspx",
@@ -5994,7 +5994,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Education Administrator",
           "Instructional Coordinator",
           "Teacher Assistant",
-          "Special Education Teacher, Preschool, Kindergarten and Elementary School",
+          "Special Education Teacher, Preschool, Kindergarten And Elementary School",
           "Childcare Worker"
         ]
       },
@@ -6018,7 +6018,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "earlychildhoodinfant",
-        "name": "Early Childhood Education - Infant Toddler Associate in Science",
+        "name": "Early Childhood Education - Infant Toddler Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodinfant/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodinfant/careers.aspx",
@@ -6027,7 +6027,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Education Administrator",
           "Instructional Coordinator",
           "Teacher Assistant",
-          "Special Education Teacher, Preschool, Kindergarten and Elementary School",
+          "Special Education Teacher, Preschool, Kindergarten And Elementary School",
           "Childcare Worker"
         ]
       }
@@ -6035,11 +6035,11 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Education"
   },
   {
-    "career": "Special Education Teacher, Preschool, Kindergarten and Elementary School",
+    "career": "Special Education Teacher, Preschool, Kindergarten And Elementary School",
     "programs": [
       {
         "id": "earlychildhoodinfant",
-        "name": "Early Childhood Education - Infant Toddler Associate in Science",
+        "name": "Early Childhood Education - Infant Toddler Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/earlychildhoodinfant/",
         "careersUrl": "https://www.mdc.edu/earlychildhoodinfant/careers.aspx",
@@ -6048,7 +6048,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Education Administrator",
           "Instructional Coordinator",
           "Teacher Assistant",
-          "Special Education Teacher, Preschool, Kindergarten and Elementary School",
+          "Special Education Teacher, Preschool, Kindergarten And Elementary School",
           "Childcare Worker"
         ]
       }
@@ -6056,16 +6056,16 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Education"
   },
   {
-    "career": "Electronics Engineeringtechnology",
+    "career": "Electronics Engineering Technology",
     "programs": [
       {
         "id": "electronicsengineeringtechnology",
-        "name": "Electronics Engineeringtechnology",
+        "name": "Electronics Engineering Technology",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/electronicsengineeringtechnology",
         "pdfLinks": {},
         "careerProspects": [
-          "Electronics Engineeringtechnology"
+          "Electronics Engineering Technology"
         ]
       }
     ],
@@ -6076,7 +6076,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "ems",
-        "name": "Emergency Medical Services Associate in Science",
+        "name": "Emergency Medical Services Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/ems/",
         "careersUrl": "https://www.mdc.edu/ems/careers.aspx",
@@ -6095,8 +6095,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careersUrl": "https://www.mdc.edu/firefighteremt/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "State of Florida Firefighter Certification",
-          "State of Florida Emergency Medical Technician Certification",
+          "State Of Florida Firefighter Certification",
+          "State Of Florida Emergency Medical Technician Certification",
           "Fire Fighter",
           "Paramedic",
           "Fire Safety Inspector",
@@ -6111,7 +6111,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "ems",
-        "name": "Emergency Medical Services Associate in Science",
+        "name": "Emergency Medical Services Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/ems/",
         "careersUrl": "https://www.mdc.edu/ems/careers.aspx",
@@ -6142,8 +6142,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careersUrl": "https://www.mdc.edu/firefighteremt/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "State of Florida Firefighter Certification",
-          "State of Florida Emergency Medical Technician Certification",
+          "State Of Florida Firefighter Certification",
+          "State Of Florida Emergency Medical Technician Certification",
           "Fire Fighter",
           "Paramedic",
           "Fire Safety Inspector",
@@ -6158,7 +6158,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "ems",
-        "name": "Emergency Medical Services Associate in Science",
+        "name": "Emergency Medical Services Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/ems/",
         "careersUrl": "https://www.mdc.edu/ems/careers.aspx",
@@ -6173,17 +6173,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Business Entrepreneurship Associate in Science",
+    "career": "Business Entrepreneurship Associate In Science",
     "programs": [
       {
         "id": "entrepreneurship",
-        "name": "Business Entrepreneurship Associate in Science",
+        "name": "Business Entrepreneurship Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/entrepreneurship/",
         "careersUrl": "https://www.mdc.edu/entrepreneurship/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Business Entrepreneurship Associate in Science"
+          "Business Entrepreneurship Associate In Science"
         ]
       }
     ],
@@ -6194,7 +6194,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "fashiondesign",
-        "name": "Fashion Design and Merchandising - Fashion Design Associate in Science",
+        "name": "Fashion Design And Merchandising - Fashion Design Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/fashiondesign/",
         "careersUrl": "https://www.mdc.edu/fashiondesign/careers.aspx",
@@ -6214,7 +6214,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "fashiondesign",
-        "name": "Fashion Design and Merchandising - Fashion Design Associate in Science",
+        "name": "Fashion Design And Merchandising - Fashion Design Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/fashiondesign/",
         "careersUrl": "https://www.mdc.edu/fashiondesign/careers.aspx",
@@ -6234,7 +6234,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "fashiondesign",
-        "name": "Fashion Design and Merchandising - Fashion Design Associate in Science",
+        "name": "Fashion Design And Merchandising - Fashion Design Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/fashiondesign/",
         "careersUrl": "https://www.mdc.edu/fashiondesign/careers.aspx",
@@ -6254,7 +6254,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "fashiondesign",
-        "name": "Fashion Design and Merchandising - Fashion Design Associate in Science",
+        "name": "Fashion Design And Merchandising - Fashion Design Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/fashiondesign/",
         "careersUrl": "https://www.mdc.edu/fashiondesign/careers.aspx",
@@ -6274,14 +6274,14 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "fashionmerchandising",
-        "name": "Fashion Design and Merchandising - Fashion Merchandising Associate in Science",
+        "name": "Fashion Design And Merchandising - Fashion Merchandising Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/fashionmerchandising/",
         "careersUrl": "https://www.mdc.edu/fashionmerchandising/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Merchandiser",
-          "Planning and Logistics",
+          "Planning And Logistics",
           "Business Operations Manager",
           "Technology Manager",
           "Apparel Contractor"
@@ -6291,18 +6291,18 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Planning and Logistics",
+    "career": "Planning And Logistics",
     "programs": [
       {
         "id": "fashionmerchandising",
-        "name": "Fashion Design and Merchandising - Fashion Merchandising Associate in Science",
+        "name": "Fashion Design And Merchandising - Fashion Merchandising Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/fashionmerchandising/",
         "careersUrl": "https://www.mdc.edu/fashionmerchandising/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Merchandiser",
-          "Planning and Logistics",
+          "Planning And Logistics",
           "Business Operations Manager",
           "Technology Manager",
           "Apparel Contractor"
@@ -6316,14 +6316,14 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "fashionmerchandising",
-        "name": "Fashion Design and Merchandising - Fashion Merchandising Associate in Science",
+        "name": "Fashion Design And Merchandising - Fashion Merchandising Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/fashionmerchandising/",
         "careersUrl": "https://www.mdc.edu/fashionmerchandising/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Merchandiser",
-          "Planning and Logistics",
+          "Planning And Logistics",
           "Business Operations Manager",
           "Technology Manager",
           "Apparel Contractor"
@@ -6337,14 +6337,14 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "fashionmerchandising",
-        "name": "Fashion Design and Merchandising - Fashion Merchandising Associate in Science",
+        "name": "Fashion Design And Merchandising - Fashion Merchandising Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/fashionmerchandising/",
         "careersUrl": "https://www.mdc.edu/fashionmerchandising/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Merchandiser",
-          "Planning and Logistics",
+          "Planning And Logistics",
           "Business Operations Manager",
           "Technology Manager",
           "Apparel Contractor"
@@ -6358,14 +6358,14 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "fashionmerchandising",
-        "name": "Fashion Design and Merchandising - Fashion Merchandising Associate in Science",
+        "name": "Fashion Design And Merchandising - Fashion Merchandising Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/fashionmerchandising/",
         "careersUrl": "https://www.mdc.edu/fashionmerchandising/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Merchandiser",
-          "Planning and Logistics",
+          "Planning And Logistics",
           "Business Operations Manager",
           "Technology Manager",
           "Apparel Contractor"
@@ -6379,7 +6379,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "filmproduction",
-        "name": "Film Production Technology Associate in Science",
+        "name": "Film Production Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/filmproduction/",
         "careersUrl": "https://www.mdc.edu/filmproduction/careers.aspx",
@@ -6401,7 +6401,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "filmproduction",
-        "name": "Film Production Technology Associate in Science",
+        "name": "Film Production Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/filmproduction/",
         "careersUrl": "https://www.mdc.edu/filmproduction/careers.aspx",
@@ -6423,7 +6423,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "filmproduction",
-        "name": "Film Production Technology Associate in Science",
+        "name": "Film Production Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/filmproduction/",
         "careersUrl": "https://www.mdc.edu/filmproduction/careers.aspx",
@@ -6445,7 +6445,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "filmproduction",
-        "name": "Film Production Technology Associate in Science",
+        "name": "Film Production Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/filmproduction/",
         "careersUrl": "https://www.mdc.edu/filmproduction/careers.aspx",
@@ -6467,7 +6467,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "filmproduction",
-        "name": "Film Production Technology Associate in Science",
+        "name": "Film Production Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/filmproduction/",
         "careersUrl": "https://www.mdc.edu/filmproduction/careers.aspx",
@@ -6504,7 +6504,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "filmproduction",
-        "name": "Film Production Technology Associate in Science",
+        "name": "Film Production Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/filmproduction/",
         "careersUrl": "https://www.mdc.edu/filmproduction/careers.aspx",
@@ -6526,7 +6526,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "banking",
-        "name": "Financial Services - Banking Associate in Science",
+        "name": "Financial Services - Banking Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/banking/",
         "careersUrl": "https://www.mdc.edu/banking/careers.aspx",
@@ -6537,7 +6537,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Business &amp; Commercial Lender",
           "Financial Services Representative",
           "Mortgage Broker / Lender",
-          "Operations Manager or Supervisor"
+          "Operations Manager Or Supervisor"
         ]
       }
     ],
@@ -6548,7 +6548,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "banking",
-        "name": "Financial Services - Banking Associate in Science",
+        "name": "Financial Services - Banking Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/banking/",
         "careersUrl": "https://www.mdc.edu/banking/careers.aspx",
@@ -6559,7 +6559,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Business &amp; Commercial Lender",
           "Financial Services Representative",
           "Mortgage Broker / Lender",
-          "Operations Manager or Supervisor"
+          "Operations Manager Or Supervisor"
         ]
       }
     ],
@@ -6570,7 +6570,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "banking",
-        "name": "Financial Services - Banking Associate in Science",
+        "name": "Financial Services - Banking Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/banking/",
         "careersUrl": "https://www.mdc.edu/banking/careers.aspx",
@@ -6581,7 +6581,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Business &amp; Commercial Lender",
           "Financial Services Representative",
           "Mortgage Broker / Lender",
-          "Operations Manager or Supervisor"
+          "Operations Manager Or Supervisor"
         ]
       }
     ],
@@ -6592,7 +6592,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "banking",
-        "name": "Financial Services - Banking Associate in Science",
+        "name": "Financial Services - Banking Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/banking/",
         "careersUrl": "https://www.mdc.edu/banking/careers.aspx",
@@ -6603,18 +6603,18 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Business &amp; Commercial Lender",
           "Financial Services Representative",
           "Mortgage Broker / Lender",
-          "Operations Manager or Supervisor"
+          "Operations Manager Or Supervisor"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Operations Manager or Supervisor",
+    "career": "Operations Manager Or Supervisor",
     "programs": [
       {
         "id": "banking",
-        "name": "Financial Services - Banking Associate in Science",
+        "name": "Financial Services - Banking Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/banking/",
         "careersUrl": "https://www.mdc.edu/banking/careers.aspx",
@@ -6625,7 +6625,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Business &amp; Commercial Lender",
           "Financial Services Representative",
           "Mortgage Broker / Lender",
-          "Operations Manager or Supervisor"
+          "Operations Manager Or Supervisor"
         ]
       }
     ],
@@ -6652,17 +6652,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "firescience",
-        "name": "Fire Science Technology Associate in Science",
+        "name": "Fire Science Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/firescience/",
         "careersUrl": "https://www.mdc.edu/firescience/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Emergency Management Director",
-          "Fire-Prevention and Protection Engineer",
+          "Fire-prevention And Protection Engineer",
           "Fire Safety Inspector",
           "Municipal Fire Fighter",
-          "Ambulance Driver and Attendant"
+          "Ambulance Driver And Attendant"
         ]
       },
       {
@@ -6675,8 +6675,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Emergency Management Director",
           "Security Management Specialist",
-          "Criminal Investigator and Agent",
-          "Immigration and Custom Inspector",
+          "Criminal Investigator And Agent",
+          "Immigration And Custom Inspector",
           "Intelligence Analyst"
         ]
       }
@@ -6684,21 +6684,21 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Fire-Prevention and Protection Engineer",
+    "career": "Fire-prevention And Protection Engineer",
     "programs": [
       {
         "id": "firescience",
-        "name": "Fire Science Technology Associate in Science",
+        "name": "Fire Science Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/firescience/",
         "careersUrl": "https://www.mdc.edu/firescience/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Emergency Management Director",
-          "Fire-Prevention and Protection Engineer",
+          "Fire-prevention And Protection Engineer",
           "Fire Safety Inspector",
           "Municipal Fire Fighter",
-          "Ambulance Driver and Attendant"
+          "Ambulance Driver And Attendant"
         ]
       }
     ],
@@ -6709,17 +6709,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "firescience",
-        "name": "Fire Science Technology Associate in Science",
+        "name": "Fire Science Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/firescience/",
         "careersUrl": "https://www.mdc.edu/firescience/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Emergency Management Director",
-          "Fire-Prevention and Protection Engineer",
+          "Fire-prevention And Protection Engineer",
           "Fire Safety Inspector",
           "Municipal Fire Fighter",
-          "Ambulance Driver and Attendant"
+          "Ambulance Driver And Attendant"
         ]
       },
       {
@@ -6730,8 +6730,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careersUrl": "https://www.mdc.edu/firefighteremt/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "State of Florida Firefighter Certification",
-          "State of Florida Emergency Medical Technician Certification",
+          "State Of Florida Firefighter Certification",
+          "State Of Florida Emergency Medical Technician Certification",
           "Fire Fighter",
           "Paramedic",
           "Fire Safety Inspector",
@@ -6746,38 +6746,38 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "firescience",
-        "name": "Fire Science Technology Associate in Science",
+        "name": "Fire Science Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/firescience/",
         "careersUrl": "https://www.mdc.edu/firescience/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Emergency Management Director",
-          "Fire-Prevention and Protection Engineer",
+          "Fire-prevention And Protection Engineer",
           "Fire Safety Inspector",
           "Municipal Fire Fighter",
-          "Ambulance Driver and Attendant"
+          "Ambulance Driver And Attendant"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Ambulance Driver and Attendant",
+    "career": "Ambulance Driver And Attendant",
     "programs": [
       {
         "id": "firescience",
-        "name": "Fire Science Technology Associate in Science",
+        "name": "Fire Science Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/firescience/",
         "careersUrl": "https://www.mdc.edu/firescience/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Emergency Management Director",
-          "Fire-Prevention and Protection Engineer",
+          "Fire-prevention And Protection Engineer",
           "Fire Safety Inspector",
           "Municipal Fire Fighter",
-          "Ambulance Driver and Attendant"
+          "Ambulance Driver And Attendant"
         ]
       }
     ],
@@ -6905,7 +6905,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "gamedevelopment",
-        "name": "Game Development and Design Associate in Science",
+        "name": "Game Development And Design Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/gamedevelopment/",
         "careersUrl": "https://www.mdc.edu/gamedevelopment/careers.aspx",
@@ -6923,7 +6923,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "gamedevelopment",
-        "name": "Game Development and Design Associate in Science",
+        "name": "Game Development And Design Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/gamedevelopment/",
         "careersUrl": "https://www.mdc.edu/gamedevelopment/careers.aspx",
@@ -6941,15 +6941,15 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "graphicdesign",
-        "name": "Graphic Design Technology Associate in Science",
+        "name": "Graphic Design Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/graphicdesign/",
         "careersUrl": "https://www.mdc.edu/graphicdesign/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Art Director",
-          "Multimedia Artist and Animator",
-          "Commercial and Industrial Designer",
+          "Multimedia Artist And Animator",
+          "Commercial And Industrial Designer",
           "Graphic Designer",
           "Desktop Publisher"
         ]
@@ -6958,19 +6958,19 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Multimedia Artist and Animator",
+    "career": "Multimedia Artist And Animator",
     "programs": [
       {
         "id": "graphicdesign",
-        "name": "Graphic Design Technology Associate in Science",
+        "name": "Graphic Design Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/graphicdesign/",
         "careersUrl": "https://www.mdc.edu/graphicdesign/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Art Director",
-          "Multimedia Artist and Animator",
-          "Commercial and Industrial Designer",
+          "Multimedia Artist And Animator",
+          "Commercial And Industrial Designer",
           "Graphic Designer",
           "Desktop Publisher"
         ]
@@ -6979,26 +6979,26 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Commercial and Industrial Designer",
+    "career": "Commercial And Industrial Designer",
     "programs": [
       {
         "id": "graphicdesign",
-        "name": "Graphic Design Technology Associate in Science",
+        "name": "Graphic Design Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/graphicdesign/",
         "careersUrl": "https://www.mdc.edu/graphicdesign/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Art Director",
-          "Multimedia Artist and Animator",
-          "Commercial and Industrial Designer",
+          "Multimedia Artist And Animator",
+          "Commercial And Industrial Designer",
           "Graphic Designer",
           "Desktop Publisher"
         ]
       },
       {
         "id": "graphicinternet",
-        "name": "Graphic Internet Technology Associate in Science",
+        "name": "Graphic Internet Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/graphicinternet/",
         "careersUrl": "https://www.mdc.edu/graphicinternet/careers.aspx",
@@ -7007,8 +7007,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Web Developer",
           "Web Administrator",
           "Webmaster",
-          "Multimedia Arts and Animation Designer",
-          "Commercial and Industrial Designer",
+          "Multimedia Arts And Animation Designer",
+          "Commercial And Industrial Designer",
           "Graphic Designer"
         ]
       }
@@ -7020,22 +7020,22 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "graphicdesign",
-        "name": "Graphic Design Technology Associate in Science",
+        "name": "Graphic Design Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/graphicdesign/",
         "careersUrl": "https://www.mdc.edu/graphicdesign/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Art Director",
-          "Multimedia Artist and Animator",
-          "Commercial and Industrial Designer",
+          "Multimedia Artist And Animator",
+          "Commercial And Industrial Designer",
           "Graphic Designer",
           "Desktop Publisher"
         ]
       },
       {
         "id": "graphicinternet",
-        "name": "Graphic Internet Technology Associate in Science",
+        "name": "Graphic Internet Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/graphicinternet/",
         "careersUrl": "https://www.mdc.edu/graphicinternet/careers.aspx",
@@ -7044,8 +7044,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Web Developer",
           "Web Administrator",
           "Webmaster",
-          "Multimedia Arts and Animation Designer",
-          "Commercial and Industrial Designer",
+          "Multimedia Arts And Animation Designer",
+          "Commercial And Industrial Designer",
           "Graphic Designer"
         ]
       }
@@ -7057,15 +7057,15 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "graphicdesign",
-        "name": "Graphic Design Technology Associate in Science",
+        "name": "Graphic Design Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/graphicdesign/",
         "careersUrl": "https://www.mdc.edu/graphicdesign/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
           "Art Director",
-          "Multimedia Artist and Animator",
-          "Commercial and Industrial Designer",
+          "Multimedia Artist And Animator",
+          "Commercial And Industrial Designer",
           "Graphic Designer",
           "Desktop Publisher"
         ]
@@ -7080,7 +7080,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Desktop Publisher",
           "Graphic Design Assistant",
-          "Commercial and Industrial Design Assistant"
+          "Commercial And Industrial Design Assistant"
         ]
       }
     ],
@@ -7091,7 +7091,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "graphicinternet",
-        "name": "Graphic Internet Technology Associate in Science",
+        "name": "Graphic Internet Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/graphicinternet/",
         "careersUrl": "https://www.mdc.edu/graphicinternet/careers.aspx",
@@ -7100,8 +7100,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Web Developer",
           "Web Administrator",
           "Webmaster",
-          "Multimedia Arts and Animation Designer",
-          "Commercial and Industrial Designer",
+          "Multimedia Arts And Animation Designer",
+          "Commercial And Industrial Designer",
           "Graphic Designer"
         ]
       }
@@ -7113,7 +7113,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "graphicinternet",
-        "name": "Graphic Internet Technology Associate in Science",
+        "name": "Graphic Internet Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/graphicinternet/",
         "careersUrl": "https://www.mdc.edu/graphicinternet/careers.aspx",
@@ -7122,8 +7122,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Web Developer",
           "Web Administrator",
           "Webmaster",
-          "Multimedia Arts and Animation Designer",
-          "Commercial and Industrial Designer",
+          "Multimedia Arts And Animation Designer",
+          "Commercial And Industrial Designer",
           "Graphic Designer"
         ]
       }
@@ -7135,7 +7135,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "graphicinternet",
-        "name": "Graphic Internet Technology Associate in Science",
+        "name": "Graphic Internet Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/graphicinternet/",
         "careersUrl": "https://www.mdc.edu/graphicinternet/careers.aspx",
@@ -7144,8 +7144,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Web Developer",
           "Web Administrator",
           "Webmaster",
-          "Multimedia Arts and Animation Designer",
-          "Commercial and Industrial Designer",
+          "Multimedia Arts And Animation Designer",
+          "Commercial And Industrial Designer",
           "Graphic Designer"
         ]
       }
@@ -7153,11 +7153,11 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Multimedia Arts and Animation Designer",
+    "career": "Multimedia Arts And Animation Designer",
     "programs": [
       {
         "id": "graphicinternet",
-        "name": "Graphic Internet Technology Associate in Science",
+        "name": "Graphic Internet Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/graphicinternet/",
         "careersUrl": "https://www.mdc.edu/graphicinternet/careers.aspx",
@@ -7166,8 +7166,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Web Developer",
           "Web Administrator",
           "Webmaster",
-          "Multimedia Arts and Animation Designer",
-          "Commercial and Industrial Designer",
+          "Multimedia Arts And Animation Designer",
+          "Commercial And Industrial Designer",
           "Graphic Designer"
         ]
       }
@@ -7179,7 +7179,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "healthinformation",
-        "name": "Health Information Technology Associate in Science",
+        "name": "Health Information Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/healthinformation/",
         "careersUrl": "https://www.mdc.edu/healthinformation/careers.aspx",
@@ -7199,7 +7199,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "healthinformation",
-        "name": "Health Information Technology Associate in Science",
+        "name": "Health Information Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/healthinformation/",
         "careersUrl": "https://www.mdc.edu/healthinformation/careers.aspx",
@@ -7219,7 +7219,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "healthinformation",
-        "name": "Health Information Technology Associate in Science",
+        "name": "Health Information Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/healthinformation/",
         "careersUrl": "https://www.mdc.edu/healthinformation/careers.aspx",
@@ -7239,7 +7239,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "healthinformation",
-        "name": "Health Information Technology Associate in Science",
+        "name": "Health Information Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/healthinformation/",
         "careersUrl": "https://www.mdc.edu/healthinformation/careers.aspx",
@@ -7255,17 +7255,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Health Science - Health Services Management - Associate in Science degree",
+    "career": "Health Science - Health Services Management - Associate In Science Degree",
     "programs": [
       {
         "id": "healthservicesas",
-        "name": "Health Science - Health Services Management - Associate in Science degree",
+        "name": "Health Science - Health Services Management - Associate In Science Degree",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/healthservicesas",
         "careersUrl": "https://www.mdc.edu/healthservicesas/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Health Science - Health Services Management - Associate in Science degree"
+          "Health Science - Health Services Management - Associate In Science Degree"
         ]
       }
     ],
@@ -7292,7 +7292,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "histotechnology",
-        "name": "Histologic Technology Associate in Science",
+        "name": "Histologic Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/histotechnology/",
         "careersUrl": "https://www.mdc.edu/histotechnology/careers.aspx",
@@ -7310,7 +7310,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "histotechnology",
-        "name": "Histologic Technology Associate in Science",
+        "name": "Histologic Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/histotechnology/",
         "careersUrl": "https://www.mdc.edu/histotechnology/careers.aspx",
@@ -7324,18 +7324,18 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Convention and Event Planner",
+    "career": "Convention And Event Planner",
     "programs": [
       {
         "id": "tourismmanagement",
-        "name": "Hospitality and Tourism Management Associate in Science",
+        "name": "Hospitality And Tourism Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/tourismmanagement/",
         "careersUrl": "https://www.mdc.edu/tourismmanagement/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Convention and Event Planner",
-          "Food and Beverage Manager",
+          "Convention And Event Planner",
+          "Food And Beverage Manager",
           "Front Desk Manager"
         ]
       }
@@ -7343,18 +7343,18 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Food and Beverage Manager",
+    "career": "Food And Beverage Manager",
     "programs": [
       {
         "id": "tourismmanagement",
-        "name": "Hospitality and Tourism Management Associate in Science",
+        "name": "Hospitality And Tourism Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/tourismmanagement/",
         "careersUrl": "https://www.mdc.edu/tourismmanagement/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Convention and Event Planner",
-          "Food and Beverage Manager",
+          "Convention And Event Planner",
+          "Food And Beverage Manager",
           "Front Desk Manager"
         ]
       }
@@ -7366,14 +7366,14 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "tourismmanagement",
-        "name": "Hospitality and Tourism Management Associate in Science",
+        "name": "Hospitality And Tourism Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/tourismmanagement/",
         "careersUrl": "https://www.mdc.edu/tourismmanagement/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Convention and Event Planner",
-          "Food and Beverage Manager",
+          "Convention And Event Planner",
+          "Food And Beverage Manager",
           "Front Desk Manager"
         ]
       }
@@ -7385,7 +7385,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "interiordesigntechnology",
-        "name": "Interior Design Technology Associate in Science",
+        "name": "Interior Design Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/interiordesigntechnology/",
         "careersUrl": "https://www.mdc.edu/interiordesigntechnology/careers.aspx",
@@ -7405,7 +7405,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "interiordesigntechnology",
-        "name": "Interior Design Technology Associate in Science",
+        "name": "Interior Design Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/interiordesigntechnology/",
         "careersUrl": "https://www.mdc.edu/interiordesigntechnology/careers.aspx",
@@ -7425,7 +7425,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "interiordesigntechnology",
-        "name": "Interior Design Technology Associate in Science",
+        "name": "Interior Design Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/interiordesigntechnology/",
         "careersUrl": "https://www.mdc.edu/interiordesigntechnology/careers.aspx",
@@ -7457,275 +7457,275 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Market Research Analyst and Marketing Specialist Producer Public Relations Specialists",
+    "career": "Market Research Analyst And Marketing Specialist Producer Public Relations Specialists",
     "programs": [
       {
         "id": "marketing",
-        "name": "Marketing Management - Marketing Associate in Science",
+        "name": "Marketing Management - Marketing Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/marketing/",
         "careersUrl": "https://www.mdc.edu/marketing/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Market Research Analyst and Marketing Specialist Producer Public Relations Specialists"
+          "Market Research Analyst And Marketing Specialist Producer Public Relations Specialists"
         ]
       }
     ],
     "field": "Business"
   },
   {
-    "career": "Artist or Tour management",
+    "career": "Artist Or Tour Management",
     "programs": [
       {
         "id": "musicbusinessmanagement",
-        "name": "Music Business - Business Management Associate in Science",
+        "name": "Music Business - Business Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessmanagement/",
         "careersUrl": "https://www.mdc.edu/musicbusinessmanagement/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour management",
-          "A&R (Artists and Repertoire) Representative",
-          "Marketing or Brand Coordinator",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Social Media and Digital Content Manager",
-          "Music Distribution or Streaming Specialist"
+          "Artist Or Tour Management",
+          "A&R (artists And Repertoire) Representative",
+          "Marketing Or Brand Coordinator",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Social Media And Digital Content Manager",
+          "Music Distribution Or Streaming Specialist"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "A&R (Artists and Repertoire) Representative",
+    "career": "A&R (artists And Repertoire) Representative",
     "programs": [
       {
         "id": "musicbusinessmanagement",
-        "name": "Music Business - Business Management Associate in Science",
+        "name": "Music Business - Business Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessmanagement/",
         "careersUrl": "https://www.mdc.edu/musicbusinessmanagement/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour management",
-          "A&R (Artists and Repertoire) Representative",
-          "Marketing or Brand Coordinator",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Social Media and Digital Content Manager",
-          "Music Distribution or Streaming Specialist"
+          "Artist Or Tour Management",
+          "A&R (artists And Repertoire) Representative",
+          "Marketing Or Brand Coordinator",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Social Media And Digital Content Manager",
+          "Music Distribution Or Streaming Specialist"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Marketing or Brand Coordinator",
+    "career": "Marketing Or Brand Coordinator",
     "programs": [
       {
         "id": "musicbusinessmanagement",
-        "name": "Music Business - Business Management Associate in Science",
+        "name": "Music Business - Business Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessmanagement/",
         "careersUrl": "https://www.mdc.edu/musicbusinessmanagement/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour management",
-          "A&R (Artists and Repertoire) Representative",
-          "Marketing or Brand Coordinator",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Social Media and Digital Content Manager",
-          "Music Distribution or Streaming Specialist"
+          "Artist Or Tour Management",
+          "A&R (artists And Repertoire) Representative",
+          "Marketing Or Brand Coordinator",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Social Media And Digital Content Manager",
+          "Music Distribution Or Streaming Specialist"
         ]
       }
     ],
     "field": "Business"
   },
   {
-    "career": "Music Licensing or Publishing Specialist",
+    "career": "Music Licensing Or Publishing Specialist",
     "programs": [
       {
         "id": "musicbusinessmanagement",
-        "name": "Music Business - Business Management Associate in Science",
+        "name": "Music Business - Business Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessmanagement/",
         "careersUrl": "https://www.mdc.edu/musicbusinessmanagement/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour management",
-          "A&R (Artists and Repertoire) Representative",
-          "Marketing or Brand Coordinator",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Social Media and Digital Content Manager",
-          "Music Distribution or Streaming Specialist"
+          "Artist Or Tour Management",
+          "A&R (artists And Repertoire) Representative",
+          "Marketing Or Brand Coordinator",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Social Media And Digital Content Manager",
+          "Music Distribution Or Streaming Specialist"
         ]
       },
       {
         "id": "musicbusinessproduction",
-        "name": "Music Business - Performance and Production Associate in Science",
+        "name": "Music Business - Performance And Production Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessproduction/",
         "careersUrl": "https://www.mdc.edu/musicbusinessproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour Manager",
-          "Sound Engineers and Technicians",
+          "Artist Or Tour Manager",
+          "Sound Engineers And Technicians",
           "Music Producer",
-          "A&amp;R (Artists and Repertoire) Representative",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Music Distribution or Streaming Specialist"
+          "A&amp;r (artists And Repertoire) Representative",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Music Distribution Or Streaming Specialist"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Concert or Event Promoter",
+    "career": "Concert Or Event Promoter",
     "programs": [
       {
         "id": "musicbusinessmanagement",
-        "name": "Music Business - Business Management Associate in Science",
+        "name": "Music Business - Business Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessmanagement/",
         "careersUrl": "https://www.mdc.edu/musicbusinessmanagement/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour management",
-          "A&R (Artists and Repertoire) Representative",
-          "Marketing or Brand Coordinator",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Social Media and Digital Content Manager",
-          "Music Distribution or Streaming Specialist"
+          "Artist Or Tour Management",
+          "A&R (artists And Repertoire) Representative",
+          "Marketing Or Brand Coordinator",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Social Media And Digital Content Manager",
+          "Music Distribution Or Streaming Specialist"
         ]
       },
       {
         "id": "musicbusinessproduction",
-        "name": "Music Business - Performance and Production Associate in Science",
+        "name": "Music Business - Performance And Production Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessproduction/",
         "careersUrl": "https://www.mdc.edu/musicbusinessproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour Manager",
-          "Sound Engineers and Technicians",
+          "Artist Or Tour Manager",
+          "Sound Engineers And Technicians",
           "Music Producer",
-          "A&amp;R (Artists and Repertoire) Representative",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Music Distribution or Streaming Specialist"
+          "A&amp;r (artists And Repertoire) Representative",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Music Distribution Or Streaming Specialist"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Social Media and Digital Content Manager",
+    "career": "Social Media And Digital Content Manager",
     "programs": [
       {
         "id": "musicbusinessmanagement",
-        "name": "Music Business - Business Management Associate in Science",
+        "name": "Music Business - Business Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessmanagement/",
         "careersUrl": "https://www.mdc.edu/musicbusinessmanagement/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour management",
-          "A&R (Artists and Repertoire) Representative",
-          "Marketing or Brand Coordinator",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Social Media and Digital Content Manager",
-          "Music Distribution or Streaming Specialist"
+          "Artist Or Tour Management",
+          "A&R (artists And Repertoire) Representative",
+          "Marketing Or Brand Coordinator",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Social Media And Digital Content Manager",
+          "Music Distribution Or Streaming Specialist"
         ]
       }
     ],
     "field": "Business"
   },
   {
-    "career": "Music Distribution or Streaming Specialist",
+    "career": "Music Distribution Or Streaming Specialist",
     "programs": [
       {
         "id": "musicbusinessmanagement",
-        "name": "Music Business - Business Management Associate in Science",
+        "name": "Music Business - Business Management Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessmanagement/",
         "careersUrl": "https://www.mdc.edu/musicbusinessmanagement/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour management",
-          "A&R (Artists and Repertoire) Representative",
-          "Marketing or Brand Coordinator",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Social Media and Digital Content Manager",
-          "Music Distribution or Streaming Specialist"
+          "Artist Or Tour Management",
+          "A&R (artists And Repertoire) Representative",
+          "Marketing Or Brand Coordinator",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Social Media And Digital Content Manager",
+          "Music Distribution Or Streaming Specialist"
         ]
       },
       {
         "id": "musicbusinessproduction",
-        "name": "Music Business - Performance and Production Associate in Science",
+        "name": "Music Business - Performance And Production Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessproduction/",
         "careersUrl": "https://www.mdc.edu/musicbusinessproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour Manager",
-          "Sound Engineers and Technicians",
+          "Artist Or Tour Manager",
+          "Sound Engineers And Technicians",
           "Music Producer",
-          "A&amp;R (Artists and Repertoire) Representative",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Music Distribution or Streaming Specialist"
+          "A&amp;r (artists And Repertoire) Representative",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Music Distribution Or Streaming Specialist"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Artist or Tour Manager",
+    "career": "Artist Or Tour Manager",
     "programs": [
       {
         "id": "musicbusinessproduction",
-        "name": "Music Business - Performance and Production Associate in Science",
+        "name": "Music Business - Performance And Production Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessproduction/",
         "careersUrl": "https://www.mdc.edu/musicbusinessproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour Manager",
-          "Sound Engineers and Technicians",
+          "Artist Or Tour Manager",
+          "Sound Engineers And Technicians",
           "Music Producer",
-          "A&amp;R (Artists and Repertoire) Representative",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Music Distribution or Streaming Specialist"
+          "A&amp;r (artists And Repertoire) Representative",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Music Distribution Or Streaming Specialist"
         ]
       }
     ],
     "field": "Business"
   },
   {
-    "career": "Sound Engineers and Technicians",
+    "career": "Sound Engineers And Technicians",
     "programs": [
       {
         "id": "musicbusinessproduction",
-        "name": "Music Business - Performance and Production Associate in Science",
+        "name": "Music Business - Performance And Production Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessproduction/",
         "careersUrl": "https://www.mdc.edu/musicbusinessproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour Manager",
-          "Sound Engineers and Technicians",
+          "Artist Or Tour Manager",
+          "Sound Engineers And Technicians",
           "Music Producer",
-          "A&amp;R (Artists and Repertoire) Representative",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Music Distribution or Streaming Specialist"
+          "A&amp;r (artists And Repertoire) Representative",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Music Distribution Or Streaming Specialist"
         ]
       }
     ],
@@ -7736,59 +7736,59 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "musicbusinessproduction",
-        "name": "Music Business - Performance and Production Associate in Science",
+        "name": "Music Business - Performance And Production Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessproduction/",
         "careersUrl": "https://www.mdc.edu/musicbusinessproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour Manager",
-          "Sound Engineers and Technicians",
+          "Artist Or Tour Manager",
+          "Sound Engineers And Technicians",
           "Music Producer",
-          "A&amp;R (Artists and Repertoire) Representative",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Music Distribution or Streaming Specialist"
+          "A&amp;r (artists And Repertoire) Representative",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Music Distribution Or Streaming Specialist"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "A&amp;R (Artists and Repertoire) Representative",
+    "career": "A&amp;r (artists And Repertoire) Representative",
     "programs": [
       {
         "id": "musicbusinessproduction",
-        "name": "Music Business - Performance and Production Associate in Science",
+        "name": "Music Business - Performance And Production Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/musicbusinessproduction/",
         "careersUrl": "https://www.mdc.edu/musicbusinessproduction/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Artist or Tour Manager",
-          "Sound Engineers and Technicians",
+          "Artist Or Tour Manager",
+          "Sound Engineers And Technicians",
           "Music Producer",
-          "A&amp;R (Artists and Repertoire) Representative",
-          "Music Licensing or Publishing Specialist",
-          "Concert or Event Promoter",
-          "Music Distribution or Streaming Specialist"
+          "A&amp;r (artists And Repertoire) Representative",
+          "Music Licensing Or Publishing Specialist",
+          "Concert Or Event Promoter",
+          "Music Distribution Or Streaming Specialist"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Cloud Solutions Architect Cloud Computing Analyst Cloud (Network) Engineer",
+    "career": "Cloud Solutions Architect Cloud Computing Analyst Cloud (network) Engineer",
     "programs": [
       {
         "id": "cloudcomputing",
-        "name": "Networking Services Technology Enterprise Cloud Computing Concentration Associate in Science",
+        "name": "Networking Services Technology Enterprise Cloud Computing Concentration Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/cloudcomputing/",
         "careersUrl": "https://www.mdc.edu/cloudcomputing/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Cloud Solutions Architect Cloud Computing Analyst Cloud (Network) Engineer",
+          "Cloud Solutions Architect Cloud Computing Analyst Cloud (network) Engineer",
           "Cloud Administrator Cloud Application Architect Computer Systems Analyst"
         ]
       }
@@ -7800,13 +7800,13 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "cloudcomputing",
-        "name": "Networking Services Technology Enterprise Cloud Computing Concentration Associate in Science",
+        "name": "Networking Services Technology Enterprise Cloud Computing Concentration Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/cloudcomputing/",
         "careersUrl": "https://www.mdc.edu/cloudcomputing/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Cloud Solutions Architect Cloud Computing Analyst Cloud (Network) Engineer",
+          "Cloud Solutions Architect Cloud Computing Analyst Cloud (network) Engineer",
           "Cloud Administrator Cloud Application Architect Computer Systems Analyst"
         ]
       }
@@ -7814,17 +7814,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Networking Services Technology - Network Infrastructure Associate in Science",
+    "career": "Networking Services Technology - Network Infrastructure Associate In Science",
     "programs": [
       {
         "id": "networkinfrastructure",
-        "name": "Networking Services Technology - Network Infrastructure Associate in Science",
+        "name": "Networking Services Technology - Network Infrastructure Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/networkinfrastructure/",
         "careersUrl": "https://www.mdc.edu/networkinfrastructure/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Networking Services Technology - Network Infrastructure Associate in Science"
+          "Networking Services Technology - Network Infrastructure Associate In Science"
         ]
       }
     ],
@@ -7835,7 +7835,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "nuclearmedicine",
-        "name": "Nuclear Medicine Technology Associate in Science",
+        "name": "Nuclear Medicine Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/nuclearmedicine/",
         "careersUrl": "https://www.mdc.edu/nuclearmedicine/careers.aspx",
@@ -7855,7 +7855,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "nuclearmedicine",
-        "name": "Nuclear Medicine Technology Associate in Science",
+        "name": "Nuclear Medicine Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/nuclearmedicine/",
         "careersUrl": "https://www.mdc.edu/nuclearmedicine/careers.aspx",
@@ -7875,7 +7875,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "nuclearmedicine",
-        "name": "Nuclear Medicine Technology Associate in Science",
+        "name": "Nuclear Medicine Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/nuclearmedicine/",
         "careersUrl": "https://www.mdc.edu/nuclearmedicine/careers.aspx",
@@ -7895,7 +7895,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "nuclearmedicine",
-        "name": "Nuclear Medicine Technology Associate in Science",
+        "name": "Nuclear Medicine Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/nuclearmedicine/",
         "careersUrl": "https://www.mdc.edu/nuclearmedicine/careers.aspx",
@@ -7915,7 +7915,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "nursingrn",
-        "name": "Nursing RN Associate in Science in Nursing (ASN)",
+        "name": "Nursing RN Associate In Science In Nursing (ASN)",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/nursingrn/",
         "careersUrl": "https://www.mdc.edu/nursingrn/careers.aspx",
@@ -7933,7 +7933,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "nursingrn",
-        "name": "Nursing RN Associate in Science in Nursing (ASN)",
+        "name": "Nursing RN Associate In Science In Nursing (ASN)",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/nursingrn/",
         "careersUrl": "https://www.mdc.edu/nursingrn/careers.aspx",
@@ -7951,7 +7951,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "opticianry",
-        "name": "Opticianry Associate in Science",
+        "name": "Opticianry Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/opticianry/",
         "careersUrl": "https://www.mdc.edu/opticianry/careers.aspx",
@@ -7969,7 +7969,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "opticianry",
-        "name": "Opticianry Associate in Science",
+        "name": "Opticianry Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/opticianry/",
         "careersUrl": "https://www.mdc.edu/opticianry/careers.aspx",
@@ -7983,17 +7983,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Paralegal Studies Associate in Science",
+    "career": "Paralegal Studies Associate In Science",
     "programs": [
       {
         "id": "paralegal",
-        "name": "Paralegal Studies Associate in Science",
+        "name": "Paralegal Studies Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/paralegal/",
         "careersUrl": "https://www.mdc.edu/paralegal/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Paralegal Studies Associate in Science"
+          "Paralegal Studies Associate In Science"
         ]
       }
     ],
@@ -8004,7 +8004,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "photography",
-        "name": "Photographic Technology Associate in Science",
+        "name": "Photographic Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/photography/",
         "careersUrl": "https://www.mdc.edu/photography/careers.aspx",
@@ -8025,7 +8025,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "photography",
-        "name": "Photographic Technology Associate in Science",
+        "name": "Photographic Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/photography/",
         "careersUrl": "https://www.mdc.edu/photography/careers.aspx",
@@ -8046,7 +8046,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "photography",
-        "name": "Photographic Technology Associate in Science",
+        "name": "Photographic Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/photography/",
         "careersUrl": "https://www.mdc.edu/photography/careers.aspx",
@@ -8067,7 +8067,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "photography",
-        "name": "Photographic Technology Associate in Science",
+        "name": "Photographic Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/photography/",
         "careersUrl": "https://www.mdc.edu/photography/careers.aspx",
@@ -8088,7 +8088,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "photography",
-        "name": "Photographic Technology Associate in Science",
+        "name": "Photographic Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/photography/",
         "careersUrl": "https://www.mdc.edu/photography/careers.aspx",
@@ -8109,7 +8109,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "physicaltherapistassistant",
-        "name": "Physical Therapist Assistant Associate in Science",
+        "name": "Physical Therapist Assistant Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/physicaltherapistassistant/",
         "careersUrl": "https://www.mdc.edu/physicaltherapistassistant/careers.aspx",
@@ -8126,7 +8126,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "professionalpilot",
-        "name": "Professional Pilot Technology Associate in Science",
+        "name": "Professional Pilot Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/professionalpilot/",
         "careersUrl": "https://www.mdc.edu/professionalpilot/careers.aspx",
@@ -8139,7 +8139,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "aviationmanagement",
-        "name": "Airline/Aviation Management - College Credit Certificate",
+        "name": "Airline/aviation Management - College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/aviationmanagement/",
         "careersUrl": "https://www.mdc.edu/aviationmanagement/careers.aspx",
@@ -8148,7 +8148,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Pilot",
           "Transportation Manager",
           "Logistician",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Manager",
           "Air Traffic Controller",
           "Airfield Operation Specialist"
@@ -8162,7 +8162,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "professionalpilot",
-        "name": "Professional Pilot Technology Associate in Science",
+        "name": "Professional Pilot Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/professionalpilot/",
         "careersUrl": "https://www.mdc.edu/professionalpilot/careers.aspx",
@@ -8181,7 +8181,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "professionalpilot",
-        "name": "Professional Pilot Technology Associate in Science",
+        "name": "Professional Pilot Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/professionalpilot/",
         "careersUrl": "https://www.mdc.edu/professionalpilot/careers.aspx",
@@ -8217,7 +8217,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "broadcast",
-        "name": "Radio and Television Broadcast Programming Associate in Science",
+        "name": "Radio And Television Broadcast Programming Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/broadcast/",
         "careersUrl": "https://www.mdc.edu/broadcast/careers.aspx",
@@ -8240,7 +8240,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "broadcast",
-        "name": "Radio and Television Broadcast Programming Associate in Science",
+        "name": "Radio And Television Broadcast Programming Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/broadcast/",
         "careersUrl": "https://www.mdc.edu/broadcast/careers.aspx",
@@ -8263,7 +8263,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "broadcast",
-        "name": "Radio and Television Broadcast Programming Associate in Science",
+        "name": "Radio And Television Broadcast Programming Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/broadcast/",
         "careersUrl": "https://www.mdc.edu/broadcast/careers.aspx",
@@ -8286,7 +8286,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "broadcast",
-        "name": "Radio and Television Broadcast Programming Associate in Science",
+        "name": "Radio And Television Broadcast Programming Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/broadcast/",
         "careersUrl": "https://www.mdc.edu/broadcast/careers.aspx",
@@ -8309,7 +8309,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "broadcast",
-        "name": "Radio and Television Broadcast Programming Associate in Science",
+        "name": "Radio And Television Broadcast Programming Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/broadcast/",
         "careersUrl": "https://www.mdc.edu/broadcast/careers.aspx",
@@ -8332,7 +8332,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "broadcast",
-        "name": "Radio and Television Broadcast Programming Associate in Science",
+        "name": "Radio And Television Broadcast Programming Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/broadcast/",
         "careersUrl": "https://www.mdc.edu/broadcast/careers.aspx",
@@ -8355,7 +8355,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "broadcast",
-        "name": "Radio and Television Broadcast Programming Associate in Science",
+        "name": "Radio And Television Broadcast Programming Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/broadcast/",
         "careersUrl": "https://www.mdc.edu/broadcast/careers.aspx",
@@ -8378,7 +8378,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "radiography",
-        "name": "Radiography Associate in Science",
+        "name": "Radiography Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/radiography/",
         "careersUrl": "https://www.mdc.edu/radiography/careers.aspx",
@@ -8399,7 +8399,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "radiography",
-        "name": "Radiography Associate in Science",
+        "name": "Radiography Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/radiography/",
         "careersUrl": "https://www.mdc.edu/radiography/careers.aspx",
@@ -8420,7 +8420,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "radiography",
-        "name": "Radiography Associate in Science",
+        "name": "Radiography Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/radiography/",
         "careersUrl": "https://www.mdc.edu/radiography/careers.aspx",
@@ -8441,7 +8441,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "radiography",
-        "name": "Radiography Associate in Science",
+        "name": "Radiography Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/radiography/",
         "careersUrl": "https://www.mdc.edu/radiography/careers.aspx",
@@ -8462,7 +8462,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "radiography",
-        "name": "Radiography Associate in Science",
+        "name": "Radiography Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/radiography/",
         "careersUrl": "https://www.mdc.edu/radiography/careers.aspx",
@@ -8483,7 +8483,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "respiratorycare",
-        "name": "Respiratory Care Associate in Science",
+        "name": "Respiratory Care Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/respiratorycare/",
         "careersUrl": "https://www.mdc.edu/respiratorycare/careers.aspx",
@@ -8492,10 +8492,10 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Certified Respiratory Therapists",
           "Registered Respiratory Therapist (RRT)",
           "Certified Pulmonary Function Technologist",
-          "Neonatal Pediatric Specialist (RRT-NPS)",
-          "Adult Critical Care Specialist (RRT-ACCS)",
-          "Certified Asthma Educator (AE-C)",
-          "Certified Tobacco Treatment Specialist (CTTS)"
+          "Neonatal Pediatric Specialist (rrt-nps)",
+          "Adult Critical Care Specialist (rrt-accs)",
+          "Certified Asthma Educator (ae-c)",
+          "Certified Tobacco Treatment Specialist (ctts)"
         ]
       }
     ],
@@ -8506,7 +8506,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "respiratorycare",
-        "name": "Respiratory Care Associate in Science",
+        "name": "Respiratory Care Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/respiratorycare/",
         "careersUrl": "https://www.mdc.edu/respiratorycare/careers.aspx",
@@ -8515,10 +8515,10 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Certified Respiratory Therapists",
           "Registered Respiratory Therapist (RRT)",
           "Certified Pulmonary Function Technologist",
-          "Neonatal Pediatric Specialist (RRT-NPS)",
-          "Adult Critical Care Specialist (RRT-ACCS)",
-          "Certified Asthma Educator (AE-C)",
-          "Certified Tobacco Treatment Specialist (CTTS)"
+          "Neonatal Pediatric Specialist (rrt-nps)",
+          "Adult Critical Care Specialist (rrt-accs)",
+          "Certified Asthma Educator (ae-c)",
+          "Certified Tobacco Treatment Specialist (ctts)"
         ]
       }
     ],
@@ -8529,7 +8529,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "respiratorycare",
-        "name": "Respiratory Care Associate in Science",
+        "name": "Respiratory Care Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/respiratorycare/",
         "careersUrl": "https://www.mdc.edu/respiratorycare/careers.aspx",
@@ -8538,21 +8538,21 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Certified Respiratory Therapists",
           "Registered Respiratory Therapist (RRT)",
           "Certified Pulmonary Function Technologist",
-          "Neonatal Pediatric Specialist (RRT-NPS)",
-          "Adult Critical Care Specialist (RRT-ACCS)",
-          "Certified Asthma Educator (AE-C)",
-          "Certified Tobacco Treatment Specialist (CTTS)"
+          "Neonatal Pediatric Specialist (rrt-nps)",
+          "Adult Critical Care Specialist (rrt-accs)",
+          "Certified Asthma Educator (ae-c)",
+          "Certified Tobacco Treatment Specialist (ctts)"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Neonatal Pediatric Specialist (RRT-NPS)",
+    "career": "Neonatal Pediatric Specialist (rrt-nps)",
     "programs": [
       {
         "id": "respiratorycare",
-        "name": "Respiratory Care Associate in Science",
+        "name": "Respiratory Care Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/respiratorycare/",
         "careersUrl": "https://www.mdc.edu/respiratorycare/careers.aspx",
@@ -8561,21 +8561,21 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Certified Respiratory Therapists",
           "Registered Respiratory Therapist (RRT)",
           "Certified Pulmonary Function Technologist",
-          "Neonatal Pediatric Specialist (RRT-NPS)",
-          "Adult Critical Care Specialist (RRT-ACCS)",
-          "Certified Asthma Educator (AE-C)",
-          "Certified Tobacco Treatment Specialist (CTTS)"
+          "Neonatal Pediatric Specialist (rrt-nps)",
+          "Adult Critical Care Specialist (rrt-accs)",
+          "Certified Asthma Educator (ae-c)",
+          "Certified Tobacco Treatment Specialist (ctts)"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Adult Critical Care Specialist (RRT-ACCS)",
+    "career": "Adult Critical Care Specialist (rrt-accs)",
     "programs": [
       {
         "id": "respiratorycare",
-        "name": "Respiratory Care Associate in Science",
+        "name": "Respiratory Care Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/respiratorycare/",
         "careersUrl": "https://www.mdc.edu/respiratorycare/careers.aspx",
@@ -8584,21 +8584,21 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Certified Respiratory Therapists",
           "Registered Respiratory Therapist (RRT)",
           "Certified Pulmonary Function Technologist",
-          "Neonatal Pediatric Specialist (RRT-NPS)",
-          "Adult Critical Care Specialist (RRT-ACCS)",
-          "Certified Asthma Educator (AE-C)",
-          "Certified Tobacco Treatment Specialist (CTTS)"
+          "Neonatal Pediatric Specialist (rrt-nps)",
+          "Adult Critical Care Specialist (rrt-accs)",
+          "Certified Asthma Educator (ae-c)",
+          "Certified Tobacco Treatment Specialist (ctts)"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Certified Asthma Educator (AE-C)",
+    "career": "Certified Asthma Educator (ae-c)",
     "programs": [
       {
         "id": "respiratorycare",
-        "name": "Respiratory Care Associate in Science",
+        "name": "Respiratory Care Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/respiratorycare/",
         "careersUrl": "https://www.mdc.edu/respiratorycare/careers.aspx",
@@ -8607,21 +8607,21 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Certified Respiratory Therapists",
           "Registered Respiratory Therapist (RRT)",
           "Certified Pulmonary Function Technologist",
-          "Neonatal Pediatric Specialist (RRT-NPS)",
-          "Adult Critical Care Specialist (RRT-ACCS)",
-          "Certified Asthma Educator (AE-C)",
-          "Certified Tobacco Treatment Specialist (CTTS)"
+          "Neonatal Pediatric Specialist (rrt-nps)",
+          "Adult Critical Care Specialist (rrt-accs)",
+          "Certified Asthma Educator (ae-c)",
+          "Certified Tobacco Treatment Specialist (ctts)"
         ]
       }
     ],
     "field": "Education"
   },
   {
-    "career": "Certified Tobacco Treatment Specialist (CTTS)",
+    "career": "Certified Tobacco Treatment Specialist (ctts)",
     "programs": [
       {
         "id": "respiratorycare",
-        "name": "Respiratory Care Associate in Science",
+        "name": "Respiratory Care Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/respiratorycare/",
         "careersUrl": "https://www.mdc.edu/respiratorycare/careers.aspx",
@@ -8630,10 +8630,10 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Certified Respiratory Therapists",
           "Registered Respiratory Therapist (RRT)",
           "Certified Pulmonary Function Technologist",
-          "Neonatal Pediatric Specialist (RRT-NPS)",
-          "Adult Critical Care Specialist (RRT-ACCS)",
-          "Certified Asthma Educator (AE-C)",
-          "Certified Tobacco Treatment Specialist (CTTS)"
+          "Neonatal Pediatric Specialist (rrt-nps)",
+          "Adult Critical Care Specialist (rrt-accs)",
+          "Certified Asthma Educator (ae-c)",
+          "Certified Tobacco Treatment Specialist (ctts)"
         ]
       }
     ],
@@ -8644,7 +8644,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "signlanguage",
-        "name": "Sign Language Interpretation Associate in Science",
+        "name": "Sign Language Interpretation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/signlanguage/",
         "careersUrl": "https://www.mdc.edu/signlanguage/careers.aspx",
@@ -8668,7 +8668,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "signlanguage",
-        "name": "Sign Language Interpretation Associate in Science",
+        "name": "Sign Language Interpretation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/signlanguage/",
         "careersUrl": "https://www.mdc.edu/signlanguage/careers.aspx",
@@ -8692,7 +8692,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "signlanguage",
-        "name": "Sign Language Interpretation Associate in Science",
+        "name": "Sign Language Interpretation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/signlanguage/",
         "careersUrl": "https://www.mdc.edu/signlanguage/careers.aspx",
@@ -8716,7 +8716,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "signlanguage",
-        "name": "Sign Language Interpretation Associate in Science",
+        "name": "Sign Language Interpretation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/signlanguage/",
         "careersUrl": "https://www.mdc.edu/signlanguage/careers.aspx",
@@ -8740,7 +8740,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "signlanguage",
-        "name": "Sign Language Interpretation Associate in Science",
+        "name": "Sign Language Interpretation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/signlanguage/",
         "careersUrl": "https://www.mdc.edu/signlanguage/careers.aspx",
@@ -8764,7 +8764,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "signlanguage",
-        "name": "Sign Language Interpretation Associate in Science",
+        "name": "Sign Language Interpretation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/signlanguage/",
         "careersUrl": "https://www.mdc.edu/signlanguage/careers.aspx",
@@ -8788,7 +8788,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "signlanguage",
-        "name": "Sign Language Interpretation Associate in Science",
+        "name": "Sign Language Interpretation Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/signlanguage/",
         "careersUrl": "https://www.mdc.edu/signlanguage/careers.aspx",
@@ -8812,7 +8812,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "addictionstudies",
-        "name": "Social and Human Services - Addictions Studies Associate in Science",
+        "name": "Social And Human Services - Addictions Studies Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/addictionstudies/",
         "careersUrl": "https://www.mdc.edu/addictionstudies/careers.aspx",
@@ -8833,7 +8833,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "addictionstudies",
-        "name": "Social and Human Services - Addictions Studies Associate in Science",
+        "name": "Social And Human Services - Addictions Studies Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/addictionstudies/",
         "careersUrl": "https://www.mdc.edu/addictionstudies/careers.aspx",
@@ -8854,7 +8854,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "addictionstudies",
-        "name": "Social and Human Services - Addictions Studies Associate in Science",
+        "name": "Social And Human Services - Addictions Studies Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/addictionstudies/",
         "careersUrl": "https://www.mdc.edu/addictionstudies/careers.aspx",
@@ -8883,7 +8883,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "medicalcoderbiller",
-        "name": "Medical Coder/Biller Career Technical Certificate",
+        "name": "Medical Coder/biller Career Technical Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/medicalcoderbiller/",
         "careersUrl": "https://www.mdc.edu/medicalcoderbiller/careers.aspx",
@@ -8891,9 +8891,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Hospitals",
           "Physicians",
-          "Nursing and Residential Care Facilities",
+          "Nursing And Residential Care Facilities",
           "Health Insurance Companies",
-          "Other Health Practitioners and Organizations"
+          "Other Health Practitioners And Organizations"
         ]
       }
     ],
@@ -8904,7 +8904,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "addictionstudies",
-        "name": "Social and Human Services - Addictions Studies Associate in Science",
+        "name": "Social And Human Services - Addictions Studies Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/addictionstudies/",
         "careersUrl": "https://www.mdc.edu/addictionstudies/careers.aspx",
@@ -8925,7 +8925,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "addictionstudies",
-        "name": "Social and Human Services - Addictions Studies Associate in Science",
+        "name": "Social And Human Services - Addictions Studies Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/addictionstudies/",
         "careersUrl": "https://www.mdc.edu/addictionstudies/careers.aspx",
@@ -8986,34 +8986,34 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Surgical Technology Associate in Science",
+    "career": "Surgical Technology Associate In Science",
     "programs": [
       {
         "id": "surgicaltechnology",
-        "name": "Surgical Technology Associate in Science",
+        "name": "Surgical Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/surgicaltechnology/",
         "careersUrl": "https://www.mdc.edu/surgicaltechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Surgical Technology Associate in Science"
+          "Surgical Technology Associate In Science"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Translation and Interpretation Studies Associate in Science",
+    "career": "Translation And Interpretation Studies Associate In Science",
     "programs": [
       {
         "id": "translationinterpretation",
-        "name": "Translation and Interpretation Studies Associate in Science",
+        "name": "Translation And Interpretation Studies Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/translationinterpretation/",
         "careersUrl": "https://www.mdc.edu/translationinterpretation/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Translation and Interpretation Studies Associate in Science"
+          "Translation And Interpretation Studies Associate In Science"
         ]
       }
     ],
@@ -9024,7 +9024,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9035,9 +9035,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9057,7 +9057,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9068,9 +9068,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9090,7 +9090,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9101,9 +9101,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9123,7 +9123,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9134,9 +9134,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9156,7 +9156,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9167,9 +9167,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9183,7 +9183,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "aviationmanagement",
-        "name": "Airline/Aviation Management - College Credit Certificate",
+        "name": "Airline/aviation Management - College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/aviationmanagement/",
         "careersUrl": "https://www.mdc.edu/aviationmanagement/careers.aspx",
@@ -9192,7 +9192,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Pilot",
           "Transportation Manager",
           "Logistician",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Manager",
           "Air Traffic Controller",
           "Airfield Operation Specialist"
@@ -9202,11 +9202,11 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Business"
   },
   {
-    "career": "Shipping and Receiving Clerk",
+    "career": "Shipping And Receiving Clerk",
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9217,9 +9217,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9239,7 +9239,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9250,9 +9250,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9268,11 +9268,11 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Storage and Distribution Manager",
+    "career": "Storage And Distribution Manager",
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9283,9 +9283,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9299,7 +9299,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "aviationmanagement",
-        "name": "Airline/Aviation Management - College Credit Certificate",
+        "name": "Airline/aviation Management - College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/aviationmanagement/",
         "careersUrl": "https://www.mdc.edu/aviationmanagement/careers.aspx",
@@ -9308,7 +9308,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Pilot",
           "Transportation Manager",
           "Logistician",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Manager",
           "Air Traffic Controller",
           "Airfield Operation Specialist"
@@ -9322,7 +9322,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9333,9 +9333,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9355,7 +9355,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9366,9 +9366,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9388,7 +9388,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9399,9 +9399,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9421,7 +9421,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9432,9 +9432,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9454,7 +9454,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9465,9 +9465,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9487,7 +9487,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9498,9 +9498,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9520,7 +9520,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9531,9 +9531,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9553,7 +9553,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "transportationlogistics",
-        "name": "Transportation &amp; Logistics Associate in Science",
+        "name": "Transportation &amp; Logistics Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/transportationlogistics/",
         "careersUrl": "https://www.mdc.edu/transportationlogistics/careers.aspx",
@@ -9564,9 +9564,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Industrial Production Manager",
           "Logistics Analyst",
           "Transportation Manager",
-          "Shipping and Receiving Clerk",
+          "Shipping And Receiving Clerk",
           "Transportation Supervisor",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Supervisor",
           "Electronics Systems Engineer",
           "Electronics Hardware Engineer",
@@ -9582,34 +9582,34 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Veterinary Technology Associate in Science",
+    "career": "Veterinary Technology Associate In Science",
     "programs": [
       {
         "id": "veterinarytechnology",
-        "name": "Veterinary Technology Associate in Science",
+        "name": "Veterinary Technology Associate In Science",
         "degreeType": "AS",
         "programUrl": "https://www.mdc.edu/veterinarytechnology/",
         "careersUrl": "https://www.mdc.edu/veterinarytechnology/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Veterinary Technology Associate in Science"
+          "Veterinary Technology Associate In Science"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Accounting and Budgeting",
+    "career": "Accounting And Budgeting",
     "programs": [
       {
         "id": "accountingbudgeting",
-        "name": "Accounting and Budgeting",
+        "name": "Accounting And Budgeting",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/accountingbudgeting",
         "careersUrl": "https://www.mdc.edu/accountingbudgeting/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Accounting and Budgeting"
+          "Accounting And Budgeting"
         ]
       }
     ],
@@ -9659,7 +9659,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "Air Cargo Management",
-          "Cargo and Freight Agent",
+          "Cargo And Freight Agent",
           "Baggage Agent"
         ]
       }
@@ -9667,7 +9667,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Cargo and Freight Agent",
+    "career": "Cargo And Freight Agent",
     "programs": [
       {
         "id": "aircargoagent",
@@ -9678,7 +9678,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "Air Cargo Management",
-          "Cargo and Freight Agent",
+          "Cargo And Freight Agent",
           "Baggage Agent"
         ]
       },
@@ -9690,9 +9690,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careersUrl": "https://www.mdc.edu/intermodalfreight/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Cargo and Freight Agent",
+          "Cargo And Freight Agent",
           "Freight Forwarder",
-          "Shipping, Receiving and Traffic Clerk"
+          "Shipping, Receiving And Traffic Clerk"
         ]
       },
       {
@@ -9704,9 +9704,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "Logistics Manager",
-          "Cargo and Freight Agent",
+          "Cargo And Freight Agent",
           "Freight Forwarder",
-          "Freight and Cargo Inspector"
+          "Freight And Cargo Inspector"
         ]
       }
     ],
@@ -9724,7 +9724,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "Air Cargo Management",
-          "Cargo and Freight Agent",
+          "Cargo And Freight Agent",
           "Baggage Agent"
         ]
       }
@@ -9752,7 +9752,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "aviationmanagement",
-        "name": "Airline/Aviation Management - College Credit Certificate",
+        "name": "Airline/aviation Management - College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/aviationmanagement/",
         "careersUrl": "https://www.mdc.edu/aviationmanagement/careers.aspx",
@@ -9761,7 +9761,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Pilot",
           "Transportation Manager",
           "Logistician",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Manager",
           "Air Traffic Controller",
           "Airfield Operation Specialist"
@@ -9775,7 +9775,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "aviationmanagement",
-        "name": "Airline/Aviation Management - College Credit Certificate",
+        "name": "Airline/aviation Management - College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/aviationmanagement/",
         "careersUrl": "https://www.mdc.edu/aviationmanagement/careers.aspx",
@@ -9784,7 +9784,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
           "Pilot",
           "Transportation Manager",
           "Logistician",
-          "Storage and Distribution Manager",
+          "Storage And Distribution Manager",
           "Transportation Manager",
           "Air Traffic Controller",
           "Airfield Operation Specialist"
@@ -9851,17 +9851,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "American Sign language",
+    "career": "American Sign Language",
     "programs": [
       {
         "id": "signlanguagecertificate",
-        "name": "American Sign language",
+        "name": "American Sign Language",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/signlanguagecertificate",
         "careersUrl": "https://www.mdc.edu/signlanguagecertificate/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "American Sign language"
+          "American Sign Language"
         ]
       }
     ],
@@ -9975,16 +9975,16 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Bio Technologycertificate",
+    "career": "Biotechnologycertificate",
     "programs": [
       {
         "id": "biotechnologycertificate",
-        "name": "Bio Technologycertificate",
+        "name": "Biotechnologycertificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/biotechnologycertificate",
         "pdfLinks": {},
         "careerProspects": [
-          "Bio Technologycertificate"
+          "Biotechnologycertificate"
         ]
       }
     ],
@@ -10002,16 +10002,16 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "Construction laborer",
-          "Helper - Painter, Paperhanger, Platere and Stucco Mason",
-          "Helper - Pipelayer, Plumber, Pipelifter and Steamfitter",
-          "Helper - Installation, Maintenance, and Repair Worker"
+          "Helper - Painter, Paperhanger, Platere And Stucco Mason",
+          "Helper - Pipelayer, Plumber, Pipelifter And Steamfitter",
+          "Helper - Installation, Maintenance, And Repair Worker"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Helper - Painter, Paperhanger, Platere and Stucco Mason",
+    "career": "Helper - Painter, Paperhanger, Platere And Stucco Mason",
     "programs": [
       {
         "id": "buildingconstructionspecialist",
@@ -10022,16 +10022,16 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "Construction laborer",
-          "Helper - Painter, Paperhanger, Platere and Stucco Mason",
-          "Helper - Pipelayer, Plumber, Pipelifter and Steamfitter",
-          "Helper - Installation, Maintenance, and Repair Worker"
+          "Helper - Painter, Paperhanger, Platere And Stucco Mason",
+          "Helper - Pipelayer, Plumber, Pipelifter And Steamfitter",
+          "Helper - Installation, Maintenance, And Repair Worker"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Helper - Pipelayer, Plumber, Pipelifter and Steamfitter",
+    "career": "Helper - Pipelayer, Plumber, Pipelifter And Steamfitter",
     "programs": [
       {
         "id": "buildingconstructionspecialist",
@@ -10042,16 +10042,16 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "Construction laborer",
-          "Helper - Painter, Paperhanger, Platere and Stucco Mason",
-          "Helper - Pipelayer, Plumber, Pipelifter and Steamfitter",
-          "Helper - Installation, Maintenance, and Repair Worker"
+          "Helper - Painter, Paperhanger, Platere And Stucco Mason",
+          "Helper - Pipelayer, Plumber, Pipelifter And Steamfitter",
+          "Helper - Installation, Maintenance, And Repair Worker"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Helper - Installation, Maintenance, and Repair Worker",
+    "career": "Helper - Installation, Maintenance, And Repair Worker",
     "programs": [
       {
         "id": "buildingconstructionspecialist",
@@ -10062,9 +10062,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "Construction laborer",
-          "Helper - Painter, Paperhanger, Platere and Stucco Mason",
-          "Helper - Pipelayer, Plumber, Pipelifter and Steamfitter",
-          "Helper - Installation, Maintenance, and Repair Worker"
+          "Helper - Painter, Paperhanger, Platere And Stucco Mason",
+          "Helper - Pipelayer, Plumber, Pipelifter And Steamfitter",
+          "Helper - Installation, Maintenance, And Repair Worker"
         ]
       }
     ],
@@ -10233,16 +10233,16 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Business Operationsmarketing",
+    "career": "Business Operations Marketing",
     "programs": [
       {
         "id": "businessoperationsmarketing",
-        "name": "Business Operationsmarketing",
+        "name": "Business Operations Marketing",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/businessoperationsmarketing",
         "pdfLinks": {},
         "careerProspects": [
-          "Business Operationsmarketing"
+          "Business Operations Marketing"
         ]
       }
     ],
@@ -10401,7 +10401,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "cisco",
-        "name": "Cisco Certified Network Associate (CCNA) College Credit Certificate",
+        "name": "Cisco Certified Network Associate (ccna) College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/cisco/",
         "careersUrl": "https://www.mdc.edu/cisco/careers.aspx",
@@ -10415,7 +10415,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "pcrepair",
-        "name": "Microcomputer Repairer/Installer College Credit Certificate",
+        "name": "Microcomputer Repairer/installer College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/pcrepair/",
         "careersUrl": "https://www.mdc.edu/pcrepair/careers.aspx",
@@ -10435,7 +10435,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "cisco",
-        "name": "Cisco Certified Network Associate (CCNA) College Credit Certificate",
+        "name": "Cisco Certified Network Associate (ccna) College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/cisco/",
         "careersUrl": "https://www.mdc.edu/cisco/careers.aspx",
@@ -10449,7 +10449,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "pcrepair",
-        "name": "Microcomputer Repairer/Installer College Credit Certificate",
+        "name": "Microcomputer Repairer/installer College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/pcrepair/",
         "careersUrl": "https://www.mdc.edu/pcrepair/careers.aspx",
@@ -10469,7 +10469,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "cisco",
-        "name": "Cisco Certified Network Associate (CCNA) College Credit Certificate",
+        "name": "Cisco Certified Network Associate (ccna) College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/cisco/",
         "careersUrl": "https://www.mdc.edu/cisco/careers.aspx",
@@ -10483,7 +10483,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "pcrepair",
-        "name": "Microcomputer Repairer/Installer College Credit Certificate",
+        "name": "Microcomputer Repairer/installer College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/pcrepair/",
         "careersUrl": "https://www.mdc.edu/pcrepair/careers.aspx",
@@ -10503,7 +10503,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "cisco",
-        "name": "Cisco Certified Network Associate (CCNA) College Credit Certificate",
+        "name": "Cisco Certified Network Associate (ccna) College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/cisco/",
         "careersUrl": "https://www.mdc.edu/cisco/careers.aspx",
@@ -10517,7 +10517,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
       },
       {
         "id": "pcrepair",
-        "name": "Microcomputer Repairer/Installer College Credit Certificate",
+        "name": "Microcomputer Repairer/installer College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/pcrepair/",
         "careersUrl": "https://www.mdc.edu/pcrepair/careers.aspx",
@@ -10847,7 +10847,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Food Service Manager",
           "Cook",
-          "First-Line Supervisor of Food Preparation"
+          "First-line Supervisor Of Food Preparation"
         ]
       }
     ],
@@ -10866,14 +10866,14 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Food Service Manager",
           "Cook",
-          "First-Line Supervisor of Food Preparation"
+          "First-line Supervisor Of Food Preparation"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "First-Line Supervisor of Food Preparation",
+    "career": "First-line Supervisor Of Food Preparation",
     "programs": [
       {
         "id": "culinaryartsmanagementoperations",
@@ -10885,14 +10885,14 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Food Service Manager",
           "Cook",
-          "First-Line Supervisor of Food Preparation"
+          "First-line Supervisor Of Food Preparation"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Advertising and Promotions Managers",
+    "career": "Advertising And Promotions Managers",
     "programs": [
       {
         "id": "digitalmarketing",
@@ -10902,7 +10902,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careersUrl": "https://www.mdc.edu/digitalmarketing/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Advertising and Promotions Managers",
+          "Advertising And Promotions Managers",
           "Marketing Managers",
           "Marketing Research Analyst",
           "Marketing Specialists"
@@ -10922,7 +10922,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careersUrl": "https://www.mdc.edu/digitalmarketing/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Advertising and Promotions Managers",
+          "Advertising And Promotions Managers",
           "Marketing Managers",
           "Marketing Research Analyst",
           "Marketing Specialists"
@@ -10942,7 +10942,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careersUrl": "https://www.mdc.edu/digitalmarketing/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Advertising and Promotions Managers",
+          "Advertising And Promotions Managers",
           "Marketing Managers",
           "Marketing Research Analyst",
           "Marketing Specialists"
@@ -10962,7 +10962,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careersUrl": "https://www.mdc.edu/digitalmarketing/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Advertising and Promotions Managers",
+          "Advertising And Promotions Managers",
           "Marketing Managers",
           "Marketing Research Analyst",
           "Marketing Specialists"
@@ -11300,14 +11300,14 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Desktop Publisher",
           "Graphic Design Assistant",
-          "Commercial and Industrial Design Assistant"
+          "Commercial And Industrial Design Assistant"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Commercial and Industrial Design Assistant",
+    "career": "Commercial And Industrial Design Assistant",
     "programs": [
       {
         "id": "graphicdesignspecialist",
@@ -11319,7 +11319,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Desktop Publisher",
           "Graphic Design Assistant",
-          "Commercial and Industrial Design Assistant"
+          "Commercial And Industrial Design Assistant"
         ]
       }
     ],
@@ -11411,8 +11411,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Emergency Management Director",
           "Security Management Specialist",
-          "Criminal Investigator and Agent",
-          "Immigration and Custom Inspector",
+          "Criminal Investigator And Agent",
+          "Immigration And Custom Inspector",
           "Intelligence Analyst"
         ]
       }
@@ -11420,7 +11420,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Criminal Justice"
   },
   {
-    "career": "Criminal Investigator and Agent",
+    "career": "Criminal Investigator And Agent",
     "programs": [
       {
         "id": "homelandsecurity",
@@ -11432,8 +11432,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Emergency Management Director",
           "Security Management Specialist",
-          "Criminal Investigator and Agent",
-          "Immigration and Custom Inspector",
+          "Criminal Investigator And Agent",
+          "Immigration And Custom Inspector",
           "Intelligence Analyst"
         ]
       }
@@ -11441,7 +11441,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Criminal Justice"
   },
   {
-    "career": "Immigration and Custom Inspector",
+    "career": "Immigration And Custom Inspector",
     "programs": [
       {
         "id": "homelandsecurity",
@@ -11453,8 +11453,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Emergency Management Director",
           "Security Management Specialist",
-          "Criminal Investigator and Agent",
-          "Immigration and Custom Inspector",
+          "Criminal Investigator And Agent",
+          "Immigration And Custom Inspector",
           "Intelligence Analyst"
         ]
       }
@@ -11474,8 +11474,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Emergency Management Director",
           "Security Management Specialist",
-          "Criminal Investigator and Agent",
-          "Immigration and Custom Inspector",
+          "Criminal Investigator And Agent",
+          "Immigration And Custom Inspector",
           "Intelligence Analyst"
         ]
       }
@@ -11519,7 +11519,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "infanttoddler",
-        "name": "Infant/Toddler Specialization College Credit Certificate",
+        "name": "Infant/toddler Specialization College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/infanttoddler/",
         "careersUrl": "https://www.mdc.edu/infanttoddler/careers.aspx",
@@ -11538,7 +11538,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "infanttoddler",
-        "name": "Infant/Toddler Specialization College Credit Certificate",
+        "name": "Infant/toddler Specialization College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/infanttoddler/",
         "careersUrl": "https://www.mdc.edu/infanttoddler/careers.aspx",
@@ -11598,9 +11598,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careersUrl": "https://www.mdc.edu/intermodalfreight/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Cargo and Freight Agent",
+          "Cargo And Freight Agent",
           "Freight Forwarder",
-          "Shipping, Receiving and Traffic Clerk"
+          "Shipping, Receiving And Traffic Clerk"
         ]
       },
       {
@@ -11612,16 +11612,16 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "Logistics Manager",
-          "Cargo and Freight Agent",
+          "Cargo And Freight Agent",
           "Freight Forwarder",
-          "Freight and Cargo Inspector"
+          "Freight And Cargo Inspector"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Shipping, Receiving and Traffic Clerk",
+    "career": "Shipping, Receiving And Traffic Clerk",
     "programs": [
       {
         "id": "intermodalfreight",
@@ -11631,9 +11631,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careersUrl": "https://www.mdc.edu/intermodalfreight/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Cargo and Freight Agent",
+          "Cargo And Freight Agent",
           "Freight Forwarder",
-          "Shipping, Receiving and Traffic Clerk"
+          "Shipping, Receiving And Traffic Clerk"
         ]
       }
     ],
@@ -11651,16 +11651,16 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "Logistics Manager",
-          "Cargo and Freight Agent",
+          "Cargo And Freight Agent",
           "Freight Forwarder",
-          "Freight and Cargo Inspector"
+          "Freight And Cargo Inspector"
         ]
       }
     ],
     "field": "Business"
   },
   {
-    "career": "Freight and Cargo Inspector",
+    "career": "Freight And Cargo Inspector",
     "programs": [
       {
         "id": "internationalfreight",
@@ -11671,9 +11671,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "Logistics Manager",
-          "Cargo and Freight Agent",
+          "Cargo And Freight Agent",
           "Freight Forwarder",
-          "Freight and Cargo Inspector"
+          "Freight And Cargo Inspector"
         ]
       }
     ],
@@ -11792,7 +11792,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "medicalcoderbiller",
-        "name": "Medical Coder/Biller Career Technical Certificate",
+        "name": "Medical Coder/biller Career Technical Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/medicalcoderbiller/",
         "careersUrl": "https://www.mdc.edu/medicalcoderbiller/careers.aspx",
@@ -11800,20 +11800,20 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Hospitals",
           "Physicians",
-          "Nursing and Residential Care Facilities",
+          "Nursing And Residential Care Facilities",
           "Health Insurance Companies",
-          "Other Health Practitioners and Organizations"
+          "Other Health Practitioners And Organizations"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Nursing and Residential Care Facilities",
+    "career": "Nursing And Residential Care Facilities",
     "programs": [
       {
         "id": "medicalcoderbiller",
-        "name": "Medical Coder/Biller Career Technical Certificate",
+        "name": "Medical Coder/biller Career Technical Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/medicalcoderbiller/",
         "careersUrl": "https://www.mdc.edu/medicalcoderbiller/careers.aspx",
@@ -11821,9 +11821,9 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Hospitals",
           "Physicians",
-          "Nursing and Residential Care Facilities",
+          "Nursing And Residential Care Facilities",
           "Health Insurance Companies",
-          "Other Health Practitioners and Organizations"
+          "Other Health Practitioners And Organizations"
         ]
       }
     ],
@@ -11834,7 +11834,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "medicalcoderbiller",
-        "name": "Medical Coder/Biller Career Technical Certificate",
+        "name": "Medical Coder/biller Career Technical Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/medicalcoderbiller/",
         "careersUrl": "https://www.mdc.edu/medicalcoderbiller/careers.aspx",
@@ -11842,20 +11842,20 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Hospitals",
           "Physicians",
-          "Nursing and Residential Care Facilities",
+          "Nursing And Residential Care Facilities",
           "Health Insurance Companies",
-          "Other Health Practitioners and Organizations"
+          "Other Health Practitioners And Organizations"
         ]
       }
     ],
     "field": "Medicine"
   },
   {
-    "career": "Other Health Practitioners and Organizations",
+    "career": "Other Health Practitioners And Organizations",
     "programs": [
       {
         "id": "medicalcoderbiller",
-        "name": "Medical Coder/Biller Career Technical Certificate",
+        "name": "Medical Coder/biller Career Technical Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/medicalcoderbiller/",
         "careersUrl": "https://www.mdc.edu/medicalcoderbiller/careers.aspx",
@@ -11863,26 +11863,26 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careerProspects": [
           "Hospitals",
           "Physicians",
-          "Nursing and Residential Care Facilities",
+          "Nursing And Residential Care Facilities",
           "Health Insurance Companies",
-          "Other Health Practitioners and Organizations"
+          "Other Health Practitioners And Organizations"
         ]
       }
     ],
     "field": "Medicine"
   },
   {
-    "career": "Mental Health - Neuroscience and Aging - College Credit Certificate",
+    "career": "Mental Health - Neuroscience And Aging - College Credit Certificate",
     "programs": [
       {
         "id": "neuroscience",
-        "name": "Mental Health - Neuroscience and Aging - College Credit Certificate",
+        "name": "Mental Health - Neuroscience And Aging - College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/neuroscience",
         "careersUrl": "https://www.mdc.edu/neuroscience/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Mental Health - Neuroscience and Aging - College Credit Certificate"
+          "Mental Health - Neuroscience And Aging - College Credit Certificate"
         ]
       }
     ],
@@ -12033,7 +12033,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "patternmaking",
-        "name": "Pattern Making and Construction College Credit Certificate",
+        "name": "Pattern Making And Construction College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/patternmaking/",
         "careersUrl": "https://www.mdc.edu/patternmaking/careers.aspx",
@@ -12053,7 +12053,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "patternmaking",
-        "name": "Pattern Making and Construction College Credit Certificate",
+        "name": "Pattern Making And Construction College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/patternmaking/",
         "careersUrl": "https://www.mdc.edu/patternmaking/careers.aspx",
@@ -12073,7 +12073,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "patternmaking",
-        "name": "Pattern Making and Construction College Credit Certificate",
+        "name": "Pattern Making And Construction College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/patternmaking/",
         "careersUrl": "https://www.mdc.edu/patternmaking/careers.aspx",
@@ -12093,7 +12093,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "patternmaking",
-        "name": "Pattern Making and Construction College Credit Certificate",
+        "name": "Pattern Making And Construction College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/patternmaking/",
         "careersUrl": "https://www.mdc.edu/patternmaking/careers.aspx",
@@ -12210,17 +12210,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Sales and Customer Service Management",
+    "career": "Sales And Customer Service Management",
     "programs": [
       {
         "id": "sales-customer-management",
-        "name": "Sales and Customer Service Management",
+        "name": "Sales And Customer Service Management",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/sales-customer-management/",
         "careersUrl": "https://www.mdc.edu/sales-customer-management/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Sales and Customer Service Management"
+          "Sales And Customer Service Management"
         ]
       }
     ],
@@ -12504,33 +12504,33 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Virtual and Augmented Reality Technologies College Credit Certificate",
+    "career": "Virtual And Augmented Reality Technologies College Credit Certificate",
     "programs": [
       {
         "id": "virtualreality",
-        "name": "Virtual and Augmented Reality Technologies College Credit Certificate",
+        "name": "Virtual And Augmented Reality Technologies College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/virtualreality/",
         "careersUrl": "https://www.mdc.edu/virtualreality/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Virtual and Augmented Reality Technologies College Credit Certificate"
+          "Virtual And Augmented Reality Technologies College Credit Certificate"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "Bio Technologyatc",
+    "career": "Biotechnologyatc",
     "programs": [
       {
         "id": "biotechnologyatc",
-        "name": "Bio Technologyatc",
+        "name": "Biotechnologyatc",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/biotechnologyatc",
         "pdfLinks": {},
         "careerProspects": [
-          "Bio Technologyatc"
+          "Biotechnologyatc"
         ]
       }
     ],
@@ -12769,17 +12769,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Central Sterile Processing Technician - Career Technical and Degree",
+    "career": "Central Sterile Processing Technician - Career Technical And Degree",
     "programs": [
       {
         "id": "steriletech",
-        "name": "Central Sterile Processing Technician - Career Technical and Degree",
+        "name": "Central Sterile Processing Technician - Career Technical And Degree",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/steriletech/",
         "careersUrl": "https://www.mdc.edu/steriletech/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Central Sterile Processing Technician - Career Technical and Degree"
+          "Central Sterile Processing Technician - Career Technical And Degree"
         ]
       }
     ],
@@ -12836,24 +12836,24 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Dental Assisiting Technology and Management",
+    "career": "Dental Assisiting Technology And Management",
     "programs": [
       {
         "id": "dental-assisting",
-        "name": "Dental Assisiting Technology and Management",
+        "name": "Dental Assisiting Technology And Management",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/dental-assisting/",
         "careersUrl": "https://www.mdc.edu/dental-assisting/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Dental Assisiting Technology and Management"
+          "Dental Assisiting Technology And Management"
         ]
       }
     ],
     "field": "Other"
   },
   {
-    "career": "State of Florida Firefighter Certification",
+    "career": "State Of Florida Firefighter Certification",
     "programs": [
       {
         "id": "firefighteremt",
@@ -12863,8 +12863,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careersUrl": "https://www.mdc.edu/firefighteremt/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "State of Florida Firefighter Certification",
-          "State of Florida Emergency Medical Technician Certification",
+          "State Of Florida Firefighter Certification",
+          "State Of Florida Emergency Medical Technician Certification",
           "Fire Fighter",
           "Paramedic",
           "Fire Safety Inspector",
@@ -12875,7 +12875,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "State of Florida Emergency Medical Technician Certification",
+    "career": "State Of Florida Emergency Medical Technician Certification",
     "programs": [
       {
         "id": "firefighteremt",
@@ -12885,8 +12885,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careersUrl": "https://www.mdc.edu/firefighteremt/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "State of Florida Firefighter Certification",
-          "State of Florida Emergency Medical Technician Certification",
+          "State Of Florida Firefighter Certification",
+          "State Of Florida Emergency Medical Technician Certification",
           "Fire Fighter",
           "Paramedic",
           "Fire Safety Inspector",
@@ -12907,8 +12907,8 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "careersUrl": "https://www.mdc.edu/firefighteremt/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "State of Florida Firefighter Certification",
-          "State of Florida Emergency Medical Technician Certification",
+          "State Of Florida Firefighter Certification",
+          "State Of Florida Emergency Medical Technician Certification",
           "Fire Fighter",
           "Paramedic",
           "Fire Safety Inspector",
@@ -12936,17 +12936,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Criminal Justice"
   },
   {
-    "career": "Licensed Practical Nursing - Career technical Certificate",
+    "career": "Licensed Practical Nursing - Career Technical Certificate",
     "programs": [
       {
         "id": "lpn",
-        "name": "Licensed Practical Nursing - Career technical Certificate",
+        "name": "Licensed Practical Nursing - Career Technical Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/lpn/",
         "careersUrl": "https://www.mdc.edu/lpn/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Licensed Practical Nursing - Career technical Certificate"
+          "Licensed Practical Nursing - Career Technical Certificate"
         ]
       }
     ],
@@ -12981,7 +12981,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "American Massage Therapy Association",
-          "Associated Bodywork and Massage Professionals",
+          "Associated Bodywork And Massage Professionals",
           "Florida State Massage Therapy Association"
         ]
       }
@@ -12989,7 +12989,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Associated Bodywork and Massage Professionals",
+    "career": "Associated Bodywork And Massage Professionals",
     "programs": [
       {
         "id": "massagetherapy",
@@ -13000,7 +13000,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "American Massage Therapy Association",
-          "Associated Bodywork and Massage Professionals",
+          "Associated Bodywork And Massage Professionals",
           "Florida State Massage Therapy Association"
         ]
       }
@@ -13019,7 +13019,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
         "pdfLinks": {},
         "careerProspects": [
           "American Massage Therapy Association",
-          "Associated Bodywork and Massage Professionals",
+          "Associated Bodywork And Massage Professionals",
           "Florida State Massage Therapy Association"
         ]
       }
@@ -13295,17 +13295,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Cyber Defense - Certificate of Professional Preparation",
+    "career": "Cyber Defense - Certificate Of Professional Preparation",
     "programs": [
       {
         "id": "cyber-defense",
-        "name": "Cyber Defense - Certificate of Professional Preparation",
+        "name": "Cyber Defense - Certificate Of Professional Preparation",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/cyber-defense",
         "careersUrl": "https://www.mdc.edu/cyber-defense/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Cyber Defense - Certificate of Professional Preparation"
+          "Cyber Defense - Certificate Of Professional Preparation"
         ]
       }
     ],
@@ -13316,7 +13316,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "educatorpreparation",
-        "name": "Educator preparation Institute College Credit Certificate",
+        "name": "Educator Preparation Institute College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/educatorpreparation/",
         "careersUrl": "https://www.mdc.edu/educatorpreparation/careers.aspx",
@@ -13337,7 +13337,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "educatorpreparation",
-        "name": "Educator preparation Institute College Credit Certificate",
+        "name": "Educator Preparation Institute College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/educatorpreparation/",
         "careersUrl": "https://www.mdc.edu/educatorpreparation/careers.aspx",
@@ -13358,7 +13358,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "educatorpreparation",
-        "name": "Educator preparation Institute College Credit Certificate",
+        "name": "Educator Preparation Institute College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/educatorpreparation/",
         "careersUrl": "https://www.mdc.edu/educatorpreparation/careers.aspx",
@@ -13379,7 +13379,7 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "programs": [
       {
         "id": "educatorpreparation",
-        "name": "Educator preparation Institute College Credit Certificate",
+        "name": "Educator Preparation Institute College Credit Certificate",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/educatorpreparation/",
         "careersUrl": "https://www.mdc.edu/educatorpreparation/careers.aspx",
@@ -13412,17 +13412,17 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Networking - Certificate of Professional Preparation",
+    "career": "Networking - Certificate Of Professional Preparation",
     "programs": [
       {
         "id": "networkingcpp",
-        "name": "Networking - Certificate of Professional Preparation",
+        "name": "Networking - Certificate Of Professional Preparation",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/networkingcpp",
         "careersUrl": "https://www.mdc.edu/networkingcpp/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Networking - Certificate of Professional Preparation"
+          "Networking - Certificate Of Professional Preparation"
         ]
       }
     ],
@@ -13445,34 +13445,34 @@ export const careerToProgramsMapping: CareerProgramMapping[] = [
     "field": "Other"
   },
   {
-    "career": "Software Engineering - Certificate of Professional Preparation",
+    "career": "Software Engineering - Certificate Of Professional Preparation",
     "programs": [
       {
         "id": "softwareengineeringcpp",
-        "name": "Software Engineering - Certificate of Professional Preparation",
+        "name": "Software Engineering - Certificate Of Professional Preparation",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/softwareengineeringcpp",
         "careersUrl": "https://www.mdc.edu/softwareengineeringcpp/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Software Engineering - Certificate of Professional Preparation"
+          "Software Engineering - Certificate Of Professional Preparation"
         ]
       }
     ],
     "field": "Technology"
   },
   {
-    "career": "Vulnerability Assessment - Certificate of Professional Preparation",
+    "career": "Vulnerability Assessment - Certificate Of Professional Preparation",
     "programs": [
       {
         "id": "vulnerability-assessment",
-        "name": "Vulnerability Assessment - Certificate of Professional Preparation",
+        "name": "Vulnerability Assessment - Certificate Of Professional Preparation",
         "degreeType": "CERT",
         "programUrl": "https://www.mdc.edu/vulnerability-assessment",
         "careersUrl": "https://www.mdc.edu/vulnerability-assessment/careers.aspx",
         "pdfLinks": {},
         "careerProspects": [
-          "Vulnerability Assessment - Certificate of Professional Preparation"
+          "Vulnerability Assessment - Certificate Of Professional Preparation"
         ]
       }
     ],

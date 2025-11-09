@@ -8,7 +8,9 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "type-check": "tsc --noEmit",
-    "scrape": "tsx src/scripts/scrape-mdc-programs.ts"
+    "scrape": "tsx src/scripts/scrape-mdc-programs.ts",
+    "fix-spacing": "tsx src/scripts/fix-spacing-issues.ts",
+    "analyze": "tsx src/scripts/analyze-scraped-data.ts"
   },
   "keywords": [
     "education",
