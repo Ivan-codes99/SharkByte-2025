@@ -44,7 +44,8 @@ export function useTilt<T extends HTMLElement>(
     }
 
     function handleMove(e: MouseEvent) {
-      if (!rect) rect = card.getBoundingClientRect();
+      if (!card || !rect) rect = card?.getBoundingClientRect() || null;
+      if (!rect) return;
       const offsetX = e.clientX - rect.left - rect.width / 2;
       const offsetY = e.clientY - rect.top - rect.height / 2;
       const rotationX = (offsetY / (rect.height / 2)) * -defaultOpts.rotateAmplitude;
@@ -54,6 +55,7 @@ export function useTilt<T extends HTMLElement>(
     }
 
     function enter() {
+      if (!card) return;
       rect = card.getBoundingClientRect();
       targetScale = defaultOpts.scaleOnHover;
       if (!raf) update();
