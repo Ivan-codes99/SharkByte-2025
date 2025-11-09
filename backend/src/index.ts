@@ -12,6 +12,7 @@ import { getCachedPathway, cachePathway } from "./lib/storage";
 import { logger } from "./lib/logger";
 import { processProgramPDFs } from "./services/pdf-processor";
 import { processTranscriptPDF, processResumePDF } from "./services/student-document-processor";
+import { generateProposal } from "./services/proposal-generator";
 import {
   getAllCareerProspects,
   getAllFields,
@@ -915,6 +916,92 @@ app.post("/scholarships/relevant", async (c) => {
     );
   }
 });
+
+// Generate proposal endpoint
+app.post("/proposals/generate", async (c) => {
+  const startTime = Date.now();
+  
+  try {
+    const formData = await c.req.formData();
+    const scholarshipJson = formData.get("scholarship");
+    const studentInfoJson = formData.get("studentInfo");
+    const supportingDocumentEntry = formData.get("supportingDocument");
+
+    if (!scholarshipJson || !studentInfoJson) {
+      return c.json({ error: "Scholarship and student info are required" }, 400);
+    }
+
+    const scholarship = JSON.parse(scholarshipJson as string);
+    const studentInfo = JSON.parse(studentInfoJson as string);
+
+    logger.info("Generating proposal", {
+      scholarshipId: scholarship.id,
+      scholarshipTitle: scholarship.title,
+      studentName: studentInfo.name,
+      hasSupportingDocument: !!supportingDocumentEntry,
+    });
+
+    const env = c.env;
+    if (!env.GEMINI_API_KEY) {
+      logger.error("Gemini API key not configured");
+      return c.json({ error: "Gemini API key not configured" }, 500);
+    }
+
+    let supportingDocument: { name: string; data: string } | undefined;
+
+    if (supportingDocumentEntry && typeof supportingDocumentEntry !== "string") {
+      const file = supportingDocumentEntry as File;
+      if (file.type !== "application/pdf") {
+        return c.json({ error: "Supporting document must be a PDF" }, 400);
+      }
+      const buffer = await file.arrayBuffer();
+      const base64 = arrayBufferToBase64(buffer);
+      supportingDocument = {
+        name: file.name,
+        data: base64,
+      };
+    }
+
+    const proposal = await generateProposal(
+      {
+        scholarship,
+        studentInfo,
+        supportingDocument,
+      },
+      env.GEMINI_API_KEY
+    );
+
+    const duration = Date.now() - startTime;
+    logger.performance("proposal_generation_api", duration, {
+      scholarshipId: scholarship.id,
+      hasSupportingDocument: !!supportingDocument,
+    });
+
+    return c.json({ proposal });
+  } catch (error) {
+    const duration = Date.now() - startTime;
+    logger.error("Failed to generate proposal", error instanceof Error ? error : new Error(String(error)), {
+      duration,
+    });
+    return c.json(
+      {
+        error: "Failed to generate proposal",
+        message: error instanceof Error ? error.message : "Unknown error",
+      },
+      500
+    );
+  }
+});
+
+// Helper function to convert ArrayBuffer to base64
+function arrayBufferToBase64(buffer: ArrayBuffer): string {
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return btoa(binary);
+}
 
 export default app;
 

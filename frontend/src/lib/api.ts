@@ -3,7 +3,7 @@
  */
 
 import type { GeneratedPathway, PathwayGenerationRequest } from "../types/pathway";
-import type { ProgramAnalysisResponse } from "../types";
+import type { ProgramAnalysisResponse, Scholarship } from "../types";
 import { logger } from "./logger";
 
 // Backend API URL - adjust for your deployment
@@ -332,6 +332,69 @@ export async function analyzeProgramById(programId: string, signal?: AbortSignal
       ? Object.assign(error, { endpoint: `/programs/${programId}/analyze` })
       : { message: String(error), endpoint: `/programs/${programId}/analyze` };
     logger.error("Failed to analyze program", errorWithContext);
+    throw error;
+  }
+}
+
+/**
+ * Generate a scholarship proposal
+ */
+export async function generateProposal(
+  scholarship: Scholarship,
+  studentInfo: {
+    name: string;
+    program: string;
+    additionalNotes?: string;
+    gpa?: number;
+    classStanding?: string;
+    achievements?: string;
+    workExperience?: string;
+    extracurricularActivities?: string;
+    careerGoals?: string;
+    financialNeed?: string;
+    isFirstGeneration?: boolean;
+    isVeteran?: boolean;
+    isInternationalStudent?: boolean;
+    raceEthnicity?: string;
+  },
+  supportingDocument?: File
+): Promise<string> {
+  try {
+    logger.api("POST", "/proposals/generate", { scholarshipId: scholarship.id });
+    const startTime = Date.now();
+
+    const formData = new FormData();
+    formData.append("scholarship", JSON.stringify(scholarship));
+    formData.append("studentInfo", JSON.stringify(studentInfo));
+    
+    if (supportingDocument) {
+      formData.append("supportingDocument", supportingDocument);
+    }
+
+    const response = await fetch(`${API_BASE_URL}/proposals/generate`, {
+      method: "POST",
+      body: formData,
+    });
+
+    const duration = Date.now() - startTime;
+    logger.performance("proposal_generation_api", duration, {
+      scholarshipId: scholarship.id,
+      hasSupportingDocument: !!supportingDocument,
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ error: "Unknown error" }));
+      throw new Error(error.message || `HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    logger.api("POST", "/proposals/generate", { scholarshipId: scholarship.id }, data);
+    return data.proposal;
+  } catch (error) {
+    const errorWithContext = error instanceof Error
+      ? Object.assign(error, { endpoint: "/proposals/generate", scholarshipId: scholarship.id })
+      : { message: String(error), endpoint: "/proposals/generate", scholarshipId: scholarship.id };
+    logger.error("Failed to generate proposal", errorWithContext, "API");
     throw error;
   }
 }
