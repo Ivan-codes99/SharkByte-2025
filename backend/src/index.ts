@@ -26,6 +26,8 @@ type Env = {
   GEMINI_API_KEY?: string;
   PROGRAM_CACHE?: KVNamespace;
   DB?: D1Database;
+  BROWSERLESS_API_KEY?: string;
+  BROWSERLESS_URL?: string;
 };
 
 const app = new Hono<{ Bindings: Env }>();
@@ -463,45 +465,200 @@ app.post("/programs/:programId/analyze", async (c) => {
     if ((!pdfs.courseList || !pdfs.sequenceGuide) && targetProgram.programUrl) {
       logger.info(`Some PDFs missing, re-scraping program page: ${targetProgram.programUrl}`);
       try {
+        let html: string;
+        
+        // Helper function to fetch rendered HTML using headless browser
+        const fetchRenderedHTML = async (url: string): Promise<string | null> => {
+          const env = c.env;
+          // Use the production endpoint (not the legacy chrome.browserless.io)
+          const browserlessUrl = env.BROWSERLESS_URL || "https://production-sfo.browserless.io";
+          const apiKey = env.BROWSERLESS_API_KEY;
+          
+          if (!apiKey) {
+            logger.warn("BROWSERLESS_API_KEY not configured, skipping headless browser fetch");
+            return null;
+          }
+          
+          try {
+            // Browserless.io REST API format
+            const browserlessResponse = await fetch(`${browserlessUrl}/content?token=${apiKey}`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Cache-Control": "no-cache",
+              },
+              body: JSON.stringify({
+                url: url,
+                gotoOptions: {
+                  waitUntil: "load", // Wait for page load event (less strict than networkidle2)
+                  timeout: 90000, // Increase timeout to 90 seconds
+                },
+                rejectRequestPattern: [
+                  ".*\\.(jpg|jpeg|png|gif|css|woff|woff2|ttf|svg|ico)",
+                ],
+              }),
+            });
+            
+            if (browserlessResponse.ok) {
+              const renderedHTML = await browserlessResponse.text();
+              logger.info(`Fetched rendered HTML via headless browser (${renderedHTML.length} chars)`);
+              return renderedHTML;
+            } else {
+              const errorText = await browserlessResponse.text();
+              logger.warn(`Headless browser failed: ${browserlessResponse.status} - ${errorText.substring(0, 200)}`);
+              return null;
+            }
+          } catch (browserError) {
+            logger.error("Headless browser fetch error", browserError instanceof Error ? browserError : new Error(String(browserError)), {
+              browserlessUrl,
+            });
+            return null;
+          }
+        };
+        
+        // First try regular fetch
         const programPageResponse = await fetch(targetProgram.programUrl);
         if (programPageResponse.ok) {
-          const html = await programPageResponse.text();
+          html = await programPageResponse.text();
           
-          // Extract PDF links from the page
-          if (!pdfs.courseList) {
-            const courseListMatch = html.match(/See a complete course list[^<]*<a[^>]*href=["']([^"']+)["']/i);
-            if (courseListMatch) {
-              let pdfUrl = courseListMatch[1];
-              if (!pdfUrl.startsWith("http")) {
-                pdfUrl = pdfUrl.startsWith("/") ? `https://www.mdc.edu${pdfUrl}` : `https://www.mdc.edu/${pdfUrl}`;
+          // Check if we found the PDF text in the initial HTML
+          const hasPdfText = html.toLowerCase().includes("see a complete course list") || 
+                           html.toLowerCase().includes("see a course sequence guide");
+          
+          // If not found and we have browserless configured, try headless browser
+          if (!hasPdfText) {
+            logger.info("PDF text not found in initial HTML, trying headless browser...");
+            const renderedHTML = await fetchRenderedHTML(targetProgram.programUrl);
+            if (renderedHTML) {
+              html = renderedHTML;
+              logger.info(`Using rendered HTML from headless browser (${html.length} chars)`);
+            }
+          }
+          
+          // Helper function to find text in HTML and extract nearby PDF link
+          const findTextAndExtractLink = (baseText: string, linkType: string): string | null => {
+            // First, check if the text exists in the page (with optional year like "(2025)")
+            // Pattern: "See a complete course list" or "See a complete course list (2025)" or "See a complete course list (2024)"
+            const textPatternWithYear = new RegExp(
+              baseText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\s*(?:\\(\\d{4}\\))?",
+              "i"
+            );
+            
+            // Also try without year as fallback
+            const textPatternWithoutYear = new RegExp(
+              baseText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
+              "i"
+            );
+            
+            let textMatch = html.match(textPatternWithYear);
+            if (!textMatch) {
+              textMatch = html.match(textPatternWithoutYear);
+            }
+            
+            if (textMatch) {
+              const foundText = textMatch[0];
+              
+              // Find the position of the text
+              const textIndex = html.indexOf(foundText);
+              if (textIndex === -1) {
+                return null;
               }
-              logger.info(`Found course list PDF on re-scrape: ${pdfUrl}`);
-              const courseListResponse = await fetch(pdfUrl);
+              
+              // Extract a section around the text (500 chars before and after)
+              const startIndex = Math.max(0, textIndex - 500);
+              const endIndex = Math.min(html.length, textIndex + foundText.length + 500);
+              const context = html.substring(startIndex, endIndex);
+              
+              // Try multiple patterns to find the link near the text
+              const linkPatterns = [
+                // Pattern 1: Direct link after text (flexible whitespace) - prefer .pdf
+                new RegExp(`${foundText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[^<]*<a[^>]*href=["']([^"']+\\.pdf[^"']*)["']`, "i"),
+                // Pattern 2: Link with text inside anchor tag - prefer .pdf
+                new RegExp(`<a[^>]*href=["']([^"']+\\.pdf[^"']*)["'][^>]*>[^<]*${foundText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[^<]*</a>`, "i"),
+                // Pattern 3: Text followed by link (with possible HTML between) - any URL
+                new RegExp(`${foundText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[^<]*<a[^>]*href=["']([^"']+)["']`, "i"),
+                // Pattern 4: Flexible spacing - prefer .pdf
+                new RegExp(`${foundText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[\\s\\S]{0,200}?<a[^>]*href=["']([^"']+\\.pdf[^"']*)["']`, "i"),
+                // Pattern 5: Any link near the text (within context) - prefer .pdf
+                new RegExp(`${foundText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[\\s\\S]{0,300}?href=["']([^"']+\\.pdf[^"']*)["']`, "i"),
+                // Pattern 6: Fallback - any URL near the text
+                new RegExp(`${foundText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[\\s\\S]{0,300}?<a[^>]*href=["']([^"']+)["']`, "i"),
+              ];
+              
+              // Try patterns in the full HTML first (more reliable)
+              for (const pattern of linkPatterns) {
+                const match = html.match(pattern);
+                if (match && match[1]) {
+                  return match[1];
+                }
+              }
+              
+              // If not found in full HTML, try in context
+              for (const pattern of linkPatterns) {
+                const match = context.match(pattern);
+                if (match && match[1]) {
+                  return match[1];
+                }
+              }
+            }
+            
+            return null;
+          };
+          
+          // Extract course list PDF
+          if (!pdfs.courseList) {
+            const courseListText = "See a complete course list";
+            const courseListUrl = findTextAndExtractLink(courseListText, "course list");
+            
+            if (courseListUrl) {
+              // Normalize URL
+              let normalizedUrl = courseListUrl;
+              if (!normalizedUrl.startsWith("http")) {
+                normalizedUrl = normalizedUrl.startsWith("/") 
+                  ? `https://www.mdc.edu${normalizedUrl}` 
+                  : `https://www.mdc.edu/${normalizedUrl}`;
+              }
+              
+              const courseListResponse = await fetch(normalizedUrl);
               if (courseListResponse.ok) {
                 pdfs.courseList = await courseListResponse.arrayBuffer();
-                logger.info(`✓ Course list PDF fetched from re-scrape`);
+                logger.info(`✓ Course list PDF fetched (${pdfs.courseList.byteLength} bytes)`);
+              } else {
+                logger.warn(`Failed to fetch course list PDF: ${courseListResponse.status}`);
               }
             }
           }
           
+          // Extract sequence guide PDF
           if (!pdfs.sequenceGuide) {
-            const sequenceGuideMatch = html.match(/See a course sequence guide[^<]*<a[^>]*href=["']([^"']+)["']/i);
-            if (sequenceGuideMatch) {
-              let pdfUrl = sequenceGuideMatch[1];
-              if (!pdfUrl.startsWith("http")) {
-                pdfUrl = pdfUrl.startsWith("/") ? `https://www.mdc.edu${pdfUrl}` : `https://www.mdc.edu/${pdfUrl}`;
+            const sequenceGuideText = "See a course sequence guide";
+            const sequenceGuideUrl = findTextAndExtractLink(sequenceGuideText, "sequence guide");
+            
+            if (sequenceGuideUrl) {
+              // Normalize URL
+              let normalizedUrl = sequenceGuideUrl;
+              if (!normalizedUrl.startsWith("http")) {
+                normalizedUrl = normalizedUrl.startsWith("/") 
+                  ? `https://www.mdc.edu${normalizedUrl}` 
+                  : `https://www.mdc.edu/${normalizedUrl}`;
               }
-              logger.info(`Found sequence guide PDF on re-scrape: ${pdfUrl}`);
-              const sequenceGuideResponse = await fetch(pdfUrl);
+              
+              const sequenceGuideResponse = await fetch(normalizedUrl);
               if (sequenceGuideResponse.ok) {
                 pdfs.sequenceGuide = await sequenceGuideResponse.arrayBuffer();
-                logger.info(`✓ Sequence guide PDF fetched from re-scrape`);
+                logger.info(`✓ Sequence guide PDF fetched (${pdfs.sequenceGuide.byteLength} bytes)`);
+              } else {
+                logger.warn(`Failed to fetch sequence guide PDF: ${sequenceGuideResponse.status}`);
               }
             }
           }
+        } else {
+          logger.warn(`Failed to fetch program page: ${programPageResponse.status} ${programPageResponse.statusText}`);
         }
       } catch (scrapeError) {
-        logger.warn(`Failed to re-scrape program page: ${scrapeError instanceof Error ? scrapeError.message : String(scrapeError)}`);
+        logger.error(`Failed to re-scrape program page`, scrapeError instanceof Error ? scrapeError : new Error(String(scrapeError)), {
+          programUrl: targetProgram.programUrl,
+        });
       }
     }
     
@@ -525,9 +682,13 @@ app.post("/programs/:programId/analyze", async (c) => {
       return c.json({ error: "Both course list and sequence guide PDFs are required" }, 400);
     }
     
+    // Process with Gemini - IMPORTANT: Order matters!
+    // 1. FIRST: courseList (Complete Course List) - CANONICAL/PRIMARY source
+    // 2. SECOND: sequenceGuide (Course Sequence Guide) - SECONDARY source
+    logger.info("Sending PDFs to Gemini in order: 1) Course List (primary), 2) Sequence Guide (secondary)");
     const analysis = await processProgramPDFs(
-      pdfs.courseList,
-      pdfs.sequenceGuide,
+      pdfs.courseList,      // FIRST - PRIMARY/CANONICAL source
+      pdfs.sequenceGuide,   // SECOND - SECONDARY source
       env.GEMINI_API_KEY
     );
     
