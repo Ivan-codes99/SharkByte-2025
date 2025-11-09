@@ -195,12 +195,19 @@ function MilestoneCard({
           )}
         </div>
         <div className="flex-1 min-w-0">
-          <h4 className={cn(
-            "font-semibold text-black",
-            isDegree ? "text-lg" : "text-base"
-          )}>
-            {milestone.title}
-          </h4>
+          <div className="flex items-center gap-2">
+            <h4 className={cn(
+              "font-semibold text-black",
+              isDegree ? "text-lg" : "text-base"
+            )}>
+              {milestone.title}
+            </h4>
+            {milestone.credits !== undefined && milestone.credits > 0 && (
+              <Badge variant="outline" className="text-xs font-medium">
+                {milestone.credits} credit{milestone.credits !== 1 ? "s" : ""}
+              </Badge>
+            )}
+          </div>
           {isLevelHeader(milestone) && (
             <p className="text-xs text-gray-600 mt-1">
               {milestone.title.split(" @ ")[1]}
@@ -304,6 +311,61 @@ export function TimelineTree({
 
   // Group milestones by time period (semester or month)
   const timeGroups = groupMilestonesByTime(milestones);
+
+  // Calculate cumulative credits up to a specific group index
+  // For semesters, includes all nested months that belong to that semester
+  const calculateCumulativeCredits = (upToIndex: number): number => {
+    let cumulative = 0;
+    const currentGroup = timeGroups[upToIndex];
+    
+    if (!currentGroup) return 0;
+    
+    // If this is a semester, we need to include all its nested months
+    if (currentGroup.type === "semester") {
+      // Find the last nested month that belongs to this semester
+      let lastNestedMonthIndex = upToIndex;
+      for (let i = upToIndex + 1; i < timeGroups.length; i++) {
+        const nextGroup = timeGroups[i];
+        if (nextGroup?.parentSemester === currentGroup.key) {
+          lastNestedMonthIndex = i;
+        } else {
+          break; // No more nested months for this semester
+        }
+      }
+      
+      // Count all groups up to and including the last nested month
+      for (let i = 0; i <= lastNestedMonthIndex; i++) {
+        const group = timeGroups[i];
+        if (!group) continue;
+        
+        // Only count credits that count toward required credits
+        const groupCredits = group.milestones.reduce((sum, m) => {
+          if (m.kind === "COURSE" && m.credits && (m.countsTowardRequired !== false)) {
+            return sum + m.credits;
+          }
+          return sum;
+        }, 0);
+        cumulative += groupCredits;
+      }
+    } else {
+      // For nested months or standalone months, count all previous groups plus current
+      for (let i = 0; i <= upToIndex; i++) {
+        const group = timeGroups[i];
+        if (!group) continue;
+        
+        // Only count credits that count toward required credits
+        const groupCredits = group.milestones.reduce((sum, m) => {
+          if (m.kind === "COURSE" && m.credits && (m.countsTowardRequired !== false)) {
+            return sum + m.credits;
+          }
+          return sum;
+        }, 0);
+        cumulative += groupCredits;
+      }
+    }
+    
+    return cumulative;
+  };
 
   const toggleCard = (milestoneId: string) => {
     setExpandedCards((prev) => {
@@ -446,9 +508,72 @@ export function TimelineTree({
                   )}>
                     {group.displayName}
                   </h3>
-                  <p className="text-sm text-gray-600 mt-1">
-                    {group.milestones.length} milestone{group.milestones.length !== 1 ? "s" : ""}
-                  </p>
+                  <div className="flex items-center gap-3 mt-1 flex-wrap">
+                    <p className="text-sm text-gray-600">
+                      {group.milestones.length} milestone{group.milestones.length !== 1 ? "s" : ""}
+                    </p>
+                    {(() => {
+                      if (isSemester) {
+                        // For semesters, calculate credits including nested months
+                        // Only count credits that count toward required credits
+                        let semesterCredits = group.milestones.reduce((sum, m) => {
+                          if (m.kind === "COURSE" && m.credits && (m.countsTowardRequired !== false)) {
+                            return sum + m.credits;
+                          }
+                          return sum;
+                        }, 0);
+                        
+                        // Add credits from nested months
+                        for (let i = groupIndex + 1; i < timeGroups.length; i++) {
+                          const nextGroup = timeGroups[i];
+                          if (nextGroup?.parentSemester === group.key) {
+                            const nestedCredits = nextGroup.milestones.reduce((sum, m) => {
+                              if (m.kind === "COURSE" && m.credits && (m.countsTowardRequired !== false)) {
+                                return sum + m.credits;
+                              }
+                              return sum;
+                            }, 0);
+                            semesterCredits += nestedCredits;
+                          } else {
+                            break; // No more nested months for this semester
+                          }
+                        }
+                        
+                        if (semesterCredits > 0) {
+                          // Calculate cumulative credits up to this semester (including nested months)
+                          const cumulativeCredits = calculateCumulativeCredits(groupIndex);
+                          
+                          return (
+                            <>
+                              <p className="text-sm font-semibold text-primary">
+                                {semesterCredits} credit{semesterCredits !== 1 ? "s" : ""} this semester
+                              </p>
+                              <p className="text-sm font-semibold text-gray-700">
+                                {cumulativeCredits} total credit{cumulativeCredits !== 1 ? "s" : ""} completed
+                              </p>
+                            </>
+                          );
+                        }
+                      } else {
+                        // For non-semester groups (months), just show current credits
+                        const totalCredits = group.milestones.reduce((sum, m) => {
+                          if (m.kind === "COURSE" && m.credits) {
+                            return sum + m.credits;
+                          }
+                          return sum;
+                        }, 0);
+                        
+                        if (totalCredits > 0) {
+                          return (
+                            <p className="text-sm font-semibold text-primary">
+                              {totalCredits} credit{totalCredits !== 1 ? "s" : ""}
+                            </p>
+                          );
+                        }
+                      }
+                      return null;
+                    })()}
+                  </div>
                 </div>
               </div>
 
@@ -467,8 +592,16 @@ export function TimelineTree({
                       const firstMilestone = item.milestones[0];
                       const requiredCount = firstMilestone.requiredCount || 1;
 
+                      // Extract a cleaner group name from the electiveGroupId
+                      const groupName = firstMilestone.electiveGroupId 
+                        ? firstMilestone.electiveGroupId.replace(/^elective-/, "").split(" > ").pop() || "Electives"
+                        : "Electives";
+                      
+                      // Calculate total credits for this elective group
+                      const groupTotalCredits = item.milestones.reduce((sum, m) => sum + (m.credits || 0), 0);
+
                       return (
-                        <div key={groupId} className="border-l-4 border-blue-400 bg-blue-50 rounded-lg p-4">
+                        <div key={groupId} className="border-l-4 border-blue-400 bg-blue-50 rounded-lg p-4 shadow-sm">
                           <button
                             onClick={() => toggleGroup(groupId)}
                             className="w-full flex items-center gap-2 mb-3"
@@ -478,13 +611,25 @@ export function TimelineTree({
                               isExpanded && "rotate-90"
                             )} />
                             <div className="flex-1 text-left">
-                              <p className="font-semibold text-blue-900 text-lg">
-                                Elective Group: {firstMilestone.electiveGroupId || "Electives"}
-                              </p>
-                              <p className="text-sm text-blue-700 mt-1">
-                                Choose {requiredCount} of {item.milestones.length} courses
-                                {selectedCount > 0 && ` • ${selectedCount} selected`}
-                              </p>
+                              <div className="flex items-center gap-2">
+                                <p className="font-semibold text-blue-900 text-lg">
+                                  {groupName}
+                                </p>
+                                <Badge variant="outline" className="text-xs bg-blue-100 border-blue-300 text-blue-800">
+                                  Elective Group
+                                </Badge>
+                              </div>
+                              <div className="flex items-center gap-3 mt-1">
+                                <p className="text-sm text-blue-700">
+                                  Choose {requiredCount} of {item.milestones.length} courses
+                                  {selectedCount > 0 && ` • ${selectedCount} selected`}
+                                </p>
+                                {groupTotalCredits > 0 && (
+                                  <p className="text-sm font-medium text-blue-800">
+                                    {groupTotalCredits} total credits
+                                  </p>
+                                )}
+                              </div>
                             </div>
                           </button>
                           
