@@ -6,6 +6,7 @@ import { Copy, Download, Loader2 } from "lucide-react";
 import type { Scholarship } from "../types";
 import { draftProposal, type ProposalFormData } from "../lib/ai";
 import { logger } from "../lib/logger";
+import { getStudentInfo } from "../lib/storage";
 import {
   Dialog,
   DialogContent,
@@ -51,6 +52,21 @@ export function ProposalModal({
     resolver: zodResolver(proposalSchema),
   });
 
+  // Load student info when modal opens
+  useEffect(() => {
+    if (open && scholarship) {
+      const studentInfo = getStudentInfo();
+      if (studentInfo) {
+        reset({
+          studentName: studentInfo.name,
+          program: studentInfo.program || "",
+          resumeLink: studentInfo.resumeLink || "",
+          additionalNotes: "",
+        });
+      }
+    }
+  }, [open, scholarship, reset]);
+
   useEffect(() => {
     if (open && scholarship) {
       logger.info("Proposal modal opened", { scholarshipId: scholarship.id, scholarshipTitle: scholarship.title }, "ProposalModal");
@@ -69,11 +85,58 @@ export function ProposalModal({
     setIsGenerating(true);
     const startTime = performance.now();
     try {
+      // Get student info to include additional context
+      const studentInfo = getStudentInfo();
+      
+      // Build additional notes from student info
+      let additionalContext = data.additionalNotes || "";
+      if (studentInfo) {
+        const contextParts: string[] = [];
+        
+        if (studentInfo.classStanding) {
+          contextParts.push(`Class Standing: ${studentInfo.classStanding}`);
+        }
+        if (studentInfo.gpa) {
+          contextParts.push(`GPA: ${studentInfo.gpa}`);
+        }
+        if (studentInfo.achievements) {
+          contextParts.push(`Achievements: ${studentInfo.achievements}`);
+        }
+        if (studentInfo.workExperience) {
+          contextParts.push(`Work Experience: ${studentInfo.workExperience}`);
+        }
+        if (studentInfo.extracurricularActivities) {
+          contextParts.push(`Extracurricular Activities: ${studentInfo.extracurricularActivities}`);
+        }
+        if (studentInfo.careerGoals) {
+          contextParts.push(`Career Goals: ${studentInfo.careerGoals}`);
+        }
+        if (studentInfo.financialNeed) {
+          contextParts.push(`Financial Need: ${studentInfo.financialNeed}`);
+        }
+        if (studentInfo.isFirstGeneration) {
+          contextParts.push("First-generation college student");
+        }
+        if (studentInfo.isVeteran) {
+          contextParts.push("Veteran");
+        }
+        if (studentInfo.isInternationalStudent) {
+          contextParts.push("International student");
+        }
+        if (studentInfo.raceEthnicity) {
+          contextParts.push(`Race/Ethnicity: ${studentInfo.raceEthnicity}`);
+        }
+        
+        if (contextParts.length > 0) {
+          additionalContext = contextParts.join("\n") + (additionalContext ? `\n\nAdditional Notes:\n${additionalContext}` : "");
+        }
+      }
+
       const formData: ProposalFormData = {
         studentName: data.studentName,
         program: data.program,
-        resumeLink: data.resumeLink || undefined,
-        additionalNotes: data.additionalNotes || undefined,
+        resumeLink: data.resumeLink || studentInfo?.resumeLink || undefined,
+        additionalNotes: additionalContext || undefined,
       };
 
       const markdown = await draftProposal(scholarship, formData);

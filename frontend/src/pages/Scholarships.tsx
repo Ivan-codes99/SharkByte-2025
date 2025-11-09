@@ -1,13 +1,15 @@
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Search, Filter } from "lucide-react";
+import { Search, Filter, User } from "lucide-react";
 import type { Scholarship } from "../types";
 import { ScholarshipCard } from "../components/ScholarshipCard";
 import { ProposalModal } from "../components/ProposalModal";
+import { StudentInfoModal } from "../components/StudentInfoModal";
 import { Input } from "../components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Button } from "../components/ui/button";
 import { logger } from "../lib/logger";
+import { hasStudentInfo } from "../lib/storage";
 import "../styles/pages.css";
 
 // Hardcoded scholarship data
@@ -138,10 +140,22 @@ export function Scholarships() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedScholarship, setSelectedScholarship] = useState<Scholarship | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isStudentInfoModalOpen, setIsStudentInfoModalOpen] = useState(false);
+  const [hasCheckedStudentInfo, setHasCheckedStudentInfo] = useState(false);
 
   useEffect(() => {
     logger.info("Scholarships page mounted", { totalScholarships: hardcodedScholarships.length }, "Scholarships");
-  }, []);
+    
+    // Check for student info on mount
+    if (!hasCheckedStudentInfo) {
+      const hasInfo = hasStudentInfo();
+      if (!hasInfo) {
+        logger.info("No student information found, prompting user", undefined, "Scholarships");
+        setIsStudentInfoModalOpen(true);
+      }
+      setHasCheckedStudentInfo(true);
+    }
+  }, [hasCheckedStudentInfo]);
 
   // Filter state from URL params
   const programFilterParam = searchParams.get("program") || "";
@@ -213,8 +227,31 @@ export function Scholarships() {
 
   const handleGenerateProposal = (scholarship: Scholarship) => {
     logger.action("generate_proposal_clicked", { scholarshipId: scholarship.id, scholarshipTitle: scholarship.title }, "Scholarships");
+    
+    // Check if student info exists before opening proposal modal
+    if (!hasStudentInfo()) {
+      logger.info("No student information found, prompting user before proposal generation", { scholarshipId: scholarship.id }, "Scholarships");
+      setIsStudentInfoModalOpen(true);
+      // Store the scholarship to open after info is saved
+      setSelectedScholarship(scholarship);
+      return;
+    }
+    
     setSelectedScholarship(scholarship);
     setIsModalOpen(true);
+  };
+
+  const handleStudentInfoSaved = () => {
+    logger.info("Student information saved, opening proposal modal if scholarship was selected", undefined, "Scholarships");
+    // If a scholarship was selected before saving info, open the proposal modal
+    if (selectedScholarship) {
+      setIsModalOpen(true);
+    }
+  };
+
+  const handleEditStudentInfo = () => {
+    logger.action("edit_student_info_clicked", undefined, "Scholarships");
+    setIsStudentInfoModalOpen(true);
   };
 
   const clearFilters = () => {
@@ -226,12 +263,26 @@ export function Scholarships() {
     <div className="page-container">
       <div className="page-content">
         <div className="mb-8">
-          <h1 className="page-title">
-            Scholarships & Proposal Generator
-          </h1>
-          <p className="page-subtitle">
-            Find scholarships and generate AI-powered proposals
-          </p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="page-title">
+                Scholarships & Proposal Generator
+              </h1>
+              <p className="page-subtitle">
+                Find scholarships and generate AI-powered proposals
+              </p>
+            </div>
+            {hasStudentInfo() && (
+              <Button
+                variant="outline"
+                onClick={handleEditStudentInfo}
+                className="flex items-center gap-2"
+              >
+                <User className="h-4 w-4" />
+                Edit Student Info
+              </Button>
+            )}
+          </div>
         </div>
 
         {/* Filter Bar */}
@@ -338,6 +389,13 @@ export function Scholarships() {
         scholarship={selectedScholarship}
         open={isModalOpen}
         onOpenChange={setIsModalOpen}
+      />
+
+      {/* Student Info Modal */}
+      <StudentInfoModal
+        open={isStudentInfoModalOpen}
+        onOpenChange={setIsStudentInfoModalOpen}
+        onSave={handleStudentInfoSaved}
       />
     </div>
   );

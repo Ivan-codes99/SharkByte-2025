@@ -3,12 +3,13 @@
  * Handles saving and retrieving application data from browser localStorage
  */
 
-import type { ProgramAnalysisResponse, RequirementGroup } from "../types";
+import type { ProgramAnalysisResponse, RequirementGroup, StudentInfo } from "../types";
 import { logger } from "./logger";
 
 const STORAGE_KEYS = {
   PROGRAM_ANALYSIS: "sharkscholar_program_analysis",
   PENDING_ANALYSIS: "sharkscholar_pending_analysis",
+  STUDENT_INFO: "sharkscholar_student_info",
 } as const;
 
 interface PendingAnalysis {
@@ -154,6 +155,66 @@ export function clearPendingAnalysis(): void {
     logger.info("Pending analysis cleared from localStorage", undefined, "Storage");
   } catch (error) {
     logger.error("Failed to clear pending analysis from localStorage", error instanceof Error ? error : new Error(String(error)), "Storage");
+  }
+}
+
+/**
+ * Save student information to localStorage
+ */
+export function saveStudentInfo(studentInfo: StudentInfo): void {
+  try {
+    const serialized = JSON.stringify(studentInfo);
+    localStorage.setItem(STORAGE_KEYS.STUDENT_INFO, serialized);
+    logger.info("Student information saved to localStorage", {
+      name: studentInfo.name,
+      hasTranscript: !!studentInfo.transcriptFile,
+      lastUpdated: studentInfo.lastUpdated,
+    }, "Storage");
+  } catch (error) {
+    logger.error("Failed to save student information to localStorage", error instanceof Error ? error : new Error(String(error)), "Storage");
+    throw new Error("Failed to save student information");
+  }
+}
+
+/**
+ * Retrieve student information from localStorage
+ */
+export function getStudentInfo(): StudentInfo | null {
+  try {
+    const serialized = localStorage.getItem(STORAGE_KEYS.STUDENT_INFO);
+    if (!serialized) {
+      return null;
+    }
+
+    const studentInfo = JSON.parse(serialized) as StudentInfo;
+    logger.info("Student information retrieved from localStorage", {
+      name: studentInfo.name,
+      hasTranscript: !!studentInfo.transcriptFile,
+      lastUpdated: studentInfo.lastUpdated,
+    }, "Storage");
+    return studentInfo;
+  } catch (error) {
+    logger.error("Failed to retrieve student information from localStorage", error instanceof Error ? error : new Error(String(error)), "Storage");
+    return null;
+  }
+}
+
+/**
+ * Check if student information exists in localStorage
+ */
+export function hasStudentInfo(): boolean {
+  return localStorage.getItem(STORAGE_KEYS.STUDENT_INFO) !== null;
+}
+
+/**
+ * Clear student information from localStorage
+ */
+export function clearStudentInfo(): void {
+  try {
+    localStorage.removeItem(STORAGE_KEYS.STUDENT_INFO);
+    logger.info("Student information cleared from localStorage", undefined, "Storage");
+  } catch (error) {
+    logger.error("Failed to clear student information from localStorage", error instanceof Error ? error : new Error(String(error)), "Storage");
   }
 }
 
