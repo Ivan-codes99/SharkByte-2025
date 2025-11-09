@@ -4,10 +4,8 @@ import { ExternalLink, Loader2, CheckCircle2, Trash2, Search, GraduationCap, Boo
 import { 
   analyzeProgramById, 
   searchPrograms, 
-  getProgramsByCareer, 
   getFields,
-  getProgramsByField,
-  getCareers
+  getProgramsByField
 } from "../lib/api";
 import type { ProgramAnalysisResponse, RequirementGroup } from "../types";
 import { Button } from "../components/ui/button";
@@ -28,6 +26,7 @@ interface MDCProgram {
   careerProspects: string[];
   school?: string;
   concentration?: string;
+  field?: string;
 }
 
 export function ChoosePath() {
@@ -41,7 +40,6 @@ export function ChoosePath() {
   const [error, setError] = useState<string | null>(null);
   const [hasSavedData, setHasSavedData] = useState(false);
   const [fields, setFields] = useState<string[]>([]);
-  const [careers, setCareers] = useState<string[]>([]);
   const [loadingFields, setLoadingFields] = useState(false);
   const [searching, setSearching] = useState(false);
 
@@ -60,10 +58,9 @@ export function ChoosePath() {
     }
   }, []);
 
-  // Load fields and careers on mount
+  // Load fields on mount
   useEffect(() => {
     loadFields();
-    loadCareers();
   }, []);
 
   const loadFields = async () => {
@@ -75,15 +72,6 @@ export function ChoosePath() {
       logger.error("Failed to load fields", err instanceof Error ? err : new Error(String(err)));
     } finally {
       setLoadingFields(false);
-    }
-  };
-
-  const loadCareers = async () => {
-    try {
-      const careersData = await getCareers();
-      setCareers(careersData);
-    } catch (err) {
-      logger.error("Failed to load careers", err instanceof Error ? err : new Error(String(err)));
     }
   };
 
@@ -134,12 +122,18 @@ export function ChoosePath() {
       logger.action("get_programs_by_field", { field }, "ChoosePath");
       const result = await getProgramsByField(field);
       
-      // Flatten all programs from all career mappings
+      // Flatten all programs from all career mappings, preserving field info
       const allPrograms: MDCProgram[] = [];
       result.mappings.forEach(mapping => {
         mapping.programs.forEach((program: MDCProgram) => {
-          if (!allPrograms.find(p => p.id === program.id)) {
-            allPrograms.push(program);
+          const existingIndex = allPrograms.findIndex(p => p.id === program.id);
+          if (existingIndex === -1) {
+            allPrograms.push({ ...program, field: mapping.field });
+          } else {
+            // If program already exists but doesn't have field, add it
+            if (!allPrograms[existingIndex].field && mapping.field) {
+              allPrograms[existingIndex].field = mapping.field;
+            }
           }
         });
       });
@@ -359,72 +353,161 @@ export function ChoosePath() {
           </div>
 
           {/* Programs List */}
-          {programs.length > 0 && (
-            <div className="page-card mb-6">
-              <h2 className="page-section-title mb-4">
-                Found {programs.length} Program{programs.length !== 1 ? "s" : ""}
-              </h2>
-              <div className="space-y-3">
-                {programs.map((program) => (
-                  <div
-                    key={program.id}
-                      className={`p-4 border rounded-lg cursor-pointer transition-colors ${
-                        selectedProgram?.id === program.id
-                          ? "border-[#d45a2a] bg-[#f6f3eb]"
-                          : "border-gray-200 hover:border-[#d45a2a] hover:bg-gray-50"
-                      }`}
-                      onClick={() => handleProgramSelect(program)}
-                    >
-                      <div className="flex items-start justify-between">
-                        <div className="flex-1">
-                          <h3 className="font-semibold text-primary-dark mb-1">
-                            {program.name}
-                          </h3>
-                          <div className="flex flex-wrap gap-2 text-sm text-muted mb-2">
-                            <span className="px-2 py-1 bg-gray-100 rounded">
-                              {program.degreeType}
-                            </span>
-                            {program.school && (
-                              <span className="px-2 py-1 bg-gray-100 rounded">
-                                {program.school}
-                              </span>
-                            )}
-                            {program.concentration && (
-                              <span className="px-2 py-1 bg-gray-100 rounded">
-                                {program.concentration}
-                              </span>
-                            )}
-                          </div>
-                          {program.careerProspects.length > 0 && (
-                            <p className="text-sm text-muted">
-                              <strong>Career Prospects:</strong> {program.careerProspects.slice(0, 3).join(", ")}
-                              {program.careerProspects.length > 3 && ` +${program.careerProspects.length - 3} more`}
-                            </p>
-                          )}
-                          <div className="mt-2 flex gap-2 text-xs text-muted">
-                            {program.pdfLinks.courseList && (
-                              <span className="flex items-center gap-1">
-                                <BookOpen className="h-3 w-3" />
-                                Course List
-                              </span>
-                            )}
-                            {program.pdfLinks.sequenceGuide && (
-                              <span className="flex items-center gap-1">
-                                <BookOpen className="h-3 w-3" />
-                                Sequence Guide
-                              </span>
-                            )}
-                          </div>
+          {programs.length > 0 && (() => {
+            // Group programs by degree type
+            const groupedByDegree = programs.reduce((acc, program) => {
+              const degreeType = program.degreeType;
+              if (!acc[degreeType]) {
+                acc[degreeType] = [];
+              }
+              acc[degreeType].push(program);
+              return acc;
+            }, {} as Record<string, MDCProgram[]>);
+
+            // Define degree type labels and order
+            const degreeOrder = ["BS", "BA", "AS", "AA", "CERT"];
+            const degreeLabels: Record<string, string> = {
+              BS: "Bachelor of Science",
+              BA: "Bachelor of Arts",
+              AS: "Associate in Science",
+              AA: "Associate in Arts",
+              CERT: "Certificates",
+            };
+
+            // Define field colors
+            const getFieldColor = (field?: string): { border: string; bg: string; badge: string } => {
+              const fieldColors: Record<string, { border: string; bg: string; badge: string }> = {
+                Technology: {
+                  border: "border-blue-300",
+                  bg: "bg-blue-50",
+                  badge: "bg-blue-100 text-blue-800",
+                },
+                Medicine: {
+                  border: "border-red-300",
+                  bg: "bg-red-50",
+                  badge: "bg-red-100 text-red-800",
+                },
+                Education: {
+                  border: "border-green-300",
+                  bg: "bg-green-50",
+                  badge: "bg-green-100 text-green-800",
+                },
+                Business: {
+                  border: "border-purple-300",
+                  bg: "bg-purple-50",
+                  badge: "bg-purple-100 text-purple-800",
+                },
+                Other: {
+                  border: "border-gray-300",
+                  bg: "bg-gray-50",
+                  badge: "bg-gray-100 text-gray-800",
+                },
+              };
+
+              if (!field) {
+                return {
+                  border: "border-gray-200",
+                  bg: "bg-gray-50",
+                  badge: "bg-gray-100 text-gray-800",
+                };
+              }
+
+              return fieldColors[field] || fieldColors.Other;
+            };
+
+            return (
+              <div className="page-card mb-6">
+                <h2 className="page-section-title mb-4">
+                  Found {programs.length} Program{programs.length !== 1 ? "s" : ""}
+                </h2>
+                <div className="space-y-6">
+                  {degreeOrder.map((degreeType) => {
+                    const degreePrograms = groupedByDegree[degreeType] || [];
+                    if (degreePrograms.length === 0) return null;
+
+                    return (
+                      <div key={degreeType} className="space-y-3">
+                        <h3 className="text-lg font-semibold text-primary-dark border-b pb-2">
+                          {degreeLabels[degreeType]} ({degreePrograms.length})
+                        </h3>
+                        <div className="space-y-3">
+                          {degreePrograms.map((program) => {
+                            const colors = getFieldColor(program.field);
+                            const isSelected = selectedProgram?.id === program.id;
+                            
+                            return (
+                              <div
+                                key={program.id}
+                                className={`p-4 border rounded-lg cursor-pointer transition-colors ${
+                                  isSelected
+                                    ? "border-[#d45a2a] bg-[#f6f3eb]"
+                                    : `${colors.border} ${colors.bg} hover:border-[#d45a2a] hover:bg-gray-50`
+                                }`}
+                                onClick={() => handleProgramSelect(program)}
+                              >
+                                <div className="flex items-start justify-between">
+                                  <div className="flex-1">
+                                    <div className="flex items-center gap-2 mb-2">
+                                      <h3 className="font-semibold text-primary-dark">
+                                        {program.name}
+                                      </h3>
+                                      {program.field && (
+                                        <span className={`px-2 py-1 rounded text-xs font-medium ${colors.badge}`}>
+                                          {program.field}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <div className="flex flex-wrap gap-2 text-sm text-muted mb-2">
+                                      <span className="px-2 py-1 bg-gray-100 rounded">
+                                        {program.degreeType}
+                                      </span>
+                                      {program.school && (
+                                        <span className="px-2 py-1 bg-gray-100 rounded">
+                                          {program.school}
+                                        </span>
+                                      )}
+                                      {program.concentration && (
+                                        <span className="px-2 py-1 bg-gray-100 rounded">
+                                          {program.concentration}
+                                        </span>
+                                      )}
+                                    </div>
+                                    {program.careerProspects.length > 0 && (
+                                      <p className="text-sm text-muted">
+                                        <strong>Career Prospects:</strong> {program.careerProspects.slice(0, 3).join(", ")}
+                                        {program.careerProspects.length > 3 && ` +${program.careerProspects.length - 3} more`}
+                                      </p>
+                                    )}
+                                    <div className="mt-2 flex gap-2 text-xs text-muted">
+                                      {program.pdfLinks.courseList && (
+                                        <span className="flex items-center gap-1">
+                                          <BookOpen className="h-3 w-3" />
+                                          Course List
+                                        </span>
+                                      )}
+                                      {program.pdfLinks.sequenceGuide && (
+                                        <span className="flex items-center gap-1">
+                                          <BookOpen className="h-3 w-3" />
+                                          Sequence Guide
+                                        </span>
+                                      )}
+                                    </div>
+                                  </div>
+                                  {isSelected && (
+                                    <CheckCircle2 className="h-5 w-5 text-[#d45a2a] ml-2 flex-shrink-0" />
+                                  )}
+                                </div>
+                              </div>
+                            );
+                          })}
                         </div>
-                        {selectedProgram?.id === program.id && (
-                          <CheckCircle2 className="h-5 w-5 text-[#d45a2a] ml-2 flex-shrink-0" />
-                        )}
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
-            )}
+            );
+          })()}
 
           {/* Selected Program Actions */}
           {selectedProgram && (

@@ -67,20 +67,28 @@ export function getAllFields(): string[] {
 
 /**
  * Find programs by career prospect
+ * Returns programs with their associated field
  */
-export function getProgramsByCareer(career: string): MDCProgram[] {
+export function getProgramsByCareer(career: string): Array<MDCProgram & { field?: string }> {
   const normalizedCareer = career.toLowerCase().trim();
-  const programs: MDCProgram[] = [];
+  const programs: Array<MDCProgram & { field?: string }> = [];
+  const seen = new Set<string>();
   
   careerToProgramsMapping.forEach(mapping => {
     if (mapping.career.toLowerCase() === normalizedCareer) {
-      programs.push(...mapping.programs);
+      mapping.programs.forEach(program => {
+        if (!seen.has(program.id)) {
+          programs.push({ ...program, field: mapping.field });
+          seen.add(program.id);
+        }
+      });
     }
     // Also check if any program has this career in its prospects
     mapping.programs.forEach(program => {
       if (program.careerProspects.some(cp => cp.toLowerCase() === normalizedCareer)) {
-        if (!programs.find(p => p.id === program.id)) {
-          programs.push(program);
+        if (!seen.has(program.id)) {
+          programs.push({ ...program, field: mapping.field });
+          seen.add(program.id);
         }
       }
     });
@@ -101,10 +109,11 @@ export function getProgramsByField(field: string): CareerProgramMapping[] {
 
 /**
  * Search programs by career (fuzzy search)
+ * Returns programs with their associated field
  */
-export function searchProgramsByCareer(searchTerm: string): MDCProgram[] {
+export function searchProgramsByCareer(searchTerm: string): Array<MDCProgram & { field?: string }> {
   const normalizedSearch = searchTerm.toLowerCase().trim();
-  const programs: MDCProgram[] = [];
+  const programs: Array<MDCProgram & { field?: string }> = [];
   const seen = new Set<string>();
   
   careerToProgramsMapping.forEach(mapping => {
@@ -112,7 +121,7 @@ export function searchProgramsByCareer(searchTerm: string): MDCProgram[] {
     if (mapping.career.toLowerCase().includes(normalizedSearch)) {
       mapping.programs.forEach(program => {
         if (!seen.has(program.id)) {
-          programs.push(program);
+          programs.push({ ...program, field: mapping.field });
           seen.add(program.id);
         }
       });
@@ -122,7 +131,7 @@ export function searchProgramsByCareer(searchTerm: string): MDCProgram[] {
     mapping.programs.forEach(program => {
       if (program.careerProspects.some(cp => cp.toLowerCase().includes(normalizedSearch))) {
         if (!seen.has(program.id)) {
-          programs.push(program);
+          programs.push({ ...program, field: mapping.field });
           seen.add(program.id);
         }
       }
@@ -131,7 +140,7 @@ export function searchProgramsByCareer(searchTerm: string): MDCProgram[] {
     // Check if program name matches
     mapping.programs.forEach(program => {
       if (program.name.toLowerCase().includes(normalizedSearch) && !seen.has(program.id)) {
-        programs.push(program);
+        programs.push({ ...program, field: mapping.field });
         seen.add(program.id);
       }
     });
