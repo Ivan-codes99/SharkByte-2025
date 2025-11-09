@@ -105,6 +105,19 @@ async function scrapeProgramPage(programUrl: string, index?: number, total?: num
     // Extract program name - try multiple strategies
     let name = "Unknown Program";
     
+    // Helper function to check if a name is generic/invalid
+    const isGenericName = (text: string): boolean => {
+      const lower = text.toLowerCase();
+      return lower.includes("academics") ||
+             lower.includes("academic programs") ||
+             lower === "programs" ||
+             lower.includes("miami dade college") ||
+             lower.includes("mdc") ||
+             lower.includes("new world school of the arts") || // Common wrong extraction
+             text.length < 3 ||
+             text.length > 150;
+    };
+    
     // Strategy 1: Look for program name in specific heading patterns
     // MDC pages often have the program name in an h1 or h2 after "Academics" navigation
     const programHeadingPatterns = [
@@ -120,50 +133,64 @@ async function scrapeProgramPage(programUrl: string, index?: number, total?: num
         const candidate = match[2] || match[1];
         const cleaned = candidate.replace(/<[^>]+>/g, "").trim();
         // Skip generic terms
-        if (cleaned && 
-            !cleaned.toLowerCase().includes("academics") && 
-            cleaned.length > 3 &&
-            cleaned.length < 150) {
+        if (cleaned && !isGenericName(cleaned)) {
           name = cleaned;
           break;
         }
       }
     }
     
-    // Strategy 2: Extract from page title, but filter out generic terms
-    if (name === "Unknown Program" || name.toLowerCase().includes("academics")) {
+    // Strategy 2: Look for breadcrumbs or navigation that might contain program name
+    if (isGenericName(name) || name === "Unknown Program") {
+      // Look for breadcrumb patterns like: Home > Academics > Program Name
+      const breadcrumbMatch = html.match(/<[^>]*breadcrumb[^>]*>[\s\S]*?([A-Z][^<]{10,80}(?:Associate|Bachelor|Certificate|Degree|Science|Arts)[^<]{0,50})/i) ||
+                                      html.match(/>\s*([A-Z][^<]{10,80}(?:Associate|Bachelor|Certificate|Degree|Science|Arts)[^<]{0,50})\s*</i);
+      if (breadcrumbMatch) {
+        const candidate = breadcrumbMatch[1].trim();
+        if (candidate && !isGenericName(candidate)) {
+          name = candidate;
+        }
+      }
+    }
+    
+    // Strategy 3: Extract from page title, but filter out generic terms
+    if (isGenericName(name) || name === "Unknown Program") {
       const titleMatch = html.match(/<title[^>]*>(.*?)<\/title>/i);
       if (titleMatch) {
         let title = titleMatch[1].replace(/<[^>]+>/g, "").trim();
         // Remove common prefixes/suffixes
         title = title.replace(/^\s*(?:Miami Dade College|MDC)\s*[-|]\s*/i, "");
-        title = title.replace(/\s*[-|]\s*(?:Academics|Miami Dade College|MDC)\s*$/i, "");
+        title = title.replace(/\s*[-|]\s*(?:Academics|Academic Programs|Miami Dade College|MDC)\s*$/i, "");
         title = title.replace(/\s*\|\s*.*$/i, ""); // Remove everything after |
-        if (title && 
-            !title.toLowerCase().includes("academics") && 
-            title.length > 3 &&
-            title.length < 150) {
+        if (title && !isGenericName(title)) {
           name = title.trim();
         }
       }
     }
     
-    // Strategy 3: Extract from URL path as fallback
-    if (name === "Unknown Program" || name.toLowerCase().includes("academics")) {
+    // Strategy 4: Extract from URL path as fallback
+    if (isGenericName(name) || name === "Unknown Program") {
       try {
         const urlObj = new URL(programUrl);
-        const pathSegments = urlObj.pathname.split("/").filter(s => s.length > 0);
-        const lastSegment = pathSegments[pathSegments.length - 1] || "";
-        // Convert URL slug to readable name (e.g., "appliedai" -> "Applied AI")
-        if (lastSegment && lastSegment !== "careers.aspx") {
-          const readable = lastSegment
+        const pathSegments = urlObj.pathname.split("/").filter(s => s.length > 0 && s !== "careers.aspx" && s !== "default.aspx");
+        if (pathSegments.length > 0) {
+          const lastSegment = pathSegments[pathSegments.length - 1];
+          // Convert URL slug to readable name (e.g., "accountingmanagement" -> "Accounting Management")
+          // Handle compound words by splitting on common patterns
+          let readable = lastSegment
             .replace(/\.aspx$/, "")
             .replace(/([a-z])([A-Z])/g, "$1 $2") // Add space before capitals
-            .replace(/\b\w/g, l => l.toUpperCase()) // Capitalize words
             .replace(/([a-z])([0-9])/g, "$1 $2") // Add space before numbers
             .replace(/_/g, " ")
             .replace(/-/g, " ");
-          if (readable.length > 3) {
+          
+          // Split compound words (e.g., "accountingmanagement" -> "accounting management")
+          // Common patterns: management, administration, technology, engineering, etc.
+          readable = readable
+            .replace(/([a-z])(management|administration|technology|engineering|science|studies|education|design|development|analytics|marketing|programming|systems|networking|security|analysis|planning|services|operations|innovation|production)/gi, "$1 $2")
+            .replace(/\b\w/g, l => l.toUpperCase()); // Capitalize words
+          
+          if (readable.length > 3 && !isGenericName(readable)) {
             name = readable;
           }
         }
@@ -172,22 +199,47 @@ async function scrapeProgramPage(programUrl: string, index?: number, total?: num
       }
     }
     
-    // Final cleanup: if still "Academics", try to find any meaningful heading
-    if (name.toLowerCase().includes("academics") || name === "Unknown Program") {
-      // Look for any h1-h3 that's not "Academics"
+    // Strategy 5: Look for any meaningful heading that's not generic
+    if (isGenericName(name) || name === "Unknown Program") {
+      // Look for any h1-h3 that's not generic
       const anyHeadingMatch = html.match(/<h[1-3][^>]*>([^<]+)<\/h[1-3]>/gi);
       if (anyHeadingMatch) {
         for (const heading of anyHeadingMatch) {
           const text = heading.replace(/<[^>]+>/g, "").trim();
-          if (text && 
-              !text.toLowerCase().includes("academics") &&
-              !text.toLowerCase().includes("miami dade college") &&
-              text.length > 3 &&
-              text.length < 100) {
+          if (text && !isGenericName(text) && text.length > 5 && text.length < 100) {
             name = text;
             break;
           }
         }
+      }
+    }
+    
+    // Final fallback: Use URL-based name if we still have a generic name
+    if (isGenericName(name) || name === "Unknown Program") {
+      try {
+        const urlObj = new URL(programUrl);
+        const pathSegments = urlObj.pathname.split("/").filter(s => s.length > 0 && s !== "careers.aspx" && s !== "default.aspx");
+        if (pathSegments.length > 0) {
+          const lastSegment = pathSegments[pathSegments.length - 1];
+          // Use same improved logic as Strategy 4
+          let readable = lastSegment
+            .replace(/\.aspx$/, "")
+            .replace(/([a-z])([A-Z])/g, "$1 $2")
+            .replace(/([a-z])([0-9])/g, "$1 $2")
+            .replace(/_/g, " ")
+            .replace(/-/g, " ");
+          
+          // Split compound words
+          readable = readable
+            .replace(/([a-z])(management|administration|technology|engineering|science|studies|education|design|development|analytics|marketing|programming|systems|networking|security|analysis|planning|services|operations|innovation|production)/gi, "$1 $2")
+            .replace(/\b\w/g, l => l.toUpperCase());
+          
+          if (readable.length > 3) {
+            name = readable;
+          }
+        }
+      } catch (e) {
+        // Keep current name
       }
     }
     
@@ -235,49 +287,111 @@ async function scrapeProgramPage(programUrl: string, index?: number, total?: num
     // Try multiple patterns to find career prospects on main page
     // Based on MDC's structure: careers are in styled boxes/divs after "Career Prospects" heading
     const careerSectionPatterns = [
-      // Pattern 1: Look for "Career Prospects" heading followed by content
-      /<h[1-6][^>]*>Career Prospects?<\/h[1-6]>[\s\S]*?(?:<p[^>]*>.*?<\/p>)?([\s\S]*?)(?:<h[1-6]|<\/section>|<\/div>|$)/i,
+      // Pattern 1: Look for "Career Prospects" heading followed by content (more flexible)
+      /<h[1-6][^>]*>Career Prospects?<\/h[1-6]>[\s\S]*?(?:<p[^>]*>.*?<\/p>)?([\s\S]*?)(?=<h[1-6]|<\/section>|<\/div[^>]*class|$)/i,
       // Pattern 2: Look for "Career Information" section
       /Career Information[^<]*>([\s\S]*?)(?:<\/section>|<\/div>|<h[1-6]|$)/i,
       // Pattern 3: Look for "Job roles related" text
       /Job roles? related[^<]*>([\s\S]*?)(?:<\/section>|<\/div>|<\/div>|$)/i,
-      // Pattern 4: Generic "Career Prospects" section
+      // Pattern 4: Generic "Career Prospects" section (broader match)
       /Career Prospects?[^<]*>([\s\S]*?)(?:<\/section>|<\/div>|<h[1-6]|$)/i,
     ];
     
-    for (const pattern of careerSectionPatterns) {
+    for (let patternIdx = 0; patternIdx < careerSectionPatterns.length; patternIdx++) {
+      const pattern = careerSectionPatterns[patternIdx];
       const careerSectionMatch = html.match(pattern);
       if (careerSectionMatch) {
         const careerText = careerSectionMatch[1];
         
+        // Debug: Log a sample of the matched section (first 500 chars) to help diagnose issues
+        if (patternIdx === 0) { // Only log for first pattern to avoid spam
+          const sample = careerText.substring(0, 500).replace(/\s+/g, " ");
+          console.log(`  ${progress} 🔍 Found Career Prospects section (sample): ${sample}...`);
+        }
+        
         // Extract careers from styled boxes/divs (MDC uses styled divs with classes)
-        // Try multiple patterns to match the box-like structure
+        // Try multiple patterns to match the box-like structure, including nested content
         const jobMatches = 
-          // Pattern 1: Styled divs/boxes (common MDC pattern)
-          careerText.match(/<div[^>]*class=["'][^"']*["'][^>]*>([^<]+)<\/div>/gi) ||
-          // Pattern 2: List items
-          careerText.match(/<li[^>]*>([^<]+)<\/li>/gi) ||
-          // Pattern 3: Paragraphs with career titles
-          careerText.match(/<p[^>]*>([^<]+)<\/p>/gi) ||
-          // Pattern 4: Any div containing text (fallback)
-          careerText.match(/<div[^>]*>([^<]+)<\/div>/gi) ||
+          // Pattern 1: Divs with nested content (capture all text inside, including nested elements)
+          (() => {
+            const divMatches: string[] = [];
+            const divRegex = /<div[^>]*class=["'][^"']*["'][^>]*>([\s\S]*?)<\/div>/gi;
+            let divMatch;
+            while ((divMatch = divRegex.exec(careerText)) !== null) {
+              // Extract all text from nested HTML
+              const innerText = divMatch[1].replace(/<[^>]+>/g, "").trim();
+              if (innerText.length > 0) {
+                divMatches.push(innerText);
+              }
+            }
+            return divMatches.length > 0 ? divMatches : null;
+          })() ||
+          // Pattern 2: List items (including nested content)
+          (() => {
+            const liMatches: string[] = [];
+            const liRegex = /<li[^>]*>([\s\S]*?)<\/li>/gi;
+            let liMatch;
+            while ((liMatch = liRegex.exec(careerText)) !== null) {
+              const innerText = liMatch[1].replace(/<[^>]+>/g, "").trim();
+              if (innerText.length > 0) {
+                liMatches.push(innerText);
+              }
+            }
+            return liMatches.length > 0 ? liMatches : null;
+          })() ||
+          // Pattern 3: Paragraphs with career titles (including nested content)
+          (() => {
+            const pMatches: string[] = [];
+            const pRegex = /<p[^>]*>([\s\S]*?)<\/p>/gi;
+            let pMatch;
+            while ((pMatch = pRegex.exec(careerText)) !== null) {
+              const innerText = pMatch[1].replace(/<[^>]+>/g, "").trim();
+              if (innerText.length > 0) {
+                pMatches.push(innerText);
+              }
+            }
+            return pMatches.length > 0 ? pMatches : null;
+          })() ||
+          // Pattern 4: Any div containing text (fallback, including nested)
+          (() => {
+            const divMatches: string[] = [];
+            const divRegex = /<div[^>]*>([\s\S]*?)<\/div>/gi;
+            let divMatch;
+            while ((divMatch = divRegex.exec(careerText)) !== null) {
+              const innerText = divMatch[1].replace(/<[^>]+>/g, "").trim();
+              if (innerText.length > 0 && innerText.length < 200) { // Limit length to avoid capturing entire sections
+                divMatches.push(innerText);
+              }
+            }
+            return divMatches.length > 0 ? divMatches : null;
+          })() ||
           // Pattern 5: Plain text with bullet points
           careerText.match(/(?:^|\n)\s*[-•·]\s*([^\n]+)/gi);
         
-        if (jobMatches && jobMatches.length > 0) {
+        if (jobMatches && Array.isArray(jobMatches) && jobMatches.length > 0) {
           careerProspects = jobMatches
-            .map(match => {
-              // Remove HTML tags and clean up
-              let text = match.replace(/<[^>]+>/g, "").trim();
+            .map((match: string | RegExpMatchArray) => {
+              // If match is already a string (from nested extraction), use it directly
+              // Otherwise, remove HTML tags and clean up
+              let text: string;
+              if (typeof match === 'string') {
+                text = match;
+              } else if (Array.isArray(match)) {
+                // RegExp match array - get the captured group
+                text = (match.length > 1 ? match[1] : match[0]) || String(match[0]);
+              } else {
+                text = String(match);
+              }
+              text = text.replace(/<[^>]+>/g, "").trim();
               // Remove common prefixes like "•", "-", etc.
               text = text.replace(/^[-•·]\s*/, "").trim();
-              // Remove extra whitespace
-              text = text.replace(/\s+/g, " ").trim();
+              // Remove extra whitespace and newlines
+              text = text.replace(/[\s\n\r]+/g, " ").trim();
               return text;
             })
             .filter(text => {
               // Filter out empty, too short, or too long entries
-              // Also filter out common non-job text
+              // Also filter out common non-job text, accessibility links, and navigation
               const lowerText = text.toLowerCase();
               return text.length > 3 && 
                      text.length < 100 && 
@@ -288,14 +402,34 @@ async function scrapeProgramPage(programUrl: string, index?: number, total?: num
                      !lowerText.includes("employment picture") &&
                      !lowerText.includes("explore career") &&
                      !lowerText.includes("pursue additional") &&
+                     !lowerText.includes("pursue additional studies") &&
                      !lowerText.startsWith("job roles") &&
-                     !lowerText.startsWith("career prospects");
+                     !lowerText.startsWith("career prospects") &&
+                     !lowerText.match(/^when you/i) && // "when you pursue additional studies"
+                     !lowerText.match(/^explore/i) && // "explore career options"
+                     !lowerText.startsWith("skip to") && // Accessibility skip links
+                     !lowerText.includes("skip to site") &&
+                     !lowerText.includes("skip to content") &&
+                     !lowerText.includes("skip navigation") &&
+                     !lowerText.includes("go to main") &&
+                     !lowerText.includes("go to content") &&
+                     !lowerText.match(/^menu$/i) && // Menu items
+                     !lowerText.match(/^home$/i) && // Navigation items
+                     !lowerText.match(/^search$/i) &&
+                     !lowerText.match(/^close$/i) &&
+                     !lowerText.match(/^back$/i);
             });
           
           if (careerProspects.length > 0) {
             console.log(`  ${progress} ✓ Found ${careerProspects.length} career prospects on main page`);
             break;
+          } else if (patternIdx === 0) {
+            // Debug: If we matched the section but found no careers, log what we tried
+            console.log(`  ${progress} ⚠️  Matched Career Prospects section but extracted 0 careers. Trying other patterns...`);
           }
+        } else if (patternIdx === 0) {
+          // Debug: If we matched the section but found no job matches
+          console.log(`  ${progress} ⚠️  Matched Career Prospects section but found no job matches in HTML structure.`);
         }
       }
     }
@@ -330,19 +464,75 @@ async function scrapeProgramPage(programUrl: string, index?: number, total?: num
             if (careersListMatch) {
               const careersContent = careersListMatch[1];
               
-              // Extract from styled boxes/divs (same as main page)
+              // Extract from styled boxes/divs (same improved logic as main page)
               const jobMatches = 
-                careersContent.match(/<div[^>]*class=["'][^"']*["'][^>]*>([^<]+)<\/div>/gi) ||
-                careersContent.match(/<li[^>]*>([^<]+)<\/li>/gi) ||
-                careersContent.match(/<p[^>]*>([^<]+)<\/p>/gi) ||
-                careersContent.match(/<div[^>]*>([^<]+)<\/div>/gi);
+                // Pattern 1: Divs with nested content
+                (() => {
+                  const divMatches: string[] = [];
+                  const divRegex = /<div[^>]*class=["'][^"']*["'][^>]*>([\s\S]*?)<\/div>/gi;
+                  let divMatch;
+                  while ((divMatch = divRegex.exec(careersContent)) !== null) {
+                    const innerText = divMatch[1].replace(/<[^>]+>/g, "").trim();
+                    if (innerText.length > 0) {
+                      divMatches.push(innerText);
+                    }
+                  }
+                  return divMatches.length > 0 ? divMatches : null;
+                })() ||
+                // Pattern 2: List items (including nested)
+                (() => {
+                  const liMatches: string[] = [];
+                  const liRegex = /<li[^>]*>([\s\S]*?)<\/li>/gi;
+                  let liMatch;
+                  while ((liMatch = liRegex.exec(careersContent)) !== null) {
+                    const innerText = liMatch[1].replace(/<[^>]+>/g, "").trim();
+                    if (innerText.length > 0) {
+                      liMatches.push(innerText);
+                    }
+                  }
+                  return liMatches.length > 0 ? liMatches : null;
+                })() ||
+                // Pattern 3: Paragraphs (including nested)
+                (() => {
+                  const pMatches: string[] = [];
+                  const pRegex = /<p[^>]*>([\s\S]*?)<\/p>/gi;
+                  let pMatch;
+                  while ((pMatch = pRegex.exec(careersContent)) !== null) {
+                    const innerText = pMatch[1].replace(/<[^>]+>/g, "").trim();
+                    if (innerText.length > 0) {
+                      pMatches.push(innerText);
+                    }
+                  }
+                  return pMatches.length > 0 ? pMatches : null;
+                })() ||
+                // Pattern 4: Any div (fallback)
+                (() => {
+                  const divMatches: string[] = [];
+                  const divRegex = /<div[^>]*>([\s\S]*?)<\/div>/gi;
+                  let divMatch;
+                  while ((divMatch = divRegex.exec(careersContent)) !== null) {
+                    const innerText = divMatch[1].replace(/<[^>]+>/g, "").trim();
+                    if (innerText.length > 0 && innerText.length < 200) {
+                      divMatches.push(innerText);
+                    }
+                  }
+                  return divMatches.length > 0 ? divMatches : null;
+                })();
               
-              if (jobMatches && jobMatches.length > 0) {
+              if (jobMatches && Array.isArray(jobMatches) && jobMatches.length > 0) {
                 careerProspects = jobMatches
-                  .map(match => {
-                    let text = match.replace(/<[^>]+>/g, "").trim();
+                  .map((match: string | RegExpMatchArray) => {
+                    let text: string;
+                    if (typeof match === 'string') {
+                      text = match;
+                    } else if (Array.isArray(match)) {
+                      text = (match.length > 1 ? match[1] : match[0]) || String(match[0]);
+                    } else {
+                      text = String(match);
+                    }
+                    text = text.replace(/<[^>]+>/g, "").trim();
                     text = text.replace(/^[-•·]\s*/, "").trim();
-                    text = text.replace(/\s+/g, " ").trim();
+                    text = text.replace(/[\s\n\r]+/g, " ").trim();
                     return text;
                   })
                   .filter(text => {
@@ -356,8 +546,22 @@ async function scrapeProgramPage(programUrl: string, index?: number, total?: num
                            !lowerText.includes("employment picture") &&
                            !lowerText.includes("explore career") &&
                            !lowerText.includes("pursue additional") &&
+                           !lowerText.includes("pursue additional studies") &&
                            !lowerText.startsWith("job roles") &&
-                           !lowerText.startsWith("career prospects");
+                           !lowerText.startsWith("career prospects") &&
+                           !lowerText.match(/^when you/i) &&
+                           !lowerText.match(/^explore/i) &&
+                           !lowerText.startsWith("skip to") && // Accessibility skip links
+                           !lowerText.includes("skip to site") &&
+                           !lowerText.includes("skip to content") &&
+                           !lowerText.includes("skip navigation") &&
+                           !lowerText.includes("go to main") &&
+                           !lowerText.includes("go to content") &&
+                           !lowerText.match(/^menu$/i) &&
+                           !lowerText.match(/^home$/i) &&
+                           !lowerText.match(/^search$/i) &&
+                           !lowerText.match(/^close$/i) &&
+                           !lowerText.match(/^back$/i);
                   });
                 
                 if (careerProspects.length > 0) {
@@ -381,8 +585,14 @@ async function scrapeProgramPage(programUrl: string, index?: number, total?: num
       }
     }
     
+    // If no career prospects found, use the program name itself as a fallback
     if (careerProspects.length === 0) {
       console.warn(`  ${progress} ⚠️  No career prospects found for this program`);
+      // Use program name as a career prospect so the program can still be found
+      if (name && name !== "Unknown Program" && !name.toLowerCase().includes("academics")) {
+        careerProspects = [name];
+        console.log(`  ${progress} ℹ️  Using program name "${name}" as career prospect`);
+      }
     } else {
       console.log(`  ${progress} Career prospects: ${careerProspects.slice(0, 3).join(", ")}${careerProspects.length > 3 ? ` (+${careerProspects.length - 3} more)` : ""}`);
     }
@@ -718,50 +928,63 @@ async function scrapeAllPrograms(): Promise<CareerProgramMapping[]> {
     const link = bachelorsLinks[i];
     stats.bachelors.total++;
     
-    const programData = await scrapeProgramPage(link, i, bachelorsLinks.length);
+    try {
+      const programData = await scrapeProgramPage(link, i, bachelorsLinks.length);
+      
+      // Extract program ID from URL (e.g., "bsn" from "https://www.mdc.edu/bsn/")
+      let programId: string;
+      try {
+        const urlPath = new URL(link).pathname;
+        programId = urlPath.split("/").filter(s => s.length > 0).pop() || `bachelors-${i}`;
+      } catch (urlError) {
+        console.warn(`  [${i + 1}/${bachelorsLinks.length}] ⚠️  Invalid URL format: ${link}, using fallback ID`);
+        programId = `bachelors-${i}`;
+      }
     
-    // Extract program ID from URL (e.g., "bsn" from "https://www.mdc.edu/bsn/")
-    const urlPath = new URL(link).pathname;
-    const programId = urlPath.split("/").filter(s => s.length > 0).pop() || `bachelors-${i}`;
-    
-    const program: MDCProgram = {
-      id: programId,
-      name: programData.name,
-      degreeType: "BS",
-      programUrl: link,
-      careersUrl: programData.careersUrl,
-      pdfLinks: programData.pdfLinks,
-      careerProspects: programData.careerProspects,
-    };
-    
-    // Track statistics (PDFs are not extracted during scraping)
-    if (programData.careerProspects.length > 0) {
-      stats.bachelors.withCareers++;
-    }
-    if (programData.name === "Unknown Program") {
+      const program: MDCProgram = {
+        id: programId,
+        name: programData.name,
+        degreeType: "BS",
+        programUrl: link,
+        careersUrl: programData.careersUrl,
+        pdfLinks: programData.pdfLinks,
+        careerProspects: programData.careerProspects,
+      };
+      
+      // Track statistics (PDFs are not extracted during scraping)
+      if (programData.careerProspects.length > 0) {
+        stats.bachelors.withCareers++;
+      }
+      if (programData.name === "Unknown Program") {
+        stats.bachelors.errors++;
+      }
+      
+      allPrograms.push(program);
+      
+      // Map careers to programs
+      // Each program already has programUrl stored, so it can be used to fetch PDFs later
+      programData.careerProspects.forEach(career => {
+        if (!careerToPrograms.has(career)) {
+          careerToPrograms.set(career, []);
+        }
+        // Ensure program URL is included (it should already be set above)
+        if (program.programUrl) {
+          careerToPrograms.get(career)!.push(program);
+          console.log(`  ✓ Mapped career "${career}" to program: ${program.name} (${program.programUrl})`);
+        } else {
+          console.warn(`  ⚠️  Program ${program.name} missing programUrl, skipping career mapping`);
+        }
+      });
+    } catch (error) {
+      console.error(`  [${i + 1}/${bachelorsLinks.length}] ❌ Failed to process program: ${link}`);
+      console.error(`  Error: ${error instanceof Error ? error.message : String(error)}`);
       stats.bachelors.errors++;
+      // Continue to next program instead of stopping
     }
     
-    allPrograms.push(program);
-    
-    // Map careers to programs
-    // Each program already has programUrl stored, so it can be used to fetch PDFs later
-    programData.careerProspects.forEach(career => {
-      if (!careerToPrograms.has(career)) {
-        careerToPrograms.set(career, []);
-      }
-      // Ensure program URL is included (it should already be set above)
-      if (program.programUrl) {
-        careerToPrograms.get(career)!.push(program);
-        console.log(`  ✓ Mapped career "${career}" to program: ${program.name} (${program.programUrl})`);
-      } else {
-        console.warn(`  ⚠️  Program ${program.name} missing programUrl, skipping career mapping`);
-      }
-    });
-    
-    // Add delay to avoid overwhelming the server
+    // Add delay to avoid overwhelming the server (2 seconds between requests)
     if (i < bachelorsLinks.length - 1) {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 2000));
     }
   }
   
@@ -778,42 +1001,56 @@ async function scrapeAllPrograms(): Promise<CareerProgramMapping[]> {
     const link = aaLinks[i];
     stats.associateAA.total++;
     
-    const programData = await scrapeProgramPage(link, i, aaLinks.length);
+    try {
+      const programData = await scrapeProgramPage(link, i, aaLinks.length);
+      
+      let programId: string;
+      try {
+        const urlPath = new URL(link).pathname;
+        programId = urlPath.split("/").filter(s => s.length > 0).pop() || `aa-${i}`;
+      } catch (urlError) {
+        console.warn(`  [${i + 1}/${aaLinks.length}] ⚠️  Invalid URL format: ${link}, using fallback ID`);
+        programId = `aa-${i}`;
+      }
     
-    const urlPath = new URL(link).pathname;
-    const programId = urlPath.split("/").filter(s => s.length > 0).pop() || `aa-${i}`;
-    
-    const program: MDCProgram = {
-      id: programId,
-      name: programData.name,
-      degreeType: "AA",
-      programUrl: link,
-      careersUrl: programData.careersUrl,
-      pdfLinks: programData.pdfLinks,
-      careerProspects: programData.careerProspects,
-    };
-    
-    // Track statistics (PDFs are not extracted during scraping)
-    if (programData.careerProspects.length > 0) {
-      stats.associateAA.withCareers++;
-    }
-    if (programData.name === "Unknown Program") {
+      const program: MDCProgram = {
+        id: programId,
+        name: programData.name,
+        degreeType: "AA",
+        programUrl: link,
+        careersUrl: programData.careersUrl,
+        pdfLinks: programData.pdfLinks,
+        careerProspects: programData.careerProspects,
+      };
+      
+      // Track statistics (PDFs are not extracted during scraping)
+      if (programData.careerProspects.length > 0) {
+        stats.associateAA.withCareers++;
+      }
+      if (programData.name === "Unknown Program") {
+        stats.associateAA.errors++;
+      }
+      
+      allPrograms.push(program);
+      
+      programData.careerProspects.forEach(career => {
+        if (!careerToPrograms.has(career)) {
+          careerToPrograms.set(career, []);
+        }
+        if (program.programUrl) {
+          careerToPrograms.get(career)!.push(program);
+        }
+      });
+    } catch (error) {
+      console.error(`  [${i + 1}/${aaLinks.length}] ❌ Failed to process program: ${link}`);
+      console.error(`  Error: ${error instanceof Error ? error.message : String(error)}`);
       stats.associateAA.errors++;
+      // Continue to next program instead of stopping
     }
     
-    allPrograms.push(program);
-    
-    programData.careerProspects.forEach(career => {
-      if (!careerToPrograms.has(career)) {
-        careerToPrograms.set(career, []);
-      }
-      if (program.programUrl) {
-        careerToPrograms.get(career)!.push(program);
-      }
-    });
-    
+    // Add delay to avoid overwhelming the server (2 seconds between requests)
     if (i < aaLinks.length - 1) {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 2000));
     }
   }
   
@@ -830,42 +1067,56 @@ async function scrapeAllPrograms(): Promise<CareerProgramMapping[]> {
     const link = asLinks[i];
     stats.associateAS.total++;
     
-    const programData = await scrapeProgramPage(link, i, asLinks.length);
+    try {
+      const programData = await scrapeProgramPage(link, i, asLinks.length);
+      
+      let programId: string;
+      try {
+        const urlPath = new URL(link).pathname;
+        programId = urlPath.split("/").filter(s => s.length > 0).pop() || `as-${i}`;
+      } catch (urlError) {
+        console.warn(`  [${i + 1}/${asLinks.length}] ⚠️  Invalid URL format: ${link}, using fallback ID`);
+        programId = `as-${i}`;
+      }
     
-    const urlPath = new URL(link).pathname;
-    const programId = urlPath.split("/").filter(s => s.length > 0).pop() || `as-${i}`;
-    
-    const program: MDCProgram = {
-      id: programId,
-      name: programData.name,
-      degreeType: "AS",
-      programUrl: link,
-      careersUrl: programData.careersUrl,
-      pdfLinks: programData.pdfLinks,
-      careerProspects: programData.careerProspects,
-    };
-    
-    // Track statistics (PDFs are not extracted during scraping)
-    if (programData.careerProspects.length > 0) {
-      stats.associateAS.withCareers++;
-    }
-    if (programData.name === "Unknown Program") {
+      const program: MDCProgram = {
+        id: programId,
+        name: programData.name,
+        degreeType: "AS",
+        programUrl: link,
+        careersUrl: programData.careersUrl,
+        pdfLinks: programData.pdfLinks,
+        careerProspects: programData.careerProspects,
+      };
+      
+      // Track statistics (PDFs are not extracted during scraping)
+      if (programData.careerProspects.length > 0) {
+        stats.associateAS.withCareers++;
+      }
+      if (programData.name === "Unknown Program") {
+        stats.associateAS.errors++;
+      }
+      
+      allPrograms.push(program);
+      
+      programData.careerProspects.forEach(career => {
+        if (!careerToPrograms.has(career)) {
+          careerToPrograms.set(career, []);
+        }
+        if (program.programUrl) {
+          careerToPrograms.get(career)!.push(program);
+        }
+      });
+    } catch (error) {
+      console.error(`  [${i + 1}/${asLinks.length}] ❌ Failed to process program: ${link}`);
+      console.error(`  Error: ${error instanceof Error ? error.message : String(error)}`);
       stats.associateAS.errors++;
+      // Continue to next program instead of stopping
     }
     
-    allPrograms.push(program);
-    
-    programData.careerProspects.forEach(career => {
-      if (!careerToPrograms.has(career)) {
-        careerToPrograms.set(career, []);
-      }
-      if (program.programUrl) {
-        careerToPrograms.get(career)!.push(program);
-      }
-    });
-    
+    // Add delay to avoid overwhelming the server (2 seconds between requests)
     if (i < asLinks.length - 1) {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 2000));
     }
   }
   
@@ -888,42 +1139,56 @@ async function scrapeAllPrograms(): Promise<CareerProgramMapping[]> {
     const link = certLinks[i];
     stats.certificates.total++;
     
-    const programData = await scrapeProgramPage(link, i, certLinks.length);
+    try {
+      const programData = await scrapeProgramPage(link, i, certLinks.length);
+      
+      let programId: string;
+      try {
+        const urlPath = new URL(link).pathname;
+        programId = urlPath.split("/").filter(s => s.length > 0).pop() || `cert-${i}`;
+      } catch (urlError) {
+        console.warn(`  [${i + 1}/${certLinks.length}] ⚠️  Invalid URL format: ${link}, using fallback ID`);
+        programId = `cert-${i}`;
+      }
     
-    const urlPath = new URL(link).pathname;
-    const programId = urlPath.split("/").filter(s => s.length > 0).pop() || `cert-${i}`;
-    
-    const program: MDCProgram = {
-      id: programId,
-      name: programData.name,
-      degreeType: "CERT",
-      programUrl: link,
-      careersUrl: programData.careersUrl,
-      pdfLinks: programData.pdfLinks,
-      careerProspects: programData.careerProspects,
-    };
-    
-    // Track statistics (PDFs are not extracted during scraping)
-    if (programData.careerProspects.length > 0) {
-      stats.certificates.withCareers++;
-    }
-    if (programData.name === "Unknown Program") {
+      const program: MDCProgram = {
+        id: programId,
+        name: programData.name,
+        degreeType: "CERT",
+        programUrl: link,
+        careersUrl: programData.careersUrl,
+        pdfLinks: programData.pdfLinks,
+        careerProspects: programData.careerProspects,
+      };
+      
+      // Track statistics (PDFs are not extracted during scraping)
+      if (programData.careerProspects.length > 0) {
+        stats.certificates.withCareers++;
+      }
+      if (programData.name === "Unknown Program") {
+        stats.certificates.errors++;
+      }
+      
+      allPrograms.push(program);
+      
+      programData.careerProspects.forEach(career => {
+        if (!careerToPrograms.has(career)) {
+          careerToPrograms.set(career, []);
+        }
+        if (program.programUrl) {
+          careerToPrograms.get(career)!.push(program);
+        }
+      });
+    } catch (error) {
+      console.error(`  [${i + 1}/${certLinks.length}] ❌ Failed to process program: ${link}`);
+      console.error(`  Error: ${error instanceof Error ? error.message : String(error)}`);
       stats.certificates.errors++;
+      // Continue to next program instead of stopping
     }
     
-    allPrograms.push(program);
-    
-    programData.careerProspects.forEach(career => {
-      if (!careerToPrograms.has(career)) {
-        careerToPrograms.set(career, []);
-      }
-      if (program.programUrl) {
-        careerToPrograms.get(career)!.push(program);
-      }
-    });
-    
+    // Add delay to avoid overwhelming the server (2 seconds between requests)
     if (i < certLinks.length - 1) {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 2000));
     }
   }
   
@@ -934,8 +1199,22 @@ async function scrapeAllPrograms(): Promise<CareerProgramMapping[]> {
   console.log("🔗 BUILDING CAREER-TO-PROGRAM MAPPING");
   console.log("─".repeat(80));
   const mapping: CareerProgramMapping[] = Array.from(careerToPrograms.entries()).map(([career, programs]) => {
+    // Remove duplicate programs (same program can appear for multiple careers)
+    const uniquePrograms = new Map<string, MDCProgram>();
+    programs.forEach(program => {
+      if (!uniquePrograms.has(program.id)) {
+        uniquePrograms.set(program.id, program);
+      }
+    });
+    
+    const programsList = Array.from(uniquePrograms.values());
+    
     // Ensure all programs have programUrl for later PDF fetching
-    const programsWithUrls = programs.map(program => {
+    // Keep careerProspects array - it's useful for:
+    // 1. Displaying all careers a program leads to
+    // 2. Reverse lookups (finding programs by checking their careerProspects)
+    // 3. Fuzzy search functionality
+    const programsWithUrls = programsList.map(program => {
       if (!program.programUrl) {
         console.warn(`  ⚠️  Program ${program.name} (${program.id}) is missing programUrl`);
       }
