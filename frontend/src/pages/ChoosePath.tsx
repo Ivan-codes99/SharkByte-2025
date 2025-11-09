@@ -907,11 +907,6 @@ export function ChoosePath() {
                     })()
                   }</p>
                 </div>
-                <div className="mt-4">
-                  <pre className="bg-white p-4 rounded border text-xs overflow-auto max-h-96">
-                    {JSON.stringify(analysisResult, null, 2)}
-                  </pre>
-                </div>
               </div>
             </div>
           )}
