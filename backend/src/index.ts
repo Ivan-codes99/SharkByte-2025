@@ -78,6 +78,14 @@ app.get("/", (c) => {
   });
 });
 
+app.get("/health", (c) => {
+  return c.json({
+    service: "SharkScholar Backend",
+    version: "1.0.0",
+    status: "healthy",
+  });
+});
+
 // Generate pathway endpoint
 app.post("/pathways/generate", async (c) => {
   const startTime = Date.now();
