@@ -6,6 +6,7 @@ import * as z from "zod";
 import { Search, Filter, Upload, FileText, X, Loader2 } from "lucide-react";
 import type { Scholarship, StudentInfo, ClassStanding, RaceEthnicity } from "../types";
 import { ScholarshipCard } from "../components/ScholarshipCard";
+import { ProposalModal } from "../components/ProposalModal";
 import { Input } from "../components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Button } from "../components/ui/button";
@@ -70,6 +71,8 @@ export function Scholarships() {
   const [existingTranscript, setExistingTranscript] = useState<StudentInfo["transcriptFile"] | null>(null);
   const [existingResume, setExistingResume] = useState<StudentInfo["resumeFile"] | null>(null);
   const [hasScholarshipsFromPDFs, setHasScholarshipsFromPDFs] = useState(false);
+  const [selectedScholarship, setSelectedScholarship] = useState<Scholarship | null>(null);
+  const [isProposalModalOpen, setIsProposalModalOpen] = useState(false);
 
   const {
     register,
@@ -1055,6 +1058,10 @@ export function Scholarships() {
               <ScholarshipCard
                 key={scholarship.id}
                 scholarship={scholarship}
+                onGenerateProposal={(scholarship) => {
+                  setSelectedScholarship(scholarship);
+                  setIsProposalModalOpen(true);
+                }}
               />
             ))}
               </div>
@@ -1070,6 +1077,16 @@ export function Scholarships() {
         )}
       </div>
 
+      <ProposalModal
+        scholarship={selectedScholarship}
+        open={isProposalModalOpen}
+        onOpenChange={(open) => {
+          setIsProposalModalOpen(open);
+          if (!open) {
+            setSelectedScholarship(null);
+          }
+        }}
+      />
     </div>
   );
 }

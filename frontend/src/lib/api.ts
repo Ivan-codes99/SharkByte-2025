@@ -2,11 +2,16 @@
  * API Client for SharkScholar Backend
  */
 
+// NOTE: In Cloudflare Pages, set an environment variable:
+// VITE_API_URL = https://sharkscholar.courses/api
+// If the site serves at www, use: https://www.sharkscholar.courses/api
+//----------------------------------------------------------------
+
 import type { GeneratedPathway, PathwayGenerationRequest } from "../types/pathway";
-import type { ProgramAnalysisResponse } from "../types";
+import type { ProgramAnalysisResponse, Scholarship } from "../types";
 import { logger } from "./logger";
 
-// Backend API URL - adjust for your deployment
+// In production, VITE_API_URL must be set to "https://sharkscholar.courses/api" (or https://www.sharkscholar.courses/api)
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8787";
 
 /**
@@ -17,11 +22,9 @@ export async function checkBackendHealth(): Promise<{ connected: boolean; status
     logger.info("Checking backend connection", { apiUrl: API_BASE_URL }, "API");
     const startTime = Date.now();
 
-    const response = await fetch(`${API_BASE_URL}/`, {
+    const response = await fetch(`${API_BASE_URL}/health`, {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
     });
 
     const duration = Date.now() - startTime;
@@ -332,6 +335,69 @@ export async function analyzeProgramById(programId: string, signal?: AbortSignal
       ? Object.assign(error, { endpoint: `/programs/${programId}/analyze` })
       : { message: String(error), endpoint: `/programs/${programId}/analyze` };
     logger.error("Failed to analyze program", errorWithContext);
+    throw error;
+  }
+}
+
+/**
+ * Generate a scholarship proposal
+ */
+export async function generateProposal(
+  scholarship: Scholarship,
+  studentInfo: {
+    name: string;
+    program: string;
+    additionalNotes?: string;
+    gpa?: number;
+    classStanding?: string;
+    achievements?: string;
+    workExperience?: string;
+    extracurricularActivities?: string;
+    careerGoals?: string;
+    financialNeed?: string;
+    isFirstGeneration?: boolean;
+    isVeteran?: boolean;
+    isInternationalStudent?: boolean;
+    raceEthnicity?: string;
+  },
+  supportingDocument?: File
+): Promise<string> {
+  try {
+    logger.api("POST", "/proposals/generate", { scholarshipId: scholarship.id });
+    const startTime = Date.now();
+
+    const formData = new FormData();
+    formData.append("scholarship", JSON.stringify(scholarship));
+    formData.append("studentInfo", JSON.stringify(studentInfo));
+    
+    if (supportingDocument) {
+      formData.append("supportingDocument", supportingDocument);
+    }
+
+    const response = await fetch(`${API_BASE_URL}/proposals/generate`, {
+      method: "POST",
+      body: formData,
+    });
+
+    const duration = Date.now() - startTime;
+    logger.performance("proposal_generation_api", duration, {
+      scholarshipId: scholarship.id,
+      hasSupportingDocument: !!supportingDocument,
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ error: "Unknown error" }));
+      throw new Error(error.message || `HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    logger.api("POST", "/proposals/generate", { scholarshipId: scholarship.id }, data);
+    return data.proposal;
+  } catch (error) {
+    const errorWithContext = error instanceof Error
+      ? Object.assign(error, { endpoint: "/proposals/generate", scholarshipId: scholarship.id })
+      : { message: String(error), endpoint: "/proposals/generate", scholarshipId: scholarship.id };
+    logger.error("Failed to generate proposal", errorWithContext, "API");
     throw error;
   }
 }

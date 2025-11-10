@@ -12,6 +12,7 @@ import { getCachedPathway, cachePathway } from "./lib/storage";
 import { logger } from "./lib/logger";
 import { processProgramPDFs } from "./services/pdf-processor";
 import { processTranscriptPDF, processResumePDF } from "./services/student-document-processor";
+import { generateProposal } from "./services/proposal-generator";
 import {
   getAllCareerProspects,
   getAllFields,
@@ -32,10 +33,11 @@ type Env = {
 };
 
 const app = new Hono<{ Bindings: Env }>();
+const api = new Hono<{ Bindings: Env }>();
 
 // Middleware
-app.use("*", honoLogger());
-app.use(
+api.use("*", honoLogger());
+api.use(
   "*",
   cors({
     origin: "*", // In production, restrict to your frontend domain
@@ -46,7 +48,7 @@ app.use(
 );
 
 // Request logging middleware
-app.use("*", async (c, next) => {
+api.use("*", async (c, next) => {
   const start = Date.now();
   const method = c.req.method;
   const path = c.req.path;
@@ -68,7 +70,7 @@ app.use("*", async (c, next) => {
 });
 
 // Health check
-app.get("/", (c) => {
+api.get("/", (c) => {
   logger.info("Health check requested");
   return c.json({
     service: "SharkScholar Backend",
@@ -77,8 +79,16 @@ app.get("/", (c) => {
   });
 });
 
+api.get("/health", (c) => {
+  return c.json({
+    service: "SharkScholar Backend",
+    version: "1.0.0",
+    status: "healthy",
+  });
+});
+
 // Generate pathway endpoint
-app.post("/pathways/generate", async (c) => {
+api.post("/pathways/generate", async (c) => {
   const startTime = Date.now();
   let career = "unknown";
   
@@ -157,7 +167,7 @@ app.post("/pathways/generate", async (c) => {
 });
 
 // Get pathway by career (cached)
-app.get("/pathways/:career", async (c) => {
+api.get("/pathways/:career", async (c) => {
   try {
     const career = decodeURIComponent(c.req.param("career"));
     logger.info(`Fetching pathway for: ${career}`);
@@ -182,7 +192,7 @@ app.get("/pathways/:career", async (c) => {
 });
 
 // Process program PDFs endpoint
-app.post("/programs/analyze", async (c) => {
+api.post("/programs/analyze", async (c) => {
   const startTime = Date.now();
   
   try {
@@ -284,14 +294,14 @@ app.post("/programs/analyze", async (c) => {
 });
 
 // List available careers/programs
-app.get("/careers", (c) => {
+api.get("/careers", (c) => {
   logger.info("Listing available careers");
   const careers = getAllCareerProspects();
   return c.json({ careers });
 });
 
 // Get programs by career
-app.get("/programs/by-career/:career", (c) => {
+api.get("/programs/by-career/:career", (c) => {
   try {
     const career = decodeURIComponent(c.req.param("career"));
     logger.info(`Fetching programs for career: ${career}`);
@@ -310,7 +320,7 @@ app.get("/programs/by-career/:career", (c) => {
 });
 
 // Search programs by career (fuzzy search)
-app.get("/programs/search", (c) => {
+api.get("/programs/search", (c) => {
   try {
     const searchTerm = c.req.query("q") || "";
     logger.info(`Searching programs for: ${searchTerm}`);
@@ -333,7 +343,7 @@ app.get("/programs/search", (c) => {
 });
 
 // Get programs by field
-app.get("/programs/by-field/:field", (c) => {
+api.get("/programs/by-field/:field", (c) => {
   try {
     const field = decodeURIComponent(c.req.param("field"));
     logger.info(`Fetching programs for field: ${field}`);
@@ -352,14 +362,14 @@ app.get("/programs/by-field/:field", (c) => {
 });
 
 // Get all fields
-app.get("/fields", (c) => {
+api.get("/fields", (c) => {
   logger.info("Listing available fields");
   const fields = getAllFields();
   return c.json({ fields });
 });
 
 // Download PDF from MDC program page
-app.get("/programs/:programId/pdf", async (c) => {
+api.get("/programs/:programId/pdf", async (c) => {
   try {
     const programId = decodeURIComponent(c.req.param("programId"));
     const pdfType = c.req.query("type") as "courseList" | "sequenceGuide" | undefined;
@@ -418,7 +428,7 @@ app.get("/programs/:programId/pdf", async (c) => {
 });
 
 // Analyze program by fetching PDFs automatically
-app.post("/programs/:programId/analyze", async (c) => {
+api.post("/programs/:programId/analyze", async (c) => {
   const startTime = Date.now();
   const programId = decodeURIComponent(c.req.param("programId"));
   
@@ -756,7 +766,7 @@ app.post("/programs/:programId/analyze", async (c) => {
 });
 
 // Process transcript PDF endpoint
-app.post("/student/process-transcript", async (c) => {
+api.post("/student/process-transcript", async (c) => {
   const startTime = Date.now();
   
   try {
@@ -814,7 +824,7 @@ app.post("/student/process-transcript", async (c) => {
 });
 
 // Process resume PDF endpoint
-app.post("/student/process-resume", async (c) => {
+api.post("/student/process-resume", async (c) => {
   const startTime = Date.now();
   
   try {
@@ -872,7 +882,7 @@ app.post("/student/process-resume", async (c) => {
 });
 
 // Fetch relevant scholarships endpoint
-app.post("/scholarships/relevant", async (c) => {
+api.post("/scholarships/relevant", async (c) => {
   const startTime = Date.now();
   
   try {
@@ -915,6 +925,95 @@ app.post("/scholarships/relevant", async (c) => {
     );
   }
 });
+
+// Generate proposal endpoint
+api.post("/proposals/generate", async (c) => {
+  const startTime = Date.now();
+  
+  try {
+    const formData = await c.req.formData();
+    const scholarshipJson = formData.get("scholarship");
+    const studentInfoJson = formData.get("studentInfo");
+    const supportingDocumentEntry = formData.get("supportingDocument");
+
+    if (!scholarshipJson || !studentInfoJson) {
+      return c.json({ error: "Scholarship and student info are required" }, 400);
+    }
+
+    const scholarship = JSON.parse(scholarshipJson as string);
+    const studentInfo = JSON.parse(studentInfoJson as string);
+
+    logger.info("Generating proposal", {
+      scholarshipId: scholarship.id,
+      scholarshipTitle: scholarship.title,
+      studentName: studentInfo.name,
+      hasSupportingDocument: !!supportingDocumentEntry,
+    });
+
+    const env = c.env;
+    if (!env.GEMINI_API_KEY) {
+      logger.error("Gemini API key not configured");
+      return c.json({ error: "Gemini API key not configured" }, 500);
+    }
+
+    let supportingDocument: { name: string; data: string } | undefined;
+
+    if (supportingDocumentEntry && typeof supportingDocumentEntry !== "string") {
+      const file = supportingDocumentEntry as File;
+      if (file.type !== "application/pdf") {
+        return c.json({ error: "Supporting document must be a PDF" }, 400);
+      }
+      const buffer = await file.arrayBuffer();
+      const base64 = arrayBufferToBase64(buffer);
+      supportingDocument = {
+        name: file.name,
+        data: base64,
+      };
+    }
+
+    const proposal = await generateProposal(
+      {
+        scholarship,
+        studentInfo,
+        supportingDocument,
+      },
+      env.GEMINI_API_KEY
+    );
+
+    const duration = Date.now() - startTime;
+    logger.performance("proposal_generation_api", duration, {
+      scholarshipId: scholarship.id,
+      hasSupportingDocument: !!supportingDocument,
+    });
+
+    return c.json({ proposal });
+  } catch (error) {
+    const duration = Date.now() - startTime;
+    logger.error("Failed to generate proposal", error instanceof Error ? error : new Error(String(error)), {
+      duration,
+    });
+    return c.json(
+      {
+        error: "Failed to generate proposal",
+        message: error instanceof Error ? error.message : "Unknown error",
+      },
+      500
+    );
+  }
+});
+
+// Helper function to convert ArrayBuffer to base64
+function arrayBufferToBase64(buffer: ArrayBuffer): string {
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return btoa(binary);
+}
+
+app.route("/api", api);
+app.all("*", (c) => c.text("Not Found", 404));
 
 export default app;
 
