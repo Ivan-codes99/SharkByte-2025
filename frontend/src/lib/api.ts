@@ -2,11 +2,16 @@
  * API Client for SharkScholar Backend
  */
 
+// NOTE: In Cloudflare Pages, set an environment variable:
+// VITE_API_URL = https://sharkscholar.courses/api
+// If the site serves at www, use: https://www.sharkscholar.courses/api
+//----------------------------------------------------------------
+
 import type { GeneratedPathway, PathwayGenerationRequest } from "../types/pathway";
 import type { ProgramAnalysisResponse, Scholarship } from "../types";
 import { logger } from "./logger";
 
-// Backend API URL - adjust for your deployment
+// In production, VITE_API_URL must be set to "https://sharkscholar.courses/api" (or https://www.sharkscholar.courses/api)
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8787";
 
 /**
@@ -17,11 +22,9 @@ export async function checkBackendHealth(): Promise<{ connected: boolean; status
     logger.info("Checking backend connection", { apiUrl: API_BASE_URL }, "API");
     const startTime = Date.now();
 
-    const response = await fetch(`${API_BASE_URL}/`, {
+    const response = await fetch(`${API_BASE_URL}/health`, {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
     });
 
     const duration = Date.now() - startTime;
